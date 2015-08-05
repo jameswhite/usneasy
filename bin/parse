@@ -5,6 +5,48 @@ use Time::Piece;
 use FileHandle;
 use strict;
 
+package USNEasy;
+use strict;
+# use warnings;
+
+sub new{
+  my $class = shift;
+  my $usn = shift;
+  my $self = {};
+  $self->{'notice'} = $usn;
+  bless $self, $class;
+  return $self;
+}
+
+sub notice{
+  my $self = shift;
+  $self->{'notice'} = shift if @_;
+  return $self->{'notice'};
+}
+
+sub head{
+  my $self = shift;
+  return $self->{'header'} if defined($self->{'header'});
+  my $in_head=0;
+  my $head=[];
+  foreach my $line (split/\n/,$self->notice){
+      if($line=~m/^=+$/){
+         if ($in_head==0){
+             $in_head = 1;
+         }else{
+             $in_head = 0;
+         }
+      }else{
+          push(@{$head},$line) if($in_head == 1);
+      }
+  }
+  $self->{'header'} = join("\n",@{$head});
+  return $self->{'header'};
+}
+
+1;
+
+
 my $directory = $ARGV[0];
 opendir(my $dh, $directory);
 my @mboxes = sort_mboxes(grep { /.txt$/ && -f "$directory/$_" } readdir($dh));
@@ -18,7 +60,6 @@ foreach my $mbox (@mboxes){
         if (defined $fh) {
             while( my $line=<$fh> ){
               if($line=~m/^From /){
-                
                 push(@{$mails},Mail::Internet->new( $current_mail )) if $#{$current_mail} > 0;
                 $current_mail = [];
               }
@@ -27,7 +68,11 @@ foreach my $mbox (@mboxes){
             undef $fh;       # automatically closes the file
         }
 }
-print Data::Dumper->Dump([$mails]);
+foreach my $mail (@{$mails}){
+    my $notice = USNEasy->new(join('',@{$mail->body}));
+    print $notice->head."\n";
+    print "################################################################################\n";
+}
 exit 0;
 
 ################################################################################
@@ -51,5 +96,3 @@ sub sort_mboxes(){
     }
     return @result;
 }
-
-
