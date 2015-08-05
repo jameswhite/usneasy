@@ -1,0 +1,1841 @@
+From marc.deslauriers at canonical.com  Mon May  4 14:46:45 2009
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 04 May 2009 10:46:45 -0400
+Subject: [USN-769-1] libwmf vulnerability
+Message-ID: <1241448405.6379.4.camel@mdlinux.technorage.com>
+
+===========================================================
+Ubuntu Security Notice USN-769-1               May 04, 2009
+libwmf vulnerability
+CVE-2009-1364
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 8.04 LTS
+Ubuntu 8.10
+Ubuntu 9.04
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  libwmf0.2-7                     0.2.8.3-3.1ubuntu0.2
+
+Ubuntu 8.04 LTS:
+  libwmf0.2-7                     0.2.8.4-6ubuntu0.8.04.1
+
+Ubuntu 8.10:
+  libwmf0.2-7                     0.2.8.4-6ubuntu0.8.10.1
+
+Ubuntu 9.04:
+  libwmf0.2-7                     0.2.8.4-6ubuntu1.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+Tavis Ormandy discovered that libwmf incorrectly used memory after it had
+been freed when using its embedded GD library. If a user or automated
+system were tricked into opening a crafted WMF file, an attacker could
+cause a denial of service or execute arbitrary code with privileges of the
+user invoking the program.
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.3-3.1ubuntu0.2.diff.gz
+      Size/MD5:     7548 1693ed2495751dcd73fc8e7831e0f7b3
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.3-3.1ubuntu0.2.dsc
+      Size/MD5:      793 2ddea51c8941c40224ecbf1be95acbc7
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.3.orig.tar.gz
+      Size/MD5:  1737021 c7246bb724664189ade7895547387e6a
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-doc_0.2.8.3-3.1ubuntu0.2_all.deb
+      Size/MD5:   271716 96e8d4db4814825634dd6405cd32e661
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.8.3-3.1ubuntu0.2_amd64.deb
+      Size/MD5:   207388 b9592ee21a871f90c618ccb4e309fceb
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.3-3.1ubuntu0.2_amd64.deb
+      Size/MD5:   182416 d8d8bf445c26d45277150e63f3e07e0f
+    http://security.ubuntu.com/ubuntu/pool/universe/libw/libwmf/libwmf-bin_0.2.8.3-3.1ubuntu0.2_amd64.deb
+      Size/MD5:    17944 4dd4b1fcd5e2cf58edd55559261a8893
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.8.3-3.1ubuntu0.2_i386.deb
+      Size/MD5:   186190 b50a22929e5c58d64dddfd1dc5759c35
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.3-3.1ubuntu0.2_i386.deb
+      Size/MD5:   167294 8eb6710e251969c670919faf0ac0d316
+    http://security.ubuntu.com/ubuntu/pool/universe/libw/libwmf/libwmf-bin_0.2.8.3-3.1ubuntu0.2_i386.deb
+      Size/MD5:    16286 ac1b771cbab2ec97903515fcc0d502ef
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.8.3-3.1ubuntu0.2_powerpc.deb
+      Size/MD5:   207382 17861a22d0b851f3ae565050d6b5f944
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.3-3.1ubuntu0.2_powerpc.deb
+      Size/MD5:   186342 1cdc9f3177873d0991df70dd94274164
+    http://security.ubuntu.com/ubuntu/pool/universe/libw/libwmf/libwmf-bin_0.2.8.3-3.1ubuntu0.2_powerpc.deb
+      Size/MD5:    23136 1f88bd61ca71dc25c811eb87019e5318
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.8.3-3.1ubuntu0.2_sparc.deb
+      Size/MD5:   202306 36a414f896e6b9c0cd85fb80adcdc3a2
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.3-3.1ubuntu0.2_sparc.deb
+      Size/MD5:   176046 ea143767a8b47e38c705d7f63514eb38
+    http://security.ubuntu.com/ubuntu/pool/universe/libw/libwmf/libwmf-bin_0.2.8.3-3.1ubuntu0.2_sparc.deb
+      Size/MD5:    17062 ba9845b780219b6280d245df9871dcae
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4-6ubuntu0.8.04.1.diff.gz
+      Size/MD5:     7945 db9719db8b4185a2dc1dfd9c7502a840
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4-6ubuntu0.8.04.1.dsc
+      Size/MD5:      897 aa5a40fac6d3a20e262b676a6ffb9905
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4.orig.tar.gz
+      Size/MD5:  2169375 d1177739bf1ceb07f57421f0cee191e0
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-doc_0.2.8.4-6ubuntu0.8.04.1_all.deb
+      Size/MD5:   271782 067cc55b9a443ccb54640265c83d2713
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu0.8.04.1_amd64.deb
+      Size/MD5:   204758 8d00854e0f547a1ba43a6273d989753e
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu0.8.04.1_amd64.deb
+      Size/MD5:   182500 8f982b8f49392e464d8ee6dfcf5c7d45
+    http://security.ubuntu.com/ubuntu/pool/universe/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu0.8.04.1_amd64.deb
+      Size/MD5:    18628 8bd56a6e3c735459894df6d35cca5069
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu0.8.04.1_i386.deb
+      Size/MD5:   190508 8719abb2577f1e835809901d278a1cc3
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu0.8.04.1_i386.deb
+      Size/MD5:   174632 f0c237795563bc56e93a30b2420be5d8
+    http://security.ubuntu.com/ubuntu/pool/universe/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu0.8.04.1_i386.deb
+      Size/MD5:    16854 51f4fa4bdea92af7adc8414d77c4f940
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu0.8.04.1_lpia.deb
+      Size/MD5:   190544 0be66144da34d745b6a205e39acf6b8d
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu0.8.04.1_lpia.deb
+      Size/MD5:   175152 6e321d7e9535b094a49cda9cca39cd98
+    http://ports.ubuntu.com/pool/universe/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu0.8.04.1_lpia.deb
+      Size/MD5:    16912 4ff571582af7b37e8bbf69c410e174e4
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:   208426 3f9a023a87a4b83cb773892caabd0995
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:   193284 53296daa6fee0c24910bccf542aeab5c
+    http://ports.ubuntu.com/pool/universe/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:    26614 d5f2e2ba285723762a04276cdd7788bf
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu0.8.04.1_sparc.deb
+      Size/MD5:   198188 541e5763f6b8c93e5c7fd3ad4c5036dd
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu0.8.04.1_sparc.deb
+      Size/MD5:   174884 3a7230c7e0a3ee6c4d338bbbfc51b8d6
+    http://ports.ubuntu.com/pool/universe/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu0.8.04.1_sparc.deb
+      Size/MD5:    18216 9a1750b1705281550cc63b12263122eb
+
+Updated packages for Ubuntu 8.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4-6ubuntu0.8.10.1.diff.gz
+      Size/MD5:     7947 3d9209546d67ea082b3f0bbfed1eda90
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4-6ubuntu0.8.10.1.dsc
+      Size/MD5:     1307 8e55c1cd1eebccde6dddbe717edbea01
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4.orig.tar.gz
+      Size/MD5:  2169375 d1177739bf1ceb07f57421f0cee191e0
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-doc_0.2.8.4-6ubuntu0.8.10.1_all.deb
+      Size/MD5:   271786 3ca10a1afb13e2c4869b3a61ccca2f9c
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu0.8.10.1_amd64.deb
+      Size/MD5:    18226 3ff0320cac60266fbede66a12d94e722
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu0.8.10.1_amd64.deb
+      Size/MD5:   207528 c8080917e04e780dcb7949b942315fcf
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu0.8.10.1_amd64.deb
+      Size/MD5:   185396 dd4b18c6101536755ec2059fa9ace7d7
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu0.8.10.1_i386.deb
+      Size/MD5:    16320 3e4ea0e6701bb7c1b361f400a197789e
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu0.8.10.1_i386.deb
+      Size/MD5:   191792 7f2520ac7a4df757be3fac75aa1f8b3d
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu0.8.10.1_i386.deb
+      Size/MD5:   175384 0688b920531b4bc30622df181049a969
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu0.8.10.1_lpia.deb
+      Size/MD5:    16296 3ab52a223003ac3f1f75b15bbe94c2c7
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu0.8.10.1_lpia.deb
+      Size/MD5:   192812 2c3bb8fdd898b2ea244835aac37bf91e
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu0.8.10.1_lpia.deb
+      Size/MD5:   175724 8a8a91ff084707ffc2c188ed82abaf9b
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu0.8.10.1_powerpc.deb
+      Size/MD5:    24438 dea1c25c5743967ac2e9bc720a5b53d0
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu0.8.10.1_powerpc.deb
+      Size/MD5:   210326 c972df4317570606da04f5037669f69d
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu0.8.10.1_powerpc.deb
+      Size/MD5:   195412 bf27b10058ad33b9d7070cecfd10cc9a
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu0.8.10.1_sparc.deb
+      Size/MD5:    18292 312e37cc9675e1c5ce1982b0d3d9c2f0
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu0.8.10.1_sparc.deb
+      Size/MD5:   201314 2fc36c07e6f7a7bb9412b814d79c3e09
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu0.8.10.1_sparc.deb
+      Size/MD5:   176600 f078e4b862815fff7c26dfd3c952af3b
+
+Updated packages for Ubuntu 9.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4-6ubuntu1.1.diff.gz
+      Size/MD5:     8054 75778c8b1637e8105a7d57c22f10fb1d
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4-6ubuntu1.1.dsc
+      Size/MD5:     1304 73331bc4957b531fa309e4defaaa61e8
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf_0.2.8.4.orig.tar.gz
+      Size/MD5:  2169375 d1177739bf1ceb07f57421f0cee191e0
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-doc_0.2.8.4-6ubuntu1.1_all.deb
+      Size/MD5:   271766 85012965dbe448e39dbd770149873231
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu1.1_amd64.deb
+      Size/MD5:    18224 9dabf870549fe87e2a07a0c5169ef858
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu1.1_amd64.deb
+      Size/MD5:   207486 953705c1d863cfb6e35d26cb8f14c9ee
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7-gtk_0.2.8.4-6ubuntu1.1_amd64.deb
+      Size/MD5:    20924 1176ff52c290e7e6237416b3f8f11d53
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu1.1_amd64.deb
+      Size/MD5:   182256 b9e6cdd69feb940940d2913d73b9beb9
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu1.1_i386.deb
+      Size/MD5:    16326 6dd791cdcf2a5e80231d7175c82dc0fe
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu1.1_i386.deb
+      Size/MD5:   191744 e5ecc9eab79e93ec0a8cac1662367a9c
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7-gtk_0.2.8.4-6ubuntu1.1_i386.deb
+      Size/MD5:    20688 43cdff77db7b69642d3f30b3eea62f3b
+    http://security.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu1.1_i386.deb
+      Size/MD5:   172432 06df097a479c63b16c5e2d3055e1b9f4
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu1.1_lpia.deb
+      Size/MD5:    16286 b6a14684d53478a10c5d5806bf9c4510
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu1.1_lpia.deb
+      Size/MD5:   192746 7955ed46b6fd5016da6cdaee7f9f3a2a
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7-gtk_0.2.8.4-6ubuntu1.1_lpia.deb
+      Size/MD5:    20602 8cd2b29d7615c83af5f11cd37d880cdc
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu1.1_lpia.deb
+      Size/MD5:   172836 81098a45b48473a75c485c184d9598c0
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu1.1_powerpc.deb
+      Size/MD5:    24434 3f8a54144a10505439d5aade24cf0b23
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu1.1_powerpc.deb
+      Size/MD5:   210282 7b74e82b61c5d893090d2ed2086104a6
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7-gtk_0.2.8.4-6ubuntu1.1_powerpc.deb
+      Size/MD5:    23020 65e66a2944b5d0e0837d1a4c23e06ff6
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu1.1_powerpc.deb
+      Size/MD5:   190446 2882b245d28ea23d20e25fad7b0757e1
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-bin_0.2.8.4-6ubuntu1.1_sparc.deb
+      Size/MD5:    18302 5abf22e780e2c61d4c9e0ad14b0f9673
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf-dev_0.2.8.4-6ubuntu1.1_sparc.deb
+      Size/MD5:   201282 e2933a793e52b2e4e70dff1b8c8d5cdb
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7-gtk_0.2.8.4-6ubuntu1.1_sparc.deb
+      Size/MD5:    20586 170e140a012c02e8558cc0af5f240210
+    http://ports.ubuntu.com/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-6ubuntu1.1_sparc.deb
+      Size/MD5:   173658 1eff93e12e2af48c8b2c38507c22371a
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20090504/a936f920/attachment.pgp>
+
+From jamie at canonical.com  Mon May  4 23:06:29 2009
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Mon, 4 May 2009 18:06:29 -0500
+Subject: [USN-770-1] ClamAV vulnerability
+Message-ID: <20090504230629.GF30107@severus.strandboge.com>
+
+===========================================================
+Ubuntu Security Notice USN-770-1               May 04, 2009
+clamav vulnerability
+https://launchpad.net/bugs/365823
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 9.04
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 9.04:
+  clamav-milter                   0.95.1+dfsg-1ubuntu1.2
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+A flaw was discovered in the clamav-milter initscript which caused the
+ownership of the current working directory to be changed to the 'clamav'
+user. This update attempts to repair the incorrect ownership for standard
+system directories, but it is recommended that the following command be
+performed to report any other directories that may be affected:
+
+  $ sudo find -H / -type d -user clamav \! -group clamav 2>/dev/null
+
+Systems configured to run clamav as a user other than the default 'clamav'
+user will need to adjust the above command accordingly.
+
+
+Updated packages for Ubuntu 9.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav_0.95.1+dfsg-1ubuntu1.2.diff.gz
+      Size/MD5:   240956 16d828dea428d031cc59d41b24b592d1
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav_0.95.1+dfsg-1ubuntu1.2.dsc
+      Size/MD5:     1540 575dace049ba5216b8ccbd3333b6c2c3
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav_0.95.1+dfsg.orig.tar.gz
+      Size/MD5: 24233062 1e9618ac1b9b58e5c1c1b665adf26749
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav-base_0.95.1+dfsg-1ubuntu1.2_all.deb
+      Size/MD5: 21399900 52b7926a51ada72067819f1c646db8b3
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav-docs_0.95.1+dfsg-1ubuntu1.2_all.deb
+      Size/MD5:  1110124 f7759ab6a73007be3605276cb0e7f28d
+    http://security.ubuntu.com/ubuntu/pool/universe/c/clamav/clamav-testfiles_0.95.1+dfsg-1ubuntu1.2_all.deb
+      Size/MD5:   225956 d4cc917a76574e27fe7b51643628bb4d
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav-daemon_0.95.1+dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:   393938 b905639abb64cbb62f6b088abf5a0231
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav-dbg_0.95.1+dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:  1184152 675a9cea68762ac8e0dca483292e15cf
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav-freshclam_0.95.1+dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:   281792 d0cbd33bd85b022ee85bbdac7511213f
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav_0.95.1+dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:   273934 86fa7c88dd44a77cf563b401d22a1139
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/libclamav-dev_0.95.1+dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:   605768 951853d338127eb686432233bfb5a341
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/libclamav6_0.95.1+dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:   569884 20ce2a8275351db1eee604558d79d4f7
+    http://security.ubuntu.com/ubuntu/pool/universe/c/clamav/clamav-milter_0.95.1+dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:   266000 33d736985619ca166f8f917fb7271d87
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav-daemon_0.95.1+dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:   382140 4440322bc961f0a410ebc92bb95f17aa
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav-dbg_0.95.1+dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:  1095416 9e2b92403f60728922113a3a27982533
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav-freshclam_0.95.1+dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:   279266 5f2fe7d3e0d045fe4f68e356fd977a04
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/clamav_0.95.1+dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:   268354 db1afab9a4b57a37bdcc3ccf471c5cc2
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/libclamav-dev_0.95.1+dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:   574290 c33b885b054cd55655292c55bed96295
+    http://security.ubuntu.com/ubuntu/pool/main/c/clamav/libclamav6_0.95.1+dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:   557328 643fd52c2f12ac522a87121e93978e79
+    http://security.ubuntu.com/ubuntu/pool/universe/c/clamav/clamav-milter_0.95.1+dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:   263040 0ab591f0b668adb5587edd485e987c13
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav-daemon_0.95.1+dfsg-1ubuntu1.2_lpia.deb
+      Size/MD5:   382392 0ea691eea8bd953bc273da4c9b9debc4
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav-dbg_0.95.1+dfsg-1ubuntu1.2_lpia.deb
+      Size/MD5:  1116512 52c01ee04b0107669c566b44cfac727e
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav-freshclam_0.95.1+dfsg-1ubuntu1.2_lpia.deb
+      Size/MD5:   279020 aa4872b8c2d9f299d532888d3675ea51
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav_0.95.1+dfsg-1ubuntu1.2_lpia.deb
+      Size/MD5:   268124 3a3175eb60cea6248bdd6767e5833de2
+    http://ports.ubuntu.com/pool/main/c/clamav/libclamav-dev_0.95.1+dfsg-1ubuntu1.2_lpia.deb
+      Size/MD5:   575506 96c1ca9f26aba0862f42b189fcae7354
+    http://ports.ubuntu.com/pool/main/c/clamav/libclamav6_0.95.1+dfsg-1ubuntu1.2_lpia.deb
+      Size/MD5:   559374 04a449e526bbb7d8be9b95c365b3b7f6
+    http://ports.ubuntu.com/pool/universe/c/clamav/clamav-milter_0.95.1+dfsg-1ubuntu1.2_lpia.deb
+      Size/MD5:   263008 ef2bcc6eb89e665ab5fba4cf10d2d2d8
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav-daemon_0.95.1+dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:   400204 94578b9dca844d1434025a51c0109c83
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav-dbg_0.95.1+dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:  1158670 5a7be46133af1bc18e47adfca1cf6587
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav-freshclam_0.95.1+dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:   283848 2ab5a37504e844051c48c6419e55f336
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav_0.95.1+dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:   276786 1003a47361604f8d3b54771e9bb0fa34
+    http://ports.ubuntu.com/pool/main/c/clamav/libclamav-dev_0.95.1+dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:   645340 365e906bfacae713aa391e827933e9ad
+    http://ports.ubuntu.com/pool/main/c/clamav/libclamav6_0.95.1+dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:   587074 d83bab7ca42ef3a0b37e704aa624558c
+    http://ports.ubuntu.com/pool/universe/c/clamav/clamav-milter_0.95.1+dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:   269430 29c2c9c54774130407c28ed4422da83b
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav-daemon_0.95.1+dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:   383556 1cea55a1fce839b2ca1e5b03ca632c32
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav-dbg_0.95.1+dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:  1064340 a6c0dc3a0e3d40a4f89dff2290a6769a
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav-freshclam_0.95.1+dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:   277894 fc8f08a7d044cc9246a8233d1a9cfd2a
+    http://ports.ubuntu.com/pool/main/c/clamav/clamav_0.95.1+dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:   268476 c4a9a06151ad123de3cb484f06fc8870
+    http://ports.ubuntu.com/pool/main/c/clamav/libclamav-dev_0.95.1+dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:   607604 f11ab004f8c8c5c6845bc90c38cf2f4a
+    http://ports.ubuntu.com/pool/main/c/clamav/libclamav6_0.95.1+dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:   574486 e1c8f67fa7300c4759d9c01b9bc4e3c2
+    http://ports.ubuntu.com/pool/universe/c/clamav/clamav-milter_0.95.1+dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:   262718 ff8884c64206061ec9830b029c06aa8e
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20090504/ffb8cb93/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu May  7 18:27:13 2009
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 07 May 2009 14:27:13 -0400
+Subject: [USN-772-1] MPFR vulnerability
+Message-ID: <1241720833.5979.11.camel@mdlinux.technorage.com>
+
+===========================================================
+Ubuntu Security Notice USN-772-1               May 07, 2009
+mpfr vulnerability
+CVE-2009-0757
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 9.04
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 9.04:
+  lib64mpfr1                      2.4.0-1ubuntu3.1
+  libmpfr1ldbl                    2.4.0-1ubuntu3.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+It was discovered that MPFR improperly handled string lengths in its print
+routines. If a user or automated system were tricked into processing
+specially crafted data with applications linked against MPFR, an attacker
+could cause a denial of service or execute arbitrary code with privileges
+of the user invoking the program.
+
+
+Updated packages for Ubuntu 9.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mpfr/mpfr_2.4.0-1ubuntu3.1.diff.gz
+      Size/MD5:     7603 d996b99c39cae2d82db24bd5f123ade1
+    http://security.ubuntu.com/ubuntu/pool/main/m/mpfr/mpfr_2.4.0-1ubuntu3.1.dsc
+      Size/MD5:     1316 a28e504aedb1c804af4b7156a9dc3573
+    http://security.ubuntu.com/ubuntu/pool/main/m/mpfr/mpfr_2.4.0.orig.tar.gz
+      Size/MD5:  1336846 232f9d6917898e8277041bcc046fbb72
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mpfr/libmpfr-doc_2.4.0-1ubuntu3.1_all.deb
+      Size/MD5:   645652 a0041c74091777ecc87686fab37ab1da
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mpfr/libmpfr-dev_2.4.0-1ubuntu3.1_amd64.deb
+      Size/MD5:   459986 a9e110cdaf84103c6c8c5c1b09aa11a8
+    http://security.ubuntu.com/ubuntu/pool/main/m/mpfr/libmpfr1ldbl_2.4.0-1ubuntu3.1_amd64.deb
+      Size/MD5:   417730 6fba616c8ab42fda163bd35a5993d5e5
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mpfr/libmpfr-dev_2.4.0-1ubuntu3.1_i386.deb
+      Size/MD5:   431566 872b92cab9aa82122435a6d80c3dabb7
+    http://security.ubuntu.com/ubuntu/pool/main/m/mpfr/libmpfr1ldbl_2.4.0-1ubuntu3.1_i386.deb
+      Size/MD5:   404100 81cee51ae17a92f65a8fe8881c0417ca
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/m/mpfr/libmpfr-dev_2.4.0-1ubuntu3.1_lpia.deb
+      Size/MD5:   433150 d60c4b1377d722bcdfb881480079e089
+    http://ports.ubuntu.com/pool/main/m/mpfr/libmpfr1ldbl_2.4.0-1ubuntu3.1_lpia.deb
+      Size/MD5:   404108 eb59aaaefdfa8bf954ca16be35c61896
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/m/mpfr/lib64mpfr-dev_2.4.0-1ubuntu3.1_powerpc.deb
+      Size/MD5:   461744 a943b5f7d8566cb91405ff162e07bf14
+    http://ports.ubuntu.com/pool/main/m/mpfr/lib64mpfr1_2.4.0-1ubuntu3.1_powerpc.deb
+      Size/MD5:   407042 8646e75a38bc8c0f28ab5478a768ffdc
+    http://ports.ubuntu.com/pool/main/m/mpfr/libmpfr-dev_2.4.0-1ubuntu3.1_powerpc.deb
+      Size/MD5:   469676 05b5927c2c359dcf8060d00e14cde769
+    http://ports.ubuntu.com/pool/main/m/mpfr/libmpfr1ldbl_2.4.0-1ubuntu3.1_powerpc.deb
+      Size/MD5:   421772 e209d7e0b960f4c734547b0fc71fe56d
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/m/mpfr/libmpfr-dev_2.4.0-1ubuntu3.1_sparc.deb
+      Size/MD5:   444678 14b90d05922e55b437b7bf613f7a2fce
+    http://ports.ubuntu.com/pool/main/m/mpfr/libmpfr1ldbl_2.4.0-1ubuntu3.1_sparc.deb
+      Size/MD5:   403328 5af0d9a4665f3bdeb58755e32235aceb
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20090507/1f458562/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu May  7 18:26:36 2009
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 07 May 2009 14:26:36 -0400
+Subject: [USN-771-1] libmodplug vulnerabilities
+Message-ID: <1241720796.5979.10.camel@mdlinux.technorage.com>
+
+===========================================================
+Ubuntu Security Notice USN-771-1               May 07, 2009
+libmodplug vulnerabilities
+CVE-2009-1438, CVE-2009-1513
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 8.04 LTS
+Ubuntu 8.10
+Ubuntu 9.04
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  libmodplug0c2                   1:0.7-5ubuntu0.6.06.2
+
+Ubuntu 8.04 LTS:
+  libmodplug0c2                   1:0.7-7ubuntu0.8.04.1
+
+Ubuntu 8.10:
+  libmodplug0c2                   1:0.7-7ubuntu0.8.10.1
+
+Ubuntu 9.04:
+  libmodplug0c2                   1:0.8.4-3ubuntu1.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+It was discovered that libmodplug did not correctly handle certain
+parameters when parsing MED media files. If a user or automated system were
+tricked into opening a crafted MED file, an attacker could execute
+arbitrary code with privileges of the user invoking the program.
+(CVE-2009-1438)
+
+Manfred Tremmel and Stanislav Brabec discovered that libmodplug did not
+correctly handle long instrument names when parsing PAT sample files. If a
+user or automated system were tricked into opening a crafted PAT file, an
+attacker could cause a denial of service or execute arbitrary code with
+privileges of the user invoking the program. This issue only affected
+Ubuntu 9.04. (CVE-2009-1438)
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.7-5ubuntu0.6.06.2.diff.gz
+      Size/MD5:     8019 e0cfb60fb0e8b9d2952b44fe49162a34
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.7-5ubuntu0.6.06.2.dsc
+      Size/MD5:      648 63165324d2ab4e1cbd3cea974ff7e469
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.7.orig.tar.gz
+      Size/MD5:   329398 b6e7412f90cdd4a27a2dd3de94909905
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug-dev_0.7-5ubuntu0.6.06.2_all.deb
+      Size/MD5:    22574 b2e9b39531d1cd61248c1896f41b5924
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug0c2_0.7-5ubuntu0.6.06.2_amd64.deb
+      Size/MD5:   117666 645e325b6a6f9de4725ad209ea8164b6
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug0c2_0.7-5ubuntu0.6.06.2_i386.deb
+      Size/MD5:   115600 a0db9ab74c5d57233be5ca293b98dcce
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug0c2_0.7-5ubuntu0.6.06.2_powerpc.deb
+      Size/MD5:   125876 7a615bf7d62f8196543bbf20ff5202a1
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug0c2_0.7-5ubuntu0.6.06.2_sparc.deb
+      Size/MD5:   123506 275f5a45734db4cc7c43eb63c1573bea
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.7-7ubuntu0.8.04.1.diff.gz
+      Size/MD5:     8451 e5c0199a6649713b1702fbc6e2d6fc20
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.7-7ubuntu0.8.04.1.dsc
+      Size/MD5:      750 16855b20226f3c668aeabfb00366dfee
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.7.orig.tar.gz
+      Size/MD5:   329398 b6e7412f90cdd4a27a2dd3de94909905
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug-dev_0.7-7ubuntu0.8.04.1_all.deb
+      Size/MD5:    23042 cdf25381e5c0ce41bfe5df66c983954b
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug0c2_0.7-7ubuntu0.8.04.1_amd64.deb
+      Size/MD5:   121612 7d456e69ee2dd12e197b8e30d892e333
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug0c2_0.7-7ubuntu0.8.04.1_i386.deb
+      Size/MD5:   120658 645a4441fe79e02f7b9c1851c028a314
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/libm/libmodplug/libmodplug0c2_0.7-7ubuntu0.8.04.1_lpia.deb
+      Size/MD5:   122276 f7784ebbd03cf2f9c63ee7c0fdb5920e
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/libm/libmodplug/libmodplug0c2_0.7-7ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:   131908 0b1e05f93b5e85f57566874861640083
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/libm/libmodplug/libmodplug0c2_0.7-7ubuntu0.8.04.1_sparc.deb
+      Size/MD5:   128062 29b786c3ce45fe602da56310992bdab0
+
+Updated packages for Ubuntu 8.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.7-7ubuntu0.8.10.1.diff.gz
+      Size/MD5:     8477 4e692596340a4fd891d788ee9b206f0a
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.7-7ubuntu0.8.10.1.dsc
+      Size/MD5:     1158 83e89cd14e7e3cc4a1461aadc3d108c6
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.7.orig.tar.gz
+      Size/MD5:   329398 b6e7412f90cdd4a27a2dd3de94909905
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug-dev_0.7-7ubuntu0.8.10.1_all.deb
+      Size/MD5:    23034 50d486755d9adc21e5c22b46e96d7c12
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug0c2_0.7-7ubuntu0.8.10.1_amd64.deb
+      Size/MD5:   121962 bfe382df79c137130a695078283300fc
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug0c2_0.7-7ubuntu0.8.10.1_i386.deb
+      Size/MD5:   120940 0d1eaa14546d5aeb62f1848d9bfbc8d6
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/libm/libmodplug/libmodplug0c2_0.7-7ubuntu0.8.10.1_lpia.deb
+      Size/MD5:   122746 bb5fbc25b04596b08c493ed7a258cf31
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/libm/libmodplug/libmodplug0c2_0.7-7ubuntu0.8.10.1_powerpc.deb
+      Size/MD5:   133192 9b301e52f287cf13137a9b4624d1dcec
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/libm/libmodplug/libmodplug0c2_0.7-7ubuntu0.8.10.1_sparc.deb
+      Size/MD5:   127736 db79a29968f0de688e44498446506881
+
+Updated packages for Ubuntu 9.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.8.4-3ubuntu1.1.diff.gz
+      Size/MD5:     8721 65ddff85bc42da5fdd2806adfae2364e
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.8.4-3ubuntu1.1.dsc
+      Size/MD5:     1147 a9768cf5e67c1af673110df40343bb6c
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug_0.8.4.orig.tar.gz
+      Size/MD5:   510758 091bd1168a524a4f36fc61f95209e7e4
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug-dev_0.8.4-3ubuntu1.1_all.deb
+      Size/MD5:    25412 e82af5c335f5bfd8321f99e59c07db54
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug0c2_0.8.4-3ubuntu1.1_amd64.deb
+      Size/MD5:   173236 36277712028649998c2ab648b277cb6f
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libm/libmodplug/libmodplug0c2_0.8.4-3ubuntu1.1_i386.deb
+      Size/MD5:   172220 7720ceb85256b36befb406b8df775391
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/libm/libmodplug/libmodplug0c2_0.8.4-3ubuntu1.1_lpia.deb
+      Size/MD5:   174688 a46440d2c3034aba5d0a9c012cb8c1e2
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/libm/libmodplug/libmodplug0c2_0.8.4-3ubuntu1.1_powerpc.deb
+      Size/MD5:   187064 170df3cab798c4cf33ab20d263b39874
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/libm/libmodplug/libmodplug0c2_0.8.4-3ubuntu1.1_sparc.deb
+      Size/MD5:   188008 df4617de3276c111ca15b3d6b5116156
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20090507/94f1f6ef/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu May  7 18:27:51 2009
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 07 May 2009 14:27:51 -0400
+Subject: [USN-773-1] Pango vulnerability
+Message-ID: <1241720871.5979.12.camel@mdlinux.technorage.com>
+
+===========================================================
+Ubuntu Security Notice USN-773-1               May 07, 2009
+pango1.0 vulnerability
+CVE-2009-1194
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 8.04 LTS
+Ubuntu 8.10
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  libpango1.0-0                   1.12.3-0ubuntu3.1
+
+Ubuntu 8.04 LTS:
+  libpango1.0-0                   1.20.5-0ubuntu1.1
+
+Ubuntu 8.10:
+  libpango1.0-0                   1.22.2-0ubuntu1.1
+
+After a standard system upgrade you need to restart your session to effect
+the necessary changes.
+
+Details follow:
+
+Will Drewry discovered that Pango incorrectly handled rendering text with
+long glyphstrings. If a user were tricked into displaying specially crafted
+data with applications linked against Pango, such as Firefox, an attacker
+could cause a denial of service or execute arbitrary code with privileges
+of the user invoking the program.
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.12.3-0ubuntu3.1.diff.gz
+      Size/MD5:     4500 b522e8ff79f686ff3fdd493e8542349e
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.12.3-0ubuntu3.1.dsc
+      Size/MD5:     1910 c8c30bddff7defeeee80a3610405df05
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.12.3.orig.tar.gz
+      Size/MD5:  1707615 9abcbd996cdb1fcb6737100384a55be8
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-doc_1.12.3-0ubuntu3.1_all.deb
+      Size/MD5:   205394 a80e88128fd7115254e3d5133987d4ee
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0-dbg_1.12.3-0ubuntu3.1_amd64.deb
+      Size/MD5:   677312 ecf591534d852001624f8435ede14209
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0_1.12.3-0ubuntu3.1_amd64.deb
+      Size/MD5:   315888 0073f3bd9ede36fdfa03dc1f607d03cb
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-common_1.12.3-0ubuntu3.1_amd64.deb
+      Size/MD5:    35248 bb15526175751e55282920738df947e9
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-dev_1.12.3-0ubuntu3.1_amd64.deb
+      Size/MD5:   348382 001c8a9bfe194656728952d4a611e623
+    http://security.ubuntu.com/ubuntu/pool/universe/p/pango1.0/libpango1.0-udeb_1.12.3-0ubuntu3.1_amd64.udeb
+      Size/MD5:   211678 37d27b670d2b6015ce58678356544370
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0-dbg_1.12.3-0ubuntu3.1_i386.deb
+      Size/MD5:   575498 85a732fe93794bde88a169cbe4fad19f
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0_1.12.3-0ubuntu3.1_i386.deb
+      Size/MD5:   281538 4bd301b06894d6cd4e1be81678b4be2c
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-common_1.12.3-0ubuntu3.1_i386.deb
+      Size/MD5:    32432 7723b32675d6ad213e825e98287c7069
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-dev_1.12.3-0ubuntu3.1_i386.deb
+      Size/MD5:   300604 9ce8e8ef85c82cabaf4e8b7bfb801c05
+    http://security.ubuntu.com/ubuntu/pool/universe/p/pango1.0/libpango1.0-udeb_1.12.3-0ubuntu3.1_i386.udeb
+      Size/MD5:   185128 15dfeed6702d8913ee23a9b89daaa27a
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0-dbg_1.12.3-0ubuntu3.1_powerpc.deb
+      Size/MD5:   684284 3820ab5752792a0554d032237c6d049f
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0_1.12.3-0ubuntu3.1_powerpc.deb
+      Size/MD5:   296486 cf4c37e916fabb50bf1f9d6563cc3086
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-common_1.12.3-0ubuntu3.1_powerpc.deb
+      Size/MD5:    36960 4711e9a7c92f656280145e09fabc54aa
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-dev_1.12.3-0ubuntu3.1_powerpc.deb
+      Size/MD5:   350058 c872e045849b8f4b34c90a44b7cbb08b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/pango1.0/libpango1.0-udeb_1.12.3-0ubuntu3.1_powerpc.udeb
+      Size/MD5:   194288 9b65d99b129b9fc4189432fb3b686398
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0-dbg_1.12.3-0ubuntu3.1_sparc.deb
+      Size/MD5:   590364 bb12fd807bbe366bba5cb51a73ac2e86
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0_1.12.3-0ubuntu3.1_sparc.deb
+      Size/MD5:   285696 9e21a78eac3650c6382b56366e5c24da
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-common_1.12.3-0ubuntu3.1_sparc.deb
+      Size/MD5:    32880 018271c1cffb4d64b6fb236f44dfba21
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-dev_1.12.3-0ubuntu3.1_sparc.deb
+      Size/MD5:   321630 ba578e44ca29ff4e09f091c0cbc4d710
+    http://security.ubuntu.com/ubuntu/pool/universe/p/pango1.0/libpango1.0-udeb_1.12.3-0ubuntu3.1_sparc.udeb
+      Size/MD5:   184978 8e97c008133b2cf71c2db6734894bb5e
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.20.5-0ubuntu1.1.diff.gz
+      Size/MD5:    28413 491d5425656032d156d4060f2708ac5b
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.20.5-0ubuntu1.1.dsc
+      Size/MD5:     1327 8ad3e3939c92ab1511ac0f701438b23b
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.20.5.orig.tar.gz
+      Size/MD5:  2071747 e0fac4c2c99d903fdec3f8db60107f36
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-common_1.20.5-0ubuntu1.1_all.deb
+      Size/MD5:    63608 04b86269a4399c5cdf19db8c720e9a83
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-doc_1.20.5-0ubuntu1.1_all.deb
+      Size/MD5:   277850 b35ee97b0108333b156c64b5a85f3bf0
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0-dbg_1.20.5-0ubuntu1.1_amd64.deb
+      Size/MD5:   721712 5624508e825bbe5fd64de4716f6f3875
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0_1.20.5-0ubuntu1.1_amd64.deb
+      Size/MD5:   305670 2a54d8c485987a212e57f45252d5f27d
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-dev_1.20.5-0ubuntu1.1_amd64.deb
+      Size/MD5:   387426 601d99e237fb3b42f23703aebecd7c2e
+    http://security.ubuntu.com/ubuntu/pool/universe/p/pango1.0/libpango1.0-udeb_1.20.5-0ubuntu1.1_amd64.udeb
+      Size/MD5:   225982 24eab50f837e4df93c626e7c7704dbed
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0-dbg_1.20.5-0ubuntu1.1_i386.deb
+      Size/MD5:   683650 c81d2a42d181a27706d664c18930ba16
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0_1.20.5-0ubuntu1.1_i386.deb
+      Size/MD5:   283686 fc1ad92f46f1f2bf6da1b3c64ec1d96c
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-dev_1.20.5-0ubuntu1.1_i386.deb
+      Size/MD5:   348082 05b8b3b76d2765abc8bf57decd719f2b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/pango1.0/libpango1.0-udeb_1.20.5-0ubuntu1.1_i386.udeb
+      Size/MD5:   209962 6054d5233f46eb1441a082e032b95f6b
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0-dbg_1.20.5-0ubuntu1.1_lpia.deb
+      Size/MD5:   690498 b545625f176093f2319029b0150343f0
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0_1.20.5-0ubuntu1.1_lpia.deb
+      Size/MD5:   281986 1689efa64b09f912c5dc7bd748c20198
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-dev_1.20.5-0ubuntu1.1_lpia.deb
+      Size/MD5:   349140 0f04a29b457b62fc8a47a69cd7e7a17b
+    http://ports.ubuntu.com/pool/universe/p/pango1.0/libpango1.0-udeb_1.20.5-0ubuntu1.1_lpia.udeb
+      Size/MD5:   209410 d07b5a41402030be7a48708052f44ae6
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0-dbg_1.20.5-0ubuntu1.1_powerpc.deb
+      Size/MD5:   734052 afe9bf600732f91f80d53ab81e3b3bc2
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0_1.20.5-0ubuntu1.1_powerpc.deb
+      Size/MD5:   299506 7705155e437bcc8b6a45e22ea1b6cf28
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-dev_1.20.5-0ubuntu1.1_powerpc.deb
+      Size/MD5:   394560 62cab62f7bcc2b2b938f093a3208241c
+    http://ports.ubuntu.com/pool/universe/p/pango1.0/libpango1.0-udeb_1.20.5-0ubuntu1.1_powerpc.udeb
+      Size/MD5:   221120 e913027b850970dce415b863cd46e37b
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0-dbg_1.20.5-0ubuntu1.1_sparc.deb
+      Size/MD5:   656344 ce4cdf162e3d048722308ed068d67bbb
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0_1.20.5-0ubuntu1.1_sparc.deb
+      Size/MD5:   276904 b732040e5ee1ba793858b6f62613447d
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-dev_1.20.5-0ubuntu1.1_sparc.deb
+      Size/MD5:   361848 3b315e7cf8b0df498c022d3a9bc648d4
+    http://ports.ubuntu.com/pool/universe/p/pango1.0/libpango1.0-udeb_1.20.5-0ubuntu1.1_sparc.udeb
+      Size/MD5:   201780 714d774a93755adeb322ad4f5f241a6d
+
+Updated packages for Ubuntu 8.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.22.2-0ubuntu1.1.diff.gz
+      Size/MD5:    29604 806703705b7572b9f8dca8d1acc5e290
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.22.2-0ubuntu1.1.dsc
+      Size/MD5:     1821 a5c848d38d53c249bd7d234aaf3a2495
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.22.2.orig.tar.gz
+      Size/MD5:  2129352 ac0187a02e34dd546f73647a7bc9d946
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-common_1.22.2-0ubuntu1.1_all.deb
+      Size/MD5:    66420 80863edb6443bb20ce85e2669fa344db
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-doc_1.22.2-0ubuntu1.1_all.deb
+      Size/MD5:   283724 7ebe97434d68260a1c60b8c336733578
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0-dbg_1.22.2-0ubuntu1.1_amd64.deb
+      Size/MD5:   784366 c32ef609c6f1f36ca64ed0a4fe7e52de
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0_1.22.2-0ubuntu1.1_amd64.deb
+      Size/MD5:   318300 a9ab95a8373d1a4ea5098c3ef617fee5
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-dev_1.22.2-0ubuntu1.1_amd64.deb
+      Size/MD5:   403124 39853f549a42966a5bdaa2eb990d681f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/pango1.0/libpango1.0-udeb_1.22.2-0ubuntu1.1_amd64.udeb
+      Size/MD5:   237932 ae0fc762a8d1cdaad163d7ad03518bfe
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0-dbg_1.22.2-0ubuntu1.1_i386.deb
+      Size/MD5:   732012 d3edc099dadae3d1c4a73d43c1ce1ef2
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-0_1.22.2-0ubuntu1.1_i386.deb
+      Size/MD5:   292710 0adfe076b366794ccc98b0937df79435
+    http://security.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango1.0-dev_1.22.2-0ubuntu1.1_i386.deb
+      Size/MD5:   361702 a94869f26a32f8cf4ec0e70c66fc0421
+    http://security.ubuntu.com/ubuntu/pool/universe/p/pango1.0/libpango1.0-udeb_1.22.2-0ubuntu1.1_i386.udeb
+      Size/MD5:   220458 92a7ba465b1339115ecbc7e5179aa586
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0-dbg_1.22.2-0ubuntu1.1_lpia.deb
+      Size/MD5:   739278 f7b7bf341c5356184876d8a2fc9bca88
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0_1.22.2-0ubuntu1.1_lpia.deb
+      Size/MD5:   291002 3a21b8d4e5173b754c3c7d4e83dd3d8e
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-dev_1.22.2-0ubuntu1.1_lpia.deb
+      Size/MD5:   363694 d34b04083a45a6fec0d1ad03faf682c5
+    http://ports.ubuntu.com/pool/universe/p/pango1.0/libpango1.0-udeb_1.22.2-0ubuntu1.1_lpia.udeb
+      Size/MD5:   219562 3d4d190806c912cd36240ce0b3a5ff4d
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0-dbg_1.22.2-0ubuntu1.1_powerpc.deb
+      Size/MD5:   785118 942bf391454fe269082057ddfba3f55d
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0_1.22.2-0ubuntu1.1_powerpc.deb
+      Size/MD5:   313364 74f49a139cfa99944281c39a92716f49
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-dev_1.22.2-0ubuntu1.1_powerpc.deb
+      Size/MD5:   410838 286c7f55c0a2a134d716385b9ca766c9
+    http://ports.ubuntu.com/pool/universe/p/pango1.0/libpango1.0-udeb_1.22.2-0ubuntu1.1_powerpc.udeb
+      Size/MD5:   231958 4360108ddedf88938459fbd34975195c
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0-dbg_1.22.2-0ubuntu1.1_sparc.deb
+      Size/MD5:   698562 5f196f28580241385bd77acd0cd72aad
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-0_1.22.2-0ubuntu1.1_sparc.deb
+      Size/MD5:   289512 e7580d801de9a0532730a3ef1d315417
+    http://ports.ubuntu.com/pool/main/p/pango1.0/libpango1.0-dev_1.22.2-0ubuntu1.1_sparc.deb
+      Size/MD5:   376752 bcde95529c4e80a6f0aa140e40316fd3
+    http://ports.ubuntu.com/pool/universe/p/pango1.0/libpango1.0-udeb_1.22.2-0ubuntu1.1_sparc.udeb
+      Size/MD5:   212532 e18d12dbfb924f08d57869b5074310f0
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20090507/eafe8d17/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon May 11 15:21:34 2009
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 11 May 2009 11:21:34 -0400
+Subject: [USN-774-1] MoinMoin vulnerability
+Message-ID: <1242055294.31390.2.camel@mdlinux.technorage.com>
+
+===========================================================
+Ubuntu Security Notice USN-774-1               May 11, 2009
+moin vulnerability
+CVE-2009-1482
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 8.10
+Ubuntu 9.04
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 8.10:
+  python-moinmoin                 1.7.1-1ubuntu1.2
+
+Ubuntu 9.04:
+  python-moinmoin                 1.8.2-2ubuntu2.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+It was discovered that MoinMoin did not properly sanitize its input when
+attaching files, resulting in cross-site scripting (XSS) vulnerabilities.
+With cross-site scripting vulnerabilities, if a user were tricked into
+viewing server output during a crafted server request, a remote attacker
+could exploit this to modify the contents, or steal confidential data,
+within the same domain.
+
+
+Updated packages for Ubuntu 8.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/moin/moin_1.7.1-1ubuntu1.2.diff.gz
+      Size/MD5:    70843 b324c3563a0455831aac793c235ad553
+    http://security.ubuntu.com/ubuntu/pool/main/m/moin/moin_1.7.1-1ubuntu1.2.dsc
+      Size/MD5:     1350 ae2583d23ef966e67bb6a7df4c002dba
+    http://security.ubuntu.com/ubuntu/pool/main/m/moin/moin_1.7.1.orig.tar.gz
+      Size/MD5:  5468224 871337b8171c91f9a6803e5376857e8d
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/moin/python-moinmoin_1.7.1-1ubuntu1.2_all.deb
+      Size/MD5:  4498492 7280f01e0199a258dd4b720b8c6eaf84
+
+Updated packages for Ubuntu 9.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/moin/moin_1.8.2-2ubuntu2.1.diff.gz
+      Size/MD5:    94431 35acf54b1a7351568fc80c2e3711bbf8
+    http://security.ubuntu.com/ubuntu/pool/main/m/moin/moin_1.8.2-2ubuntu2.1.dsc
+      Size/MD5:     1350 62c722d613bcded1fb4ff93729eec31a
+    http://security.ubuntu.com/ubuntu/pool/main/m/moin/moin_1.8.2.orig.tar.gz
+      Size/MD5:  5943057 b3ced56bbe09311a7c56049423214cdb
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/moin/python-moinmoin_1.8.2-2ubuntu2.1_all.deb
+      Size/MD5:  3902618 ea5f597ed7b0cc76af72b3e5c65cfaa2
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20090511/dd8a6d08/attachment.pgp>
+
+From kees at ubuntu.com  Tue May 12 22:34:28 2009
+From: kees at ubuntu.com (Kees Cook)
+Date: Tue, 12 May 2009 15:34:28 -0700
+Subject: [USN-775-1] Quagga vulnerability
+Message-ID: <20090512223428.GO9451@outflux.net>
+
+===========================================================
+Ubuntu Security Notice USN-775-1               May 12, 2009
+quagga vulnerability
+CVE-2009-1572
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 8.04 LTS
+Ubuntu 8.10
+Ubuntu 9.04
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  quagga                          0.99.2-1ubuntu3.5
+
+Ubuntu 8.04 LTS:
+  quagga                          0.99.9-2ubuntu1.2
+
+Ubuntu 8.10:
+  quagga                          0.99.9-6ubuntu0.1
+
+Ubuntu 9.04:
+  quagga                          0.99.11-1ubuntu0.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+It was discovered that the BGP service in Quagga did not correctly
+handle certain AS paths containing 4-byte ASNs.  An authenticated remote
+attacker could exploit this flaw to cause bgpd to abort, leading to a
+denial of service.
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.2-1ubuntu3.5.diff.gz
+      Size/MD5:    37396 292a1fd54c54ee38c5516a9ca6523684
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.2-1ubuntu3.5.dsc
+      Size/MD5:      808 d5f6cf9d134b206ae50a8cdb5ec440ef
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.2.orig.tar.gz
+      Size/MD5:  2185137 88087d90697fcf5fe192352634f340b3
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga-doc_0.99.2-1ubuntu3.5_all.deb
+      Size/MD5:   664112 e541fe24436631fe1dd0d9950c1d2e24
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.2-1ubuntu3.5_amd64.deb
+      Size/MD5:  1404040 736f2c09298720560f32fdd1d07034c4
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.2-1ubuntu3.5_i386.deb
+      Size/MD5:  1199076 382851e8e63c2d82a6b7be5a1dd3cbae
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.2-1ubuntu3.5_powerpc.deb
+      Size/MD5:  1351344 6251ec5c5d7f4c7bcbc955fc34949da7
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.2-1ubuntu3.5_sparc.deb
+      Size/MD5:  1322236 573027a1c4046355d7092ee6f9d1954a
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.9-2ubuntu1.2.diff.gz
+      Size/MD5:    39821 d108390e18abfb164ac6add2059a70f4
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.9-2ubuntu1.2.dsc
+      Size/MD5:     1022 1ed0ba0dad080309f1f7e4be0f938a86
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.9.orig.tar.gz
+      Size/MD5:  2341067 4dbdaf91bf6609803819d97d5fccc4c9
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga-doc_0.99.9-2ubuntu1.2_all.deb
+      Size/MD5:   661654 00651b4ef4395f0482c2e8045fef3df4
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.9-2ubuntu1.2_amd64.deb
+      Size/MD5:  1619694 1463126f4765b183d7d05439dce8e85e
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.9-2ubuntu1.2_i386.deb
+      Size/MD5:  1464662 4b47ad2b99897070c3d9e83b17d31fe6
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/q/quagga/quagga_0.99.9-2ubuntu1.2_lpia.deb
+      Size/MD5:  1461048 f43d4d089d177d8fda7b5e15c03c4fbd
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/q/quagga/quagga_0.99.9-2ubuntu1.2_powerpc.deb
+      Size/MD5:  1658536 6f57951e682174d9654138b6e64062a2
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/q/quagga/quagga_0.99.9-2ubuntu1.2_sparc.deb
+      Size/MD5:  1521228 b9eb0d80e54b06063a1cdb67fb4d127c
+
+Updated packages for Ubuntu 8.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.9-6ubuntu0.1.diff.gz
+      Size/MD5:    39858 dd50ad39ebb03c42c684efe1bfc16a73
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.9-6ubuntu0.1.dsc
+      Size/MD5:     1486 01d1272ad69971946c70ccff5dd2c1db
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.9.orig.tar.gz
+      Size/MD5:  2341067 4dbdaf91bf6609803819d97d5fccc4c9
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga-doc_0.99.9-6ubuntu0.1_all.deb
+      Size/MD5:   661130 52ab02e56bffd388775e7add6943f72c
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.9-6ubuntu0.1_amd64.deb
+      Size/MD5:  1729098 c77f07c11e21227fa219a5448f622fb0
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.9-6ubuntu0.1_i386.deb
+      Size/MD5:  1589616 8ecef808331e53dca0fe0b2f7e48049a
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/q/quagga/quagga_0.99.9-6ubuntu0.1_lpia.deb
+      Size/MD5:  1565098 eba9788ae7b71fa2cc3d349a0b96ca6e
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/q/quagga/quagga_0.99.9-6ubuntu0.1_powerpc.deb
+      Size/MD5:  1693896 f0ee074951fdab1668a33cef036b02e5
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/q/quagga/quagga_0.99.9-6ubuntu0.1_sparc.deb
+      Size/MD5:  1643386 e791fa01f8b51ca7b7bfaa9e74cd7aac
+
+Updated packages for Ubuntu 9.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.11-1ubuntu0.1.diff.gz
+      Size/MD5:    39815 af681588d24ed13e1ba223a9294423e3
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.11-1ubuntu0.1.dsc
+      Size/MD5:     1493 9c1d0c8987369d2a4cbd4d15dfd1cf6e
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.11.orig.tar.gz
+      Size/MD5:  2192249 903e40c744730ad4d62bee872eeb813b
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga-doc_0.99.11-1ubuntu0.1_all.deb
+      Size/MD5:   631710 9157ee95937ad02265b5605896577ebe
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.11-1ubuntu0.1_amd64.deb
+      Size/MD5:  1708300 f9fc9256058948fd82aec0aefddbad56
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/q/quagga/quagga_0.99.11-1ubuntu0.1_i386.deb
+      Size/MD5:  1570358 dc112519bd1248bd480d394ec710c339
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/q/quagga/quagga_0.99.11-1ubuntu0.1_lpia.deb
+      Size/MD5:  1545774 6c068d3ab5d334cee19e6290bb8c2bc1
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/q/quagga/quagga_0.99.11-1ubuntu0.1_powerpc.deb
+      Size/MD5:  1674212 82de163f2602d256caddb75c124afb54
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/q/quagga/quagga_0.99.11-1ubuntu0.1_sparc.deb
+      Size/MD5:  1623648 34b17f42f4dc5a396d7442550f53400d
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 235 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20090512/1d74de6e/attachment.pgp>
+
+From kees at ubuntu.com  Tue May 12 22:29:42 2009
+From: kees at ubuntu.com (Kees Cook)
+Date: Tue, 12 May 2009 15:29:42 -0700
+Subject: [USN-776-1] KVM vulnerabilities
+Message-ID: <20090512222942.GN9451@outflux.net>
+
+===========================================================
+Ubuntu Security Notice USN-776-1               May 12, 2009
+kvm vulnerabilities
+CVE-2008-1945, CVE-2008-2004, CVE-2008-2382, CVE-2008-4539,
+CVE-2008-5714
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 8.04 LTS
+Ubuntu 8.10
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 8.04 LTS:
+  kvm                             1:62+dfsg-0ubuntu8.1
+
+Ubuntu 8.10:
+  kvm                             1:72+dfsg-1ubuntu6.1
+
+After a standard system upgrade you need to restart all KVM VMs to effect
+the necessary changes.
+
+Details follow:
+
+Avi Kivity discovered that KVM did not correctly handle certain disk
+formats.  A local attacker could attach a malicious partition that
+would allow the guest VM to read files on the VM host. (CVE-2008-1945,
+CVE-2008-2004)
+
+Alfredo Ortega discovered that KVM's VNC protocol handler did not
+correctly validate certain messages.  A remote attacker could send
+specially crafted VNC messages that would cause KVM to consume CPU
+resources, leading to a denial of service. (CVE-2008-2382)
+
+Jan Niehusmann discovered that KVM's Cirrus VGA implementation over VNC
+did not correctly handle certain bitblt operations.  A local attacker
+could exploit this flaw to potentially execute arbitrary code on the VM
+host or crash KVM, leading to a denial of service. (CVE-2008-4539)
+
+It was discovered that KVM's VNC password checks did not use the correct
+length.  A remote attacker could exploit this flaw to cause KVM to crash,
+leading to a denial of service. (CVE-2008-5714)
+
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_62+dfsg-0ubuntu8.1.diff.gz
+      Size/MD5:    42599 1c6b8299b3a50806c5992be0db2cce2f
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_62+dfsg-0ubuntu8.1.dsc
+      Size/MD5:     1082 fd477b0999056ccc60f556e9ac1e5abc
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_62+dfsg.orig.tar.gz
+      Size/MD5:  3117412 b992a0ff585020cd5f586ac8046ad335
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kvm/kvm-source_62+dfsg-0ubuntu8.1_all.deb
+      Size/MD5:   146416 e242cbdbe846f33ffdbc77f81008efaf
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_62+dfsg-0ubuntu8.1_amd64.deb
+      Size/MD5:   770136 aa65a634670369404840047a92714a1a
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_62+dfsg-0ubuntu8.1_i386.deb
+      Size/MD5:   709378 673b1f1b0dc7299a16101d3639f3098d
+
+Updated packages for Ubuntu 8.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_72+dfsg-1ubuntu6.1.diff.gz
+      Size/MD5:    45842 8b59f530e2547c50e67b140734d44200
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_72+dfsg-1ubuntu6.1.dsc
+      Size/MD5:     1517 b671c910d142cdb3263b726780eebbab
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_72+dfsg.orig.tar.gz
+      Size/MD5:  3250251 899a66ae2ea94e994e06f637e1afef4a
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kvm/kvm-source_72+dfsg-1ubuntu6.1_all.deb
+      Size/MD5:   190230 113fb528ab82213136087d1036f65822
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_72+dfsg-1ubuntu6.1_amd64.deb
+      Size/MD5:  1028390 946f7de2766b03ee6d8276b8733aca86
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_72+dfsg-1ubuntu6.1_i386.deb
+      Size/MD5:   957398 699d7cc4987430613f930b726df849f0
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 235 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20090512/a1d24ea8/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed May 13 14:17:53 2009
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 13 May 2009 10:17:53 -0400
+Subject: [USN-776-2] KVM regression
+Message-ID: <1242224273.6343.3.camel@mdlinux.technorage.com>
+
+===========================================================
+Ubuntu Security Notice USN-776-2               May 13, 2009
+kvm regression
+https://launchpad.net/bugs/375937
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 8.04 LTS:
+  kvm                             1:62+dfsg-0ubuntu8.2
+
+After a standard system upgrade you need to restart all KVM VMs to effect
+the necessary changes.
+
+Details follow:
+
+USN-776-1 fixed vulnerabilities in KVM. Due to an incorrect fix, a
+regression was introduced in Ubuntu 8.04 LTS that caused KVM to fail to
+boot virtual machines started via libvirt. This update fixes the problem.
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ Avi Kivity discovered that KVM did not correctly handle certain disk
+ formats. A local attacker could attach a malicious partition that would
+ allow the guest VM to read files on the VM host. (CVE-2008-1945,
+ CVE-2008-2004)
+
+ Alfredo Ortega discovered that KVM's VNC protocol handler did not
+ correctly validate certain messages. A remote attacker could send
+ specially crafted VNC messages that would cause KVM to consume CPU
+ resources, leading to a denial of service. (CVE-2008-2382)
+
+ Jan Niehusmann discovered that KVM's Cirrus VGA implementation over VNC
+ did not correctly handle certain bitblt operations. A local attacker could
+ exploit this flaw to potentially execute arbitrary code on the VM host or
+ crash KVM, leading to a denial of service. (CVE-2008-4539)
+
+ It was discovered that KVM's VNC password checks did not use the correct
+ length. A remote attacker could exploit this flaw to cause KVM to crash,
+ leading to a denial of service. (CVE-2008-5714)
+
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_62+dfsg-0ubuntu8.2.diff.gz
+      Size/MD5:    43096 333b89921844b52e00b05172a49728e3
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_62+dfsg-0ubuntu8.2.dsc
+      Size/MD5:     1044 25c3b0f1abb252aeb6135f5dd8782b8e
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_62+dfsg.orig.tar.gz
+      Size/MD5:  3117412 b992a0ff585020cd5f586ac8046ad335
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kvm/kvm-source_62+dfsg-0ubuntu8.2_all.deb
+      Size/MD5:   146586 020e3cf65f1e6ef6051aaf2b85bdfff8
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_62+dfsg-0ubuntu8.2_amd64.deb
+      Size/MD5:   770350 af69aba1e0a6ecd885ed13be5ddb32c1
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kvm/kvm_62+dfsg-0ubuntu8.2_i386.deb
+      Size/MD5:   709496 be95457ef9553f5197f8a23a67c4b713
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20090513/301528a2/attachment.pgp>
+
+From jamie at canonical.com  Tue May 19 22:21:24 2009
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Tue, 19 May 2009 17:21:24 -0500
+Subject: [USN-777-1] Ntp vulnerabilities
+Message-ID: <20090519222124.GA20152@severus.strandboge.com>
+
+===========================================================
+Ubuntu Security Notice USN-777-1               May 19, 2009
+ntp vulnerabilities
+CVE-2009-0159, CVE-2009-1252
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 8.04 LTS
+Ubuntu 8.10
+Ubuntu 9.04
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  ntp                             1:4.2.0a+stable-8.1ubuntu6.2
+  ntp-server                      1:4.2.0a+stable-8.1ubuntu6.2
+
+Ubuntu 8.04 LTS:
+  ntp                             1:4.2.4p4+dfsg-3ubuntu2.2
+
+Ubuntu 8.10:
+  ntp                             1:4.2.4p4+dfsg-6ubuntu2.3
+
+Ubuntu 9.04:
+  ntp                             1:4.2.4p4+dfsg-7ubuntu5.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+A stack-based buffer overflow was discovered in ntpq. If a user were
+tricked into connecting to a malicious ntp server, a remote attacker could
+cause a denial of service in ntpq, or possibly execute arbitrary code with
+the privileges of the user invoking the program. (CVE-2009-0159)
+
+Chris Ries discovered a stack-based overflow in ntp. If ntp was configured
+to use autokey, a remote attacker could send a crafted packet to cause a
+denial of service, or possible execute arbitrary code. (CVE-2009-1252)
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.0a+stable-8.1ubuntu6.2.diff.gz
+      Size/MD5:   262624 3c306d4e68810bfa91f72a5b92cd0308
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.0a+stable-8.1ubuntu6.2.dsc
+      Size/MD5:      872 10eff071be4ba03f992b7d2d240c1f0c
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.0a+stable.orig.tar.gz
+      Size/MD5:  2272395 30f8b3d5b970c14dce5c6d8c922afa3e
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-doc_4.2.0a+stable-8.1ubuntu6.2_all.deb
+      Size/MD5:   891104 94f3aec7998e4a9e1e48180d79fd659b
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-server_4.2.0a+stable-8.1ubuntu6.2_amd64.deb
+      Size/MD5:    34892 b92a4deecbc84b6d842bf7856727d921
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-simple_4.2.0a+stable-8.1ubuntu6.2_amd64.deb
+      Size/MD5:   136264 62e7a8b3240502f3e404225a6c24a976
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.0a+stable-8.1ubuntu6.2_amd64.deb
+      Size/MD5:   270440 0b264494db3ba53cf233ff112a40796b
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntpdate_4.2.0a+stable-8.1ubuntu6.2_amd64.deb
+      Size/MD5:    47810 edce44b9fc109133209069b17301f476
+    http://security.ubuntu.com/ubuntu/pool/universe/n/ntp/ntp-refclock_4.2.0a+stable-8.1ubuntu6.2_amd64.deb
+      Size/MD5:   224034 9aa4a9a74c72607acc3c858b7c6d4366
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-server_4.2.0a+stable-8.1ubuntu6.2_i386.deb
+      Size/MD5:    33806 25b469db17cbb30269d5ae5d763ab0f2
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-simple_4.2.0a+stable-8.1ubuntu6.2_i386.deb
+      Size/MD5:   121560 7360b2078ee05de0d67f779dae5d67c8
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.0a+stable-8.1ubuntu6.2_i386.deb
+      Size/MD5:   256644 a2164630c3011129f4b22d0b82c4259c
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntpdate_4.2.0a+stable-8.1ubuntu6.2_i386.deb
+      Size/MD5:    44472 681b58a3dd5cbdc0f845f6c0ac670d7a
+    http://security.ubuntu.com/ubuntu/pool/universe/n/ntp/ntp-refclock_4.2.0a+stable-8.1ubuntu6.2_i386.deb
+      Size/MD5:   198342 4156eb43918077c9afe35748c5678b44
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-server_4.2.0a+stable-8.1ubuntu6.2_powerpc.deb
+      Size/MD5:    37052 844fcdf80da06e0805b749ef4bc3df9f
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-simple_4.2.0a+stable-8.1ubuntu6.2_powerpc.deb
+      Size/MD5:   135060 91c6db51fb366fc544a3a601d9f22f65
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.0a+stable-8.1ubuntu6.2_powerpc.deb
+      Size/MD5:   271370 aff69d174dd8c57d24c38e82b2191af2
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntpdate_4.2.0a+stable-8.1ubuntu6.2_powerpc.deb
+      Size/MD5:    49126 11d131cbcdbf88785904923df5e247e6
+    http://security.ubuntu.com/ubuntu/pool/universe/n/ntp/ntp-refclock_4.2.0a+stable-8.1ubuntu6.2_powerpc.deb
+      Size/MD5:   222152 92b60a7767280429184b84b96b1ce5fe
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-server_4.2.0a+stable-8.1ubuntu6.2_sparc.deb
+      Size/MD5:    34310 c45a59691738e4b62bcbd3bbcf7f7c9c
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-simple_4.2.0a+stable-8.1ubuntu6.2_sparc.deb
+      Size/MD5:   126660 9ad4394cc7381174485993ba41001dff
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.0a+stable-8.1ubuntu6.2_sparc.deb
+      Size/MD5:   261548 8d1375b6941de24ee31db196c7e3569c
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntpdate_4.2.0a+stable-8.1ubuntu6.2_sparc.deb
+      Size/MD5:    46674 e987304d551d69052763b1aa377244a1
+    http://security.ubuntu.com/ubuntu/pool/universe/n/ntp/ntp-refclock_4.2.0a+stable-8.1ubuntu6.2_sparc.deb
+      Size/MD5:   207388 ba43f80287f44ee657660deca2b2d0e5
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-3ubuntu2.2.diff.gz
+      Size/MD5:   286728 3855e15b60b98d7c1c39ca58f69eb42f
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-3ubuntu2.2.dsc
+      Size/MD5:     1046 f9c6b3c9adf0c5fbd7bd32af16cfda72
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg.orig.tar.gz
+      Size/MD5:  2835029 dc2b3ac9cc04b0f29df35467514c9884
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-doc_4.2.4p4+dfsg-3ubuntu2.2_all.deb
+      Size/MD5:   928002 d7ec157baefbc58639a9e405427a5a8c
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-3ubuntu2.2_amd64.deb
+      Size/MD5:   477248 d671d47c0401997a02a2c2f11e9f4d7e
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-3ubuntu2.2_amd64.deb
+      Size/MD5:    65082 2c68f30b996b18118b4b85f8d0bb2f3f
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-3ubuntu2.2_i386.deb
+      Size/MD5:   432480 13c4d104fe6e46088030628931bfa3cc
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-3ubuntu2.2_i386.deb
+      Size/MD5:    61124 94c7efececf2038c93c8add72d8207ce
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/n/ntp/ntp_4.2.4p4+dfsg-3ubuntu2.2_lpia.deb
+      Size/MD5:   435346 73421fbab6633303b700aeec6a6213e7
+    http://ports.ubuntu.com/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-3ubuntu2.2_lpia.deb
+      Size/MD5:    61074 7bf665dfd5a9585fa08121239847623d
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/n/ntp/ntp_4.2.4p4+dfsg-3ubuntu2.2_powerpc.deb
+      Size/MD5:   490358 51cc28d99069364d840bd037585e5b38
+    http://ports.ubuntu.com/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-3ubuntu2.2_powerpc.deb
+      Size/MD5:    66666 dd9c787890761ffac75fab20d2660d3e
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/n/ntp/ntp_4.2.4p4+dfsg-3ubuntu2.2_sparc.deb
+      Size/MD5:   442246 1b5ca2fd902af277675fe1963327679b
+    http://ports.ubuntu.com/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-3ubuntu2.2_sparc.deb
+      Size/MD5:    61866 cfad1625994273cd8d1c701ec108266b
+
+Updated packages for Ubuntu 8.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-6ubuntu2.3.diff.gz
+      Size/MD5:   305715 3f331886531036808a2c2b3a32d78a0f
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-6ubuntu2.3.dsc
+      Size/MD5:     1555 a887f244ea74ecce910a8ebfb159573c
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg.orig.tar.gz
+      Size/MD5:  2835029 dc2b3ac9cc04b0f29df35467514c9884
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-doc_4.2.4p4+dfsg-6ubuntu2.3_all.deb
+      Size/MD5:   928660 72eb9329b637897a085bf23df35035ee
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-6ubuntu2.3_amd64.deb
+      Size/MD5:   487118 7af13d44b196c632abf090357d904f7d
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-6ubuntu2.3_amd64.deb
+      Size/MD5:    66026 2295725e3b86ed6dbb05fcb6c99dc612
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-6ubuntu2.3_i386.deb
+      Size/MD5:   442228 dc12ebb96df581dbb97506171bb155c3
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-6ubuntu2.3_i386.deb
+      Size/MD5:    62216 cea15129abf766907060a4e164a69730
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/n/ntp/ntp_4.2.4p4+dfsg-6ubuntu2.3_lpia.deb
+      Size/MD5:   441604 dd4be304cbe8c4c422bbab3ec68499fa
+    http://ports.ubuntu.com/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-6ubuntu2.3_lpia.deb
+      Size/MD5:    61986 442b34ba10fcbc95ab2a3ce08d2743b1
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/n/ntp/ntp_4.2.4p4+dfsg-6ubuntu2.3_powerpc.deb
+      Size/MD5:   491218 c1b38cfd8dcead19bab8dd71988f4b83
+    http://ports.ubuntu.com/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-6ubuntu2.3_powerpc.deb
+      Size/MD5:    67036 1f64d1eefd532fa24856fd54ec7f2798
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/n/ntp/ntp_4.2.4p4+dfsg-6ubuntu2.3_sparc.deb
+      Size/MD5:   449306 a423c4417af2e5fe76e7a9a7fe61378b
+    http://ports.ubuntu.com/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-6ubuntu2.3_sparc.deb
+      Size/MD5:    62736 cd33d3395ac312dde92557df1a357e7e
+
+Updated packages for Ubuntu 9.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-7ubuntu5.1.diff.gz
+      Size/MD5:   306018 1f7251838d9aeb8e9d8c6e32e7f25cac
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-7ubuntu5.1.dsc
+      Size/MD5:     1556 4c2bd40a447f612050281a771cbd727d
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg.orig.tar.gz
+      Size/MD5:  2835029 dc2b3ac9cc04b0f29df35467514c9884
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp-doc_4.2.4p4+dfsg-7ubuntu5.1_all.deb
+      Size/MD5:   928978 f5c3fee6798769926a54edd1ca723ae6
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-7ubuntu5.1_amd64.deb
+      Size/MD5:   487468 2eab3d5589fa5cb6158ad3e9868e75cc
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-7ubuntu5.1_amd64.deb
+      Size/MD5:    66338 b714b28096a7d4d3c097785c570b0daa
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntp_4.2.4p4+dfsg-7ubuntu5.1_i386.deb
+      Size/MD5:   442532 4be64f24b65762d9fd7e0da2c6f13402
+    http://security.ubuntu.com/ubuntu/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-7ubuntu5.1_i386.deb
+      Size/MD5:    62582 b264e7cd0451c906b33e1c290d8486d5
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/n/ntp/ntp_4.2.4p4+dfsg-7ubuntu5.1_lpia.deb
+      Size/MD5:   441976 5d0b2cea98ac625c4caeaceea178a896
+    http://ports.ubuntu.com/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-7ubuntu5.1_lpia.deb
+      Size/MD5:    62330 055cf1659c234b249812092926162a69
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/n/ntp/ntp_4.2.4p4+dfsg-7ubuntu5.1_powerpc.deb
+      Size/MD5:   491418 e3b09166b30a91b4ad6641200b799cd5
+    http://ports.ubuntu.com/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-7ubuntu5.1_powerpc.deb
+      Size/MD5:    67428 f0643d6734f76630497bcd6de9d62a09
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/n/ntp/ntp_4.2.4p4+dfsg-7ubuntu5.1_sparc.deb
+      Size/MD5:   449352 56988b15e8fd2ab15060ee9c7755920e
+    http://ports.ubuntu.com/pool/main/n/ntp/ntpdate_4.2.4p4+dfsg-7ubuntu5.1_sparc.deb
+      Size/MD5:    63058 1a10d80527f39e62fc59998c40a47162
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20090519/66c0989a/attachment.pgp>
+

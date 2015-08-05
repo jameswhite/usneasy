@@ -1,0 +1,3404 @@
+From kees at ubuntu.com  Tue Sep  2 20:25:06 2008
+From: kees at ubuntu.com (Kees Cook)
+Date: Tue, 2 Sep 2008 13:25:06 -0700
+Subject: [USN-639-1] tiff vulnerability
+Message-ID: <20080902202506.GO12974@outflux.net>
+
+=========================================================== 
+Ubuntu Security Notice USN-639-1         September 02, 2008
+tiff vulnerability
+CVE-2008-2327
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 7.04
+Ubuntu 7.10
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  libtiff4                        3.7.4-1ubuntu3.3
+
+Ubuntu 7.04:
+  libtiff4                        3.8.2-6ubuntu1
+
+Ubuntu 7.10:
+  libtiff4                        3.8.2-7ubuntu2.1
+
+Ubuntu 8.04 LTS:
+  libtiff4                        3.8.2-7ubuntu3.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+Drew Yao discovered that the TIFF library did not correctly validate LZW
+compressed TIFF images.  If a user or automated system were tricked into
+processing a malicious image, a remote attacker could execute arbitrary
+code or cause an application linked against libtiff to crash, leading
+to a denial of service.
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.7.4-1ubuntu3.3.diff.gz
+      Size/MD5:    19356 56610d9fbd62d610f7004b3d30099c8e
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.7.4-1ubuntu3.3.dsc
+      Size/MD5:      802 426326dc802835cf100d63d6842b9939
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.7.4.orig.tar.gz
+      Size/MD5:  1280113 02cf5c3820bda83b35bb35b45ae27005
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.7.4-1ubuntu3.3_amd64.deb
+      Size/MD5:   220614 ff6387e7888bdf3b1d3515d0eede40c1
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.7.4-1ubuntu3.3_amd64.deb
+      Size/MD5:   282146 75b17acb52792737598afba03b1cb835
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.7.4-1ubuntu3.3_amd64.deb
+      Size/MD5:   475444 624f548a9b16339c5214b87a8587e0af
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.7.4-1ubuntu3.3_amd64.deb
+      Size/MD5:    44520 1522729abef4145d8ae4fb125892e03b
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.7.4-1ubuntu3.3_amd64.deb
+      Size/MD5:    49702 32735e413d785c456f8e340dbb3e974f
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.7.4-1ubuntu3.3_i386.deb
+      Size/MD5:   205772 330fd846b4c42cfea4a86db7cd578032
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.7.4-1ubuntu3.3_i386.deb
+      Size/MD5:   258868 4248ca40bb9516d3f15af5ea0b7d82e3
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.7.4-1ubuntu3.3_i386.deb
+      Size/MD5:   461668 8e64e0f252f0cf1805a95503763a7ee7
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.7.4-1ubuntu3.3_i386.deb
+      Size/MD5:    44496 38356372e09eacc21c85147a64730863
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.7.4-1ubuntu3.3_i386.deb
+      Size/MD5:    49028 0f209680ec3fe2d63b8f2ee1eb82d671
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.7.4-1ubuntu3.3_powerpc.deb
+      Size/MD5:   239612 85752da1b75412f455964b6e330d9b9c
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.7.4-1ubuntu3.3_powerpc.deb
+      Size/MD5:   287816 7dbabece275f8672edb8a23d55a7a473
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.7.4-1ubuntu3.3_powerpc.deb
+      Size/MD5:   475776 4aa903c0a0ff484a56c5fe1704a4e727
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.7.4-1ubuntu3.3_powerpc.deb
+      Size/MD5:    46734 bb81db39da467e2625c0d042d3a8cd28
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.7.4-1ubuntu3.3_powerpc.deb
+      Size/MD5:    51374 a98d703c16b08432c5faba227b49a11c
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.7.4-1ubuntu3.3_sparc.deb
+      Size/MD5:   208422 3403ad880d5a4928093e37077325b249
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.7.4-1ubuntu3.3_sparc.deb
+      Size/MD5:   269832 9e31723f565218781859094e02157832
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.7.4-1ubuntu3.3_sparc.deb
+      Size/MD5:   466524 60370fd4a11ed2ab9405d1d34ec89613
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.7.4-1ubuntu3.3_sparc.deb
+      Size/MD5:    44444 d55f667802302d260a0e9fa818a84062
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.7.4-1ubuntu3.3_sparc.deb
+      Size/MD5:    49580 8e9cf307f440d06e4fac7f8a0e72b575
+
+Updated packages for Ubuntu 7.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.8.2-6ubuntu1.diff.gz
+      Size/MD5:    17421 c27407897402d8784aaa78872df66084
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.8.2-6ubuntu1.dsc
+      Size/MD5:      894 7f473766d9506c9cf8c9dc9fc301899a
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.8.2.orig.tar.gz
+      Size/MD5:  1333780 e6ec4ab957ef49d5aabc38b7a376910b
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.8.2-6ubuntu1_amd64.deb
+      Size/MD5:   185580 b0e5244445e5b5842e15ede52b62a464
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.8.2-6ubuntu1_amd64.deb
+      Size/MD5:   248558 f870334e57d6cf450c113b434ec7dc1f
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.8.2-6ubuntu1_amd64.deb
+      Size/MD5:   491096 f082f77dec69c785f86c7da6a34e30bf
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.8.2-6ubuntu1_amd64.deb
+      Size/MD5:     4948 2af2beb4111fec29a89f4fc5b345dd4d
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.8.2-6ubuntu1_amd64.deb
+      Size/MD5:    10380 2ae539b37bfc0a4fdf0b4d1f79d71c01
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.8.2-6ubuntu1_i386.deb
+      Size/MD5:   174706 06ddc26a9eb1f25e51a537f4d13d0cd7
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.8.2-6ubuntu1_i386.deb
+      Size/MD5:   230880 1e263f73724556b229ce53da89f1bb6c
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.8.2-6ubuntu1_i386.deb
+      Size/MD5:   483176 c204eee64ba32343630090710e886ce5
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.8.2-6ubuntu1_i386.deb
+      Size/MD5:     4948 0583b395261bfc9e8971845183aa1370
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.8.2-6ubuntu1_i386.deb
+      Size/MD5:     9870 afb43b9979860ab71d5b18f667a94234
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.8.2-6ubuntu1_powerpc.deb
+      Size/MD5:   221280 67928c23965f4aad6dc9bd0904a5de3c
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.8.2-6ubuntu1_powerpc.deb
+      Size/MD5:   255168 1ee1410c16e8878c1363714c7def2039
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.8.2-6ubuntu1_powerpc.deb
+      Size/MD5:   496328 0efa9338a0a0a74593785ad710bff29c
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.8.2-6ubuntu1_powerpc.deb
+      Size/MD5:     7444 5b6cf616b9371fb54ba7cd4d74671539
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.8.2-6ubuntu1_powerpc.deb
+      Size/MD5:    13110 c3192321c2d2a212b4acb12a95958338
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.8.2-6ubuntu1_sparc.deb
+      Size/MD5:   178680 5b6c97cd81cd4a6df4d4228ee48bb81e
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.8.2-6ubuntu1_sparc.deb
+      Size/MD5:   236610 7e3286d3b39739a92c131d841fc6fa53
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.8.2-6ubuntu1_sparc.deb
+      Size/MD5:   482248 8cf86b28cc0b967efaa635f28408e70e
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.8.2-6ubuntu1_sparc.deb
+      Size/MD5:     4690 0d8ef4cc1149bc175e1b4cef56a533ac
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.8.2-6ubuntu1_sparc.deb
+      Size/MD5:    10630 4fab06812752f458f00bbe408c4a5e51
+
+Updated packages for Ubuntu 7.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.8.2-7ubuntu2.1.diff.gz
+      Size/MD5:    17693 d8bfc71ab431317d9d7776e8904d41cb
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.8.2-7ubuntu2.1.dsc
+      Size/MD5:      898 0e2bd83921a76666aaad9f0db1d2143f
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.8.2.orig.tar.gz
+      Size/MD5:  1333780 e6ec4ab957ef49d5aabc38b7a376910b
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.8.2-7ubuntu2.1_amd64.deb
+      Size/MD5:   186046 5eca7cf38e7a627ac9ff35e05341c6a3
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.8.2-7ubuntu2.1_amd64.deb
+      Size/MD5:   572732 6d8a9c1762acb37ac98637f5838677bd
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.8.2-7ubuntu2.1_amd64.deb
+      Size/MD5:   167514 7c316c12186064ce36fa302eeb1a9d35
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.8.2-7ubuntu2.1_amd64.deb
+      Size/MD5:     5030 36e2e41d1c74cba5f6226adcdb9635d4
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.8.2-7ubuntu2.1_amd64.deb
+      Size/MD5:    10482 398ee14c1a54bf682843ab5b4d5a1ef2
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.8.2-7ubuntu2.1_i386.deb
+      Size/MD5:   175032 35f9d040cf7bb70a3e0cdcaed891e8ea
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.8.2-7ubuntu2.1_i386.deb
+      Size/MD5:   555062 b95d128052ee5deddde5512404116d93
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.8.2-7ubuntu2.1_i386.deb
+      Size/MD5:   159682 6fecbcf423292c8afb087b717bc39733
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.8.2-7ubuntu2.1_i386.deb
+      Size/MD5:     5036 58dea786bf7ab7b9f124864076f98bc7
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.8.2-7ubuntu2.1_i386.deb
+      Size/MD5:     9950 4530d1926d2776a808b92451d241b40a
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff-tools_3.8.2-7ubuntu2.1_lpia.deb
+      Size/MD5:   176688 c34dd42b7fb2c866a337cf0a831500dd
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff4-dev_3.8.2-7ubuntu2.1_lpia.deb
+      Size/MD5:   554916 5c89af650f71fa329f9b27c964e159b5
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff4_3.8.2-7ubuntu2.1_lpia.deb
+      Size/MD5:   159016 0e4f184a9264ecd2669df232f031f5bc
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiffxx0c2_3.8.2-7ubuntu2.1_lpia.deb
+      Size/MD5:     4886 c365fc0610f673b5b514190f52c9b2cd
+    http://ports.ubuntu.com/pool/universe/t/tiff/libtiff-opengl_3.8.2-7ubuntu2.1_lpia.deb
+      Size/MD5:     9950 eedb7a284fd8ccfde7373719c5aa8e09
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.8.2-7ubuntu2.1_powerpc.deb
+      Size/MD5:   221632 d54b58c8832e981a496517aee739e96d
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.8.2-7ubuntu2.1_powerpc.deb
+      Size/MD5:   579494 ab32f5a3bdb94d98cfd5cec17fdbdb8b
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.8.2-7ubuntu2.1_powerpc.deb
+      Size/MD5:   172920 6221864857865170ebc103e8e9ca2f1d
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.8.2-7ubuntu2.1_powerpc.deb
+      Size/MD5:     7524 cce4cd11ab76e2a20fb23231128013d3
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.8.2-7ubuntu2.1_powerpc.deb
+      Size/MD5:    13184 4417c793e3b787fb4925052e5628a487
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.8.2-7ubuntu2.1_sparc.deb
+      Size/MD5:   179138 e056aaaf8281aeeec8e93bb4c646b11e
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.8.2-7ubuntu2.1_sparc.deb
+      Size/MD5:   560334 28115f9f96039c2ea6a861be5418d2e4
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.8.2-7ubuntu2.1_sparc.deb
+      Size/MD5:   159258 951e1ad2ff233ccf9a2357d6fd7c9d5a
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.8.2-7ubuntu2.1_sparc.deb
+      Size/MD5:     4794 4da0d6d8b2c59f8d834f26893d056a77
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.8.2-7ubuntu2.1_sparc.deb
+      Size/MD5:    10734 2430febfadfa3afef94890422229333a
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.8.2-7ubuntu3.1.diff.gz
+      Size/MD5:    17739 3df53cb9be4eac8018114eca54eeddd0
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.8.2-7ubuntu3.1.dsc
+      Size/MD5:      898 63c01af90b1a28f341cda765cb388af5
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.8.2.orig.tar.gz
+      Size/MD5:  1333780 e6ec4ab957ef49d5aabc38b7a376910b
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.8.2-7ubuntu3.1_amd64.deb
+      Size/MD5:   186212 cb1aa7ea448c64d8a071db1e7103abde
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.8.2-7ubuntu3.1_amd64.deb
+      Size/MD5:   570784 d42a106beb13b5fada52bb49b23348e0
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.8.2-7ubuntu3.1_amd64.deb
+      Size/MD5:   130572 d92ef8e00a2c11a92ef2258c9ee34509
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.8.2-7ubuntu3.1_amd64.deb
+      Size/MD5:     5076 505cb2e12de00a198f6043cfa5826f99
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.8.2-7ubuntu3.1_amd64.deb
+      Size/MD5:    10500 3f4885e033e8b49ac0ace8a25033bd70
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.8.2-7ubuntu3.1_i386.deb
+      Size/MD5:   175046 e1968da8535ff6051d1fd16fa515e77f
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.8.2-7ubuntu3.1_i386.deb
+      Size/MD5:   552288 b22a3ffa9d2bd620aa7dcb5897ecb65d
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.8.2-7ubuntu3.1_i386.deb
+      Size/MD5:   122264 c7e7c7b3d1f51471a67495a82c8c318c
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx0c2_3.8.2-7ubuntu3.1_i386.deb
+      Size/MD5:     5038 c15e0e405b52dac9ae0ba43bf0bf2929
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-opengl_3.8.2-7ubuntu3.1_i386.deb
+      Size/MD5:     9936 d295285a90e2f40f4c6be563f4feecf8
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff-tools_3.8.2-7ubuntu3.1_lpia.deb
+      Size/MD5:   177130 feec0c26db46f966db003e73e04e42ca
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff4-dev_3.8.2-7ubuntu3.1_lpia.deb
+      Size/MD5:   554830 6833fbea686cd3780bd8e814aea90693
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff4_3.8.2-7ubuntu3.1_lpia.deb
+      Size/MD5:   123436 ba48f119c3690bafac6dc0914b080076
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiffxx0c2_3.8.2-7ubuntu3.1_lpia.deb
+      Size/MD5:     4920 74d243746774e0ad29fc9a5c888f88fa
+    http://ports.ubuntu.com/pool/universe/t/tiff/libtiff-opengl_3.8.2-7ubuntu3.1_lpia.deb
+      Size/MD5:     9976 79dd38d3c74419e2f3af36599c3c0ed0
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff-tools_3.8.2-7ubuntu3.1_powerpc.deb
+      Size/MD5:   223256 dc107cbd87d9106985537d6c275a0544
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff4-dev_3.8.2-7ubuntu3.1_powerpc.deb
+      Size/MD5:   576802 7b70d820ee684cdccda2abb2f0803578
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff4_3.8.2-7ubuntu3.1_powerpc.deb
+      Size/MD5:   133868 bdfb766eeab2dfc1ee4e30c64464a581
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiffxx0c2_3.8.2-7ubuntu3.1_powerpc.deb
+      Size/MD5:     7508 47e95d771f3e56e8d0edb098a227699d
+    http://ports.ubuntu.com/pool/universe/t/tiff/libtiff-opengl_3.8.2-7ubuntu3.1_powerpc.deb
+      Size/MD5:    13288 df5e73b79db7688fbb097123a8893886
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff-tools_3.8.2-7ubuntu3.1_sparc.deb
+      Size/MD5:   178648 76db5473a395f84e57f74882d4276032
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff4-dev_3.8.2-7ubuntu3.1_sparc.deb
+      Size/MD5:   558200 2fa5edc2be0a83f0d8b5a872ad2852cc
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiff4_3.8.2-7ubuntu3.1_sparc.deb
+      Size/MD5:   122054 d54617bcf0f9ee0eb0593dc57f6cacaa
+    http://ports.ubuntu.com/pool/main/t/tiff/libtiffxx0c2_3.8.2-7ubuntu3.1_sparc.deb
+      Size/MD5:     4802 bdc15c3e7f4658e9747e6092e7c118a5
+    http://ports.ubuntu.com/pool/universe/t/tiff/libtiff-opengl_3.8.2-7ubuntu3.1_sparc.deb
+      Size/MD5:    10696 0cbe55aa53a298214936bcd103370ad6
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 235 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080902/85310008/attachment.pgp>
+
+From kees at ubuntu.com  Wed Sep  3 23:08:39 2008
+From: kees at ubuntu.com (Kees Cook)
+Date: Wed, 3 Sep 2008 16:08:39 -0700
+Subject: [USN-640-1] libxml2 vulnerability
+Message-ID: <20080903230839.GH12962@outflux.net>
+
+=========================================================== 
+Ubuntu Security Notice USN-640-1         September 03, 2008
+libxml2 vulnerability
+CVE-2008-3281
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 7.04
+Ubuntu 7.10
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  libxml2                         2.6.24.dfsg-1ubuntu1.2
+
+Ubuntu 7.04:
+  libxml2                         2.6.27.dfsg-1ubuntu3.2
+
+Ubuntu 7.10:
+  libxml2                         2.6.30.dfsg-2ubuntu1.2
+
+Ubuntu 8.04 LTS:
+  libxml2                         2.6.31.dfsg-2ubuntu1.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+Andreas Solberg discovered that libxml2 did not handle recursive entities
+safely.  If an application linked against libxml2 were made to process
+a specially crafted XML document, a remote attacker could exhaust the
+system's CPU resources, leading to a denial of service.
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.2.diff.gz
+      Size/MD5:    60191 6a214b689f58040545ff197fe4163255
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.2.dsc
+      Size/MD5:      940 c5fc18917961e09df890c01c325f123d
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg.orig.tar.gz
+      Size/MD5:  3293814 461eb1bf7f0c845f7ff7d9b1a4c4eac8
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-doc_2.6.24.dfsg-1ubuntu1.2_all.deb
+      Size/MD5:  1252772 d820db218e3f2fee1a6a1318379d6ee7
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.24.dfsg-1ubuntu1.2_all.deb
+      Size/MD5:    18988 4ce9dd93fe5ad4ec0547c1f2d24020ee
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.24.dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:   918232 14b5fa19b5a025fb76bedc0c42c74132
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.24.dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:   737156 eab5587f1f6c46ee8efa4c3ae49e3245
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.24.dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:    36692 2220b5e79eebdb14ae8e95ce4743db8c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:   752360 9adf37be52a761a6989349e64566c71c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python2.4-libxml2_2.6.24.dfsg-1ubuntu1.2_amd64.deb
+      Size/MD5:   181658 b4e527c71c64a06573368ca395ec6076
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.24.dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:   765570 eae8c86ee5e0408c44d34752c56f7894
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.24.dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:   641600 500367c779b75de2885e887a6d46d6df
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.24.dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:    32976 14135212c4b907c97b134521acd2fcc7
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:   684460 d1a1199d59e399b1dd70b601707d4cef
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python2.4-libxml2_2.6.24.dfsg-1ubuntu1.2_i386.deb
+      Size/MD5:   166422 25f5289cd6f7a312a94560e30d9aa9a1
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.24.dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:   904190 d1aafd718b903d24c12a8ef8940062fa
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.24.dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:   760864 67a7e5075b1b4b2ed69b805525236903
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.24.dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:    37424 f3a634f8a137b00d93b817e0b5b3c05f
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:   733294 bd50c0fed7a540607d7e28ccb5db8e21
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python2.4-libxml2_2.6.24.dfsg-1ubuntu1.2_powerpc.deb
+      Size/MD5:   170820 84353c8e07095ae7dfc0cdadeef4c70e
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.24.dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:   745178 0e88615626fab9d24c45500bb36d7117
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.24.dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:   703220 e3fa546314d80b857c524c8a1ad18ce5
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.24.dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:    34306 07189657822d4b4a24f0821a42388904
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:   716374 ac7e64beace4d313237373d2cc50d745
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python2.4-libxml2_2.6.24.dfsg-1ubuntu1.2_sparc.deb
+      Size/MD5:   174780 cf3278be2f270a75e7864d13a35b4856
+
+Updated packages for Ubuntu 7.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.2.diff.gz
+      Size/MD5:   146205 327b7dcc16dd41b735a8abbe84f94241
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.2.dsc
+      Size/MD5:     1109 244fa5269dfbf1fd1af1ebf226fb04ae
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg.orig.tar.gz
+      Size/MD5:  3416175 5ff71b22f6253a6dd9afc1c34778dec3
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-doc_2.6.27.dfsg-1ubuntu3.2_all.deb
+      Size/MD5:  1293138 63f851f149d97e458842857887680b08
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.27.dfsg-1ubuntu3.2_amd64.deb
+      Size/MD5:   894700 5f757978b789b2c4d134a1c4c4979d15
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.27.dfsg-1ubuntu3.2_amd64.deb
+      Size/MD5:   747622 b48287a92fc3da9bd4a1272ff6d9e72f
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.27.dfsg-1ubuntu3.2_amd64.udeb
+      Size/MD5:   575288 608bb2e2d67635e9d050e398f17ed594
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.27.dfsg-1ubuntu3.2_amd64.deb
+      Size/MD5:    37138 2c71a708a1514402c3bd0881af6293ee
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.2_amd64.deb
+      Size/MD5:   809572 ec87d03e38b5bd7ae5788b4d0862ade8
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.27.dfsg-1ubuntu3.2_amd64.deb
+      Size/MD5:   862306 32dd3c4ccb9459c6dab7c40c91230953
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.27.dfsg-1ubuntu3.2_amd64.deb
+      Size/MD5:   292858 76ac76d74921f9b26c13e1b3a217fec1
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.27.dfsg-1ubuntu3.2_i386.deb
+      Size/MD5:   850664 1e8c355c8380437bd80220a63540519b
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.27.dfsg-1ubuntu3.2_i386.deb
+      Size/MD5:   672718 1aaca4b39cabec020fd3ae37a0e9e10a
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.27.dfsg-1ubuntu3.2_i386.udeb
+      Size/MD5:   527126 4f4c5788ee5f92af4b1deebf54d5ec5e
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.27.dfsg-1ubuntu3.2_i386.deb
+      Size/MD5:    34232 3f7580b929b08b1ce51461e8df4ef87b
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.2_i386.deb
+      Size/MD5:   761286 8aa414c05ab13b164d0ebe478cf9d250
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.27.dfsg-1ubuntu3.2_i386.deb
+      Size/MD5:   788794 78ebe0956b541cb125028d03d75b9bf0
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.27.dfsg-1ubuntu3.2_i386.deb
+      Size/MD5:   262452 a37121d006462557743f7518059c74d6
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.27.dfsg-1ubuntu3.2_powerpc.deb
+      Size/MD5:   895858 9ecdee5e7d792f93795bef204f132256
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.27.dfsg-1ubuntu3.2_powerpc.deb
+      Size/MD5:   774336 3b760fda601d50785eb78683dad9635e
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.27.dfsg-1ubuntu3.2_powerpc.udeb
+      Size/MD5:   559728 cbb92482b752b00d1df0459d26d07c2b
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.27.dfsg-1ubuntu3.2_powerpc.deb
+      Size/MD5:    42338 c813dfd770ca3d103a4929f144564832
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.2_powerpc.deb
+      Size/MD5:   794508 0dbda1b2c17461e2a160458b10fe2394
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.27.dfsg-1ubuntu3.2_powerpc.deb
+      Size/MD5:   856114 eafc1a3a6e92b8dadfef317905a5c81a
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.27.dfsg-1ubuntu3.2_powerpc.deb
+      Size/MD5:   286514 be5355b5a55df77bc5b380c3a47822de
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.27.dfsg-1ubuntu3.2_sparc.deb
+      Size/MD5:   787800 402ccd3b713dfc52d03c4af9bb88afc5
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.27.dfsg-1ubuntu3.2_sparc.deb
+      Size/MD5:   715350 245c6244696d804f26343e4f42ff4ade
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.27.dfsg-1ubuntu3.2_sparc.udeb
+      Size/MD5:   538886 b73764fd8acc8290a75d4c4eaf48ded0
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.27.dfsg-1ubuntu3.2_sparc.deb
+      Size/MD5:    36394 506372bd37985bc6dd0532f79d0bb437
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.2_sparc.deb
+      Size/MD5:   773492 19960be81230e2f53c40140b09a92cc7
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.27.dfsg-1ubuntu3.2_sparc.deb
+      Size/MD5:   816310 b89752d772f2ced1eed09ce8e93b9615
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.27.dfsg-1ubuntu3.2_sparc.deb
+      Size/MD5:   278880 205a4f13c6b2ebcd31d9e64524cf4457
+
+Updated packages for Ubuntu 7.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.2.diff.gz
+      Size/MD5:   178818 77dd1f98bf183b11f3f97a134ab0bf39
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.2.dsc
+      Size/MD5:     1109 588e007509ea87254c730c52cb9f5ca4
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg.orig.tar.gz
+      Size/MD5:  3433982 fe52a06fd8f104308271eb7093a0b644
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-doc_2.6.30.dfsg-2ubuntu1.2_all.deb
+      Size/MD5:  1300148 72a2b0f0f281b7a9eb26dfc86c15d533
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.30.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:   895172 a3765c87a0eed80efed465a9cd7a577d
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.30.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:   752786 f510e178ab5ca44a088f6a9941feaa88
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.30.dfsg-2ubuntu1.2_amd64.udeb
+      Size/MD5:   578414 585590746e1174feae78b05e48c1c3c2
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.30.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:    37180 cc74418be746fdf0259f2168aab0be6b
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:   818792 022e40c4156cc04890054ebf7ac3b7b1
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.30.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:   863906 419ae7d77cf0088942cb200a545c3dd9
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.30.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:   293814 35832922ab8429c19008c2f2a19b4f6e
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.30.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:   853970 f2117b1e3a5de1e213a8054f524be7ce
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.30.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:   675252 9ee0ad03a7d9c203e70bc167f2acc43b
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.30.dfsg-2ubuntu1.2_i386.udeb
+      Size/MD5:   529026 64903f5b14c3f24c960e96ab2e71a2f1
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.30.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:    34254 c06a55656107e446ed5b94d85cbae364
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:   770118 5cd1d37b516334cb75919f58f4e55c1d
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.30.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:   792528 66bc6a0f7a64aa540b35ff969207e493
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.30.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:   263078 863919afaf2c3b8c710e3ee7373fba4b
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dbg_2.6.30.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:   929776 b55d7dd7f45f18c7f3afbcf1c703ce9e
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dev_2.6.30.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:   679106 8dfd3a8a5762febbdb359fe7226da3b1
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-udeb_2.6.30.dfsg-2ubuntu1.2_lpia.udeb
+      Size/MD5:   529034 7dedfa1e999b52d89c0a5959b6ba43ab
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-utils_2.6.30.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:    34526 8c45330b6d2af115043911cf69425c80
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:   770232 e3d1ca84b7d9c01fe477813f1e598ba8
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2-dbg_2.6.30.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:   788080 bb8cf4cd7197b8a82fd60ff0081619f5
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2_2.6.30.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:   259678 1c327b8809443d353013fc757edbfc9d
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.30.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:   896444 5ff597f4020d7325094b89fc8f3c9507
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.30.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:   777268 9feb05e7cb40d7bc3c409dde19fa03f1
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.30.dfsg-2ubuntu1.2_powerpc.udeb
+      Size/MD5:   561644 63986fb94f3629d5c82acd2383dd9b29
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.30.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:    42350 b9c1026c57bf661ee98879c7adeb10ab
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:   802244 0d5e3d4e2f3882349f40d4b8fec0a483
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.30.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:   857862 0ef43bb8deb0bc1fbc9e4ac84ad0d419
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.30.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:   287272 f98059e171281fe73c65c573cf3e252f
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.30.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:   786910 1cd704514114beef814df88317d7924c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.30.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:   718288 07844b3e88ec93af62ab50ba9e99b8a9
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.30.dfsg-2ubuntu1.2_sparc.udeb
+      Size/MD5:   541390 c2da24a6c928d2c1a799738b75b9c7ae
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.30.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:    36498 866364008170a6824f4d122c9b00a9f1
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:   781352 3d6c5d0f50c2df7773f3ca431bc1ccb1
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.30.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:   815996 0c811fecca83247dfa40e977964d0dc4
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.30.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:   279510 d16d97e4915d021f259191ba35fc9244
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.1.diff.gz
+      Size/MD5:    64396 01a0b6f8cc4212ea13ff40932b020bc7
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.1.dsc
+      Size/MD5:     1110 88ee4eb3f7a214112fd64efe9cf78af2
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.31.dfsg.orig.tar.gz
+      Size/MD5:  3442959 8498d4e6f284d2f0a01560f089cb5a3e
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-doc_2.6.31.dfsg-2ubuntu1.1_all.deb
+      Size/MD5:  1302230 6086b009e176b010ae1845f2445e5dc0
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.31.dfsg-2ubuntu1.1_amd64.deb
+      Size/MD5:   939106 e7bc5b67fcadb2c77f05b149ff61fbf3
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.31.dfsg-2ubuntu1.1_amd64.deb
+      Size/MD5:   753526 919a1cc44e5c144861fdf25f7db18e98
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.31.dfsg-2ubuntu1.1_amd64.udeb
+      Size/MD5:   580050 413c39297aec531026b9977770e0ae4c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.31.dfsg-2ubuntu1.1_amd64.deb
+      Size/MD5:    37054 83ba40304914ad952035f34aa371fb8d
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.1_amd64.deb
+      Size/MD5:   831902 65df7a8169b85121e89e5c63e90079af
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.31.dfsg-2ubuntu1.1_amd64.deb
+      Size/MD5:   872904 430a7c21fc29f6575bd3ad37591eaec3
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.31.dfsg-2ubuntu1.1_amd64.deb
+      Size/MD5:   297974 1d0e5c41fed847b5abb46cbde2161e1b
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.31.dfsg-2ubuntu1.1_i386.deb
+      Size/MD5:   904844 e4d058cb8c45c75004642ce435a0d001
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.31.dfsg-2ubuntu1.1_i386.deb
+      Size/MD5:   676046 f99a3d75094888d30c7883c60cb2d69e
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.31.dfsg-2ubuntu1.1_i386.udeb
+      Size/MD5:   532798 d0a9588361fd30ff387723849e22c247
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.31.dfsg-2ubuntu1.1_i386.deb
+      Size/MD5:    34050 a6bae002d015bea458f3fcacb4deec99
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.1_i386.deb
+      Size/MD5:   785396 fa2b9dfa062667138ef9eff748132301
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.31.dfsg-2ubuntu1.1_i386.deb
+      Size/MD5:   796222 095b2733a48adf7959be6c96670e9ba9
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.31.dfsg-2ubuntu1.1_i386.deb
+      Size/MD5:   262972 66673fdddbfa8e41acc4020ffe565494
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dbg_2.6.31.dfsg-2ubuntu1.1_lpia.deb
+      Size/MD5:   930530 7bcc05bd11dbf8d90542512ca1caf4dd
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dev_2.6.31.dfsg-2ubuntu1.1_lpia.deb
+      Size/MD5:   679132 f43f12fc4a6404e71dc222e439270b4e
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-udeb_2.6.31.dfsg-2ubuntu1.1_lpia.udeb
+      Size/MD5:   528668 93961d14f15d935829a55f273f7d9435
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-utils_2.6.31.dfsg-2ubuntu1.1_lpia.deb
+      Size/MD5:    34498 ec405a518c482f62cdd5d2edbd3c3bcb
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.1_lpia.deb
+      Size/MD5:   780742 ea05aca1919347860ec2796761c0c17d
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2-dbg_2.6.31.dfsg-2ubuntu1.1_lpia.deb
+      Size/MD5:   788506 cb3909087b0e915f9e85970b2199e7e8
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2_2.6.31.dfsg-2ubuntu1.1_lpia.deb
+      Size/MD5:   259634 bad001b19aaa6a3c06d518f8be02273c
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dbg_2.6.31.dfsg-2ubuntu1.1_powerpc.deb
+      Size/MD5:   922482 fbf1caf4e58eb7c2beda992d1f9d28b8
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dev_2.6.31.dfsg-2ubuntu1.1_powerpc.deb
+      Size/MD5:   775678 14ff35624f61779ec8c03c8b54fc7e0f
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-udeb_2.6.31.dfsg-2ubuntu1.1_powerpc.udeb
+      Size/MD5:   563516 c43b62cc44962f00523fe965f8db0e73
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-utils_2.6.31.dfsg-2ubuntu1.1_powerpc.deb
+      Size/MD5:    42062 855016ce88595d7e5e310b91de0baa67
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.1_powerpc.deb
+      Size/MD5:   815508 b5260005ea0b25678f4e96a12a1b6715
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2-dbg_2.6.31.dfsg-2ubuntu1.1_powerpc.deb
+      Size/MD5:   841262 ef1027246949de19103e2fdea6a4d69e
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2_2.6.31.dfsg-2ubuntu1.1_powerpc.deb
+      Size/MD5:   285368 15d700fd21c2fb8a9f2e365aa4456817
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dbg_2.6.31.dfsg-2ubuntu1.1_sparc.deb
+      Size/MD5:   824842 f507543302feb3b628f75591f7257ff1
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dev_2.6.31.dfsg-2ubuntu1.1_sparc.deb
+      Size/MD5:   719258 a34c62b0caaeb0aa181b3db76d382bcc
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-udeb_2.6.31.dfsg-2ubuntu1.1_sparc.udeb
+      Size/MD5:   540722 ee04422f1b0d440f4d8513edf1efb09c
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-utils_2.6.31.dfsg-2ubuntu1.1_sparc.deb
+      Size/MD5:    36186 a08df0439ab046d7614a73f6a5c05ce7
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.1_sparc.deb
+      Size/MD5:   792522 c50ba8e8379fb6c0e8437c3ae18e8c5d
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2-dbg_2.6.31.dfsg-2ubuntu1.1_sparc.deb
+      Size/MD5:   807752 9ab94dffa20f9bd7a80bf170c76d9061
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2_2.6.31.dfsg-2ubuntu1.1_sparc.deb
+      Size/MD5:   277516 f498f07cdc37d09fc8f263fcfdc7a327
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 235 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080903/51de75ec/attachment.pgp>
+
+From kees at ubuntu.com  Tue Sep  9 00:31:49 2008
+From: kees at ubuntu.com (Kees Cook)
+Date: Mon, 8 Sep 2008 17:31:49 -0700
+Subject: [USN-641-1] Racoon vulnerabilities
+Message-ID: <20080909003149.GJ26657@outflux.net>
+
+=========================================================== 
+Ubuntu Security Notice USN-641-1         September 09, 2008
+ipsec-tools vulnerabilities
+CVE-2008-3651, CVE-2008-3652
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 7.04
+Ubuntu 7.10
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  racoon                          1:0.6.5-4ubuntu1.2
+
+Ubuntu 7.04:
+  racoon                          1:0.6.6-3ubuntu3.1
+
+Ubuntu 7.10:
+  racoon                          1:0.6.6-3.1ubuntu3.1
+
+Ubuntu 8.04 LTS:
+  racoon                          1:0.6.7-1.1ubuntu1.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+It was discovered that there were multiple ways to leak memory during
+the IKE negotiation when handling certain packets.  If a remote attacker
+sent repeated malicious requests, the "racoon" key exchange server could
+allocate large amounts of memory, possibly leading to a denial of service.
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.5-4ubuntu1.2.diff.gz
+      Size/MD5:    47976 6638ae6b7edc7671f77af5b93763de0d
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.5-4ubuntu1.2.dsc
+      Size/MD5:      750 7d87380c510f48a35da9333fbfaf6629
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.5.orig.tar.gz
+      Size/MD5:   914466 168076243c023782d3fb44a583d4a32c
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.5-4ubuntu1.2_amd64.deb
+      Size/MD5:    89430 2750ab4633d8ae447bed5aa7971aba48
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.5-4ubuntu1.2_amd64.deb
+      Size/MD5:   342540 912a807165c43ce90d3c60cc211ec94b
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.5-4ubuntu1.2_i386.deb
+      Size/MD5:    82876 5958ed679926590d81b53ecf8c651331
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.5-4ubuntu1.2_i386.deb
+      Size/MD5:   311398 ef1a597a39f3ee88292364b037452395
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.5-4ubuntu1.2_powerpc.deb
+      Size/MD5:    91124 e140993179e7d7187574bf971d6773f5
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.5-4ubuntu1.2_powerpc.deb
+      Size/MD5:   336876 9bfa3bb9da23913f4ca6161a0acc602f
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.5-4ubuntu1.2_sparc.deb
+      Size/MD5:    86632 210608ca3d4990fb54566f6d4b3942c8
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.5-4ubuntu1.2_sparc.deb
+      Size/MD5:   316756 ad7f2ccefd4f35cb8aaf5980e53a9499
+
+Updated packages for Ubuntu 7.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3ubuntu3.1.diff.gz
+      Size/MD5:    51311 51c0a08c38483a47bd3b2d8a73e1287f
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3ubuntu3.1.dsc
+      Size/MD5:      848 50817196a867ed407f0c67f928bc2260
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6.orig.tar.gz
+      Size/MD5:   914807 643a238e17148d242c603c511e28d029
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3ubuntu3.1_amd64.deb
+      Size/MD5:    91284 1780bae1fe5fdb3b907c39a876a2c419
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.6-3ubuntu3.1_amd64.deb
+      Size/MD5:   345490 cb1610211a35a5a4f8d27b962e67830b
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3ubuntu3.1_i386.deb
+      Size/MD5:    85700 eb95ead40564cd0965a6c256cc29cda4
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.6-3ubuntu3.1_i386.deb
+      Size/MD5:   321292 338faec788865311b18ffe8aa9424ae5
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3ubuntu3.1_powerpc.deb
+      Size/MD5:    95646 0b6ce9437e4255922de2ed241730aa73
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.6-3ubuntu3.1_powerpc.deb
+      Size/MD5:   347712 b7eadf3051881ee5d184aa93e0bc7f8e
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3ubuntu3.1_sparc.deb
+      Size/MD5:    89750 e47a17747bf516f28ba30b71ab762df4
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.6-3ubuntu3.1_sparc.deb
+      Size/MD5:   323440 617461a267909d50f6d0994b03f55688
+
+Updated packages for Ubuntu 7.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3.1ubuntu3.1.diff.gz
+      Size/MD5:    54744 118e0b2e21e6fd42e7b153212f9d7847
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3.1ubuntu3.1.dsc
+      Size/MD5:      852 754c5e79157f7161d03323206c402c90
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6.orig.tar.gz
+      Size/MD5:   914807 643a238e17148d242c603c511e28d029
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3.1ubuntu3.1_amd64.deb
+      Size/MD5:    91780 cdeda0b4689c7051074ccfbf7757ca5b
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.6-3.1ubuntu3.1_amd64.deb
+      Size/MD5:   348172 07a71cb07b5edc9e805c716b6bdc7374
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3.1ubuntu3.1_i386.deb
+      Size/MD5:    86050 2224517ec375bdf2d55ddeea1afcd8bb
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.6-3.1ubuntu3.1_i386.deb
+      Size/MD5:   323010 919ef460216ef536459dd21b50483b07
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3.1ubuntu3.1_lpia.deb
+      Size/MD5:    86698 cf26821405e282cd0c158bef83ba75ca
+    http://ports.ubuntu.com/pool/main/i/ipsec-tools/racoon_0.6.6-3.1ubuntu3.1_lpia.deb
+      Size/MD5:   323408 878b1d8f4c31dd4139e4ea14e4b9fefc
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3.1ubuntu3.1_powerpc.deb
+      Size/MD5:    96036 037e835bb80cb35c792dce96168e502f
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.6-3.1ubuntu3.1_powerpc.deb
+      Size/MD5:   349582 3d53de0ac8a3fcf27c8a28234c363099
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.6-3.1ubuntu3.1_sparc.deb
+      Size/MD5:    90208 7e6ae9b61a59731e5edf759da59b6443
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.6-3.1ubuntu3.1_sparc.deb
+      Size/MD5:   325398 ed029d3727b0abb6dfc5718661d3179f
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.7-1.1ubuntu1.1.diff.gz
+      Size/MD5:   263295 c9592c8529b56ee3d6b40a1e3745b4c2
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.7-1.1ubuntu1.1.dsc
+      Size/MD5:      865 e7183e67f50caf1a396570bf7a4f1e89
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.7.orig.tar.gz
+      Size/MD5:   933322 e9f38f6f12124b9c19da684c87db9fcf
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.7-1.1ubuntu1.1_amd64.deb
+      Size/MD5:    91902 412eee43832542bdb31e47a8eec55a4b
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.7-1.1ubuntu1.1_amd64.deb
+      Size/MD5:   349030 bc73017cf4999c7e5f26218ef2e1e8a5
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.6.7-1.1ubuntu1.1_i386.deb
+      Size/MD5:    86470 3496a2a6e102a029364642c5a02d49ea
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/racoon_0.6.7-1.1ubuntu1.1_i386.deb
+      Size/MD5:   324144 456c9da0a86535481406445d7e0a3e18
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/i/ipsec-tools/ipsec-tools_0.6.7-1.1ubuntu1.1_lpia.deb
+      Size/MD5:    86776 eafd43eda682ca7a99c3dcff763ea430
+    http://ports.ubuntu.com/pool/main/i/ipsec-tools/racoon_0.6.7-1.1ubuntu1.1_lpia.deb
+      Size/MD5:   324314 9349d9ecfb37919ac5caf4f841215a63
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/i/ipsec-tools/ipsec-tools_0.6.7-1.1ubuntu1.1_powerpc.deb
+      Size/MD5:    96006 d4195e7f700808a98fb4f79c9e3fd0a9
+    http://ports.ubuntu.com/pool/main/i/ipsec-tools/racoon_0.6.7-1.1ubuntu1.1_powerpc.deb
+      Size/MD5:   350830 eaa04a1b7456ec1ddf95c133aee9e2c8
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/i/ipsec-tools/ipsec-tools_0.6.7-1.1ubuntu1.1_sparc.deb
+      Size/MD5:    91072 f917354fcfa265bf5c008edea716e0ce
+    http://ports.ubuntu.com/pool/main/i/ipsec-tools/racoon_0.6.7-1.1ubuntu1.1_sparc.deb
+      Size/MD5:   325378 4940622cdeaf063c76b9e090987d5e89
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 235 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080908/bf55427f/attachment.pgp>
+
+From kees at ubuntu.com  Wed Sep 10 22:41:59 2008
+From: kees at ubuntu.com (Kees Cook)
+Date: Wed, 10 Sep 2008 15:41:59 -0700
+Subject: [USN-642-1] Postfix vulnerabilities
+Message-ID: <20080910224159.GB26657@outflux.net>
+
+=========================================================== 
+Ubuntu Security Notice USN-642-1         September 10, 2008
+postfix vulnerabilities
+CVE-2008-3889
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 7.10
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 7.10:
+  postfix                         2.4.5-3ubuntu1.3
+
+Ubuntu 8.04 LTS:
+  postfix                         2.5.1-2ubuntu1.2
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+Wietse Venema discovered that Postfix leaked internal file descriptors
+when executing non-Postfix commands.  A local attacker could exploit
+this to cause Postfix to run out of descriptors, leading to a denial
+of service.
+
+
+Updated packages for Ubuntu 7.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.4.5-3ubuntu1.3.diff.gz
+      Size/MD5:   208955 3596c996c2d82fcc9cd755c337cbac6b
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.4.5-3ubuntu1.3.dsc
+      Size/MD5:     1034 7097cb52b993eb39e3572516e37fa2fa
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.4.5.orig.tar.gz
+      Size/MD5:  2934634 ceba0cde05d12baa0ba2ed69fbb96b42
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-dev_2.4.5-3ubuntu1.3_all.deb
+      Size/MD5:   131564 d817f30dac7e3cefa7207c9545484234
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-doc_2.4.5-3ubuntu1.3_all.deb
+      Size/MD5:   805972 f21663666d6a5a9d4fc82842a22f72ab
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-cdb_2.4.5-3ubuntu1.3_amd64.deb
+      Size/MD5:    38160 2b8a37d554c58a28e23d10d86df219a9
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-ldap_2.4.5-3ubuntu1.3_amd64.deb
+      Size/MD5:    45310 900f1c0404391ecf79c1275175ef643d
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-mysql_2.4.5-3ubuntu1.3_amd64.deb
+      Size/MD5:    40108 a1a6ffbfb86958511d610025e0a73d58
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pcre_2.4.5-3ubuntu1.3_amd64.deb
+      Size/MD5:    40160 a8775f56b0b51d99565ccbe731dc5e94
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pgsql_2.4.5-3ubuntu1.3_amd64.deb
+      Size/MD5:    40224 b989f80156a941d822b1e7d19477e08a
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.4.5-3ubuntu1.3_amd64.deb
+      Size/MD5:  1188180 9850d0763881c36da658d051fd43bcc5
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-cdb_2.4.5-3ubuntu1.3_i386.deb
+      Size/MD5:    37940 5cfcf1cf801d60e309428d6770e31e48
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-ldap_2.4.5-3ubuntu1.3_i386.deb
+      Size/MD5:    44644 0911f3527974816a8101e579ed439e7b
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-mysql_2.4.5-3ubuntu1.3_i386.deb
+      Size/MD5:    39790 10b6ae3688a3b74e208ba383973bd3a8
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pcre_2.4.5-3ubuntu1.3_i386.deb
+      Size/MD5:    39634 df5c552d2f10bfcdff5e9e38b2ce946a
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pgsql_2.4.5-3ubuntu1.3_i386.deb
+      Size/MD5:    39876 938516395dfcadfb33c7becb673cc157
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.4.5-3ubuntu1.3_i386.deb
+      Size/MD5:  1118910 8479b2542dd638e9bc78ee318ba320a2
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-cdb_2.4.5-3ubuntu1.3_lpia.deb
+      Size/MD5:    37918 c792b13b095b27f4c44f00b6ae7c5d4b
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-ldap_2.4.5-3ubuntu1.3_lpia.deb
+      Size/MD5:    44384 83e6e216238d4d3d6f4e1855767f3d40
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-mysql_2.4.5-3ubuntu1.3_lpia.deb
+      Size/MD5:    39810 0a917ce72b8bc23490af6d2374ebfd84
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-pcre_2.4.5-3ubuntu1.3_lpia.deb
+      Size/MD5:    39534 5c3c470f3609e053d212b96961bad854
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-pgsql_2.4.5-3ubuntu1.3_lpia.deb
+      Size/MD5:    39872 f8a381828c5e4e8056aad583282b2e70
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix_2.4.5-3ubuntu1.3_lpia.deb
+      Size/MD5:  1109740 56a17d3a010a3e2ea1be39e9ffb9ae3a
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-cdb_2.4.5-3ubuntu1.3_powerpc.deb
+      Size/MD5:    40328 7574b4b3c594be170675c25b25cf7ddd
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-ldap_2.4.5-3ubuntu1.3_powerpc.deb
+      Size/MD5:    47254 82e8deaf6c53addeca09a2c1ab6f4cdb
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-mysql_2.4.5-3ubuntu1.3_powerpc.deb
+      Size/MD5:    42360 9a993a1ecadd0516186561ee718fffe6
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pcre_2.4.5-3ubuntu1.3_powerpc.deb
+      Size/MD5:    42154 2bcd3cc874e5ca7a4b056e515341f334
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pgsql_2.4.5-3ubuntu1.3_powerpc.deb
+      Size/MD5:    42500 f4da3a93046d6733c541dd124682deb5
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.4.5-3ubuntu1.3_powerpc.deb
+      Size/MD5:  1282198 1e49df341ebd8ceadef06c40e90f4143
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-cdb_2.4.5-3ubuntu1.3_sparc.deb
+      Size/MD5:    37950 e54565d41630f06ad25d9412ff7ed86a
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-ldap_2.4.5-3ubuntu1.3_sparc.deb
+      Size/MD5:    45080 b60aab3168843d14933fbf2f9b0836a4
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-mysql_2.4.5-3ubuntu1.3_sparc.deb
+      Size/MD5:    39808 1476c11421716fc226f79ed95d9a0f29
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pcre_2.4.5-3ubuntu1.3_sparc.deb
+      Size/MD5:    39780 7d462ece7c3d9c8cef0c26bbe33dbf5c
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pgsql_2.4.5-3ubuntu1.3_sparc.deb
+      Size/MD5:    40002 c78d11bcb7cb95583314e7936f4bbfa5
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.4.5-3ubuntu1.3_sparc.deb
+      Size/MD5:  1138322 a9d7465e120b2efcc7c5e95e3432be72
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.5.1-2ubuntu1.2.diff.gz
+      Size/MD5:   214022 fd7e7980960fb7599b3b8dcbda027c72
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.5.1-2ubuntu1.2.dsc
+      Size/MD5:     1074 c986a840867daed7e64e8135d20350a2
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.5.1.orig.tar.gz
+      Size/MD5:  3153629 95a559c509081fdd07d78eafd4f4c3b4
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-dev_2.5.1-2ubuntu1.2_all.deb
+      Size/MD5:   137002 feab6db3336d0281475bc1e1cef1379a
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-doc_2.5.1-2ubuntu1.2_all.deb
+      Size/MD5:   892350 9132a5ad000c69b648fac2c4723f5afb
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-cdb_2.5.1-2ubuntu1.2_amd64.deb
+      Size/MD5:    40252 59f33c5bd60d52ce02196909210b2c41
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-ldap_2.5.1-2ubuntu1.2_amd64.deb
+      Size/MD5:    47656 e28ff31be26aeec2ca1ad61696ebd4c3
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-mysql_2.5.1-2ubuntu1.2_amd64.deb
+      Size/MD5:    42152 0d8c68a34bc110e5bd39b44cf4ec2955
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pcre_2.5.1-2ubuntu1.2_amd64.deb
+      Size/MD5:    42134 fe597a44741cb9b5fb622a93a5175308
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pgsql_2.5.1-2ubuntu1.2_amd64.deb
+      Size/MD5:    42264 ac5cd5303dab598c49cc3df02019bb0e
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.5.1-2ubuntu1.2_amd64.deb
+      Size/MD5:  1229544 b822139fc9066a70732ada39cea3f265
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-cdb_2.5.1-2ubuntu1.2_i386.deb
+      Size/MD5:    39990 6c5081b0e1389494fa1e0f74bce52257
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-ldap_2.5.1-2ubuntu1.2_i386.deb
+      Size/MD5:    46916 2a8ecba9c109e24c8e0228f8fbbdb012
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-mysql_2.5.1-2ubuntu1.2_i386.deb
+      Size/MD5:    41922 2b8fa5f0cd7546a0bed4f6f22f251fd5
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pcre_2.5.1-2ubuntu1.2_i386.deb
+      Size/MD5:    41720 ec7a4569696f720baa6ac4786789e752
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix-pgsql_2.5.1-2ubuntu1.2_i386.deb
+      Size/MD5:    41998 e3ebe373988c9904a1b7aff028031738
+    http://security.ubuntu.com/ubuntu/pool/main/p/postfix/postfix_2.5.1-2ubuntu1.2_i386.deb
+      Size/MD5:  1160404 3a52da16e6c765304db0d4f91469aed9
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-cdb_2.5.1-2ubuntu1.2_lpia.deb
+      Size/MD5:    39978 9c15ad197da735f9f15f8ee7e618d8f3
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-ldap_2.5.1-2ubuntu1.2_lpia.deb
+      Size/MD5:    46990 e6a64fb1b931b22f98ee122635ed608f
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-mysql_2.5.1-2ubuntu1.2_lpia.deb
+      Size/MD5:    41910 5694e817258275890c094078a4beef62
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-pcre_2.5.1-2ubuntu1.2_lpia.deb
+      Size/MD5:    41634 277db3152e3021989bd29289f1983f76
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-pgsql_2.5.1-2ubuntu1.2_lpia.deb
+      Size/MD5:    41976 1e8a8ac3197a6f7d507751cb3f528abf
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix_2.5.1-2ubuntu1.2_lpia.deb
+      Size/MD5:  1156860 13be9938c4ff3cac2c07fe14211d5e33
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-cdb_2.5.1-2ubuntu1.2_powerpc.deb
+      Size/MD5:    42344 4c1344558316b09dcbdadde87fde1e5f
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-ldap_2.5.1-2ubuntu1.2_powerpc.deb
+      Size/MD5:    49656 4915653e7ce08e45cc42a2ca37b07cb2
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-mysql_2.5.1-2ubuntu1.2_powerpc.deb
+      Size/MD5:    44476 68c0b40b23f9ddb1a2fb0510603bb8a6
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-pcre_2.5.1-2ubuntu1.2_powerpc.deb
+      Size/MD5:    44250 f5abb11346a5a5c2d8efb6bf2d2114f9
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-pgsql_2.5.1-2ubuntu1.2_powerpc.deb
+      Size/MD5:    44616 44a226ed816655f7e33571010ff11d82
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix_2.5.1-2ubuntu1.2_powerpc.deb
+      Size/MD5:  1327862 3279cecf1db084a515a01fa0efea0499
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-cdb_2.5.1-2ubuntu1.2_sparc.deb
+      Size/MD5:    39908 435a985bc8cf9a38498885b08310ec8f
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-ldap_2.5.1-2ubuntu1.2_sparc.deb
+      Size/MD5:    47134 0a994044167d28e4d6f05cb523e716f0
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-mysql_2.5.1-2ubuntu1.2_sparc.deb
+      Size/MD5:    41800 a95dbcebf682d677ecce57dc4f679167
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-pcre_2.5.1-2ubuntu1.2_sparc.deb
+      Size/MD5:    41818 f226978ae4906d029c4abc2a97ad43a9
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix-pgsql_2.5.1-2ubuntu1.2_sparc.deb
+      Size/MD5:    42000 5d723e46f2e1366dd6ed7661bf51dfc8
+    http://ports.ubuntu.com/pool/main/p/postfix/postfix_2.5.1-2ubuntu1.2_sparc.deb
+      Size/MD5:  1175784 9f5f883813a80d17b5f5e63cf197519b
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 235 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080910/58001e19/attachment.pgp>
+
+From kees at ubuntu.com  Thu Sep 11 22:27:09 2008
+From: kees at ubuntu.com (Kees Cook)
+Date: Thu, 11 Sep 2008 15:27:09 -0700
+Subject: [USN-643-1] FreeType vulnerabilities
+Message-ID: <20080911222709.GG14230@outflux.net>
+
+=========================================================== 
+Ubuntu Security Notice USN-643-1         September 11, 2008
+freetype vulnerabilities
+CVE-2008-1806, CVE-2008-1807, CVE-2008-1808
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 7.04
+Ubuntu 7.10
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  libfreetype6                    2.1.10-1ubuntu2.5
+
+Ubuntu 7.04:
+  libfreetype6                    2.2.1-5ubuntu1.2
+
+Ubuntu 7.10:
+  libfreetype6                    2.3.5-1ubuntu4.7.10.1
+
+Ubuntu 8.04 LTS:
+  libfreetype6                    2.3.5-1ubuntu4.8.04.1
+
+After a standard system upgrade you need to restart your session to
+effect the necessary changes.
+
+Details follow:
+
+Multiple flaws were discovered in the PFB and TTF font handling code
+in freetype.  If a user were tricked into using a specially crafted
+font file, a remote attacker could execute arbitrary code with user
+privileges or cause the application linked against freetype to crash,
+leading to a denial of service.
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.1.10-1ubuntu2.5.diff.gz
+      Size/MD5:    61226 6c66dd6e70020232a317923954795f55
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.1.10-1ubuntu2.5.dsc
+      Size/MD5:      756 ae876a7d63fc19acd58839f78883568e
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.1.10.orig.tar.gz
+      Size/MD5:  1323617 adf145ce51196ad1b3054d5fb032efe6
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.1.10-1ubuntu2.5_amd64.deb
+      Size/MD5:   717504 f7f01c858678c88b72a297cfaf0c04d8
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.1.10-1ubuntu2.5_amd64.deb
+      Size/MD5:   439950 bd57f3d8d0de6c92313a5013cc65a9dd
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.1.10-1ubuntu2.5_amd64.deb
+      Size/MD5:   133870 a9e289db8b44a07e560762c4b50fbb32
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.1.10-1ubuntu2.5_amd64.udeb
+      Size/MD5:   251744 2ec43e089150ebf7e4ca76a283123bfe
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.1.10-1ubuntu2.5_i386.deb
+      Size/MD5:   677456 bb8a9ffe2a4129440a5f2b1580951441
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.1.10-1ubuntu2.5_i386.deb
+      Size/MD5:   415534 285c888edd64956294eb12401086fdf9
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.1.10-1ubuntu2.5_i386.deb
+      Size/MD5:   117362 9f871503b252e990b134481aaee8bf05
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.1.10-1ubuntu2.5_i386.udeb
+      Size/MD5:   227326 8edd92c819fdf564dfaf9eabb8d5bbcb
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.1.10-1ubuntu2.5_powerpc.deb
+      Size/MD5:   708442 236abfb1c77da946d4964a65330c3723
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.1.10-1ubuntu2.5_powerpc.deb
+      Size/MD5:   430020 f7bacfcd3b7067e055f9e1a19d652839
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.1.10-1ubuntu2.5_powerpc.deb
+      Size/MD5:   134256 4537e50e0087a7dbbc4dbd1881f37986
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.1.10-1ubuntu2.5_powerpc.udeb
+      Size/MD5:   241466 3cdc08267a14e7c8d318b89588850f4f
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.1.10-1ubuntu2.5_sparc.deb
+      Size/MD5:   683628 d65cc62a285251ba5adf654a46a9873f
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.1.10-1ubuntu2.5_sparc.deb
+      Size/MD5:   411058 e75386ffdb84eec8734c5a4e8e316515
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.1.10-1ubuntu2.5_sparc.deb
+      Size/MD5:   120082 ca64eaec1f4443e7a7e483ce11d908db
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.1.10-1ubuntu2.5_sparc.udeb
+      Size/MD5:   222480 b2bed2f9d40445aed9fdbaffde6557a0
+
+Updated packages for Ubuntu 7.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.2.1-5ubuntu1.2.diff.gz
+      Size/MD5:    34128 293369b7734de909c48a1a53a52ac9ad
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.2.1-5ubuntu1.2.dsc
+      Size/MD5:      934 c962be94c068c0267d53aef2ca8049dc
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.2.1.orig.tar.gz
+      Size/MD5:  1451392 a584e84d617c6e7919b4aef9b5106cf4
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.2.1-5ubuntu1.2_amd64.deb
+      Size/MD5:   669160 7c282fffc798a15c26611d605ab5f644
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.2.1-5ubuntu1.2_amd64.deb
+      Size/MD5:   355868 7c1ca824c4b99d0602f2ab3a48217daa
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.2.1-5ubuntu1.2_amd64.deb
+      Size/MD5:   151698 1f50e1bef945a99f73ff5d7731bee945
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.2.1-5ubuntu1.2_amd64.udeb
+      Size/MD5:   250868 53aaf7a3a775e1b0c8ca9a511db5ef27
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.2.1-5ubuntu1.2_i386.deb
+      Size/MD5:   640474 e231a834f099014cc68714e5ab322337
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.2.1-5ubuntu1.2_i386.deb
+      Size/MD5:   343826 d0aed109134464b056e44aca37e3f400
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.2.1-5ubuntu1.2_i386.deb
+      Size/MD5:   134584 d9ba29677ab94b9b69ea726a33abe06d
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.2.1-5ubuntu1.2_i386.udeb
+      Size/MD5:   237572 f227ea16926050038c2452360cfe0397
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.2.1-5ubuntu1.2_powerpc.deb
+      Size/MD5:   663186 7262489abc1ed1726eb60480cae9daaf
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.2.1-5ubuntu1.2_powerpc.deb
+      Size/MD5:   356450 eaaec2862b5ba92908353fde90e354d9
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.2.1-5ubuntu1.2_powerpc.deb
+      Size/MD5:   160368 949d30bc1508138673acc48e4d54117a
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.2.1-5ubuntu1.2_powerpc.udeb
+      Size/MD5:   250216 601c00ff376609db7e272a4cb22b8277
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.2.1-5ubuntu1.2_sparc.deb
+      Size/MD5:   635780 eee358eb58a4a274a3cf4f7924a45425
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.2.1-5ubuntu1.2_sparc.deb
+      Size/MD5:   328008 6fb5e77c1e11345af657f50990a23799
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.2.1-5ubuntu1.2_sparc.deb
+      Size/MD5:   135438 e389f6f4c58408cb143fc53b5ec16f18
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.2.1-5ubuntu1.2_sparc.udeb
+      Size/MD5:   222258 5005d2bf0ebab47b0f00ba006e4b3a3a
+
+Updated packages for Ubuntu 7.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.3.5-1ubuntu4.7.10.1.diff.gz
+      Size/MD5:    32392 f43351d5c56e0a6432132556581bbe59
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.3.5-1ubuntu4.7.10.1.dsc
+      Size/MD5:      944 4095a3dbfcc9a33f9014cb40415b9434
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.3.5.orig.tar.gz
+      Size/MD5:  1536077 4a5bdbe1ab92f3fe4c4816f9934a5ec2
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.3.5-1ubuntu4.7.10.1_amd64.deb
+      Size/MD5:   695776 bd34599d40b4bada4a7c942ecb73af2e
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.3.5-1ubuntu4.7.10.1_amd64.deb
+      Size/MD5:   363958 b94b8a86bfc9b4d377bafbe1a270d10f
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.3.5-1ubuntu4.7.10.1_amd64.deb
+      Size/MD5:   226098 06393a425b12ba5db9edc0be0d43f5f3
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.3.5-1ubuntu4.7.10.1_amd64.udeb
+      Size/MD5:   260832 dcafd9881766c3fe78d3981b770f5ae3
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.3.5-1ubuntu4.7.10.1_i386.deb
+      Size/MD5:   664184 36999d55d7900a522eeb1393440abfdb
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.3.5-1ubuntu4.7.10.1_i386.deb
+      Size/MD5:   348580 3317d4129d8b48e72bed79cc77007e76
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.3.5-1ubuntu4.7.10.1_i386.deb
+      Size/MD5:   199554 b5fe08ca3fe3fc72d99e9d8774738938
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.3.5-1ubuntu4.7.10.1_i386.udeb
+      Size/MD5:   245958 9fe1900b2a3676624c5d8bb1e0eb4719
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/f/freetype/libfreetype6-dev_2.3.5-1ubuntu4.7.10.1_lpia.deb
+      Size/MD5:   665092 eb05b0004a767fb5adf20b15b11a0957
+    http://ports.ubuntu.com/pool/main/f/freetype/libfreetype6_2.3.5-1ubuntu4.7.10.1_lpia.deb
+      Size/MD5:   348748 ef2b09db0c6afac6557bc24d4147f6a0
+    http://ports.ubuntu.com/pool/universe/f/freetype/freetype2-demos_2.3.5-1ubuntu4.7.10.1_lpia.deb
+      Size/MD5:   205274 053325b7712aa9edb70a5153626459ed
+    http://ports.ubuntu.com/pool/universe/f/freetype/libfreetype6-udeb_2.3.5-1ubuntu4.7.10.1_lpia.udeb
+      Size/MD5:   245988 e6a9e1d029fe308a62d726f7aed67bf9
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.3.5-1ubuntu4.7.10.1_powerpc.deb
+      Size/MD5:   688928 4431492d76055646289cd563c2fdca54
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.3.5-1ubuntu4.7.10.1_powerpc.deb
+      Size/MD5:   361526 a7ad92719a212856bbf09a3c421257c8
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.3.5-1ubuntu4.7.10.1_powerpc.deb
+      Size/MD5:   234566 775ce2c35af5d64f48c76302d78b5f25
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.3.5-1ubuntu4.7.10.1_powerpc.udeb
+      Size/MD5:   259014 083d6dfa14a395f2ea8a8cf7ebb80b08
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.3.5-1ubuntu4.7.10.1_sparc.deb
+      Size/MD5:   659680 966a89e882917b3395eb6252dbdb4e74
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.3.5-1ubuntu4.7.10.1_sparc.deb
+      Size/MD5:   333962 93a9a871a86bd6f313c330a8c36fed7c
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.3.5-1ubuntu4.7.10.1_sparc.deb
+      Size/MD5:   201010 c2ff174e86e3e42a5aa268fa7f173d34
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.3.5-1ubuntu4.7.10.1_sparc.udeb
+      Size/MD5:   230518 0e9fd929044df71406738e9d84c7c880
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.3.5-1ubuntu4.8.04.1.diff.gz
+      Size/MD5:    32395 2ae84145941bf1c67058decbef143652
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.3.5-1ubuntu4.8.04.1.dsc
+      Size/MD5:      944 bb7c3ed6113393ccd6abdb3d37300c07
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.3.5.orig.tar.gz
+      Size/MD5:  1536077 4a5bdbe1ab92f3fe4c4816f9934a5ec2
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.3.5-1ubuntu4.8.04.1_amd64.deb
+      Size/MD5:   694000 d3f6a9432ba6e6128ae6042ec913de9c
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.3.5-1ubuntu4.8.04.1_amd64.deb
+      Size/MD5:   361338 3b5f89dab8e56569d7427ac67507492c
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.3.5-1ubuntu4.8.04.1_amd64.deb
+      Size/MD5:   221288 c27d0aa4b83a0f428b45388fade03097
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.3.5-1ubuntu4.8.04.1_amd64.udeb
+      Size/MD5:   258196 6277f4040b0e996e87dc251a874dd439
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.3.5-1ubuntu4.8.04.1_i386.deb
+      Size/MD5:   663140 87fd64034becc5901e1559e9cb1301ba
+    http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.3.5-1ubuntu4.8.04.1_i386.deb
+      Size/MD5:   346396 f49f1d306c5c2ffd41df1f85c82ff20a
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/freetype2-demos_2.3.5-1ubuntu4.8.04.1_i386.deb
+      Size/MD5:   201200 3c1851a782a0886f23de434aeaa8d033
+    http://security.ubuntu.com/ubuntu/pool/universe/f/freetype/libfreetype6-udeb_2.3.5-1ubuntu4.8.04.1_i386.udeb
+      Size/MD5:   243222 84dc439ed4697cfee55da2eb67d81698
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/f/freetype/libfreetype6-dev_2.3.5-1ubuntu4.8.04.1_lpia.deb
+      Size/MD5:   665082 22e6aedd01689bb8cad75d1e98f6211e
+    http://ports.ubuntu.com/pool/main/f/freetype/libfreetype6_2.3.5-1ubuntu4.8.04.1_lpia.deb
+      Size/MD5:   346596 6f8718573d06a221a4cec2f41411fe21
+    http://ports.ubuntu.com/pool/universe/f/freetype/freetype2-demos_2.3.5-1ubuntu4.8.04.1_lpia.deb
+      Size/MD5:   205444 cbe4313062dee1ee8a06fbced6e9a0d1
+    http://ports.ubuntu.com/pool/universe/f/freetype/libfreetype6-udeb_2.3.5-1ubuntu4.8.04.1_lpia.udeb
+      Size/MD5:   244208 8388f5dc96acef6cc8a2e375569b450a
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/f/freetype/libfreetype6-dev_2.3.5-1ubuntu4.8.04.1_powerpc.deb
+      Size/MD5:   686986 9ddf5f196c576dfae2f53ab2c57df29b
+    http://ports.ubuntu.com/pool/main/f/freetype/libfreetype6_2.3.5-1ubuntu4.8.04.1_powerpc.deb
+      Size/MD5:   357360 68496230dd15b13b59dbf8b713bf1f8e
+    http://ports.ubuntu.com/pool/universe/f/freetype/freetype2-demos_2.3.5-1ubuntu4.8.04.1_powerpc.deb
+      Size/MD5:   235472 175aaae30eaa1c46ec8653e104794682
+    http://ports.ubuntu.com/pool/universe/f/freetype/libfreetype6-udeb_2.3.5-1ubuntu4.8.04.1_powerpc.udeb
+      Size/MD5:   254308 f2489420c89bbe5009fe0b3b33dcb3fb
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/f/freetype/libfreetype6-dev_2.3.5-1ubuntu4.8.04.1_sparc.deb
+      Size/MD5:   657910 e3b7e8c502de36802d0cd75c22257f67
+    http://ports.ubuntu.com/pool/main/f/freetype/libfreetype6_2.3.5-1ubuntu4.8.04.1_sparc.deb
+      Size/MD5:   331172 dfae3b2a457907b6719c0fbf0019eb6f
+    http://ports.ubuntu.com/pool/universe/f/freetype/freetype2-demos_2.3.5-1ubuntu4.8.04.1_sparc.deb
+      Size/MD5:   199666 8181a2d5292df6a775f8a2179120bf8e
+    http://ports.ubuntu.com/pool/universe/f/freetype/libfreetype6-udeb_2.3.5-1ubuntu4.8.04.1_sparc.udeb
+      Size/MD5:   227644 e945304ee5c12b57850c91cc6b2ef903
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 235 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080911/aa8ecbc6/attachment.pgp>
+
+From kees at ubuntu.com  Thu Sep 11 22:28:31 2008
+From: kees at ubuntu.com (Kees Cook)
+Date: Thu, 11 Sep 2008 15:28:31 -0700
+Subject: [USN-644-1] libxml2 vulnerabilities
+Message-ID: <20080911222831.GH14230@outflux.net>
+
+=========================================================== 
+Ubuntu Security Notice USN-644-1         September 11, 2008
+libxml2 vulnerabilities
+CVE-2008-3281, CVE-2008-3529
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 7.04
+Ubuntu 7.10
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  libxml2                         2.6.24.dfsg-1ubuntu1.3
+
+Ubuntu 7.04:
+  libxml2                         2.6.27.dfsg-1ubuntu3.3
+
+Ubuntu 7.10:
+  libxml2                         2.6.30.dfsg-2ubuntu1.3
+
+Ubuntu 8.04 LTS:
+  libxml2                         2.6.31.dfsg-2ubuntu1.2
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+It was discovered that libxml2 did not correctly handle long entity names.
+If a user were tricked into processing a specially crafted XML document,
+a remote attacker could execute arbitrary code with user privileges
+or cause the application linked against libxml2 to crash, leading to a
+denial of service. (CVE-2008-3529)
+
+USN-640-1 fixed vulnerabilities in libxml2.  When processing extremely
+large XML documents with valid entities, it was possible to incorrectly
+trigger the newly added vulnerability protections.  This update fixes
+the problem.  (CVE-2008-3281)
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.3.diff.gz
+      Size/MD5:    61589 1caf7319965402fb60d913d2cac18d8a
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.3.dsc
+      Size/MD5:      940 7ab1c0777b48ddbf2cb27afcb37fcca2
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg.orig.tar.gz
+      Size/MD5:  3293814 461eb1bf7f0c845f7ff7d9b1a4c4eac8
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-doc_2.6.24.dfsg-1ubuntu1.3_all.deb
+      Size/MD5:  1252798 93eb74fac1b129ccd366c3b48704118f
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.24.dfsg-1ubuntu1.3_all.deb
+      Size/MD5:    19074 04517d331d80308b97222436ea0245f8
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.24.dfsg-1ubuntu1.3_amd64.deb
+      Size/MD5:   918392 45eaa24bc7dde218bfca786eec6f9190
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.24.dfsg-1ubuntu1.3_amd64.deb
+      Size/MD5:   737364 3718b55b85ba1229a4d99bb23f2e5b77
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.24.dfsg-1ubuntu1.3_amd64.deb
+      Size/MD5:    36692 2a42ab94d27f8834f439e7b01888dcc7
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.3_amd64.deb
+      Size/MD5:   752734 b98c9993482c9e5ad8d66065d4fb4197
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python2.4-libxml2_2.6.24.dfsg-1ubuntu1.3_amd64.deb
+      Size/MD5:   181658 4325b8fde93378dad7a488a5829e1f5a
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.24.dfsg-1ubuntu1.3_i386.deb
+      Size/MD5:   766138 f1bb142ff585f888fecb8108ae31d46f
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.24.dfsg-1ubuntu1.3_i386.deb
+      Size/MD5:   641938 7a8fe1e56f828726f20fa6dd321dd7e7
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.24.dfsg-1ubuntu1.3_i386.deb
+      Size/MD5:    32980 7ec93f72efdc21ba783133a44b971116
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.3_i386.deb
+      Size/MD5:   684720 2f103b8271a178219f188b846e151858
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python2.4-libxml2_2.6.24.dfsg-1ubuntu1.3_i386.deb
+      Size/MD5:   166424 1a83e38ed030a757c9c11e3e9e31470b
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.24.dfsg-1ubuntu1.3_powerpc.deb
+      Size/MD5:   904972 bc07023c3e6e8e1c325f19150886d2b5
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.24.dfsg-1ubuntu1.3_powerpc.deb
+      Size/MD5:   761162 058a6215bc1c13a58a0eb1073eca0ac5
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.24.dfsg-1ubuntu1.3_powerpc.deb
+      Size/MD5:    37426 44b923891d07dbe1d6cac79a855eaeaf
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.3_powerpc.deb
+      Size/MD5:   733722 968c8dfb542854913a7dba0d4f17b53f
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python2.4-libxml2_2.6.24.dfsg-1ubuntu1.3_powerpc.deb
+      Size/MD5:   170810 b3b3c0a57c6854b3c9937c22edd82609
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.24.dfsg-1ubuntu1.3_sparc.deb
+      Size/MD5:   745746 818a1718390f14ee853caabc5031770f
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.24.dfsg-1ubuntu1.3_sparc.deb
+      Size/MD5:   703460 57419e39af3ded76eea898fca33b921b
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.24.dfsg-1ubuntu1.3_sparc.deb
+      Size/MD5:    34312 4f2860124fd44b350c485c14a9ee111b
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.24.dfsg-1ubuntu1.3_sparc.deb
+      Size/MD5:   716606 63d1bf332588b487a06d144f86c2c56e
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python2.4-libxml2_2.6.24.dfsg-1ubuntu1.3_sparc.deb
+      Size/MD5:   174782 28bf85a981eb8f3e1fd3748846ef4c04
+
+Updated packages for Ubuntu 7.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.3.diff.gz
+      Size/MD5:   147778 90c5a5379cca6b0184e56cfa867fd296
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.3.dsc
+      Size/MD5:     1109 6251978a31121be9704e732e9dffdfe8
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg.orig.tar.gz
+      Size/MD5:  3416175 5ff71b22f6253a6dd9afc1c34778dec3
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-doc_2.6.27.dfsg-1ubuntu3.3_all.deb
+      Size/MD5:  1293190 def20b492544e828c520732d112f1c78
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.27.dfsg-1ubuntu3.3_amd64.deb
+      Size/MD5:   894942 8d8f5338737fcd1d4ffc2571722a0825
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.27.dfsg-1ubuntu3.3_amd64.deb
+      Size/MD5:   748010 df1863c983827a0eb1a8dfe2db7c49cb
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.27.dfsg-1ubuntu3.3_amd64.udeb
+      Size/MD5:   575622 bf3994ade2af4171962b0f3a25bca84c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.27.dfsg-1ubuntu3.3_amd64.deb
+      Size/MD5:    37142 d4aab16417845d43044981078a42f204
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.3_amd64.deb
+      Size/MD5:   809934 ebe61729c2b02353958a490175c2c931
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.27.dfsg-1ubuntu3.3_amd64.deb
+      Size/MD5:   862394 4076a7a320c7a94d805df2ff4cfe3b6d
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.27.dfsg-1ubuntu3.3_amd64.deb
+      Size/MD5:   292854 5d79c55c74cc1747ae18e161a065cfd8
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.27.dfsg-1ubuntu3.3_i386.deb
+      Size/MD5:   851062 edd3db1efa6e8a3ce2f9981653cfd506
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.27.dfsg-1ubuntu3.3_i386.deb
+      Size/MD5:   672804 a5eaf6013329b2d5d0ed960a1c35353f
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.27.dfsg-1ubuntu3.3_i386.udeb
+      Size/MD5:   527280 b0c58355b74b9dbfbec7d7ae6d6c5f8c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.27.dfsg-1ubuntu3.3_i386.deb
+      Size/MD5:    34234 0d638fb62260342899ee268422c86c21
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.3_i386.deb
+      Size/MD5:   761436 7b71af003bb09cd5865ca009ddaeff30
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.27.dfsg-1ubuntu3.3_i386.deb
+      Size/MD5:   788924 192e7774d8a44d83a0834c054702c126
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.27.dfsg-1ubuntu3.3_i386.deb
+      Size/MD5:   262454 33235eafbd6e3fa9b1cef4bad3a0af14
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.27.dfsg-1ubuntu3.3_powerpc.deb
+      Size/MD5:   896274 f77201d38fd6e9cf95e1add627aaabe9
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.27.dfsg-1ubuntu3.3_powerpc.deb
+      Size/MD5:   774754 923d7f405a5e904a147982f95fca5a75
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.27.dfsg-1ubuntu3.3_powerpc.udeb
+      Size/MD5:   560064 86428334645eddfff0375f3257ac15be
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.27.dfsg-1ubuntu3.3_powerpc.deb
+      Size/MD5:    42338 b491c713ef647bea36a37d877baeef16
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.3_powerpc.deb
+      Size/MD5:   794890 27dca04d2795acaae253fd6a7530df3d
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.27.dfsg-1ubuntu3.3_powerpc.deb
+      Size/MD5:   856154 083d3754b7184172d8aa856f804456d0
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.27.dfsg-1ubuntu3.3_powerpc.deb
+      Size/MD5:   286514 e5df2f8da51bef8a9b157fdf3220cafe
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.27.dfsg-1ubuntu3.3_sparc.deb
+      Size/MD5:   788878 24311a6a98c7fd2ee3fe4ca4cecbb900
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.27.dfsg-1ubuntu3.3_sparc.deb
+      Size/MD5:   715658 a4f6df673f6ea3fa1802bdf86167e40c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.27.dfsg-1ubuntu3.3_sparc.udeb
+      Size/MD5:   539368 6015e03960be6fbc53e304d6203f2f00
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.27.dfsg-1ubuntu3.3_sparc.deb
+      Size/MD5:    36400 1648dec7cc3513442a15617888bc606b
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.27.dfsg-1ubuntu3.3_sparc.deb
+      Size/MD5:   774032 c61bd0ca3e8d746e3877273542eb0b3f
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.27.dfsg-1ubuntu3.3_sparc.deb
+      Size/MD5:   816340 3acf524e12a660c49239ad97bac3f4ad
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.27.dfsg-1ubuntu3.3_sparc.deb
+      Size/MD5:   278888 33db7679281b082201ac8d601536dcd4
+
+Updated packages for Ubuntu 7.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.3.diff.gz
+      Size/MD5:   180133 f353106fa6b9620cbe85768303f786bf
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.3.dsc
+      Size/MD5:     1109 008021bac7ab86f94e21191d751f0f99
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg.orig.tar.gz
+      Size/MD5:  3433982 fe52a06fd8f104308271eb7093a0b644
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-doc_2.6.30.dfsg-2ubuntu1.3_all.deb
+      Size/MD5:  1300204 36af3e9b16bd27799e3abd951b552aab
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.30.dfsg-2ubuntu1.3_amd64.deb
+      Size/MD5:   895492 902054a8c94cd4947a37f1e94278c1d1
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.30.dfsg-2ubuntu1.3_amd64.deb
+      Size/MD5:   753192 8884ca56c2444890249c3c5a5b17583d
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.30.dfsg-2ubuntu1.3_amd64.udeb
+      Size/MD5:   578688 5fc319ebc073b53d9e5c0dc7429effc5
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.30.dfsg-2ubuntu1.3_amd64.deb
+      Size/MD5:    37190 7b7cb3d6e32f81e1e7eec67da07eba20
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.3_amd64.deb
+      Size/MD5:   819178 5f03cfc0eb3195506e35ccd3aa7d509d
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.30.dfsg-2ubuntu1.3_amd64.deb
+      Size/MD5:   864032 7d3668daca4298c3bbb70818877d8ef6
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.30.dfsg-2ubuntu1.3_amd64.deb
+      Size/MD5:   293812 519651823cda993c6e16820c8176fa50
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.30.dfsg-2ubuntu1.3_i386.deb
+      Size/MD5:   854386 55945858ed6026bc7e38aee843ef54f2
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.30.dfsg-2ubuntu1.3_i386.deb
+      Size/MD5:   675428 7cc0f1d0e836d7f7918f18262209b622
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.30.dfsg-2ubuntu1.3_i386.udeb
+      Size/MD5:   529110 4176d5926ee6bfd80b933d713b3552db
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.30.dfsg-2ubuntu1.3_i386.deb
+      Size/MD5:    34248 e96d46cabb0ba940518e33cbec215196
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.3_i386.deb
+      Size/MD5:   770340 1d27ccbbba9caf56245118f370e37633
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.30.dfsg-2ubuntu1.3_i386.deb
+      Size/MD5:   792688 fad753dab9420d70d33f72f027385939
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.30.dfsg-2ubuntu1.3_i386.deb
+      Size/MD5:   263072 bbc9c417428a7a1cb0a1baa57bcf7f34
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dbg_2.6.30.dfsg-2ubuntu1.3_lpia.deb
+      Size/MD5:   930126 1539cf51097e2535450ee91f71d57703
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dev_2.6.30.dfsg-2ubuntu1.3_lpia.deb
+      Size/MD5:   679360 4fa06a46e1d863bbc43c0686ab156980
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-udeb_2.6.30.dfsg-2ubuntu1.3_lpia.udeb
+      Size/MD5:   529328 56c9fbedfaccf798c88a2e699d1fdf66
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-utils_2.6.30.dfsg-2ubuntu1.3_lpia.deb
+      Size/MD5:    34524 aa8dfb07389d11ae9a17164cee2ffe75
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.3_lpia.deb
+      Size/MD5:   770526 96d4b2e3d434fad5253f45953696254f
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2-dbg_2.6.30.dfsg-2ubuntu1.3_lpia.deb
+      Size/MD5:   788132 5259df67cec435b2611973612ce534cf
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2_2.6.30.dfsg-2ubuntu1.3_lpia.deb
+      Size/MD5:   259698 b483b4eea430a431555501068a9fe89f
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.30.dfsg-2ubuntu1.3_powerpc.deb
+      Size/MD5:   896810 d87a8bb0d334a67d4eecd6be885bd955
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.30.dfsg-2ubuntu1.3_powerpc.deb
+      Size/MD5:   777616 bead4cb2a6b8fb1be423fd78df12e71c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.30.dfsg-2ubuntu1.3_powerpc.udeb
+      Size/MD5:   561964 53b38490030af4cb12e486d8b0dd8e22
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.30.dfsg-2ubuntu1.3_powerpc.deb
+      Size/MD5:    42350 03bafd6cae37553295d1f6b5715b9d68
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.3_powerpc.deb
+      Size/MD5:   802638 028dbe3416a848a76ab6f1df4e3cdd01
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.30.dfsg-2ubuntu1.3_powerpc.deb
+      Size/MD5:   857860 a0ee993267d1e219f8e5309cc6db5df4
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.30.dfsg-2ubuntu1.3_powerpc.deb
+      Size/MD5:   287282 a59e48da0eba408f7b1eab0cb7e0a965
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.30.dfsg-2ubuntu1.3_sparc.deb
+      Size/MD5:   787736 fee8ba3fb0cdc1d70346d85104938c00
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.30.dfsg-2ubuntu1.3_sparc.deb
+      Size/MD5:   718524 af618f0f74e998cc4983c92a7f8de057
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.30.dfsg-2ubuntu1.3_sparc.udeb
+      Size/MD5:   541610 88e2a74bf0be404350c6f9af1579a2db
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.30.dfsg-2ubuntu1.3_sparc.deb
+      Size/MD5:    36502 cb33c183f5d5f4a58231467ca4a104dc
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.30.dfsg-2ubuntu1.3_sparc.deb
+      Size/MD5:   781648 b28160bdc0bd7dc40dad82465724f81e
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.30.dfsg-2ubuntu1.3_sparc.deb
+      Size/MD5:   816056 338007bbb70350c9cad1f96eeb621e79
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.30.dfsg-2ubuntu1.3_sparc.deb
+      Size/MD5:   279518 a037c1eb4fff9bd09e841e08642957d7
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.2.diff.gz
+      Size/MD5:    65676 41ae2bf959ad2d6a3ca1fc36c4fbf293
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.2.dsc
+      Size/MD5:     1110 fa7e351bf0b10bca9d3b065e1241af62
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.31.dfsg.orig.tar.gz
+      Size/MD5:  3442959 8498d4e6f284d2f0a01560f089cb5a3e
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-doc_2.6.31.dfsg-2ubuntu1.2_all.deb
+      Size/MD5:  1302280 f016eca312da881a901af40e1931ecb9
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.31.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:   939160 e01e2ae4077b28b0b7c7baf126004309
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.31.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:   753858 46ee3831b7c22260d7c17ddae5561859
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.31.dfsg-2ubuntu1.2_amd64.udeb
+      Size/MD5:   580276 31b05f841a2c3998bdf9401fb69dca96
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.31.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:    37050 dfdbc191a4fedad95659eb753f69d13c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:   832304 bcbc69f97e5df3956cfd22084d2a861d
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.31.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:   872914 1e7bf3869f7c62e98dc75f2307a72c53
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.31.dfsg-2ubuntu1.2_amd64.deb
+      Size/MD5:   297980 7522d315e43d7d6fd728915a1b27db18
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dbg_2.6.31.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:   904922 3838f3d152caf8d11ede1c189104007c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.6.31.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:   676308 2a12f6c769ad029c49660928f31ead1f
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-udeb_2.6.31.dfsg-2ubuntu1.2_i386.udeb
+      Size/MD5:   533086 84d6b2c7777524a0b944aa34cdc43713
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-utils_2.6.31.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:    34040 72b9c42142fb723f82b32efc23afa28c
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:   785690 fad5c4e037a43f53e629674b4ac29d1a
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2-dbg_2.6.31.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:   796278 97340fbfc31e3862d698a0ad035dde78
+    http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/python-libxml2_2.6.31.dfsg-2ubuntu1.2_i386.deb
+      Size/MD5:   262964 e4487bc9cb402f50a6e761a9818f4e81
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dbg_2.6.31.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:   930958 b92a1d894ad0987d44b58282ea839d88
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dev_2.6.31.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:   679384 c00f47707caf2043dcc56d821f7509ca
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-udeb_2.6.31.dfsg-2ubuntu1.2_lpia.udeb
+      Size/MD5:   529010 5a957467f2fd604ee0259d244fbee919
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-utils_2.6.31.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:    34492 2545d14030ecfc56862340a13bb744da
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:   781068 3065ff761fbfacb4dcea398cfcaa352a
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2-dbg_2.6.31.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:   788516 b3d8ad92af95c60451b193393e35988d
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2_2.6.31.dfsg-2ubuntu1.2_lpia.deb
+      Size/MD5:   259636 30c3290af9c9e06e655590fa5dbbbeb1
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dbg_2.6.31.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:   923248 5a83a621a93b3bab677b94cda02d2643
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dev_2.6.31.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:   776130 21f3d67a6c69c45191c2cecb07414722
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-udeb_2.6.31.dfsg-2ubuntu1.2_powerpc.udeb
+      Size/MD5:   563884 81a083ab295f1e5b471e3b5da616d904
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-utils_2.6.31.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:    42068 2592dfecb4c7ab839ffecc1cc2e287ea
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:   816022 08bfce0447198ef3ba0dd9772d8715d3
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2-dbg_2.6.31.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:   841306 0c3bc455495f52a0525bf1dafc5239be
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2_2.6.31.dfsg-2ubuntu1.2_powerpc.deb
+      Size/MD5:   285374 a2e40e1daa0828aa179edda9b2dff0bf
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dbg_2.6.31.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:   826198 d223d6a4119b9ab1d05477e6e492591a
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-dev_2.6.31.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:   719558 90a5205670e9d19de3678df8ff457b94
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-udeb_2.6.31.dfsg-2ubuntu1.2_sparc.udeb
+      Size/MD5:   540940 ff0e80932e976d852a5c892cb389fb3a
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2-utils_2.6.31.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:    36184 d9f5cf94b7069dd5551b8465068aeef4
+    http://ports.ubuntu.com/pool/main/libx/libxml2/libxml2_2.6.31.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:   792968 0eb3d4c14446e193c2726295d96497ec
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2-dbg_2.6.31.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:   807828 ec9f3cd6c758cffa21e0bc0071c11f0e
+    http://ports.ubuntu.com/pool/main/libx/libxml2/python-libxml2_2.6.31.dfsg-2ubuntu1.2_sparc.deb
+      Size/MD5:   277526 8440b68a39d6df8dc4d5b649013b0ced
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 235 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080911/4b6c6a89/attachment.pgp>
+
+From jamie at canonical.com  Thu Sep 18 19:53:05 2008
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 18 Sep 2008 14:53:05 -0500
+Subject: [USN-646-1] rdesktop vulnerabilities
+Message-ID: <20080918195305.GB7732@severus.strandboge.com>
+
+=========================================================== 
+Ubuntu Security Notice USN-646-1         September 18, 2008
+rdesktop vulnerabilities
+CVE-2008-1801, CVE-2008-1802, CVE-2008-1803
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 7.04
+Ubuntu 7.10
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  rdesktop                        1.4.1-1.1ubuntu0.6.06.1
+
+Ubuntu 7.04:
+  rdesktop                        1.5.0-1ubuntu1.1
+
+Ubuntu 7.10:
+  rdesktop                        1.5.0-2ubuntu0.1
+
+Ubuntu 8.04 LTS:
+  rdesktop                        1.5.0-3+cvs20071006ubuntu0.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+It was discovered that rdesktop did not properly validate the length
+of packet headers when processing RDP requests. If a user were tricked
+into connecting to a malicious server, an attacker could cause a
+denial of service or possible execute arbitrary code with the
+privileges of the user. (CVE-2008-1801)
+
+Multiple buffer overflows were discovered in rdesktop when processing
+RDP redirect requests. If a user were tricked into connecting to a
+malicious server, an attacker could cause a denial of service or
+possible execute arbitrary code with the privileges of the user.
+(CVE-2008-1802)
+
+It was discovered that rdesktop performed a signed integer comparison
+when reallocating dynamic buffers which could result in a heap-based
+overflow. If a user were tricked into connecting to a malicious
+server, an attacker could cause a denial of service or possible
+execute arbitrary code with the privileges of the user.
+(CVE-2008-1802)
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.4.1-1.1ubuntu0.6.06.1.diff.gz
+      Size/MD5:    11833 02d252fcd49c4645b3e716d856d1c415
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.4.1-1.1ubuntu0.6.06.1.dsc
+      Size/MD5:      652 ef3291adc58f0a7cb13a611b4f0a2121
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.4.1.orig.tar.gz
+      Size/MD5:   218413 ce6b2369d633128ff00a2a8ae7c18ef8
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.4.1-1.1ubuntu0.6.06.1_amd64.deb
+      Size/MD5:   111972 aa37f6bbd6e6aef1c522fbdb856b0f88
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.4.1-1.1ubuntu0.6.06.1_i386.deb
+      Size/MD5:   101116 c763412c9df04d92d96ac35d3b1da461
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.4.1-1.1ubuntu0.6.06.1_powerpc.deb
+      Size/MD5:   119686 a04bf8dfa52a4b9345c0768174c4fe5f
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.4.1-1.1ubuntu0.6.06.1_sparc.deb
+      Size/MD5:   108374 f93183194eb83d0d303bc198260f5aaf
+
+Updated packages for Ubuntu 7.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-1ubuntu1.1.diff.gz
+      Size/MD5:    20640 935bc4696bd2aea80b00ce2d1541b8a1
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-1ubuntu1.1.dsc
+      Size/MD5:      648 fa4980e269f93cdc5fe4547b4ba270c6
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0.orig.tar.gz
+      Size/MD5:   245137 433546f60fc0f201e99307ba188369ed
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-1ubuntu1.1_amd64.deb
+      Size/MD5:   138228 051403b954434d9f3abdeeeaf598ab6b
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-1ubuntu1.1_i386.deb
+      Size/MD5:   122622 ddd936f095eca9f9c1ebaa9b2a1ac637
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-1ubuntu1.1_powerpc.deb
+      Size/MD5:   147290 477231f887705ee5f5303d9d95c9b63f
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-1ubuntu1.1_sparc.deb
+      Size/MD5:   131252 66fe53989b7540f8de5267e543fabb4e
+
+Updated packages for Ubuntu 7.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-2ubuntu0.1.diff.gz
+      Size/MD5:    20644 87afc1c27f2489d0a7ce4d1592f294d6
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-2ubuntu0.1.dsc
+      Size/MD5:      648 6bd1addbc212ec9b4f331be244e604aa
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0.orig.tar.gz
+      Size/MD5:   245137 433546f60fc0f201e99307ba188369ed
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-2ubuntu0.1_amd64.deb
+      Size/MD5:   138036 4a7e96222fe9027700e816acf59bb734
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-2ubuntu0.1_i386.deb
+      Size/MD5:   122472 b1dd9c0cb2641891ddcfec99704b46a9
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/r/rdesktop/rdesktop_1.5.0-2ubuntu0.1_lpia.deb
+      Size/MD5:   122174 ddcb80d1456ba036a283bd239e5d559b
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-2ubuntu0.1_powerpc.deb
+      Size/MD5:   146892 09c1dda0b426d812b867f311884854cc
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-2ubuntu0.1_sparc.deb
+      Size/MD5:   130926 4c438675fae5796dc90d18c38b09993f
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-3+cvs20071006ubuntu0.1.diff.gz
+      Size/MD5:   239616 dd50827c7f209fba8acce7438046a0c5
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-3+cvs20071006ubuntu0.1.dsc
+      Size/MD5:      673 df18cff01658e869689437b0f4ba6a3f
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0.orig.tar.gz
+      Size/MD5:   245137 433546f60fc0f201e99307ba188369ed
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-3+cvs20071006ubuntu0.1_amd64.deb
+      Size/MD5:   146160 553eebe2e4574d5ecfca06471fc5f765
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/r/rdesktop/rdesktop_1.5.0-3+cvs20071006ubuntu0.1_i386.deb
+      Size/MD5:   128674 9bc9f5f95fd66bf57b0520299e478b08
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/r/rdesktop/rdesktop_1.5.0-3+cvs20071006ubuntu0.1_lpia.deb
+      Size/MD5:   129648 abdab7d9e099f1d6dde38c7e4efe4707
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/r/rdesktop/rdesktop_1.5.0-3+cvs20071006ubuntu0.1_powerpc.deb
+      Size/MD5:   152548 25633e850f1523be7b76a08e2ff33543
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/r/rdesktop/rdesktop_1.5.0-3+cvs20071006ubuntu0.1_sparc.deb
+      Size/MD5:   136268 1cd132a6dc1d34fc08df8a87ea559c6f
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080918/091c2420/attachment.pgp>
+
+From jamie at canonical.com  Wed Sep 24 10:26:58 2008
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Wed, 24 Sep 2008 05:26:58 -0500
+Subject: [USN-645-1] Firefox and xulrunner vulnerabilities
+Message-ID: <20080924102658.GE8986@severus.strandboge.com>
+
+=========================================================== 
+Ubuntu Security Notice USN-645-1         September 24, 2008
+firefox, firefox-3.0, xulrunner-1.9 vulnerabilities
+CVE-2008-0016, CVE-2008-3835, CVE-2008-3836, CVE-2008-3837,
+CVE-2008-4058, CVE-2008-4059, CVE-2008-4060, CVE-2008-4061,
+CVE-2008-4062, CVE-2008-4063, CVE-2008-4064, CVE-2008-4065,
+CVE-2008-4066, CVE-2008-4067, CVE-2008-4068, CVE-2008-4069
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 7.04
+Ubuntu 7.10
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 7.04:
+  firefox                         2.0.0.17+0nobinonly-0ubuntu0.7.4
+
+Ubuntu 7.10:
+  firefox                         2.0.0.17+1nobinonly-0ubuntu0.7.10
+
+Ubuntu 8.04 LTS:
+  firefox-3.0                     3.0.2+build6+nobinonly-0ubuntu0.8.04.1
+  xulrunner-1.9                   1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1
+
+After a standard system upgrade you need to restart Firefox and any
+applications that use xulrunner, such as Epiphany, to effect the
+necessary changes.
+
+Details follow:
+
+Justin Schuh, Tom Cross and Peter Williams discovered errors in the
+Firefox URL parsing routines. If a user were tricked into opening a
+crafted hyperlink, an attacker could overflow a stack buffer and
+execute arbitrary code. (CVE-2008-0016)
+
+It was discovered that the same-origin check in Firefox could be
+bypassed. If a user were tricked into opening a malicious website,
+an attacker may be able to execute JavaScript in the context of a
+different website. (CVE-2008-3835)
+
+Several problems were discovered in the JavaScript engine. This
+could allow an attacker to execute scripts from page content with
+chrome privileges. (CVE-2008-3836)
+
+Paul Nickerson discovered Firefox did not properly process mouse
+click events. If a user were tricked into opening a malicious web
+page, an attacker could move the content window, which could
+potentially be used to force a user to perform unintended drag and
+drop operations. (CVE-2008-3837)
+
+Several problems were discovered in the browser engine. This could
+allow an attacker to execute code with chrome privileges.
+(CVE-2008-4058, CVE-2008-4059, CVE-2008-4060)
+
+Drew Yao, David Maciejak and other Mozilla developers found several
+problems in the browser engine of Firefox. If a user were tricked
+into opening a malicious web page, an attacker could cause a denial
+of service or possibly execute arbitrary code with the privileges
+of the user invoking the program. (CVE-2008-4061, CVE-2008-4062,
+CVE-2008-4063, CVE-2008-4064)
+
+Dave Reed discovered a flaw in the JavaScript parsing code when
+processing certain BOM characters. An attacker could exploit this
+to bypass script filters and perform cross-site scripting attacks.
+(CVE-2008-4065)
+
+Gareth Heyes discovered a flaw in the HTML parser of Firefox. If a
+user were tricked into opening a malicious web page, an attacker
+could bypass script filtering and perform cross-site scripting
+attacks. (CVE-2008-4066)
+
+Boris Zbarsky and Georgi Guninski independently discovered flaws in
+the resource: protocol. An attacker could exploit this to perform
+directory traversal, read information about the system, and prompt
+the user to save information in a file. (CVE-2008-4067,
+CVE-2008-4068)
+
+Billy Hoffman discovered a problem in the XBM decoder. If a user were
+tricked into opening a malicious web page or XBM file, an attacker
+may be able to cause a denial of service via application crash.
+(CVE-2008-4069)
+
+
+Updated packages for Ubuntu 7.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+0nobinonly-0ubuntu0.7.4.diff.gz
+      Size/MD5:   316696 fcc877d67c4c479221bbf3c4a3d7eb6d
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+0nobinonly-0ubuntu0.7.4.dsc
+      Size/MD5:     2330 b5027c93757b9fec8eda43ee3b93c227
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+0nobinonly.orig.tar.gz
+      Size/MD5: 48478465 eb9ca16ce2bd6073cf9cdf1298388ede
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/firefox-dom-inspector_2.0.0.17+0nobinonly-0ubuntu0.7.4_all.deb
+      Size/MD5:   243550 c27985a28b56d42f853f614b1329792f
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/mozilla-firefox-dev_2.0.0.17+0nobinonly-0ubuntu0.7.4_all.deb
+      Size/MD5:    58896 6617ca36bca4b8f4039a0201548da883
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/mozilla-firefox-dom-inspector_2.0.0.17+0nobinonly-0ubuntu0.7.4_all.deb
+      Size/MD5:    58992 330db0a6f2247bc95308f45849f6c347
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/mozilla-firefox-gnome-support_2.0.0.17+0nobinonly-0ubuntu0.7.4_all.deb
+      Size/MD5:    59004 de6dddee9f8f3b426f3f92486ec688f4
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/mozilla-firefox_2.0.0.17+0nobinonly-0ubuntu0.7.4_all.deb
+      Size/MD5:    59808 b5d3575dac4397435b35577ef2231ba2
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_2.0.0.17+0nobinonly-0ubuntu0.7.4_amd64.deb
+      Size/MD5: 50656752 d2488df935ed957ca20001c22a8f1469
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_2.0.0.17+0nobinonly-0ubuntu0.7.4_amd64.deb
+      Size/MD5:  3187514 c45d3640b7025bdef4d3c39026bdff82
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_2.0.0.17+0nobinonly-0ubuntu0.7.4_amd64.deb
+      Size/MD5:    92716 1f790aab7403f845f3aaa10c11aa2992
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-libthai_2.0.0.17+0nobinonly-0ubuntu0.7.4_amd64.deb
+      Size/MD5:    62694 373bb2cb44d77d351269f434746fbb54
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+0nobinonly-0ubuntu0.7.4_amd64.deb
+      Size/MD5: 10492802 4655557e86f8bc9716cb756aeca743b7
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr-dev_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_amd64.deb
+      Size/MD5:   228868 29d5b7b2a4b164aac6381e6561bd6144
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr4_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_amd64.deb
+      Size/MD5:   174386 7a13e0a9fa9df9f66f88f70cea8ebc06
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss-dev_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_amd64.deb
+      Size/MD5:   254952 55e0c0afef21b363fe31c744af4c6d77
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss3_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_amd64.deb
+      Size/MD5:   888180 7f8ddc7f096215b1bcaaee5858e0cb88
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_2.0.0.17+0nobinonly-0ubuntu0.7.4_i386.deb
+      Size/MD5: 49801022 e5c279cc182430cfdf2836d77ead95cb
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_2.0.0.17+0nobinonly-0ubuntu0.7.4_i386.deb
+      Size/MD5:  3178474 7859e4225dc2f28e83348d596886ff24
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_2.0.0.17+0nobinonly-0ubuntu0.7.4_i386.deb
+      Size/MD5:    86924 683cc43035d1b4b7134cd1052533022b
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-libthai_2.0.0.17+0nobinonly-0ubuntu0.7.4_i386.deb
+      Size/MD5:    62104 274e4ea11b4c5d43b3a384d15c385c14
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+0nobinonly-0ubuntu0.7.4_i386.deb
+      Size/MD5:  9299290 ee50c9f1a78b743ddeb8f71a27694ad9
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr-dev_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_i386.deb
+      Size/MD5:   228866 3e6fd628f22993e9f3f56addc20e16fd
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr4_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_i386.deb
+      Size/MD5:   163308 7628c8cb150ed486314ffc6be890cda8
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss-dev_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_i386.deb
+      Size/MD5:   254940 6b6498be6365b35e4676feecef534869
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss3_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_i386.deb
+      Size/MD5:   809598 10670c735ac61b6efe20328cc5d0f54c
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_2.0.0.17+0nobinonly-0ubuntu0.7.4_powerpc.deb
+      Size/MD5: 52311700 0a4d76530c48760bddb2c59938afe2bd
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_2.0.0.17+0nobinonly-0ubuntu0.7.4_powerpc.deb
+      Size/MD5:  3190192 0ca1ef99a5f80a6ac3b1527c33325cab
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_2.0.0.17+0nobinonly-0ubuntu0.7.4_powerpc.deb
+      Size/MD5:    90750 746fc3ece73fdf71441b4c2269ed17d5
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-libthai_2.0.0.17+0nobinonly-0ubuntu0.7.4_powerpc.deb
+      Size/MD5:    62938 32be863293c321907d8ed6a346d55804
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+0nobinonly-0ubuntu0.7.4_powerpc.deb
+      Size/MD5: 10371522 f75e280227e1d7428e16f2209fa78a03
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr-dev_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_powerpc.deb
+      Size/MD5:   228868 bf24f6487d8314fed24f82cfc665ea06
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr4_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_powerpc.deb
+      Size/MD5:   180030 45218a08229d942aea27cc8719e80ed7
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss-dev_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_powerpc.deb
+      Size/MD5:   254946 4c212146f6d85ceac1fbaad9129d3fc5
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss3_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_powerpc.deb
+      Size/MD5:   896060 d66825d900f03fa5093b5c29301ace14
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_2.0.0.17+0nobinonly-0ubuntu0.7.4_sparc.deb
+      Size/MD5: 49836692 25a24ef04fbeb43dfb5f7203fb94de7d
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_2.0.0.17+0nobinonly-0ubuntu0.7.4_sparc.deb
+      Size/MD5:  3177280 a52529905aeed8b38a35e825b646b159
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_2.0.0.17+0nobinonly-0ubuntu0.7.4_sparc.deb
+      Size/MD5:    86616 efc4edb7c610d01da6dd4e7f13f4424a
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-libthai_2.0.0.17+0nobinonly-0ubuntu0.7.4_sparc.deb
+      Size/MD5:    62162 319793e8f7bd0f29befe99b383c91275
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+0nobinonly-0ubuntu0.7.4_sparc.deb
+      Size/MD5:  9575550 407b513437f0c3a16fbfa838a55c89c5
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr-dev_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_sparc.deb
+      Size/MD5:   228864 2068b5134cc8c24a769fa3984fd36547
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr4_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_sparc.deb
+      Size/MD5:   162098 ad7dfb30f2a7bce32c38c6522408af6e
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss-dev_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_sparc.deb
+      Size/MD5:   254964 68df04f7a07a59cf2e52f7dadf30dd90
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss3_1.firefox2.0.0.17+0nobinonly-0ubuntu0.7.4_sparc.deb
+      Size/MD5:   801430 7a664cecf34231cba2f4a307e7b4d78f
+
+Updated packages for Ubuntu 7.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+1nobinonly-0ubuntu0.7.10.diff.gz
+      Size/MD5:   193456 41e5fd9a5b264d59a7a19c4652135fa2
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+1nobinonly-0ubuntu0.7.10.dsc
+      Size/MD5:     2297 241e87103d61cf94617968e58eae5e49
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+1nobinonly.orig.tar.gz
+      Size/MD5: 37705770 d50c621116c9c6446ae8cc44b50e4422
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/firefox-dom-inspector_2.0.0.17+1nobinonly-0ubuntu0.7.10_all.deb
+      Size/MD5:   200850 dd0a6864ed156408ad302ae826014651
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_2.0.0.17+1nobinonly-0ubuntu0.7.10_amd64.deb
+      Size/MD5: 78081002 406b5786d9a9d596bbb5a239f9521838
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_2.0.0.17+1nobinonly-0ubuntu0.7.10_amd64.deb
+      Size/MD5:  3198548 6467de3e926c81469d7b8a8663e30de4
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_2.0.0.17+1nobinonly-0ubuntu0.7.10_amd64.deb
+      Size/MD5:    98188 bd03eb6af24cd4742bcf7e9d3259b5e3
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-libthai_2.0.0.17+1nobinonly-0ubuntu0.7.10_amd64.deb
+      Size/MD5:    67214 f940933f974226a0b368e0b186195877
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+1nobinonly-0ubuntu0.7.10_amd64.deb
+      Size/MD5: 10466910 1c6763f8560faa2db02dc5541334d2eb
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_2.0.0.17+1nobinonly-0ubuntu0.7.10_i386.deb
+      Size/MD5: 77223978 0fec264e30c0a1cea0bec1b574a741f1
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_2.0.0.17+1nobinonly-0ubuntu0.7.10_i386.deb
+      Size/MD5:  3186190 10869a4be34712ef088fd82bb24666a2
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_2.0.0.17+1nobinonly-0ubuntu0.7.10_i386.deb
+      Size/MD5:    91912 a45101ff4b6e34c0641a787b9e55e568
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-libthai_2.0.0.17+1nobinonly-0ubuntu0.7.10_i386.deb
+      Size/MD5:    66500 c17d657e5a5ed8646dcabc5483884336
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+1nobinonly-0ubuntu0.7.10_i386.deb
+      Size/MD5:  9206920 e9d44cb1e42ffdad0627eb4e955b444c
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/f/firefox/firefox-dbg_2.0.0.17+1nobinonly-0ubuntu0.7.10_lpia.deb
+      Size/MD5: 77504940 f75594b281a77f3446cde6d443336610
+    http://ports.ubuntu.com/pool/main/f/firefox/firefox-dev_2.0.0.17+1nobinonly-0ubuntu0.7.10_lpia.deb
+      Size/MD5:  3183726 8072b22b2a997f7bb9ebde38879f7a75
+    http://ports.ubuntu.com/pool/main/f/firefox/firefox-gnome-support_2.0.0.17+1nobinonly-0ubuntu0.7.10_lpia.deb
+      Size/MD5:    91558 3a4e9336d0c1320fff0f3455f8626b94
+    http://ports.ubuntu.com/pool/main/f/firefox/firefox-libthai_2.0.0.17+1nobinonly-0ubuntu0.7.10_lpia.deb
+      Size/MD5:    66442 8f479619754f754d344ce2f06cadbaa1
+    http://ports.ubuntu.com/pool/main/f/firefox/firefox_2.0.0.17+1nobinonly-0ubuntu0.7.10_lpia.deb
+      Size/MD5:  9067072 a8aea6c6ebf0f054abfdd224f2aeda21
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_2.0.0.17+1nobinonly-0ubuntu0.7.10_powerpc.deb
+      Size/MD5: 80698898 80bf457d9eff4ccdac1db166b4cb34f9
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_2.0.0.17+1nobinonly-0ubuntu0.7.10_powerpc.deb
+      Size/MD5:  3202070 f4141fb98b2fad1aa6cea594aaa0836e
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_2.0.0.17+1nobinonly-0ubuntu0.7.10_powerpc.deb
+      Size/MD5:    96238 1c58383b83012e2433e7e94d1fd692a4
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-libthai_2.0.0.17+1nobinonly-0ubuntu0.7.10_powerpc.deb
+      Size/MD5:    67488 3d364e7fe31efbaefe48e42e7eb149a1
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+1nobinonly-0ubuntu0.7.10_powerpc.deb
+      Size/MD5: 10309836 b8fc060b7717ca09f0c9b6032aaadc73
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_2.0.0.17+1nobinonly-0ubuntu0.7.10_sparc.deb
+      Size/MD5: 78054936 ed5eefdbe626ac14e0224364db000e74
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_2.0.0.17+1nobinonly-0ubuntu0.7.10_sparc.deb
+      Size/MD5:  3183678 78beaf283c45887f46216cd72274f787
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_2.0.0.17+1nobinonly-0ubuntu0.7.10_sparc.deb
+      Size/MD5:    91674 c873546b0c5cad2e214a3e7590dc8ac2
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-libthai_2.0.0.17+1nobinonly-0ubuntu0.7.10_sparc.deb
+      Size/MD5:    66576 359f0c5d326f055c9d21f1351ae67087
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_2.0.0.17+1nobinonly-0ubuntu0.7.10_sparc.deb
+      Size/MD5:  9459810 5fe3f16fd1b97e7a8d898c8408f650e2
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0_3.0.2+build6+nobinonly-0ubuntu0.8.04.1.diff.gz
+      Size/MD5:   105830 9ae8a004b6fa51d3114802bc8584780d
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0_3.0.2+build6+nobinonly-0ubuntu0.8.04.1.dsc
+      Size/MD5:     2760 4529b30c094bf6473eec8c024ac34b3a
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0_3.0.2+build6+nobinonly.orig.tar.gz
+      Size/MD5: 11112466 2bf9e7a2418a53e260395584269ac643
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1.diff.gz
+      Size/MD5:    77364 8d90a935a95e33ca9f0f92f22cf5d158
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1.dsc
+      Size/MD5:     2825 e15190772abc1a4fc6306c6f7623f3f1
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.2+build6+nobinonly.orig.tar.gz
+      Size/MD5: 40166158 e590b88ee66aacb233093257bda8a2eb
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-dev_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65888 a8bc7c861990c009d28e02fb7efd5394
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-gnome-support_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65902 f8f6e739ff2ceb4203577a5c7256ea78
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-granparadiso-dev_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65864 5a7a5b64525e0ccba057bf7cc9a1148a
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-trunk-dev_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65848 d664468be273af4b7b067538e856230d
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    66010 ec29e19ae579331ab17997626c619770
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-3.0-dom-inspector_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65908 cd5935c267b2edda2af3eb23b505a4a8
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-3.0-venkman_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65864 a829a787c9d3dbe6b1d7b8c5076ccf31
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-dom-inspector_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:     8972 4b005f351d7db19a6f07d4ce8bd2f83f
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-granparadiso-dom-inspector_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:     8964 2fc7204ae1a55f83992ec65fca358cc5
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-granparadiso-gnome-support_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65880 aff38851229b6564a123cdd40e1d74d4
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-granparadiso_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65852 3248dc488e7526ee1cc88b19f416dca0
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-libthai_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65840 efb60d9b3349d86ae6b57d891af76a93
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-trunk-dom-inspector_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:     8950 d0fc909c4ee2bb338b99b21b5e4ba53c
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-trunk-gnome-support_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65866 ce319c0dea59d4760238c63dbbbe18c8
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-trunk-venkman_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:     8948 ad5e7034b42387ed15c959ca748bcd51
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-trunk_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65834 d3d524575bc0c44fc476ec7c68c9b6be
+    http://security.ubuntu.com/ubuntu/pool/universe/x/xulrunner-1.9/xulrunner-1.9-dom-inspector_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:   125096 d4bd8c925794510c99b8cedc33af9eee
+    http://security.ubuntu.com/ubuntu/pool/universe/x/xulrunner-1.9/xulrunner-1.9-venkman_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:   235232 5651fb9bc0673df5c36690f7e8b7de9e
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0-dev_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:     9032 59650e2cf25d56905b9b4cedc32a9c75
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0-gnome-support_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:    29602 6195cca830293f4f1a18385e2359745f
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:  1087296 f3b64a363301666c801d507ee6bef72a
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9-dev_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:  4035436 66b97ec71c0b6c83b4b37ed11b5bbf7c
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9-gnome-support_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:    48658 74965d6808431e8bbbd9cbf1c6855cac
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:  9031564 989c0069101b9df7176a4f10976f5f02
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0-dev_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:     9034 bc80011d2f5681a685e310e0c444fbce
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0-gnome-support_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:    25732 aa9b0318a5b14c27f8a9cb907b82f688
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:  1064980 f23fde08f7c01637f60471123dd10449
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9-dev_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:  4016990 94003a2b828f91e46ba5c6308ef271fd
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9-gnome-support_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:    38514 4ca9181ccd85900bf20b56548e67be43
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:  7763702 c8fe4cf05fcd5f550318333577b4273c
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0-dev_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:     9034 29d06ea689d257a6082ab4e16dd7f590
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0-gnome-support_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:    25348 5aa83572c22d30b7758ee424fa001003
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:  1063092 75dddb0dfdc299afc32636de65219025
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9-dev_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:  4012464 efcb2a9ea8c9d3a5781f53884357756e
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9-gnome-support_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:    37608 e42348339291ad26d70e4124ee90bd4a
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:  7650762 b73f0cab903c38b84f42b546a201432c
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0-dev_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:     9034 195551cfc109865c6ca73c28aa775d76
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0-gnome-support_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:    27502 be0223e544c4f81f8426c312a4381790
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0_3.0.2+build6+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:  1079124 b4cec8b1b8d19d20d6a88f02ec4cd38a
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9-dev_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:  4023470 8086afab2b04b9bc5f61c2920d3a931b
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9-gnome-support_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:    43678 c4c5d38c50f1c477eb5cb752693ab827
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.2+build6+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:  8609778 bfd2eb3346f2be06232ea368d1661d16
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080924/8497bd95/attachment.pgp>
+
+From jamie at canonical.com  Wed Sep 24 12:30:20 2008
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Wed, 24 Sep 2008 07:30:20 -0500
+Subject: [USN-645-2] Firefox vulnerabilities
+Message-ID: <20080924123019.GF8986@severus.strandboge.com>
+
+=========================================================== 
+Ubuntu Security Notice USN-645-2         September 24, 2008
+firefox vulnerabilities
+CVE-2008-0016, CVE-2008-3835, CVE-2008-3836, CVE-2008-3837,
+CVE-2008-4058, CVE-2008-4059, CVE-2008-4060, CVE-2008-4061,
+CVE-2008-4062, CVE-2008-4063, CVE-2008-4064, CVE-2008-4065,
+CVE-2008-4066, CVE-2008-4067, CVE-2008-4068, CVE-2008-4069
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  firefox                         1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3
+
+After a standard system upgrade you need to restart Firefox to
+effect the necessary changes.
+
+Details follow:
+
+USN-645-1 fixed vulnerabilities in Firefox and xulrunner for Ubuntu
+7.04, 7.10 and 8.04 LTS. This provides the corresponding update for
+Ubuntu 6.06 LTS.
+
+Original advisory details:
+
+ Justin Schuh, Tom Cross and Peter Williams discovered errors in the
+ Firefox URL parsing routines. If a user were tricked into opening a
+ crafted hyperlink, an attacker could overflow a stack buffer and
+ execute arbitrary code. (CVE-2008-0016)
+ 
+ It was discovered that the same-origin check in Firefox could be
+ bypassed. If a user were tricked into opening a malicious website,
+ an attacker may be able to execute JavaScript in the context of a
+ different website. (CVE-2008-3835)
+ 
+ Several problems were discovered in the JavaScript engine. This
+ could allow an attacker to execute scripts from page content with
+ chrome privileges. (CVE-2008-3836)
+ 
+ Paul Nickerson discovered Firefox did not properly process mouse
+ click events. If a user were tricked into opening a malicious web
+ page, an attacker could move the content window, which could
+ potentially be used to force a user to perform unintended drag and
+ drop operations. (CVE-2008-3837)
+ 
+ Several problems were discovered in the browser engine. This could
+ allow an attacker to execute code with chrome privileges.
+ (CVE-2008-4058, CVE-2008-4059, CVE-2008-4060)
+ 
+ Drew Yao, David Maciejak and other Mozilla developers found several
+ problems in the browser engine of Firefox. If a user were tricked
+ into opening a malicious web page, an attacker could cause a denial
+ of service or possibly execute arbitrary code with the privileges
+ of the user invoking the program. (CVE-2008-4061, CVE-2008-4062,
+ CVE-2008-4063, CVE-2008-4064)
+ 
+ Dave Reed discovered a flaw in the JavaScript parsing code when
+ processing certain BOM characters. An attacker could exploit this
+ to bypass script filters and perform cross-site scripting attacks.
+ (CVE-2008-4065)
+ 
+ Gareth Heyes discovered a flaw in the HTML parser of Firefox. If a
+ user were tricked into opening a malicious web page, an attacker
+ could bypass script filtering and perform cross-site scripting
+ attacks. (CVE-2008-4066)
+ 
+ Boris Zbarsky and Georgi Guninski independently discovered flaws in
+ the resource: protocol. An attacker could exploit this to perform
+ directory traversal, read information about the system, and prompt
+ the user to save information in a file. (CVE-2008-4067,
+ CVE-2008-4068)
+ 
+ Billy Hoffman discovered a problem in the XBM decoder. If a user were
+ tricked into opening a malicious web page or XBM file, an attacker
+ may be able to cause a denial of service via application crash.
+ (CVE-2008-4069)
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3.diff.gz
+      Size/MD5:   184879 85df86b82d3b0791f1152f7048e80c59
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3.dsc
+      Size/MD5:     1800 958f213fa0b3290fd34ff151fac0f11e
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_1.5.dfsg+1.5.0.15~prepatch080614e.orig.tar.gz
+      Size/MD5: 47543282 53d4cf0a63c82ad875208a660dfcefd5
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/mozilla-firefox_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_all.deb
+      Size/MD5:    53526 a27b80846d4996481aa3c9b13ed6e0d4
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/mozilla-firefox-dev_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_all.deb
+      Size/MD5:    52640 b400a1eb1b12d75503cece2b8f9941c3
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_amd64.deb
+      Size/MD5: 47643106 bb2d5e1d0d251044f0dffbc53799af52
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_amd64.deb
+      Size/MD5:  2858414 52e37bdb64081a8d5b05abedd62464a7
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_amd64.deb
+      Size/MD5:    85904 7240d77e5653c6cb3ff8208ee348e98e
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_amd64.deb
+      Size/MD5:  9487524 e42a4014d438d56bd9403790084a20ea
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr-dev_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_amd64.deb
+      Size/MD5:   222196 186264226f8109b8d9a4353df2a96c21
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr4_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_amd64.deb
+      Size/MD5:   165740 4942a627546bce7b1a68af361dff8ddc
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss-dev_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_amd64.deb
+      Size/MD5:   247744 8d2e29ecd2c76966a12ffb218aca6b8b
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss3_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_amd64.deb
+      Size/MD5:   825388 a941d1b5f5d272938622b777f612d6b9
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/firefox-dom-inspector_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_amd64.deb
+      Size/MD5:   218446 817b2802f0c08f88070af9b80a17d323
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_i386.deb
+      Size/MD5: 44189792 a99fcb830eea5a75444972e90ec06df6
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_i386.deb
+      Size/MD5:  2858412 d9472137105f46be8e22253f7ba18ffa
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_i386.deb
+      Size/MD5:    78234 2d007e9a576408e32f5238f91f0fe33c
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_i386.deb
+      Size/MD5:  7993044 b20d3c354ab667504e3a4f8ba5acecdd
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr-dev_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_i386.deb
+      Size/MD5:   222200 4beee709850374317bb599654390c852
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr4_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_i386.deb
+      Size/MD5:   150230 bc5723c3db54d55cb7f91658aafb062e
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss-dev_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_i386.deb
+      Size/MD5:   247722 fe7ec32c36decef74b0bc30c4b2d8a01
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss3_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_i386.deb
+      Size/MD5:   716996 816c953c9adbee0db6c0f6dd437424cd
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/firefox-dom-inspector_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_i386.deb
+      Size/MD5:   211634 1939fa4918c8d6532c896f159cd49d6a
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_powerpc.deb
+      Size/MD5: 49030768 4701e733eb96c668a5f2b1189aa81294
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_powerpc.deb
+      Size/MD5:  2858468 afc845e382ad583537459a6106bf4f02
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_powerpc.deb
+      Size/MD5:    81350 1277ac1b04d1ada3c4fda0f55e4341ca
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_powerpc.deb
+      Size/MD5:  9106808 1ec7402a547a6f1809675633871e5b8b
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr-dev_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_powerpc.deb
+      Size/MD5:   222202 b664c35a64096e4b33fe0a9f633de940
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr4_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_powerpc.deb
+      Size/MD5:   162948 05f3d6313d9bba82cb7c3eed0579a2de
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss-dev_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_powerpc.deb
+      Size/MD5:   247744 1b660f1ea982ea4a00dec41d9edef14e
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss3_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_powerpc.deb
+      Size/MD5:   816008 1c1d8b2d2f6811c52ec7a0385c98f12a
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/firefox-dom-inspector_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_powerpc.deb
+      Size/MD5:   215140 4f6d3b38485844a7927dfa0fa42175ce
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dbg_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_sparc.deb
+      Size/MD5: 45584634 ebf76dfa8dea74542ceaad68f8a1221f
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-dev_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_sparc.deb
+      Size/MD5:  2858520 f0bd6ea3c889db6d04e22200f8608132
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox-gnome-support_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_sparc.deb
+      Size/MD5:    79810 48e4adce12e817f9fa2e140ff2dee4b3
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_sparc.deb
+      Size/MD5:  8492834 2c0dbfdd4d05b306c9fa5448a031f25f
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr-dev_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_sparc.deb
+      Size/MD5:   222202 3c098adc301eb3994baaad251dfc2c20
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnspr4_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_sparc.deb
+      Size/MD5:   152836 4970d18b4ec02af2898c4fd8fe3fc49b
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss-dev_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_sparc.deb
+      Size/MD5:   247744 0f7d58a46c0f558b9622cd8d0a7f3d23
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox/libnss3_1.firefox1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_sparc.deb
+      Size/MD5:   727436 5605e6220a85ea3fbce5f8214a397a60
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox/firefox-dom-inspector_1.5.dfsg+1.5.0.15~prepatch080614e-0ubuntu3_sparc.deb
+      Size/MD5:   212588 edc501e8453ce85df4311de5d97f2d14
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080924/f17a9fd0/attachment.pgp>
+
+From jamie at canonical.com  Thu Sep 25 18:32:04 2008
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 25 Sep 2008 13:32:04 -0500
+Subject: [USN-645-3] Firefox and xulrunner regression
+Message-ID: <20080925183203.GC8797@severus.strandboge.com>
+
+=========================================================== 
+Ubuntu Security Notice USN-645-3         September 25, 2008
+firefox-3.0, xulrunner-1.9 regression
+https://launchpad.net/bugs/270429
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 8.04 LTS:
+  firefox                         3.0.3+build1+nobinonly-0ubuntu0.8.04.1
+  xulrunner-1.9                   1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1
+
+After a standard system upgrade you need to restart Firefox and any
+applications that use xulrunner, such as Epiphany, to effect the
+necessary changes.
+
+Details follow:
+
+USN-645-1 fixed vulnerabilities in Firefox and xulrunner. The upstream
+patches introduced a regression in the saved password handling. While
+password data was not lost, if a user had saved any passwords with
+non-ASCII characters, Firefox could not access the password database.
+This update fixes the problem.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ Justin Schuh, Tom Cross and Peter Williams discovered errors in the
+ Firefox URL parsing routines. If a user were tricked into opening a
+ crafted hyperlink, an attacker could overflow a stack buffer and
+ execute arbitrary code. (CVE-2008-0016)
+ 
+ It was discovered that the same-origin check in Firefox could be
+ bypassed. If a user were tricked into opening a malicious website,
+ an attacker may be able to execute JavaScript in the context of a
+ different website. (CVE-2008-3835)
+ 
+ Several problems were discovered in the JavaScript engine. This
+ could allow an attacker to execute scripts from page content with
+ chrome privileges. (CVE-2008-3836)
+ 
+ Paul Nickerson discovered Firefox did not properly process mouse
+ click events. If a user were tricked into opening a malicious web
+ page, an attacker could move the content window, which could
+ potentially be used to force a user to perform unintended drag and
+ drop operations. (CVE-2008-3837)
+ 
+ Several problems were discovered in the browser engine. This could
+ allow an attacker to execute code with chrome privileges.
+ (CVE-2008-4058, CVE-2008-4059, CVE-2008-4060)
+ 
+ Drew Yao, David Maciejak and other Mozilla developers found several
+ problems in the browser engine of Firefox. If a user were tricked
+ into opening a malicious web page, an attacker could cause a denial
+ of service or possibly execute arbitrary code with the privileges
+ of the user invoking the program. (CVE-2008-4061, CVE-2008-4062,
+ CVE-2008-4063, CVE-2008-4064)
+ 
+ Dave Reed discovered a flaw in the JavaScript parsing code when
+ processing certain BOM characters. An attacker could exploit this
+ to bypass script filters and perform cross-site scripting attacks.
+ (CVE-2008-4065)
+ 
+ Gareth Heyes discovered a flaw in the HTML parser of Firefox. If a
+ user were tricked into opening a malicious web page, an attacker
+ could bypass script filtering and perform cross-site scripting
+ attacks. (CVE-2008-4066)
+ 
+ Boris Zbarsky and Georgi Guninski independently discovered flaws in
+ the resource: protocol. An attacker could exploit this to perform
+ directory traversal, read information about the system, and prompt
+ the user to save information in a file. (CVE-2008-4067,
+ CVE-2008-4068)
+ 
+ Billy Hoffman discovered a problem in the XBM decoder. If a user were
+ tricked into opening a malicious web page or XBM file, an attacker
+ may be able to cause a denial of service via application crash.
+ (CVE-2008-4069)
+
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0_3.0.3+build1+nobinonly-0ubuntu0.8.04.1.diff.gz
+      Size/MD5:   105898 8e9d91766d1673d85b4e2e60f09ffbb6
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0_3.0.3+build1+nobinonly-0ubuntu0.8.04.1.dsc
+      Size/MD5:     2760 57a929804f986040bc7227fe3009156c
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0_3.0.3+build1+nobinonly.orig.tar.gz
+      Size/MD5: 11573662 bcf09e18019b2f2cbb8517932c891485
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1.diff.gz
+      Size/MD5:    77467 f5a62ff3d325e95c5120cc22bda2d554
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1.dsc
+      Size/MD5:     2825 ab55f7ea35f9ee735528805831854977
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.3+build1+nobinonly.orig.tar.gz
+      Size/MD5: 40164202 72a5e40dda74d050021677f1b3ebabcc
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-dev_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65954 3f06a1b75554d1d2340afc44b78022ac
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-gnome-support_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65968 6d8a8e29f0a7c87d2c8f179f574d7aa6
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-granparadiso-dev_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65924 3ac2f3dfa932bdc940950c0a894b9080
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-trunk-dev_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65912 e9e9a4746bec14f42b2450bea8225057
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    66064 6775e8fa75a92e1f33cc8ae5bb7f9e8a
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-3.0-dom-inspector_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65974 751dd3d6688c6639e9d0ec0da761cc5c
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-3.0-venkman_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65924 cfb57e23eb08498e16a6bbef2ca4238e
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-dom-inspector_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:     8974 25f83a796d3169788d39ea68cd8635c6
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-granparadiso-dom-inspector_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:     8962 01cc668f88c84f91e2fd886d42d92f13
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-granparadiso-gnome-support_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65948 c4718d66cfe19443c59978f4e39e7e41
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-granparadiso_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65914 71f6cddfc729e4018eefe95c79efd9df
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-libthai_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65906 97334f76bbbd654157c7c5aabf7e31c6
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-trunk-dom-inspector_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:     8946 f9d779ba38a6e7732ad71bb751523a7a
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-trunk-gnome-support_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65936 4fa1a2d88890b85d3bce5cb045ec792b
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-trunk-venkman_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:     8936 700210f41bc608472f4fe88615dab81f
+    http://security.ubuntu.com/ubuntu/pool/universe/f/firefox-3.0/firefox-trunk_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    65902 d907072601c66ad491d706566c2824de
+    http://security.ubuntu.com/ubuntu/pool/universe/x/xulrunner-1.9/xulrunner-1.9-dom-inspector_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:   125194 abdbdf7f8a7597a88c60af6d98ad3be3
+    http://security.ubuntu.com/ubuntu/pool/universe/x/xulrunner-1.9/xulrunner-1.9-venkman_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:   235304 8c3f950ba19f57700fb82918f343bed3
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0-dev_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:     9028 45557a5d8f43797bebb0ee77783bdc87
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0-gnome-support_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:    29576 78c9677804c24f5b6d95e0eb6c7a7f38
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:  1086672 7399df1205d00bd6124d03fc63cf6592
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9-dev_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:  4035336 eaff46064356cea1e966ab221e45eb30
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9-gnome-support_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:    48656 41dc8e708b4972e61b2e12ab54c0c4fc
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:  9031700 f608db020679c1a062deaf017d5defd2
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0-dev_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:     9028 a8fd22201b420b5b0fa11fab1c9466d3
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0-gnome-support_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:    25726 823066888e006035bbe5f1eb790eccfa
+    http://security.ubuntu.com/ubuntu/pool/main/f/firefox-3.0/firefox-3.0_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:  1065018 32827a47e8cd521d89391879a3d84d5c
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9-dev_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:  4016914 4285536cc152b65fa881946890b44185
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9-gnome-support_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:    38514 04869df4ca726ad6c59d2e43383bf4f6
+    http://security.ubuntu.com/ubuntu/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:  7763786 685dc1eb5dce09d60c56ffa1c059735b
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0-dev_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:     9028 2de0d8feb75644816867deec8668ec34
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0-gnome-support_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:    25342 5e70051d1c36fa4115ad1b569a57b290
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:  1063126 4e9a3f4c3adaacb731b9d715e38fd3e2
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9-dev_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:  4012342 92f97468c8260b9980d348024b3b6971
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9-gnome-support_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:    37610 88681831e70f2c7ab81da01928fcf09f
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:  7650950 80ab78a657265b9cad8ec759ac8864e9
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0-dev_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:     9026 c90a944ecbc4366a54001c769d29e35b
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0-gnome-support_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:    27502 d140872135657f26a214585501d48c8c
+    http://ports.ubuntu.com/pool/main/f/firefox-3.0/firefox-3.0_3.0.3+build1+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:  1079210 2594afd5cad19bc4bee8f0bad4483c5c
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9-dev_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:  4023426 cb239f374f28f6b90ae9289240acf871
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9-gnome-support_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:    43686 d176b974055a33ede0065b4c9f2047fd
+    http://ports.ubuntu.com/pool/main/x/xulrunner-1.9/xulrunner-1.9_1.9.0.3+build1+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:  8609908 8e66fdbd3106ee310b9e8591d5fc35ad
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080925/9e810cff/attachment.pgp>
+
+From jamie at canonical.com  Fri Sep 26 02:34:25 2008
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 25 Sep 2008 21:34:25 -0500
+Subject: [USN-647-1] Thunderbird vulnerabilities
+Message-ID: <20080926023425.GG8797@severus.strandboge.com>
+
+=========================================================== 
+Ubuntu Security Notice USN-647-1         September 26, 2008
+mozilla-thunderbird, thunderbird vulnerabilities
+CVE-2008-3835, CVE-2008-4058, CVE-2008-4059, CVE-2008-4060,
+CVE-2008-4061, CVE-2008-4062, CVE-2008-4063, CVE-2008-4064,
+CVE-2008-4065, CVE-2008-4066, CVE-2008-4067, CVE-2008-4068,
+CVE-2008-4070
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 6.06 LTS
+Ubuntu 7.04
+Ubuntu 7.10
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 6.06 LTS:
+  mozilla-thunderbird             1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1
+
+Ubuntu 7.04:
+  mozilla-thunderbird             1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1
+
+Ubuntu 7.10:
+  thunderbird                     2.0.0.17+nobinonly-0ubuntu0.7.10.1
+
+Ubuntu 8.04 LTS:
+  thunderbird                     2.0.0.17+nobinonly-0ubuntu0.8.04.1
+
+After a standard system upgrade you need to restart Thunderbird to
+effect the necessary changes.
+
+Details follow:
+
+It was discovered that the same-origin check in Thunderbird could
+be bypassed. If a user had JavaScript enabled and were tricked into
+opening a malicious website, an attacker may be able to execute
+JavaScript in the context of a different website. (CVE-2008-3835)
+
+Several problems were discovered in the browser engine of
+Thunderbird. If a user had JavaScript enabled, this could allow an
+attacker to execute code with chrome privileges. (CVE-2008-4058,
+CVE-2008-4059, CVE-2008-4060)
+
+Drew Yao, David Maciejak and other Mozilla developers found several
+problems in the browser engine of Thunderbird. If a user had
+JavaScript enabled and were tricked into opening a malicious web
+page, an attacker could cause a denial of service or possibly
+execute arbitrary code with the privileges of the user invoking the
+program. (CVE-2008-4061, CVE-2008-4062, CVE-2008-4063, CVE-2008-4064)
+
+Dave Reed discovered a flaw in the JavaScript parsing code when
+processing certain BOM characters. An attacker could exploit this
+to bypass script filters and perform cross-site scripting attacks
+if a user had JavaScript enabled. (CVE-2008-4065)
+
+Gareth Heyes discovered a flaw in the HTML parser of Thunderbird. If
+a user had JavaScript enabled and were tricked into opening a
+malicious web page, an attacker could bypass script filtering and
+perform cross-site scripting attacks. (CVE-2008-4066)
+
+Boris Zbarsky and Georgi Guninski independently discovered flaws in
+the resource: protocol. An attacker could exploit this to perform
+directory traversal, read information about the system, and prompt
+the user to save information in a file. (CVE-2008-4067,
+CVE-2008-4068)
+
+Georgi Guninski discovered that Thunderbird improperly handled
+cancelled newsgroup messages. If a user opened a crafted newsgroup
+message, an attacker could cause a buffer overrun and potentially
+execute arbitrary code with the privileges of the user invoking the
+program. (CVE-2008-4070)
+
+
+Updated packages for Ubuntu 6.06 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1.diff.gz
+      Size/MD5:   457690 6d3b4e43ba967ab95fc6ad85fe595e12
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1.dsc
+      Size/MD5:     1688 9ed773039d32a90e73c6bd4e211f723e
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g.orig.tar.gz
+      Size/MD5: 38029718 4ae446c58ccde45cb8f156b395968d2b
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-dev_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_amd64.deb
+      Size/MD5:  3593958 4f8eb1f994751de1541bd53c7b3f8236
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-inspector_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_amd64.deb
+      Size/MD5:   194972 9e89bd92215c471d5265d3866fdd8c52
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-typeaheadfind_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_amd64.deb
+      Size/MD5:    60218 b30948cbd58517559134ad18a0d7f95e
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_amd64.deb
+      Size/MD5: 12118598 f13001d92a989bc023fe16e3c02a0149
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-dev_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_i386.deb
+      Size/MD5:  3587744 9058cf1a1de1fc9ca54052768c46b7a9
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-inspector_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_i386.deb
+      Size/MD5:   188392 d3ffb66f5bd3621fff5c9b648e01566b
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-typeaheadfind_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_i386.deb
+      Size/MD5:    55726 d3e7a142fc1d26727b54c4d0751d6feb
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_i386.deb
+      Size/MD5: 10391350 2b669a1e53d80a023d42f0e5aa00abcb
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-dev_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_powerpc.deb
+      Size/MD5:  3592892 65270c28e26302af25047b8524240d0f
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-inspector_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_powerpc.deb
+      Size/MD5:   191696 96bb58a8aee5f4e5187a1785baf92707
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-typeaheadfind_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_powerpc.deb
+      Size/MD5:    59376 fbd562af8142453c88ce1bd8fe2c5749
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_powerpc.deb
+      Size/MD5: 11672836 ce1bcd19a1fa0a1004146034096d6944
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-dev_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_sparc.deb
+      Size/MD5:  3589568 820731692c8f9302538f38cefaeac3f9
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-inspector_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_sparc.deb
+      Size/MD5:   189140 dac62e9cab6dee27d9f71500b77db030
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-typeaheadfind_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_sparc.deb
+      Size/MD5:    57212 06bc96f9d4826515ffe1f6c2099399d3
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.6.06.1_sparc.deb
+      Size/MD5: 10866068 15aa61ac5c6a4ad04b802a8db9c3c50a
+
+Updated packages for Ubuntu 7.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1.diff.gz
+      Size/MD5:   126911 8ea6b26003fc64eeb6266772629a06bb
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1.dsc
+      Size/MD5:     2260 6b480908f2478bea5c1c92ca70899da4
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g.orig.tar.gz
+      Size/MD5: 38029718 4ae446c58ccde45cb8f156b395968d2b
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-dev_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_amd64.deb
+      Size/MD5:  3594046 b179d32e1e4fb334af16c7c680562078
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-inspector_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_amd64.deb
+      Size/MD5:   195620 2d1d0135ce5e16313208743178b3e375
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-typeaheadfind_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_amd64.deb
+      Size/MD5:    60724 e6331e4bd6ba56c6299b395b206f058a
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_amd64.deb
+      Size/MD5: 12215314 9dd393ff33240485e361c4afce069ee6
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-dev_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_i386.deb
+      Size/MD5:  3591778 b9c0987bf3fb49a829db450187058ffb
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-inspector_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_i386.deb
+      Size/MD5:   190254 4ad088e82ed097ab26322d1d7a8c08b2
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-typeaheadfind_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_i386.deb
+      Size/MD5:    57348 881b8d76656f5c206db67b0dbcc0bdc0
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_i386.deb
+      Size/MD5: 10935830 cf0457713bd283f6fdf21a08191661c3
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-dev_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_powerpc.deb
+      Size/MD5:  3595060 607544786663ca4365a4a15f08d17bc6
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-inspector_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_powerpc.deb
+      Size/MD5:   193738 bef4987b005a61012a6d3891807529dd
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-typeaheadfind_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_powerpc.deb
+      Size/MD5:    60716 1364ae8b4391257f689280d75093ec47
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_powerpc.deb
+      Size/MD5: 12154624 1a051b08628cf992ac43f00ab5200753
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-dev_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_sparc.deb
+      Size/MD5:  3591080 437d27480cafbb8aa00563c2a4bd6534
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-inspector_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_sparc.deb
+      Size/MD5:   190082 6507d507a87bdccd42ba5fb3c507e5f8
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird-typeaheadfind_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_sparc.deb
+      Size/MD5:    57790 dc866218dc88863fb3040262e928e0e8
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-thunderbird/mozilla-thunderbird_1.5.0.13+1.5.0.15~prepatch080614g-0ubuntu0.7.04.1_sparc.deb
+      Size/MD5: 11163522 9c8107978e5bee0998527a612a7bdd01
+
+Updated packages for Ubuntu 7.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.7.10.1.diff.gz
+      Size/MD5:   125693 a74100031e75db6de34266b4599c463a
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.7.10.1.dsc
+      Size/MD5:     2321 db7c9b3c79d8fa06d047864f19e80ad5
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly.orig.tar.gz
+      Size/MD5: 37867495 28a872ebd677569f6f7e340f9a247f0e
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/mozilla-thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.7.10.1_all.deb
+      Size/MD5:    60136 faf7e4834c6adb29da55b46a0539d195
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/mozilla-thunderbird_2.0.0.17+nobinonly-0ubuntu0.7.10.1_all.deb
+      Size/MD5:    60120 1bcd9422bae0f739795bfda770019b28
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.7.10.1_amd64.deb
+      Size/MD5:  3777582 abc4f04a77bfe002b59c5bc0d163bd66
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-gnome-support_2.0.0.17+nobinonly-0ubuntu0.7.10.1_amd64.deb
+      Size/MD5:    85302 b1e62bc9c1d417a70486e3bb9b29c5b4
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.7.10.1_amd64.deb
+      Size/MD5: 12427100 383709c0916344ff68f4f249dde26148
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.7.10.1_i386.deb
+      Size/MD5:  3765864 5d2c0b0edc36c9385c4685b5e5d55c9e
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-gnome-support_2.0.0.17+nobinonly-0ubuntu0.7.10.1_i386.deb
+      Size/MD5:    80652 756e753fea709cb6e18c4bb5f546ea01
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.7.10.1_i386.deb
+      Size/MD5: 10996250 09ef12544ed1bf67fe158a2924bb16fd
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.7.10.1_lpia.deb
+      Size/MD5:  3763410 3ed2785a18d6bab7d011788e3272ff20
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird-gnome-support_2.0.0.17+nobinonly-0ubuntu0.7.10.1_lpia.deb
+      Size/MD5:    80340 aff494deb2f9e0af8abb090c6ce706ce
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.7.10.1_lpia.deb
+      Size/MD5: 10833610 c055086b72752679c15534355ae9be9d
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.7.10.1_powerpc.deb
+      Size/MD5:  3781224 ffed854520ee045553dcdc54a839177b
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-gnome-support_2.0.0.17+nobinonly-0ubuntu0.7.10.1_powerpc.deb
+      Size/MD5:    83682 69652a9d04debe2b37a46389a1ad4aac
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.7.10.1_powerpc.deb
+      Size/MD5: 12272036 4aa9bea60b4d60d3bf99d71145c1b067
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.7.10.1_sparc.deb
+      Size/MD5:  3763452 5ce7b29a1fdc99f4d1ca4f6a6cfe0899
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-gnome-support_2.0.0.17+nobinonly-0ubuntu0.7.10.1_sparc.deb
+      Size/MD5:    80068 23560fd6f7bd66dde0b5dcdcfcad7505
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.7.10.1_sparc.deb
+      Size/MD5: 11264638 8124ba427d9cde6eac0bca875cc794a3
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.8.04.1.diff.gz
+      Size/MD5:   129247 e95fcd549e87668b600192f2f3195f38
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.8.04.1.dsc
+      Size/MD5:     2319 60a1b2f776937320cf4e7d50acc27139
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly.orig.tar.gz
+      Size/MD5: 37867495 28a872ebd677569f6f7e340f9a247f0e
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/mozilla-thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    60438 e1843cd820549fee1bcd0e997114936c
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/mozilla-thunderbird_2.0.0.17+nobinonly-0ubuntu0.8.04.1_all.deb
+      Size/MD5:    60420 98644c43ea64a3cfc2c545560e696510
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:  3778292 4181ea03dc4c8659765749cbba8b9762
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-gnome-support_2.0.0.17+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5:    85326 e5e1e8b1bf39185e32e1a9dab2d5abe5
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.8.04.1_amd64.deb
+      Size/MD5: 12406704 3f337ee29d1e599892234c6498e7adeb
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:  3766262 bc355ec8523a06281d8e7a39ebec5555
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird-gnome-support_2.0.0.17+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5:    80736 35a99547527b5833e4c597537c0a6735
+    http://security.ubuntu.com/ubuntu/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.8.04.1_i386.deb
+      Size/MD5: 10980452 4f753d15f88aec49e0f5863800bd0f9f
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:  3764020 b3d26cd80965e257e4286ac183050d4a
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird-gnome-support_2.0.0.17+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5:    80472 9cfedeebdb429441a86a10d1d3cb72fe
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.8.04.1_lpia.deb
+      Size/MD5: 10825106 d5840b4c610a85ce95c6db6ac5dda0a4
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:  3782130 a573a11a88bea1659a35a41581ddfb56
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird-gnome-support_2.0.0.17+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5:    83724 b6d7bf90279f89083be54883f8642365
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.8.04.1_powerpc.deb
+      Size/MD5: 12253850 83659b4e1b069bf705789552cfe2076c
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird-dev_2.0.0.17+nobinonly-0ubuntu0.8.04.1_sparc.deb
+      Size/MD5:  3764312 5a529bff8198a3259b616dcd3ed7d25a
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird-gnome-support_2.0.0.17+nobinonly-0ubuntu0.8.04.1_sparc.deb
+      Size/MD5:    80190 bdc98a74366eb558b4cb269f062d13dc
+    http://ports.ubuntu.com/pool/main/t/thunderbird/thunderbird_2.0.0.17+nobinonly-0ubuntu0.8.04.1_sparc.deb
+      Size/MD5: 11251876 f92509c8a34bf841a7ee67a1fdad176e
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080925/abe1ea2c/attachment.pgp>
+
+From steve.langasek at ubuntu.com  Fri Sep 26 22:39:41 2008
+From: steve.langasek at ubuntu.com (Steve Langasek)
+Date: Fri, 26 Sep 2008 15:39:41 -0700
+Subject: Ubuntu 7.04 reaches end-of-life on October 19, 2008
+Message-ID: <20080926223941.GJ4723@dario.dodds.net>
+
+Ubuntu announced the release of 7.04 almost 18 months ago, on April
+19, 2007. As with the earlier releases, Ubuntu committed to ongoing
+security and critical fixes for a period of 18 months. The support
+period is now nearing its end and Ubuntu 7.04 will reach end of life
+on Sunday, October 19th, 2008. At that time, Ubuntu Security Notices will
+no longer include information or updated packages for Ubuntu 7.04.
+
+The supported upgrade path from Ubuntu 7.04 is via Ubuntu 7.10.
+Instructions and caveats for the upgrade may be found at
+https://help.ubuntu.com/community/GutsyUpgrades. Note that upgrades
+to version 8.04 LTS and beyond are only supported in multiple steps, via
+an upgrade first to 7.10, then to 8.04 LTS. Both Ubuntu 7.10 and Ubuntu 8.04
+LTS continue to be actively supported with security updates and select
+high-impact bug fixes. All announcements of official security updates for
+Ubuntu releases are sent to the ubuntu-security-announce mailing list,
+information about which may be found at
+https://lists.ubuntu.com/mailman/listinfo/ubuntu-security-announce.
+
+Since its launch in October 2004 Ubuntu has become one of the most
+highly regarded Linux distributions with millions of users in homes,
+schools, businesses and governments around the world. Ubuntu is Open
+Source software, costs nothing to download, and users are free to
+customise or alter their software in order to meet their needs.
+
+
+
+From kees at ubuntu.com  Tue Sep 30 20:36:46 2008
+From: kees at ubuntu.com (Kees Cook)
+Date: Tue, 30 Sep 2008 13:36:46 -0700
+Subject: [USN-648-1] nasm vulnerability
+Message-ID: <20080930203646.GS12527@outflux.net>
+
+===========================================================
+Ubuntu Security Notice USN-648-1         September 30, 2008
+nasm vulnerability
+CVE-2008-2719
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 8.04 LTS
+
+This advisory also applies to the corresponding versions of
+Kubuntu, Edubuntu, and Xubuntu.
+
+The problem can be corrected by upgrading your system to the
+following package versions:
+
+Ubuntu 8.04 LTS:
+  nasm                            0.99.06-2ubuntu0.1
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+Philipp Thomas discovered that the ppscan function of nasm contained
+an off-by-one error.  If a user or automated system were tricked into
+assembling a specially crafted ASM file, a remote attacker could execute
+arbitrary commands with user privileges.
+
+
+Updated packages for Ubuntu 8.04 LTS:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/nasm/nasm_0.99.06-2ubuntu0.1.diff.gz
+      Size/MD5:    15907 894daa05dae4714c30419c98b2ceb40a
+    http://security.ubuntu.com/ubuntu/pool/main/n/nasm/nasm_0.99.06-2ubuntu0.1.dsc
+      Size/MD5:      726 fb0bf3fde692980711ad529666405912
+    http://security.ubuntu.com/ubuntu/pool/main/n/nasm/nasm_0.99.06.orig.tar.gz
+      Size/MD5:   867891 78a0e7b7785ff4241f454310d3c48f14
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/nasm/nasm_0.99.06-2ubuntu0.1_amd64.deb
+      Size/MD5:   839692 8041418bc0d1fef019e9109be3996e71
+
+  i386 architecture (x86 compatible Intel/AMD):
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/nasm/nasm_0.99.06-2ubuntu0.1_i386.deb
+      Size/MD5:   817098 57dc7b6ff3cce6ced499b6f8b479c06e
+
+  lpia architecture (Low Power Intel Architecture):
+
+    http://ports.ubuntu.com/pool/main/n/nasm/nasm_0.99.06-2ubuntu0.1_lpia.deb
+      Size/MD5:   819156 e360526accd52ef2b4c57599c0833147
+
+  powerpc architecture (Apple Macintosh G3/G4/G5):
+
+    http://ports.ubuntu.com/pool/main/n/nasm/nasm_0.99.06-2ubuntu0.1_powerpc.deb
+      Size/MD5:   844482 0c9b6c75f820f1929c6285590398cbfe
+
+  sparc architecture (Sun SPARC/UltraSPARC):
+
+    http://ports.ubuntu.com/pool/main/n/nasm/nasm_0.99.06-2ubuntu0.1_sparc.deb
+      Size/MD5:   826730 b6fa477b03ba11303d63254aac7ee960
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 235 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20080930/33a5e51a/attachment.pgp>
+

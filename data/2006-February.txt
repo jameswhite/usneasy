@@ -1,0 +1,3212 @@
+From martin.pitt at canonical.com  Sat Feb 11 09:35:38 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Sat, 11 Feb 2006 10:35:38 +0100
+Subject: [USN-247-1] Heimdal vulnerability
+Message-ID: <20060211093538.GA6086@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-247-1	  February 10, 2006
+heimdal vulnerability
+CVE-2006-0582
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+heimdal-servers
+
+The problem can be corrected by upgrading the affected package to
+version 0.6.2-3ubuntu0.2 (for Ubuntu 4.10), 0.6.3-7ubuntu1.2 (for
+Ubuntu 5.04), or 0.6.3-11ubuntu1.1 (for Ubuntu 5.10).  In general, a
+standard system upgrade is sufficient to effect the necessary changes.
+
+Details follow:
+
+A privilege escalation flaw has been found in the heimdal rsh (remote
+shell) server. This allowed an authenticated attacker to overwrite
+arbitrary files and gain ownership of them.
+
+Please note that the heimdal-servers package is not officially
+supported in Ubuntu (it is in the 'universe' component of the
+archive). However, this affects you if you use a customized version
+built from the heimdal source package (which is supported).
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.2-3ubuntu0.2.diff.gz
+      Size/MD5:  3046493 38a4393ee565bcfda5ce4743e6a63b80
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.2-3ubuntu0.2.dsc
+      Size/MD5:      988 50877ab661f7e4751cb6d6468382f5bd
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.2.orig.tar.gz
+      Size/MD5:  3301571 f35336eced1e9e9bddf6b43a6248ceeb
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-docs_0.6.2-3ubuntu0.2_all.deb
+      Size/MD5:  1165110 a6294490b55aa45435e2ac071c1e799d
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:    64382 80117615ced214077947bda47554c529
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:   275438 66637ce6e606ef20daf69e440a3c1594
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:   457958 a10dab5c372da15d891ff0af25ef08bb
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:   130426 e1fcce33317e5b2cb06e8ec77669ff59
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:    41544 f0db209d2990f36463c41d0b4c27402c
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:   180566 3dbbeab7ea6cbc0d9cf911879de9f4d6
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:    74756 74ab2b28ad2d964cbb16318375ca6fd4
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:    52068 1d45da3452da05e59fdba5cd7669df8c
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:    45256 d3449e12f1c17a85ac03a68c062b2f2e
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:    36682 82aa1099682c1f7ad61bf7702259b965
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:    47052 76bbdbf3871d49a7a8fda3618f4c929e
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:    35262 810c320ddbc605b51100b3de18e3227d
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.2-3ubuntu0.2_amd64.deb
+      Size/MD5:   140340 47d32f5ee4db63e5c9b422ed0dfd10ca
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:    59724 d737db9282d49a2a89a88a3f3edce22f
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:   247380 0ca7131182c08c8d55c051d1213b4d2a
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:   397688 f00e3db143ca327b29f4633a68cffe15
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:   120590 94debfcdc388eab3eb124f6fd93ba269
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:    39408 0ffc3a28dfdc0cbf840bc77e9275a90a
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:   162940 c44b1e31427ec70f40f2a357f5dd27a6
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:    71346 ece16beffc11b18d5b4d6df5e90780c4
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:    49776 14f4035a42b71ab3d67c28a272c6737e
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:    42776 9bc2680c9c4c823c2538fac9239955d6
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:    35260 16acc8d78d81bd043381da61e91c4863
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:    44374 00e672a2d9540892179f5b6bb0aa3bef
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:    33886 029563c73b9340a018054dd2f3511e6c
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.2-3ubuntu0.2_i386.deb
+      Size/MD5:   127204 e58e14e476088536ad9984a99089491b
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:    64640 84563c5745e130b08e99357331329f6e
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:   281692 943bfe79a9d05cd0d62dec114495d813
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:   433988 cc88fff77cfefe6a82467c415b327810
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:   133600 63e9166ddaa9e40d7ba87b8801ec2026
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:    41530 59e4d9e049d89cf73287b9d11922bb95
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:   178674 fcadec1dea9d7a1a1fac285643915e95
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:    65588 754775c5f7959c8fbd769b12c9ca9279
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:    51808 451825834e240bef8404d3e708de5890
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:    43420 ba20bb8024db3536567bec70104d43d1
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:    36406 a101d4780573d8957e240144014b27d1
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:    45882 f4397ae17a1fe6f018732e0d6b4911c3
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:    36152 844e62e4695c9e3117cb1f46df28a578
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.2-3ubuntu0.2_powerpc.deb
+      Size/MD5:   132540 00a9df3a7621c591a8a2e6e2937341a4
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3-7ubuntu1.2.diff.gz
+      Size/MD5:  3222021 15858085ec2a8738ed8970ef69ae118a
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3-7ubuntu1.2.dsc
+      Size/MD5:     1011 0485faae244cd7a725a713562adf096d
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3.orig.tar.gz
+      Size/MD5:  3321408 2a9d4bfbdaade7132279758ccd5c0c4f
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-docs_0.6.3-7ubuntu1.2_all.deb
+      Size/MD5:  1167070 1bbf1449567d549baec65df8b8584ca6
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:    65136 f48bccdf940268430d7f9034096d22f3
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:   277530 43d836d1a8a308c9769f2e6dbda3c3bd
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:   464678 0a2fcf9810130b4f28f50f077cb0e73d
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:   135628 e24b4cb56a95d2ba7c300832dd8d7677
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:    42736 151a00d338340b6fed3b2d984e20847b
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:   178182 3adf5168c410e6cb1d3bf21b377a98c2
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:    77050 6120c76db32f97e2725d911f295e8f3b
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:    53834 f7564387b1932c599eb89ee94f0419bf
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:    47072 f7b51f38ce9b3c81ccdd2999d77c7d83
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:    38512 2a586306d2208a10ab55c35b3ecbe472
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:    48824 c1e2440344507a00009d6e94fe1e6671
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:    37442 d2f6bd58ad8a8773682b05ae2d0929cf
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-7ubuntu1.2_amd64.deb
+      Size/MD5:   144024 45b9f1256734e3bc014278f844fadfde
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:    60452 6ec4f29d780a92057e177fc19289dc5c
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:   246798 f2a11168c6191c83b1402401b6955171
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:   404310 387c22cbfb14d5f5c4c01f1ea75aa4bf
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:   124238 881f61122a71eb0d4a1626eaa70ebe86
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:    40470 7ef786a21927757cb50b5f85463ae94e
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:   159092 ed26a87c088564f908ce2ee7a27ac3b2
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:    73630 778c68a74968ae536ca8dd5fdb5f9b04
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:    51552 59df50c0c3e6d325cd24e0c6fa79f155
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:    44590 10cc563a779df290b79eda6976eb9307
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:    37044 d457c40ede6884d4ec729acd5be4002e
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:    46172 ac9090b815a5c6a85edebce9481eba9a
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:    36002 24906a0f923211d1e951deaa2901edd6
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-7ubuntu1.2_i386.deb
+      Size/MD5:   130554 972f5f7dc64e124de6852728a6578c99
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:    65630 3715c60db61e40f056b865ea9da2c4d2
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:   284114 769af9031db77199f271913b97948601
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:   440864 eb6c6d90b05a9c41ecc08c08c361111d
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:   139336 59ef1db24c42a0c8fdaa1fac31df6afe
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:    42794 3f89d7706f108db27f1bb57ca1c59879
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:   175948 dcb5542e9be5b5c1dbeb2acdd545c3e2
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:    67774 797b132dec9d4c8a3d7742262a1339ee
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:    53608 ec4e629d110bb6c8be51935d825d8b5b
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:    45230 32b5c9875cb16c3cc2896240c43df6e5
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:    38226 fe11893d1b40c7961b12c40e23df12d5
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:    47712 8bd5e627c38bfb7016ffe5f06993cbd2
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:    38308 cbba50da89baaabe86ce75b6a587d51b
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-7ubuntu1.2_powerpc.deb
+      Size/MD5:   136106 78908acdd8fec1c13bce0c8f90ce5067
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3-11ubuntu1.1.diff.gz
+      Size/MD5:  3223134 3fb950241dcd31f100e486a2da1525e6
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3-11ubuntu1.1.dsc
+      Size/MD5:     1051 761f30e311a19557ad790963c3cdd269
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3.orig.tar.gz
+      Size/MD5:  3321408 2a9d4bfbdaade7132279758ccd5c0c4f
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-docs_0.6.3-11ubuntu1.1_all.deb
+      Size/MD5:  1167314 40e49d7515f9f565a65a9bef772af847
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:    64344 a58bc1562cf25ef020d8b32090e3a7dd
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:   277624 655a258889e7128a27d99ad5b3f022d3
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:   461462 6bbf9fad8da962071ab672fdd2a19923
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:   132640 bcb269b6db55e112759c7fd828a82eaa
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:    42152 7df1a0621bc2461239ce08abdbfc06ea
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:   175298 56f4e3b549ebf71dc8b3ee5585c15b1f
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:    78442 48127745e678b303fa499df39a3c61e4
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:    51818 bae148257401097a804999e8a8960d0e
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:    53468 66b2ecbce67eea424cbdcb9804aa7aa2
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:    38022 58ccc744dba895f0e5a40ece9af25445
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:    48214 f0b292883a656e44b5d7df73e9dfb2f4
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:    37330 1c667a50e2aafb0f865b6e3b87701401
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-11ubuntu1.1_amd64.deb
+      Size/MD5:   141494 b8d32329d4fa66edc1dcb707cc8dc4ad
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:    60266 c281e255f855b17b708e4c60ee18c0d1
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:   244864 eac0097dace1d6cabc05cf4961cb1b01
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:   392852 c92cd18d805b12e294e1512e6e116283
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:   122072 2c98bf4a704b0fefde7ac107af2d2996
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:    40160 b365997a4656c9a1f2b2a41581ab75e6
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:   155420 7c82582b8368c7f73e3743847fd47de2
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:    76172 2cdd153af3c5a0d2ce59d38cb3ccf081
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:    48172 848d7fcb6f50944f4d7f0b6218dbc5c8
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:    50378 31fb145ac7eb259e74777d61ad7ea96b
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:    36228 e9b2d6ae74e8d89303b9cf7a3c1568ac
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:    44494 d8e8c0231f01288fd5052e998b0c36f4
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:    35696 a1b1536fac08e77e1948b75883173c52
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-11ubuntu1.1_i386.deb
+      Size/MD5:   124236 7f12618f68a4e207ba0b83a7929c871e
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:    65196 ce77388bcfa4c7a9ec0bc8da4803fb31
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:   285092 40740ace094377614b5a54e8b9a8e580
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:   438388 dbff735131e77f3b956d03331e010ea9
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:   137118 de389a6e6d52f5348f89f34fcbe8e4a2
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:    42358 d7f4dd50fd84d1698cc4f42f446c4c41
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:   174098 b22dfb7b4120a42bfe08d9c98b098c93
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:    69110 8f3a77c23021368f6c53cea6d3db7aa8
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:    51196 f86016763cef4d13f48b60272b42bdef
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:    51630 2115245f740b01b00b23e94d399d7e08
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:    37992 2da0695f3e4836376c364897d3ff8997
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:    47146 30aa0790fb9359507641aab95b965305
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:    38052 068c7e483460eaaceb3c651325afd96e
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-11ubuntu1.1_powerpc.deb
+      Size/MD5:   133742 7375dea2e303e418c6c1c59f8ef3e738
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060211/3038e024/attachment.pgp>
+
+From martin.pitt at canonical.com  Wed Feb 15 08:43:33 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Wed, 15 Feb 2006 09:43:33 +0100
+Subject: [USN-248-1] unzip vulnerability
+Message-ID: <20060215084333.GA5892@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-248-1          February 13, 2006
+unzip vulnerability
+CVE-2005-4667
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+unzip
+
+The problem can be corrected by upgrading the affected package to
+version 5.51-2ubuntu0.3 (for Ubuntu 4.10), 5.51-2ubuntu1.3 (for Ubuntu
+5.04), or 5.52-3ubuntu2.1 (for Ubuntu 5.10).  In general, a standard
+system upgrade is sufficient to effect the necessary changes.
+
+Details follow:
+
+A buffer overflow was discovered in the handling of file name
+arguments. By tricking a user or automated system into processing a
+specially crafted, excessively long file name with unzip, an attacker
+could exploit this to execute arbitrary code with the user's
+privileges.
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu0.3.diff.gz
+      Size/MD5:     6433 bd8da93f936f5ac234e5327c59bf8758
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu0.3.dsc
+      Size/MD5:      534 db487b07f655377436bc72be8431351a
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51.orig.tar.gz
+      Size/MD5:  1112594 8a25712aac642430d87d21491f7c6bd1
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu0.3_amd64.deb
+      Size/MD5:   148742 3af9fe5de336b8a59b19d2eadb892888
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu0.3_i386.deb
+      Size/MD5:   135516 c334934daf9a7e49f064ef17e884f106
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu0.3_powerpc.deb
+      Size/MD5:   149480 d5d41b65e3da33976e137bd22a85e2e5
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu1.3.diff.gz
+      Size/MD5:     7253 443470aef5d23f7290151222116fa81d
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu1.3.dsc
+      Size/MD5:      534 2618e86f3a4d42382c0add1ae2f978f5
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51.orig.tar.gz
+      Size/MD5:  1112594 8a25712aac642430d87d21491f7c6bd1
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu1.3_amd64.deb
+      Size/MD5:   148844 b30b12cd03aa4cedcc0ab83d387e2466
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu1.3_i386.deb
+      Size/MD5:   136232 72feb619b0290ba9056cf24f9b467ec0
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu1.3_powerpc.deb
+      Size/MD5:   150924 3985b6ad992bd5a4dfd9aef941d83d8b
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52-3ubuntu2.1.diff.gz
+      Size/MD5:     9670 76fa4142b93fd08f8fa4861533846d90
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52-3ubuntu2.1.dsc
+      Size/MD5:      534 4afc9cba0b40ff5fcb5eef8442ac7da2
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52.orig.tar.gz
+      Size/MD5:  1140291 9d23919999d6eac9217d1f41472034a9
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52-3ubuntu2.1_amd64.deb
+      Size/MD5:   160486 6619e42ad67d9e53a50a93cb33073829
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52-3ubuntu2.1_i386.deb
+      Size/MD5:   147208 58a818487eb9b617a3e8f278246528b7
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52-3ubuntu2.1_powerpc.deb
+      Size/MD5:   161976 d71ed8a8078bbf56bd87d16564fc5197
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060215/73261099/attachment.pgp>
+
+From martin.pitt at canonical.com  Wed Feb 15 08:44:11 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Wed, 15 Feb 2006 09:44:11 +0100
+Subject: [USN-249-1] xpdf/poppler/kpdf vulnerabilities
+Message-ID: <20060215084411.GA14891@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-249-1	  February 13, 2006
+xpdf, poppler, kdegraphics vulnerabilities
+CVE-2006-0301
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+kpdf
+libpoppler0c2
+xpdf-reader
+xpdf-utils
+
+The problem can be corrected by upgrading the affected package to
+the following versions:
+
+Ubuntu 4.10:
+  xpdf:		 3.00-8ubuntu1.11
+
+Ubuntu 5.04:
+  xpdf:		 3.00-11ubuntu3.7
+  kpdf:		 4:3.4.0-0ubuntu3.4
+
+Ubuntu 5.10:
+  libpoppler0c2: 0.4.2-0ubuntu6.6
+  kpdf:		 4:3.4.3-0ubuntu2.3
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+The splash image handler in xpdf did not check the validity of
+coordinates. By tricking a user into opening a specially crafted PDF
+file, an attacker could exploit this to trigger a buffer overflow
+which could lead to arbitrary code execution with the privileges of
+the user.
+
+The poppler library and kpdf also contain xpdf code, and thus are
+affected by the same vulnerability.
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf_3.00-8ubuntu1.11.diff.gz
+      Size/MD5:    51306 7f91af74652b69e09c8ae2538b72c024
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf_3.00-8ubuntu1.11.dsc
+      Size/MD5:      790 0ffc05f1485f4efccf940814617cd504
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf_3.00.orig.tar.gz
+      Size/MD5:   534697 95294cef3031dd68e65f331e8750b2c2
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-common_3.00-8ubuntu1.11_all.deb
+      Size/MD5:    57000 ca9fe2062163cdd79a2370495c50aea3
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf_3.00-8ubuntu1.11_all.deb
+      Size/MD5:     1286 4a29b2bba83192ac16cbc4c2bad35628
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-reader_3.00-8ubuntu1.11_amd64.deb
+      Size/MD5:   668158 3a703c515c0c876035f0d05e2be22003
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-utils_3.00-8ubuntu1.11_amd64.deb
+      Size/MD5:  1274356 9d3a6c38a3f65f556c425c41a05bc705
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-reader_3.00-8ubuntu1.11_i386.deb
+      Size/MD5:   633132 56ea07e9c91fa8e49c061e7d6cf8a832
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-utils_3.00-8ubuntu1.11_i386.deb
+      Size/MD5:  1196608 9b2ab28decf80d6dcf56b65b03881546
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-reader_3.00-8ubuntu1.11_powerpc.deb
+      Size/MD5:   694516 aa44a41b84a89a6e9d0ddc6750f43b1f
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-utils_3.00-8ubuntu1.11_powerpc.deb
+      Size/MD5:  1314108 63b83fdf49a5617259441aaf6e3a49fb
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics_3.4.0-0ubuntu3.4.diff.gz
+      Size/MD5:   159142 ed4ce74e621f81392e0c3a64480671ab
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics_3.4.0-0ubuntu3.4.dsc
+      Size/MD5:     1373 21e227c71a04928390474093c896ebed
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics_3.4.0.orig.tar.gz
+      Size/MD5:  8099991 c60ab0a0d727701144b5342dcbee201a
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf_3.00-11ubuntu3.7.diff.gz
+      Size/MD5:    52131 fa9f6d24b6eaf5dc17b2f99e630114f1
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf_3.00-11ubuntu3.7.dsc
+      Size/MD5:      798 42d96cb5ea9146f4fcbe1473cd04d92f
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf_3.00.orig.tar.gz
+      Size/MD5:   534697 95294cef3031dd68e65f331e8750b2c2
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics_3.4.0-0ubuntu3.4_all.deb
+      Size/MD5:    11000 f79a86b8c3d634e06137948339b1e0f6
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-common_3.00-11ubuntu3.7_all.deb
+      Size/MD5:    57252 ed4e43934e60c2eee40a4349fec34b7e
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf_3.00-11ubuntu3.7_all.deb
+      Size/MD5:     1282 ec50399db9e2c82aaacee38773a5a002
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kamera_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:    82662 acb87ca506232c3e0c65b24486f1b3f0
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kcoloredit_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:    94222 b51621e298345bdc7f63c02904830332
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdegraphics-dev_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:    59528 93866e3239afdb1ce2372cc972540e35
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics-kfile-plugins_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   265248 bcfe7d9451b32336b87db8feaa38992a
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdvi_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   505448 33b0db778f8f08880dfc48fb9ff26cb8
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kfax_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   143840 312230182294d5e8a86ed8f32e676712
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kgamma_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:    76806 4d31f0f578aecde131e65ce407f6b702
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kghostview_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   231480 4c09376ae5cc29d15a42ea58a9b49d8c
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kiconedit_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   137998 7125c60a9920b34a771269da332b060a
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kmrml_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   228268 44df71f41563e69482d26a76ec5a99c4
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kolourpaint_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   799452 5346afec4f1101a314fa4e1e58b179f8
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kooka_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   753746 7cb70fd52b639cf69b5afe004024374c
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kpdf_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   659952 a89010359f182ed25a12773717b42aca
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kpovmodeler_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:  2240396 634b2f231b6183502f51e02f6ca0799e
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kruler_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:    56936 f187254ad879df9ed914e953c10a0e49
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksnapshot_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   132764 0d4d6731a9825d367eb0355bc64f40ab
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksvg_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:  1217110 b59476be08dedc73424fdcd3339cc482
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kuickshow_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   472016 3189a550120841f8b52874ebc2602ca6
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kview_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   686294 32859b3017f2a2c4a55d96981299b7e6
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kviewshell_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   256792 a415a59a7400ecff52f96c332193804b
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/libkscan-dev_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:    10398 69e92e0a1bccb73be6f58cc1cf04051d
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/libkscan1_3.4.0-0ubuntu3.4_amd64.deb
+      Size/MD5:   134440 fb90a62bd9629db8094bda4e0b51048a
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-reader_3.00-11ubuntu3.7_amd64.deb
+      Size/MD5:   668194 44bba6ebf2871f55782e83b0e2752ccd
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-utils_3.00-11ubuntu3.7_amd64.deb
+      Size/MD5:  1274356 af886e360d1dfb255bf8c8a57be3e875
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kamera_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:    79110 267eef1b4d2e62db22e41b47c12a08ab
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kcoloredit_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:    86888 b302ceeb188c4e7c50aae162211e2961
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdegraphics-dev_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:    59522 ea9b34376a16bd86518bc2947815d5ae
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics-kfile-plugins_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   222588 510b203b24d370f0dc446b24fe756d35
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdvi_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   496506 a8ac2674f7caafe295aa02acb6fdb36e
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kfax_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   136614 1fc44102e5d426c700458961f1b626e9
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kgamma_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:    73946 e858853d3f91bb2f9b9b7553582134dc
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kghostview_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   220748 590a153f747306e7e308f299aa4610f5
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kiconedit_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   126674 dee769274883c122b31e8b6772df2598
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kmrml_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   210850 bdf50e2a6c8691cee253d5ff13cf796e
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kolourpaint_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   767746 1fa3ae59379b4ba5b99292761cc21382
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kooka_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   738866 64ff01f40065a938983a83eb2600849c
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kpdf_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   612628 75971f0acf1a7bb679c589d3195238b6
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kpovmodeler_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:  2169308 88e840190f74adb3ffbc80e1091c2a41
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kruler_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:    55498 f73e44b42bc077cb7ba4df409205532b
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksnapshot_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   129424 bd5ed4f2b719372069418effc2522ed4
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksvg_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:  1195650 5c9feec8ec95dadb8053df6683113806
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kuickshow_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   464100 db24143082b5f3c826550b3b97c93d4c
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kview_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   648970 842674d3d6ec48e2cae3f4d011ced1a2
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kviewshell_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   238314 a7af66e12b5e4072d2d8e41ce5258b59
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/libkscan-dev_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:    10398 1b70e42d226866fbb2376b0ae4014d19
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/libkscan1_3.4.0-0ubuntu3.4_i386.deb
+      Size/MD5:   125778 60f67c40ac87b47eb9dfdd56fce59962
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-reader_3.00-11ubuntu3.7_i386.deb
+      Size/MD5:   632996 e90d83dd255581b4bcf9d82f12c9dffe
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-utils_3.00-11ubuntu3.7_i386.deb
+      Size/MD5:  1196028 5052af3167ed028ae92f113af8ccce78
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kamera_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:    79822 7fedff235470c09f7e10508896f99f16
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kcoloredit_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:    88798 2fb88657999f1e8d0581d71fec99e453
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdegraphics-dev_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:    59536 c04423b70cb8526960660f953b2db16d
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics-kfile-plugins_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   261198 666bcaa0d1c3e8056f57c7b0ba14b1dd
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdvi_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   493872 5e864dc3bb788d131e337d54823ae3a7
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kfax_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   139278 c2bd790c232294d66a5e78fc9158981d
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kgamma_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:    74572 5f816d8905385fb57c08a1473c638ca2
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kghostview_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   223094 666c5ab46504e4b42d3802f52d49188d
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kiconedit_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   127704 425c0f026c6cd08317039a08b6b0d61f
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kmrml_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   216392 b6e687b8545cf058cc9fec1de1454f22
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kolourpaint_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   757430 ecf47b207d60ccf50c5a60ecb44328b7
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kooka_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   738782 21442b9c9c7dfd9e43a3600f76e42a4b
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kpdf_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   630564 4442bbc1c61f34c8efcd84580cef96db
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kpovmodeler_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:  2153002 1159420768062d0f2b7c4624889a0151
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kruler_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:    55088 55aaf4f720dd15788aaa1dbf191eff35
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksnapshot_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   129184 f380a3767b54cb483434eaeeb3202c24
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksvg_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:  1178956 4e5d1a37f3ee01fe4cc5a219da9a19ab
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kuickshow_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   465708 257a63a377ed4cf4d5d44ce42eaea1c9
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kview_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   683016 eb552174ea8b95d5e4089c2dab3f81c3
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kviewshell_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   239410 83b9f5ecf895844bef0e9cedff78a62f
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/libkscan-dev_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:    10406 c76cc39173b2471d816c23538f58edb4
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/libkscan1_3.4.0-0ubuntu3.4_powerpc.deb
+      Size/MD5:   127428 93b5e5b3f06591e37679bf09bc22377a
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-reader_3.00-11ubuntu3.7_powerpc.deb
+      Size/MD5:   694716 21f8789af66c1d4372ac55f14a0b297c
+    http://security.ubuntu.com/ubuntu/pool/main/x/xpdf/xpdf-utils_3.00-11ubuntu3.7_powerpc.deb
+      Size/MD5:  1314036 ddc95dc4077895f0b254dbb5073448fe
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics_3.4.3-0ubuntu2.3.diff.gz
+      Size/MD5:   192390 3126134462b7b2f7e934d26f080ba820
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics_3.4.3-0ubuntu2.3.dsc
+      Size/MD5:     1450 fb05c820c49938821472e5ac89085a4e
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics_3.4.3.orig.tar.gz
+      Size/MD5:  8067314 778d7159d185220af63066bfcc768211
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.4.2-0ubuntu6.6.diff.gz
+      Size/MD5:   108615 78573727dc9fb726ba8308dbd5c6bb58
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.4.2-0ubuntu6.6.dsc
+      Size/MD5:     1751 807d974176581674ddb7b4f0f25c0695
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.4.2.orig.tar.gz
+      Size/MD5:   777935 beb1eea135a3c5b679a7a22d01a500c0
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdegraphics-doc-html_3.4.3-0ubuntu2.3_all.deb
+      Size/MD5:   144294 43aa27021eca839e1e06b349c5898b8d
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdegraphics_3.4.3-0ubuntu2.3_all.deb
+      Size/MD5:    19174 d594a837e89c79758a22eb3d9b44c87c
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kamera_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:    92202 fa014cfd2f675fa6fe689250895297ea
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kcoloredit_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   108558 3de8e6e7e9e8f0ae41129c0349695e80
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdegraphics-dev_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:    67120 5ddbd8ede84c0501788126cc3d080572
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics-kfile-plugins_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   269862 10df2a464ae9dcc921c642395875e02f
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdvi_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   526420 d4325b5d29d55d5e028560feb53b9eb1
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kfax_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   156652 ac9a5d75352e0bc2e3b700c71a1d9371
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kgamma_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:    84694 c9e96d07be662cc209e39c0045fbd1dd
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kghostview_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   244140 e257c6ad3637949d1cf4e13ddfd5f119
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kiconedit_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   149670 e15b9030043698103d871d672a6dde24
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kmrml_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   238418 f29c374ec51e926e3c4e51e69737c055
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kolourpaint_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   816126 046fefa5cebcbc13adf646cf1aee077f
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kooka_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   767922 929478dd7253b76f4189b6570c1ffa0f
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kpdf_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   689908 98b0cab4a4108b82346de35dc7fef542
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kpovmodeler_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:  2291244 413e6af47847db2f96f93d08c8185674
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kruler_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:    66616 8c4f456d6e69c541d460990fb50093db
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksnapshot_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   146244 21bf99605adfaf163407b9e6a5b5b3a7
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksvg_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:  1251324 97f257d5f0d174c75bab663e82a19ca4
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kuickshow_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   481510 a459ef54e6a2397ccb0055ebc111dabe
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kview_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   699176 ce9e6660a018c91763e314d5aa05b6b7
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kviewshell_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   269622 31217af5d68c7d1382abfaaa612efa54
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/libkscan-dev_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:    19024 ce92ec52dae6397dfffb27c38c050b16
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/libkscan1_3.4.3-0ubuntu2.3_amd64.deb
+      Size/MD5:   143580 46b4547764feace38874ed36962ecd7c
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler-dev_0.4.2-0ubuntu6.6_amd64.deb
+      Size/MD5:   612008 ae2579011457e87be965b2919d2f57cf
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler-glib-dev_0.4.2-0ubuntu6.6_amd64.deb
+      Size/MD5:    44234 6e2c83e5b82462c15b5e16beea84ea01
+    http://security.ubuntu.com/ubuntu/pool/universe/p/poppler/libpoppler-qt-dev_0.4.2-0ubuntu6.6_amd64.deb
+      Size/MD5:    29536 8604461761224296773f19493ab8e994
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler0c2-glib_0.4.2-0ubuntu6.6_amd64.deb
+      Size/MD5:    39902 2e062c516166ed1d8a5baddcb324c989
+    http://security.ubuntu.com/ubuntu/pool/universe/p/poppler/libpoppler0c2-qt_0.4.2-0ubuntu6.6_amd64.deb
+      Size/MD5:    28258 ba38858d08ffa3e216d27c3449ee4df0
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler0c2_0.4.2-0ubuntu6.6_amd64.deb
+      Size/MD5:   455676 b7510b4359d3b7a78af5410039de5ee8
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/poppler-utils_0.4.2-0ubuntu6.6_amd64.deb
+      Size/MD5:    82720 5f02bef572f957d6fde87be7e70c49f9
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kamera_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:    85328 e66580796868bfba70ee0315c0ff492e
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kcoloredit_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:    99412 9e0235ca20fda537f7faee5a8fe3cd96
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdegraphics-dev_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:    67124 27b2e9510d1c1286212e05dbae89eed1
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics-kfile-plugins_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   224504 580f60d48003c59751696a46bc237e3a
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdvi_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   509866 127e69f328b338f25f694a6138d8b12d
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kfax_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   147970 9b87fe3813a90dc4d50226fc52dad103
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kgamma_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:    78440 e517966edd57fb619eb9ffd7eb313024
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kghostview_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   226204 8444011499912132ef21afd5872c4003
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kiconedit_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   136854 a4cdb9f987b3a060965a80cf670c6508
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kmrml_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   212038 7b855ecb8305892e721a615cec447e31
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kolourpaint_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   767862 df26b4635546b7eba3c8644d9d83094b
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kooka_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   748792 c9e4b90efd1c67e3efd1a124fc6e5f4b
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kpdf_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   616210 4cffbdf68d2630fe782904630d920adb
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kpovmodeler_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:  2147496 62cfac13ad3b903511c8ebe5c3ecc6e3
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kruler_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:    64904 bca1e3a152e45d910b2a9cac9cea0fce
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksnapshot_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   142042 54660c9bfd9f04fbca59456adc009620
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksvg_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:  1198708 0d5df402469baf44e88455af920970e7
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kuickshow_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   469534 81cfd2eda6f1a94bdef4efda22fade51
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kview_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   654760 6a868497f1c2bd12cc74d49631a5ac60
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kviewshell_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   243224 000c3e63049125ea2560958e73fc1ba1
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/libkscan-dev_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:    19024 20afb636241a3a2c3797ef4838b85dd6
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/libkscan1_3.4.3-0ubuntu2.3_i386.deb
+      Size/MD5:   128872 3f4ee072aef5fbd0984fa52ab51b06d0
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler-dev_0.4.2-0ubuntu6.6_i386.deb
+      Size/MD5:   549248 b19b343196df819b6212e4add44a1895
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler-glib-dev_0.4.2-0ubuntu6.6_i386.deb
+      Size/MD5:    41452 71259e9b389b23925188ba7d610d7544
+    http://security.ubuntu.com/ubuntu/pool/universe/p/poppler/libpoppler-qt-dev_0.4.2-0ubuntu6.6_i386.deb
+      Size/MD5:    28472 17c60318345f3d35a21772a6116fc23f
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler0c2-glib_0.4.2-0ubuntu6.6_i386.deb
+      Size/MD5:    38368 96e7803d5ee5dd8931feae84c4f0d456
+    http://security.ubuntu.com/ubuntu/pool/universe/p/poppler/libpoppler0c2-qt_0.4.2-0ubuntu6.6_i386.deb
+      Size/MD5:    27580 4e5041055b3471872f7cf810c10c5a0d
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler0c2_0.4.2-0ubuntu6.6_i386.deb
+      Size/MD5:   416126 4a28528da3f4ff7995939b278d6c872a
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/poppler-utils_0.4.2-0ubuntu6.6_i386.deb
+      Size/MD5:    77060 d9f0c91c6d27727146bb90e7a1a67682
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kamera_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:    87972 c45a40426e04efcce717150255274a6d
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kcoloredit_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   103504 2b02ef7f9efa36ae50124c57abad6efe
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdegraphics-dev_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:    67130 05c7ceff20fa4b359fdffd6b2821b623
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kdegraphics-kfile-plugins_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   267038 7e5908752277d3a2113e416773ad6d81
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kdvi_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   515668 72c113901c5a8507e3165bf0fc3d9b16
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kfax_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   152552 7f457c78c06ebc42be7558d3480e4fa4
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kgamma_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:    80758 8c5df113b65f8fa212066388bada1933
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kghostview_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   230558 aca3f6a2bdee300d89d5abc682eb0a02
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kiconedit_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   140272 9947e27668f737d019afdd71633a1e53
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kmrml_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   225974 2ec8c2b4973a0d7ee3a863b6384e5cd8
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kolourpaint_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   777932 b5b0821e8995bdd002bc77a3c5598fa8
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kooka_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   753512 2fc69c0a0086f276b601a3a8c1674764
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/kpdf_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   655690 c42dd24adb3cab99d5c0f3bdc93d4554
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kpovmodeler_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:  2201816 8d60e9b14fc7503d3918eba362454631
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kruler_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:    65030 3a70df6cda627c2fd38f7ab1eb91d700
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksnapshot_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   142566 7c146ef51bac2b3f5cafb653b775f163
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/ksvg_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:  1237508 070837c025857306b70e82ffeb988ad9
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kuickshow_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   475622 ba7dd88bd01f9998e82cc55c47c1cc90
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kview_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   694344 eff1bcc7d98237564f6c028574cb9e4e
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/kviewshell_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   251806 368d47e1150a1365f1854836aa0c1b95
+    http://security.ubuntu.com/ubuntu/pool/universe/k/kdegraphics/libkscan-dev_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:    19026 712f348c005e6ceaf86253b415607859
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdegraphics/libkscan1_3.4.3-0ubuntu2.3_powerpc.deb
+      Size/MD5:   132208 100ec17c8215ec59a6c9885c3566b1b9
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler-dev_0.4.2-0ubuntu6.6_powerpc.deb
+      Size/MD5:   644098 bbd00f2fcf8725b6e09161c6689a0b64
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler-glib-dev_0.4.2-0ubuntu6.6_powerpc.deb
+      Size/MD5:    46394 c50987a3ec633788082ae5878f53198b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/poppler/libpoppler-qt-dev_0.4.2-0ubuntu6.6_powerpc.deb
+      Size/MD5:    29854 e62333faabf1535be2a57cb36c001411
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler0c2-glib_0.4.2-0ubuntu6.6_powerpc.deb
+      Size/MD5:    41392 3b67a3a962b0e1de1270f93871e079b3
+    http://security.ubuntu.com/ubuntu/pool/universe/p/poppler/libpoppler0c2-qt_0.4.2-0ubuntu6.6_powerpc.deb
+      Size/MD5:    29730 3676564172d287dcb32c35501e1d3970
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/libpoppler0c2_0.4.2-0ubuntu6.6_powerpc.deb
+      Size/MD5:   457870 f224273f12ae76fda3733d1a58b589b8
+    http://security.ubuntu.com/ubuntu/pool/main/p/poppler/poppler-utils_0.4.2-0ubuntu6.6_powerpc.deb
+      Size/MD5:    87736 91c6af4a52298f1c5908ed73fd1dc6b9
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060215/cbda3082/attachment.pgp>
+
+From martin.pitt at canonical.com  Wed Feb 15 08:44:17 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Wed, 15 Feb 2006 09:44:17 +0100
+Subject: [USN-250-1] Linux kernel vulnerability
+Message-ID: <20060215084417.GB14891@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-250-1	  February 13, 2006
+linux-source-2.6.12 vulnerability
+CVE-2006-0454
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+linux-image-2.6.12-10-386
+linux-image-2.6.12-10-686
+linux-image-2.6.12-10-686-smp
+linux-image-2.6.12-10-amd64-generic
+linux-image-2.6.12-10-amd64-k8
+linux-image-2.6.12-10-amd64-k8-smp
+linux-image-2.6.12-10-amd64-xeon
+linux-image-2.6.12-10-iseries-smp
+linux-image-2.6.12-10-itanium
+linux-image-2.6.12-10-itanium-smp
+linux-image-2.6.12-10-k7
+linux-image-2.6.12-10-k7-smp
+linux-image-2.6.12-10-mckinley
+linux-image-2.6.12-10-mckinley-smp
+linux-image-2.6.12-10-powerpc
+linux-image-2.6.12-10-powerpc-smp
+linux-image-2.6.12-10-powerpc64-smp
+linux-patch-ubuntu-2.6.12
+
+The problem can be corrected by upgrading the affected package to
+version 2.6.12-10.28.  You have to restart your computer after a
+standard system upgrade to effect the necessary changes.
+
+Details follow:
+
+Herbert Xu discovered a remote Denial of Service vulnerability in the
+ICMP packet handler. In some situations a memory allocation was
+released twice, which led to memory corruption. A remote attacker
+could exploit this to crash the machine.
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-source-2.6.12_2.6.12-10.28.diff.gz
+      Size/MD5:  7927324 68d28cb754f6194fab6c8f360201b3ed
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-source-2.6.12_2.6.12-10.28.dsc
+      Size/MD5:     3152 cf99588f2dc173e722a0dc2d0ed26346
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-source-2.6.12_2.6.12.orig.tar.gz
+      Size/MD5: 47177098 9272115d4005d4e9773a1a6170fd20cd
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-doc-2.6.12_2.6.12-10.28_all.deb
+      Size/MD5:  4555660 c7091b4913c416db2fbeea1421cf0422
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-source-2.6.12_2.6.12-10.28_all.deb
+      Size/MD5: 40446584 fccc02233420269b741fd6ff647de54a
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-tree-2.6.12_2.6.12-10.28_all.deb
+      Size/MD5:   376084 317f7634bd2408b81215c77c6752336c
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/acpi-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    20806 90e27f3fb3bd26afc2ecde46aa766372
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/cdrom-core-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    45604 8e8dcb7af405b4435a1e980bbb6c9ede
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/crc-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:     2314 d29c9dac0949afa0528e7702282d858c
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ext3-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    88708 3a76c91f4bf8e3252b2c48395efca3d3
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/fat-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    35150 672342ac4121b99c49d5fe9fb19634ba
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/fb-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    42360 21622b0ea0f05fe8abb561a92cd3494d
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/firewire-core-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    70526 06a2fc587fda7afe208f4ab8b2a9cd0d
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/firmware-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:     5744 4be03e3db5aac867c3156e9f3b20cd74
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/floppy-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    34328 fe51f98b6851a3a074d496c3052ae292
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ide-core-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    53482 b3400cbf584e86313a2503b79ec684db
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ide-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:   129628 31bbafa213f7ed1d2def8f57a56d4d31
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/input-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    43836 aeec4fcc2013db2702d72f2e9de99653
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ipv6-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:   115024 0d320dcac131224d02e31a9c456a7c53
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/irda-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:   253666 4341dbda8a219962f99a0e1c61e407a4
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/jfs-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    83366 5c4d8bb6a6f98f0bb0a3d38f28d40817
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/kernel-image-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:  1497730 445327a29d8a6b6e4ded3d8dd544df44
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-amd64-generic_2.6.12-10.28_amd64.deb
+      Size/MD5:   804038 af2afad5b1fedbfe2f0927ff5dd6b20b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-amd64-k8-smp_2.6.12-10.28_amd64.deb
+      Size/MD5:   802100 546651ec8214beb594fa2eecd5185f71
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-amd64-k8_2.6.12-10.28_amd64.deb
+      Size/MD5:   803172 68bd5a0704611bc7cb5fa250e1ed8f72
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-amd64-xeon_2.6.12-10.28_amd64.deb
+      Size/MD5:   799110 044633a59f4e39f16069549a96bf93ea
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10_2.6.12-10.28_amd64.deb
+      Size/MD5:  5917056 9103b8cbafcd4d2312c588fdcb534fed
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-amd64-generic_2.6.12-10.28_amd64.deb
+      Size/MD5: 17088012 5ec7a2c9532e6a1d43d87f3c6e69895b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-amd64-k8-smp_2.6.12-10.28_amd64.deb
+      Size/MD5: 18131178 39351ebba6f011a7dd15ef02e65ff111
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-amd64-k8_2.6.12-10.28_amd64.deb
+      Size/MD5: 17952642 10504e070a023ac9ef9d0b8584a3e6ac
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-amd64-xeon_2.6.12-10.28_amd64.deb
+      Size/MD5: 17897044 7877f1de52e15253dfea419ebcb0b0f5
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-patch-ubuntu-2.6.12_2.6.12-10.28_amd64.deb
+      Size/MD5:  3486400 8655669e17396ff425ffa7c485a773fa
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/loop-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    14292 0fc01fe0c4407c3f5314fb370e18d07a
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/md-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:   191754 9e3bc7e98a18b576bd1dc56b6d03cd19
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nfs-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:   170322 c0146f02b369ff97e3e6cf96000cbe3c
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-firmware-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:  1048484 f0d931b84df01118c0343b94d47ae515
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:  1147172 a67d66d63528241923ac4ed1fe920ed1
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-pcmcia-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:   122456 2de3b4dd3fc58d86a718e2c445942406
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-shared-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:     8544 c3d8b3244e01235e5effedd0596ef096
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-usb-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    99014 4538a33ffbe7430ae6eebec18ac8d8b0
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ntfs-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    44950 8b9e5304e128335cd08a2fff3e915829
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/parport-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    31648 f6c8ec0a42169ff627da3e1aa86b226e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/pcmcia-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    65696 a0c3414061311c175b092acea4319d29
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/pcmcia-storage-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:     4472 391c3b24edbf18c472de126323bec867
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/plip-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:     7874 4ee313aee41cf5f0d354b739e029d9ae
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ppp-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    53860 0036e45881fac144489033658acb5f9b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/reiserfs-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:   107330 593602f0ce3aed3a871e57b1458e21dc
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/rtc-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:     9882 295e80ddd95ed5ed2297f5433b705c1e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/sata-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    69768 b732c18d014d30f7db1a8fce510adc1e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/scsi-core-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    73058 a1c324983dad4941932d26513547fb8e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/scsi-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:  1270968 9cba5427bb5653c9ba7c8a9127109c79
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/serial-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    58384 529d24a71aec2da3d90228c0bec225cf
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/socket-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    22206 c8e63658fac1e13fa87d479fc99c2ead
+    http://security.ubuntu.com/ubuntu/pool/universe/l/linux-source-2.6.12/ufs-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    29350 fd1d46be130e83331804313c986aceb8
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/usb-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    62186 ea8c84f24e9bbb696d774d3334c2eaca
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/usb-storage-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:    34966 7feb7d6876da151be87e6e8ec6ba3e73
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/xfs-modules-2.6.12-10-amd64-generic-di_2.6.12-10.28_amd64.udeb
+      Size/MD5:   248868 144a0626bd90b4a851b82dd119b29e39
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/acpi-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    18680 b6f584f72abf4ebab465d50b9fe69b97
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/cdrom-core-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    43956 1b8474b6b1e88aff232574c6391a24be
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/cdrom-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    96882 5cceae624f1c5887916457bcf0508d45
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/crc-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:     2280 99a58dfcb27430dc07726db380f39771
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ext3-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    83580 bc48640f8d0a38ca972471f1b743178b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/fat-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    33138 359dd8460708c24bfbc998e6b089a7aa
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/fb-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    41920 b126207d950f5eee5f4b1276b5f7f334
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/firewire-core-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    68218 6473e87573b7767693e670d9ebee588e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/firmware-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:     5370 62e91ca0ea31ed531462f4ec458c22ec
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/floppy-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    31132 bac9192ac271c896d1d6cbd54cacafb8
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ide-core-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    51408 6f609d08f045f9ebad1ca9dd38f4564a
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ide-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:   123402 ab445aced27b72971ac91f5754421077
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/input-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    42486 5c8b29cd3fd8880495149c7aac90e067
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ipv6-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:   110268 433047a0f79bbe4db3b96e50cb506c0e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/irda-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:   239812 dde7fed5096892397aedbe5b89392fef
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/jfs-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    86176 369b2ba6d1cbd26ed4cac4ea20c397bc
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/kernel-image-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:  1417798 6a885854a68bcdd8c6d7d334ef5fe7b4
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-386_2.6.12-10.28_i386.deb
+      Size/MD5:   801550 bf31f2863f42f9e7410fa039668add98
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-686-smp_2.6.12-10.28_i386.deb
+      Size/MD5:   797178 425fabff89cf11458c0d99d01d09497c
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-686_2.6.12-10.28_i386.deb
+      Size/MD5:   798932 61ddbe6753a2294a2e55faaa40b9409c
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-k7-smp_2.6.12-10.28_i386.deb
+      Size/MD5:   797164 46715421ebec2437c082ec53f4d783e6
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-k7_2.6.12-10.28_i386.deb
+      Size/MD5:   799166 da158b26fffd555e3ab606ead33c8981
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10_2.6.12-10.28_i386.deb
+      Size/MD5:  5926436 3daa4ef7f609aa33524c2258beeb6456
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-386_2.6.12-10.28_i386.deb
+      Size/MD5: 18026436 7de94924e89c4617dd1d88d1dde1bbfa
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-686-smp_2.6.12-10.28_i386.deb
+      Size/MD5: 19367040 be8c2bb9b2202fc61ca39e67343093db
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-686_2.6.12-10.28_i386.deb
+      Size/MD5: 19460128 fe7f843f863478718ff495bd04ee8a8b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-k7-smp_2.6.12-10.28_i386.deb
+      Size/MD5: 19501650 ca6bc03e7509cc143f1a5eff39707fb9
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-k7_2.6.12-10.28_i386.deb
+      Size/MD5: 19544528 0c1256b9950c5effb87734e06b5784af
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-patch-ubuntu-2.6.12_2.6.12-10.28_i386.deb
+      Size/MD5:  3486094 cc2ff2fc1519aec9fb7a06f3d2987c63
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/loop-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    14532 266b3ae83a01736fec0cb3fd847d8769
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/md-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:   194790 5e976a84f3ba9093689ead9f35f1b8bb
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nfs-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:   166532 65bcc1761444a79a32da50137c0a89de
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-firmware-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:  1048188 f1d5d47ac99ed51465027ba2211c6535
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:  1341416 ed54be11e62ab45363f7e2a646604a63
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-pcmcia-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:   123686 4343ab90d9ff7a17d94f82104411712d
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-shared-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:     8238 be0b4d10899c89818ecc74b345ecf87b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-usb-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    93384 97f0b5eac6f0bbec0aa65e3295de3d7a
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ntfs-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    46738 056f9e4867343b67163c0aa8f5864817
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/parport-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    29768 aaafc0a80261465180b97dd35714dfd8
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/pcmcia-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    72282 de17bb4dd5048386461c1f09b4ab2c9b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/pcmcia-storage-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:     4252 78b4a6ffa6d535c76ef542585e3444b2
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/plip-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:     7668 2068a57cc8692ea2b86619136037ceca
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ppp-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    50642 6b5e00074d7b9d20ffbbabb07b546483
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/reiserfs-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:   108630 cff9c5a63a01f8cc39c4c272a427a800
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/rtc-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:     9810 1793d20fb069942d38dcca1f6f0900d8
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/sata-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    67636 1580df9d20699b8586d30a0873478c04
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/scsi-core-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    70174 353d9191d82923fed71799d292c9e851
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/scsi-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:  1481012 a74e655c786e4409a9496e45839727ff
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/serial-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    55188 889350da4f2be1958acd85b45977fc0b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/socket-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    20342 fff612562a46aa76baaa9a4463439dcf
+    http://security.ubuntu.com/ubuntu/pool/universe/l/linux-source-2.6.12/ufs-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    29916 c888bdf653295f8ca1fb23d984b07fae
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/usb-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:   111222 253eff35920250682c27c5f238072b77
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/usb-storage-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:    34560 95accfdb0802406e9b24f22efdb51f33
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/xfs-modules-2.6.12-10-386-di_2.6.12-10.28_i386.udeb
+      Size/MD5:   263266 10846d5511b664b90cb68baa60580cd7
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/affs-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    23356 68d5734fd2f42a241082105c20d19128
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/affs-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    26346 2f61e053985693f675cf5e8d81dc0f3d
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/cdrom-core-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    55908 5d12ce60eb7f5f8458f2a1d36791d608
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/cdrom-core-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    58836 777783913c388bce6ed4f0882b1b65cf
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/crc-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:     2310 56e5cf0d9f370f1b04193267610e0e11
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/crc-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:     2514 9846575e1acc59c5a4018d722446c226
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ext2-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    29750 c3ee51bad673bf69b23d0570e575b312
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ext2-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    34718 84d1fdcde74333d4c27c93dc606473ac
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ext3-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   104670 df66dbdf31c3a6b10a973ab9522bc1e2
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ext3-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   122184 a1a1a4eaaa5e723073b2fd6257c7322a
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/fat-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    40494 da8f3cd2f580e04aeaf93aaf6b97f13a
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/fat-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    45900 2312c80b23a26dc422b26652f7d73956
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/fb-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    28992 c097f5a8eb8adb36987f9fe8dcaf9680
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/fb-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    29930 d3fc86196a4070ab3f7103a5b460cbec
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/firewire-core-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   210090 9ae3019b9d613302fec8052178d7b89e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/firewire-core-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   224750 d11760e08f0b451cd4891a01355268c6
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/firmware-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:     6146 e389995b44b2129fdcc87e6f742cec1f
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/firmware-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:     6968 262b7270a85b378838e051c3a4d80130
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/floppy-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    45170 23feb43cd4a5d47dedf8ea5d30d29a92
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/floppy-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    40414 6e7e73ba914920cc6c46d2a1e4072215
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/fs-common-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:     9796 c431ac5331f7872965c0cd1d9632d032
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/fs-common-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    11794 3288af8d977c8ddfa4d3bea7d3449561
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/hfs-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    76780 917d0657a78ea11d0a65b1a71437e2f1
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/hfs-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    85182 523c87c32f266bee2f4e6a3a1ec9c65f
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ide-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   112146 bf667103476f12405cb12bf0832478de
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ide-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   129236 d250c05caf7f1337ffb119d0605625ef
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/input-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    76732 9a8fbaa465f4ac348d02bd26b6ab1bba
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/input-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    90410 c6ac3a31bd5c1d9e60ac42d9c07af010
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ipv6-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   140754 65d23d9e7318e02dd4043989579f453f
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ipv6-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   157280 d67ca3afe949fde6d4a64487e73c7586
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/irda-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   306044 8537f62a0e572106a25b06f1bcace5ef
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/irda-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   210658 3b70bf33759a90e0a6c21bad28bacb0b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/jfs-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   110772 ff7df04683722e2027f1d3c89fbf9402
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/jfs-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   116644 940c46cbf560f24c8b81e806d6f420b0
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/kernel-image-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:  1976178 9b701857e304e809048f82d06871d140
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/kernel-image-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:  2350028 99f97f7fbdafb576d445c3575398169b
+    http://security.ubuntu.com/ubuntu/pool/universe/l/linux-source-2.6.12/linux-headers-2.6.12-10-iseries-smp_2.6.12-10.28_powerpc.deb
+      Size/MD5:   772380 41c85b51fe1196514c4f89cb833e3938
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-powerpc-smp_2.6.12-10.28_powerpc.deb
+      Size/MD5:   781334 1a656a381ac725e0b83ec62f81c13c9c
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-powerpc64-smp_2.6.12-10.28_powerpc.deb
+      Size/MD5:   800004 8759608c4d51a4d44dfb6bd4524873f0
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10-powerpc_2.6.12-10.28_powerpc.deb
+      Size/MD5:   781928 ea635abf5ff212343b17562988808d5b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-headers-2.6.12-10_2.6.12-10.28_powerpc.deb
+      Size/MD5:  5934096 b31214bd93852229ba20e53d3d88ea1e
+    http://security.ubuntu.com/ubuntu/pool/universe/l/linux-source-2.6.12/linux-image-2.6.12-10-iseries-smp_2.6.12-10.28_powerpc.deb
+      Size/MD5: 19517842 df8dbafc221de0e3a3ee1eadeee9967f
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-powerpc-smp_2.6.12-10.28_powerpc.deb
+      Size/MD5: 18357004 244b39959a63683be4b5c8574c879759
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-powerpc64-smp_2.6.12-10.28_powerpc.deb
+      Size/MD5: 21183266 2684aaddfad67db52603b2dea49001f1
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-image-2.6.12-10-powerpc_2.6.12-10.28_powerpc.deb
+      Size/MD5: 18004682 1e3770517b1872387fc62bc1807f6aa6
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/linux-patch-ubuntu-2.6.12_2.6.12-10.28_powerpc.deb
+      Size/MD5:  3485718 13b4b7023939f29b9ea9f56f139a209c
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/loop-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    17614 3edfc3739474e7ac8f3b36583cc33ab1
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/loop-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    17786 c085c23313f1ce24252abe6c4de3c7c3
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/md-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   234092 9a6cc9bbd1770e9d99c1b852c3223da9
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/md-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   258832 331c910f97b9a5f80731e3da800f2bae
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nfs-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   208840 0cad8e3d19a7167debfabd8f408f5a91
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nfs-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   235336 0f72e1ff9c5eb7f86ba9edd545b9e480
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-firmware-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:  1048280 5a54f49bf67fe4ed566fb4ac860b5077
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-firmware-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:  1048466 ac5d5226dbcb6ace1782a6af2817e0a3
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:  1457830 fc8e38454d6d883035af437aef82ec77
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:  1622922 8b1827ea0776fae0d717f8216e570345
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-pcmcia-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   212816 cf8edff86db447b4cb6324109209b968
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-pcmcia-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   197960 c024c4267dacbfef85c36abc12939e51
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-shared-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:     9466 f3fc96215ae703e4df3eb02a632f578e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-shared-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:     9062 fdd2ca2807ed9e6371bf8eda74adc87a
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-usb-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   115336 40d63aecdfea3e5d6f2ea3a399d52b97
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/nic-usb-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   134424 9f6f672b0640f1e68ea674f8fb2aaec9
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/pcmcia-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    77018 a320ebc602b406af6352716314ac0d5a
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/pcmcia-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    87526 bb7c6c8522a9331c2b2a00c4212261b1
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/pcmcia-storage-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:     4804 29952868d42df80d4790f5023fa6a5d8
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/pcmcia-storage-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:     5284 730dfb7306544532e999afd29f9f776e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ppp-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    63066 d7c27c2a8b498a4ff6cfe8b09db96a25
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/ppp-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    75994 31ce6a26e948851fcbdf13a260c88f29
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/reiserfs-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   128624 bd1e1e7ec9032ba6295aca9a96e36e86
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/reiserfs-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   164360 e3347e4a872b5fd3de18e7efb13312a8
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/sata-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    77430 47d6215a2e50a6074e2990a4ef1236ee
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/sata-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    98178 c9eb419c3059bf9967d7641bfcbc0a32
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/scsi-core-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    85242 e6d54d2fe15f5215a70bc30b07e61106
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/scsi-core-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    92314 b392726d8139d240612beefc7058706b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/scsi-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:  1537772 ff75a9ea382b19891679d2bca6c57cbe
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/scsi-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:  1755538 d870815a37f9afa17566793c54e10d60
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/serial-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    65292 923eee45ec7eca5798b701226c48c747
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/serial-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   100424 b402a1cf63ea7cdd707874d1fb052a18
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/socket-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    22876 04bf1eb08c69fa7f48be6aaa61fc0021
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/socket-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    28600 75906fb20e8e47f2d951a8b8bade7738
+    http://security.ubuntu.com/ubuntu/pool/universe/l/linux-source-2.6.12/ufs-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    35498 76060cc3cf200b9c04f80e1ec3a5ff55
+    http://security.ubuntu.com/ubuntu/pool/universe/l/linux-source-2.6.12/ufs-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    39802 93d4eee7357e74acf1b98808daaa892d
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/usb-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   139880 f232f1443e160402d4fd8b37f06f0f41
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/usb-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   152618 959a04c59bcd0bec2a26af480a8e90f7
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/usb-storage-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    40956 88bb8bd4b8828666b78640b4531213fa
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/usb-storage-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:    44428 c97e97bd30b72d1bb3ff9f01cfd4719e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/xfs-modules-2.6.12-10-powerpc-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   296154 b03cc8580c8d4013bec0553c35455223
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.12/xfs-modules-2.6.12-10-powerpc64-smp-di_2.6.12-10.28_powerpc.udeb
+      Size/MD5:   324158 de9490795d7bc32c1610f8e95324a34e
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060215/457da159/attachment.pgp>
+
+From martin.pitt at canonical.com  Wed Feb 15 13:40:58 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Wed, 15 Feb 2006 14:40:58 +0100
+Subject: [USN-248-2] unzip regression fix
+Message-ID: <20060215134058.GF14891@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-248-2          February 15, 2006
+unzip regression fix
+https://launchpad.net/bugs/31457
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+unzip
+
+The problem can be corrected by upgrading the affected package to
+version 5.51-2ubuntu0.4 (for Ubuntu 4.10), 5.51-2ubuntu1.4 (for Ubuntu
+5.04), or 5.52-3ubuntu2.2 (for Ubuntu 5.10).  In general, a standard
+system upgrade is sufficient to effect the necessary changes.
+
+Details follow:
+
+USN-248-1 fixed a vulnerability in unzip. However, that update
+inadvertedly changed the field order in the contents listing output,
+which broke unzip frontends like file-roller. The updated packages fix
+this regression.
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu0.4.diff.gz
+      Size/MD5:     6474 da3e2aa0f07b0f6942c8ca7c811be8dc
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu0.4.dsc
+      Size/MD5:      534 5863a6faa2e16fc470344be6ac0685a6
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51.orig.tar.gz
+      Size/MD5:  1112594 8a25712aac642430d87d21491f7c6bd1
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu0.4_amd64.deb
+      Size/MD5:   148136 e56ba0b19a029ca74d3b9c962e4c3067
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu0.4_i386.deb
+      Size/MD5:   135098 8d7826896481ae1b36c25a2bb82b2d77
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu0.4_powerpc.deb
+      Size/MD5:   151026 501a8ca46b0fad1bd4f6db2111d58917
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu1.4.diff.gz
+      Size/MD5:     7291 085233db5f584b7ac0bb85f130094982
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu1.4.dsc
+      Size/MD5:      534 be84e01929f5caaae5ce229d6481d6bd
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51.orig.tar.gz
+      Size/MD5:  1112594 8a25712aac642430d87d21491f7c6bd1
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu1.4_amd64.deb
+      Size/MD5:   148326 f889fb1bed3fdfe4547cb3b06e68b22d
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu1.4_i386.deb
+      Size/MD5:   136030 1443cd81161e7928862f4371f1477aa2
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.51-2ubuntu1.4_powerpc.deb
+      Size/MD5:   152608 60a9c1e55ecde86784f1e227f6532f1f
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52-3ubuntu2.2.diff.gz
+      Size/MD5:     9709 3a3d485c017577a2b6a465240308a629
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52-3ubuntu2.2.dsc
+      Size/MD5:      534 2bb7488730bc34d3ca413f4a2dae48cd
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52.orig.tar.gz
+      Size/MD5:  1140291 9d23919999d6eac9217d1f41472034a9
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52-3ubuntu2.2_amd64.deb
+      Size/MD5:   159824 b3cecbc81298489ee20b27b3a174ee72
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52-3ubuntu2.2_i386.deb
+      Size/MD5:   146510 1ce02df278333118ca892bfb841d1887
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_5.52-3ubuntu2.2_powerpc.deb
+      Size/MD5:   164084 d7b948b8c503a3cf4eb720255cc0f416
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060215/b3619422/attachment.pgp>
+
+From martin.pitt at canonical.com  Thu Feb 16 17:39:29 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Thu, 16 Feb 2006 18:39:29 +0100
+Subject: [USN-251-1] libtasn vulnerability
+Message-ID: <20060216173929.GA5906@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-251-1	  February 16, 2006
+libtasn1-2 vulnerability
+CVE-2006-0645
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+libtasn1-2
+libgnutls10
+libgnutls11
+
+The problem can be corrected by upgrading the affected package to
+the following versions:
+
+Ubuntu 4.10:
+ libtasn1-2:	0.2.7-2ubuntu0.1
+ libgnutls10:	1.0.4-3ubuntu1.2
+
+Ubuntu 5.04:
+ libtasn1-2:	0.2.10-4ubuntu0.0.5.04.1
+ libgnutls11:	1.0.16-13ubuntu0.2
+
+Ubuntu 5.10:
+ libtasn1-2:	0.2.10-4ubuntu0.1
+ libgnutls11:	1.0.16-13.1ubuntu1.1
+
+It is highly recommended to restart your computer after a standard
+system upgrade to effect the necessary changes. If you cannot afford
+to do that then you need to restart all server processes which use
+TLS or SSL.
+
+Details follow:
+
+Evgeny Legerov discovered a buffer overflow in the DER format decoding
+function of the libtasn library. This library is mainly used by the
+GNU TLS library; by sending a specially crafted X.509 certificate to a
+server which uses TLS encryption/authentication, a remote attacker
+could exploit this to crash that server process and possibly even
+execute arbitrary code with the privileges of that server.
+
+In order to fix the vulnerability in libtasn, several internal
+function signatures had to be changed; some of these functions are
+used by the GNU TLS library, so that library needs to be updated as
+well.
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10-4ubuntu0.0.5.04.1.diff.gz
+      Size/MD5:   302811 f83da11298aef60134a9d9f60a531542
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10-4ubuntu0.0.5.04.1.dsc
+      Size/MD5:      690 804db57299c32ab396cd82096695cc21
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10.orig.tar.gz
+      Size/MD5:   113412 ae95aa75e5db7dc4d85b2837017364a6
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls10/gnutls10_1.0.4-3ubuntu1.2.diff.gz
+      Size/MD5:    51101 7469996012703c4b0d114c64d5dc68bd
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls10/gnutls10_1.0.4-3ubuntu1.2.dsc
+      Size/MD5:      885 4211b5ae90cf498ed4aafda803dbeb26
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls10/gnutls10_1.0.4.orig.tar.gz
+      Size/MD5:  1378290 565d2835b772008689476488265f4e99
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls10/libgnutls-doc_1.0.4-3ubuntu1.2_all.deb
+      Size/MD5:   553680 f0229ca2a099166ad6f565bb758614bc
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2-dev_0.2.10-4ubuntu0.0.5.04.1_amd64.deb
+      Size/MD5:   185958 45bbee6946f97f40acfa658bb82568c0
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10-4ubuntu0.0.5.04.1_amd64.deb
+      Size/MD5:    44638 387a051b35fa2da3a6b34c1ad00ed5f5
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls10/gnutls-bin_1.0.4-3ubuntu1.2_amd64.deb
+      Size/MD5:   193798 486d7cf57a79adee420558731135d5bb
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls10/libgnutls10-dev_1.0.4-3ubuntu1.2_amd64.deb
+      Size/MD5:   367360 a7873c8b6f0c51eaee5cafd62bfc82dc
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls10/libgnutls10_1.0.4-3ubuntu1.2_amd64.deb
+      Size/MD5:   309536 7f7e50c02ace523bec531589950ae39b
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2-dev_0.2.10-4ubuntu0.0.5.04.1_i386.deb
+      Size/MD5:   181920 a590e7f46e3880313b0febc6b65a4d26
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10-4ubuntu0.0.5.04.1_i386.deb
+      Size/MD5:    42696 82535e441f6b80c533cc3fc939a0d212
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls10/gnutls-bin_1.0.4-3ubuntu1.2_i386.deb
+      Size/MD5:   185402 b91cd88c85e5f4351b5f64f26db699cd
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls10/libgnutls10-dev_1.0.4-3ubuntu1.2_i386.deb
+      Size/MD5:   328816 bdea2a19bc27f9ad534c5d3371729790
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls10/libgnutls10_1.0.4-3ubuntu1.2_i386.deb
+      Size/MD5:   279656 e4f7a519775fc0a830295962042ca93c
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2-dev_0.2.10-4ubuntu0.0.5.04.1_powerpc.deb
+      Size/MD5:   188012 7bc64fc8a372430f5e1d29ac0ba92d4b
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10-4ubuntu0.0.5.04.1_powerpc.deb
+      Size/MD5:    43214 86e22d9cad05471106f17423eac69673
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls10/gnutls-bin_1.0.4-3ubuntu1.2_powerpc.deb
+      Size/MD5:   196144 90339e5b1d5b9b9d1e4493b00545d589
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls10/libgnutls10-dev_1.0.4-3ubuntu1.2_powerpc.deb
+      Size/MD5:   396324 7287cefdf890c683e4aefeb676b00be7
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls10/libgnutls10_1.0.4-3ubuntu1.2_powerpc.deb
+      Size/MD5:   284968 f6e888674395191804960ebbbd736f76
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.7-2ubuntu0.1.diff.gz
+      Size/MD5:     9397 65421e1371910a12a2d0181ad85cc920
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.7-2ubuntu0.1.dsc
+      Size/MD5:      669 7a62f4a925dd9e8c905427eeaa2ff7c9
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.7.orig.tar.gz
+      Size/MD5:   529617 21e39cb21260116bf4a84d31063972e4
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/gnutls11_1.0.16-13ubuntu0.2.diff.gz
+      Size/MD5:   339177 a461c7974e30d5d643dfe39624193c14
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/gnutls11_1.0.16-13ubuntu0.2.dsc
+      Size/MD5:      830 2aec252666f1c50c3c6d42be88832a34
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/gnutls11_1.0.16.orig.tar.gz
+      Size/MD5:  1504638 7b410fa3c563c7988e434a8c8671b3cd
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2-dev_0.2.7-2ubuntu0.1_amd64.deb
+      Size/MD5:   182002 d0cded4628833103e039a4778a23616b
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.7-2ubuntu0.1_amd64.deb
+      Size/MD5:    43622 8e2fda9ac3950b8c559acf982474e8ef
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/gnutls-bin_1.0.16-13ubuntu0.2_amd64.deb
+      Size/MD5:   217456 8e337aeb284177963c1616110e50e733
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/libgnutls11-dbg_1.0.16-13ubuntu0.2_amd64.deb
+      Size/MD5:   575502 45fbfd2a5dfed9a13e0bb711824a6588
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11-dev_1.0.16-13ubuntu0.2_amd64.deb
+      Size/MD5:   392362 2898ee7b31d7f99dca61b8d27850c7db
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11_1.0.16-13ubuntu0.2_amd64.deb
+      Size/MD5:   326894 902e0a28fe1bf3c7d396e8038dcde8f8
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2-dev_0.2.7-2ubuntu0.1_i386.deb
+      Size/MD5:   178122 9693d7954bdba6dc59040fb4560cb38b
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.7-2ubuntu0.1_i386.deb
+      Size/MD5:    41964 9b7bba1c7979021988feb67f70c3a766
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/gnutls-bin_1.0.16-13ubuntu0.2_i386.deb
+      Size/MD5:   203442 34ba50244aa67e733f211f06d0d4d03a
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/libgnutls11-dbg_1.0.16-13ubuntu0.2_i386.deb
+      Size/MD5:   555604 8d5085dfa64e9a0bd1d2489a8a3825d9
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11-dev_1.0.16-13ubuntu0.2_i386.deb
+      Size/MD5:   357134 42f0fe10f5943b40264faaafd785e349
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11_1.0.16-13ubuntu0.2_i386.deb
+      Size/MD5:   293370 7d4b401e88668c627b7c224c6ea96398
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2-dev_0.2.7-2ubuntu0.1_powerpc.deb
+      Size/MD5:   184002 9e0c79244c7737042c270a43327dc7ca
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.7-2ubuntu0.1_powerpc.deb
+      Size/MD5:    42284 ad68e8405ad32072f62d5d058d923358
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/gnutls-bin_1.0.16-13ubuntu0.2_powerpc.deb
+      Size/MD5:   218384 0bd5da55b0b21b7b9e49f85363340de8
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/libgnutls11-dbg_1.0.16-13ubuntu0.2_powerpc.deb
+      Size/MD5:  1416000 525d1008f84aeb586250cecc133efb6a
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11-dev_1.0.16-13ubuntu0.2_powerpc.deb
+      Size/MD5:   388764 d8afff0331d2bce12a7fc5e62b966260
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11_1.0.16-13ubuntu0.2_powerpc.deb
+      Size/MD5:   299404 42e776d44dc90db1bc796c2c5564ac3b
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10-4ubuntu0.1.diff.gz
+      Size/MD5:   302886 1c86ff9ac73ba986e91aaf23231aa3f2
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10-4ubuntu0.1.dsc
+      Size/MD5:      676 770e9f82dff36318022a1fcc963855ff
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10.orig.tar.gz
+      Size/MD5:   113412 ae95aa75e5db7dc4d85b2837017364a6
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/gnutls11_1.0.16-13.1ubuntu1.1.diff.gz
+      Size/MD5:   339696 38b52c650f0018100c5a085ffddc2ccf
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/gnutls11_1.0.16-13.1ubuntu1.1.dsc
+      Size/MD5:      829 d65ba5094be7fc67079e12da2da25dce
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/gnutls11_1.0.16.orig.tar.gz
+      Size/MD5:  1504638 7b410fa3c563c7988e434a8c8671b3cd
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2-dev_0.2.10-4ubuntu0.1_amd64.deb
+      Size/MD5:   187882 ab7100c04b67119522e6020536fad1d8
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10-4ubuntu0.1_amd64.deb
+      Size/MD5:    46348 a435cac32c356140771a6a5c4207eef4
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/gnutls-bin_1.0.16-13.1ubuntu1.1_amd64.deb
+      Size/MD5:   217428 02c4205d6b5fda205092a3a998dd9647
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/libgnutls11-dbg_1.0.16-13.1ubuntu1.1_amd64.deb
+      Size/MD5:   500798 d3e5feafe1ea05f1fc84a6897bb93418
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11-dev_1.0.16-13.1ubuntu1.1_amd64.deb
+      Size/MD5:   398672 0b2dbfb3d19c8927da51b6ce80cac82f
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11_1.0.16-13.1ubuntu1.1_amd64.deb
+      Size/MD5:   332038 6e776f87dfdf505ccbd2d72c8406bc67
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2-dev_0.2.10-4ubuntu0.1_i386.deb
+      Size/MD5:   182088 578ad92f2fa97c221698a836f8a51cb5
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10-4ubuntu0.1_i386.deb
+      Size/MD5:    42356 18105b162e1b4a3ae0b259f8ecec8be9
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/gnutls-bin_1.0.16-13.1ubuntu1.1_i386.deb
+      Size/MD5:   201606 e7e0d57a788d2d37087373db6f9fd1f2
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/libgnutls11-dbg_1.0.16-13.1ubuntu1.1_i386.deb
+      Size/MD5:   443546 f4576a81cec8565257de1ec5e6e93467
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11-dev_1.0.16-13.1ubuntu1.1_i386.deb
+      Size/MD5:   353296 82914947d86d8fc89e78308868dcf6fb
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11_1.0.16-13.1ubuntu1.1_i386.deb
+      Size/MD5:   286992 dc34ea8b46a24be8feaf8f63cae6a08a
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2-dev_0.2.10-4ubuntu0.1_powerpc.deb
+      Size/MD5:   188214 0a375d921a5639958a1c37d904658fea
+    http://security.ubuntu.com/ubuntu/pool/main/libt/libtasn1-2/libtasn1-2_0.2.10-4ubuntu0.1_powerpc.deb
+      Size/MD5:    43566 73654c735e38d3b19d206217fbac1ca9
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/gnutls-bin_1.0.16-13.1ubuntu1.1_powerpc.deb
+      Size/MD5:   218704 a61cc659973675624da83dbb23141c7c
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gnutls11/libgnutls11-dbg_1.0.16-13.1ubuntu1.1_powerpc.deb
+      Size/MD5:   498388 e4687d0a5b18c45173bc3dc702b40563
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11-dev_1.0.16-13.1ubuntu1.1_powerpc.deb
+      Size/MD5:   395190 1a5b4de0cb8ab1a6853a9b554b91e1c8
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnutls11/libgnutls11_1.0.16-13.1ubuntu1.1_powerpc.deb
+      Size/MD5:   304606 46f8fc5a3f641f36433b9f2d5759ff17
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060216/3e6709f9/attachment.pgp>
+
+From martin.pitt at canonical.com  Fri Feb 17 15:11:26 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Fri, 17 Feb 2006 16:11:26 +0100
+Subject: [USN-252-1] gnupg vulnerability
+Message-ID: <20060217151126.GC17465@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-252-1	  February 17, 2006
+gnupg vulnerability
+CVE-2006-0455
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+gnupg
+
+The problem can be corrected by upgrading the affected package to
+version 1.2.4-4ubuntu2.2 (for ubuntu 4.10), 1.2.5-3ubuntu5.2 (for
+Ubuntu 5.04), or 1.4.1-1ubuntu1.1 (for Ubuntu 5.10).  In general, a
+standard system upgrade is sufficient to effect the necessary changes.
+
+Details follow:
+
+Tavis Ormandy discovered a potential weakness in the signature
+verification of gnupg. gpgv and gpg --verify returned a successful
+exit code even if the checked file did not have any signature at all.
+The recommended way of checking the result is to evaluate the status
+messages, but some third party applications might just check the exit
+code for determining whether or not a signature is valid. These
+applications could be tricked into erroneously reporting a valid
+signature.
+
+Please note that this does not affect the Ubuntu package signature
+checks.
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.4-4ubuntu2.2.diff.gz
+      Size/MD5:    57697 7859d87efb668c1ffb53859c17e7200a
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.4-4ubuntu2.2.dsc
+      Size/MD5:      621 a601569ac7c80138bc56e9f9eb4fbecb
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.4.orig.tar.gz
+      Size/MD5:  3451202 adfab529010ba55533c8e538c0b042a2
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.4-4ubuntu2.2_amd64.deb
+      Size/MD5:  1722418 530e590811bd954b24ff06ca0a690050
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.4-4ubuntu2.2_i386.deb
+      Size/MD5:  1667378 9456a90509b1c80c1723abd2bf2b9d07
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.4-4ubuntu2.2_powerpc.deb
+      Size/MD5:  1721708 f8bc943af454d4bcc6566340c6ef1a41
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.5-3ubuntu5.2.diff.gz
+      Size/MD5:    63903 154d68158685ee570446e0ea5bde2fd4
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.5-3ubuntu5.2.dsc
+      Size/MD5:      654 3101b98dfda3da22b8c013ff557fd95a
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.5.orig.tar.gz
+      Size/MD5:  3645308 9109ff94f7a502acd915a6e61d28d98a
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.5-3ubuntu5.2_amd64.deb
+      Size/MD5:   805508 d370724a74d179da246fa48240f2907e
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gpgv-udeb_1.2.5-3ubuntu5.2_amd64.udeb
+      Size/MD5:   146278 5f2a57a83c42c4053c974a5c8dbfbd8f
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.5-3ubuntu5.2_i386.deb
+      Size/MD5:   750320 da0f3f94a0f084a32be0bf1f17473a59
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gpgv-udeb_1.2.5-3ubuntu5.2_i386.udeb
+      Size/MD5:   121234 210e76177b3737275909d31d6eeb0cc5
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.2.5-3ubuntu5.2_powerpc.deb
+      Size/MD5:   806078 1d625d6235b1659f86acae0d8efbd3c4
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gpgv-udeb_1.2.5-3ubuntu5.2_powerpc.udeb
+      Size/MD5:   135284 7d46859278245aa9784d020d23ac1440
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.4.1-1ubuntu1.1.diff.gz
+      Size/MD5:    18014 e0c82f178dd412ea54607ca9cd03624b
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.4.1-1ubuntu1.1.dsc
+      Size/MD5:      684 c25b2397ca0e6af1201f840ba8e7e89b
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.4.1.orig.tar.gz
+      Size/MD5:  4059170 1cc77c6943baaa711222e954bbd785e5
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.4.1-1ubuntu1.1_amd64.deb
+      Size/MD5:  1135890 fc1cab421bd3defb1587d8d49741cc61
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gpgv-udeb_1.4.1-1ubuntu1.1_amd64.udeb
+      Size/MD5:   152140 45911ed13c75e1320633487e001a2d57
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.4.1-1ubuntu1.1_i386.deb
+      Size/MD5:  1043962 91336db0bac738815ac0d4de7094fdb0
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gpgv-udeb_1.4.1-1ubuntu1.1_i386.udeb
+      Size/MD5:   130578 49c6cbdf3aed81683a346d0eee7f457b
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gnupg_1.4.1-1ubuntu1.1_powerpc.deb
+      Size/MD5:  1119074 deea65c63af7e01c9675a2ff597ff3ba
+    http://security.ubuntu.com/ubuntu/pool/main/g/gnupg/gpgv-udeb_1.4.1-1ubuntu1.1_powerpc.udeb
+      Size/MD5:   140072 f147e53fb3beb6a19f362271d08d31e0
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060217/1fcdd7a7/attachment.pgp>
+
+From martin.pitt at canonical.com  Fri Feb 17 15:11:35 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Fri, 17 Feb 2006 16:11:35 +0100
+Subject: [USN-253-1] heimdal vulnerability
+Message-ID: <20060217151135.GD17465@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-253-1	  February 17, 2006
+heimdal vulnerability
+CVE-2006-0677
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+heimdal-servers
+
+The problem can be corrected by upgrading the affected package to
+version 0.6.2-3ubuntu0.3 (for Ubuntu 4.10), 0.6.3-7ubuntu1.3 (for
+Ubuntu 5.04), or 0.6.3-11ubuntu1.2 (for Ubuntu 5.10).  In general, a
+standard system upgrade is sufficient to effect the necessary changes.
+
+Details follow:
+
+A remote Denial of Service vulnerability was discovered in the heimdal
+implementation of the telnet daemon. A remote attacker could force the
+server to crash due to a NULL de-reference before the user logged in,
+resulting in inetd turning telnetd off because it forked too fast.
+
+Please note that the heimdal-servers package is not officially
+supported in Ubuntu (it is in the 'universe' component of the
+archive). However, this affects you if you use a customized version
+built from the heimdal source package (which is supported).
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.2-3ubuntu0.3.diff.gz
+      Size/MD5:  3047517 50231b9fda0efeaac919a3829c79c205
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.2-3ubuntu0.3.dsc
+      Size/MD5:      990 d051e4e0c34eb84694aa4c95a96c6c7c
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.2.orig.tar.gz
+      Size/MD5:  3301571 f35336eced1e9e9bddf6b43a6248ceeb
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-docs_0.6.2-3ubuntu0.3_all.deb
+      Size/MD5:  1165246 81ff3c89eb835e6ec19d497c46f774b0
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:    64530 73930e813d739c2088a9bfe4ea574c32
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:   275582 0750ec48256438789e1becf37bb397cc
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:   458168 6644af00f785b291c681f888100ef309
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:   130568 8999077d9c7dbb1fe254eafc6a0e30ce
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:    41686 7288a06af6f653f1a088439b66e93f42
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:   180720 38032f3df62ad12e9603a304b696f7f8
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:    74890 441f63a80d3042c9cb13a5a16a2c2fab
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:    52206 e7704e555e988b70233f591581cc929a
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:    45392 c5200300e1f1788cbe6fc75f560823e5
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:    36870 0921aefb0f712277568103693240bf3f
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:    47180 b1f2d2261b2d89e170791dd2979cf01d
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:    35400 eaad7f4215337d4fe0a0320044659325
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.2-3ubuntu0.3_amd64.deb
+      Size/MD5:   140488 98ca62072c380b2c5781a991b8201417
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:    59922 ef96354fc93025ec05b7d9273b6424c5
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:   247528 af2999f7c4da36b10978a65b857b1190
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:   397832 00fef01acfe4961e84840de28c29860b
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:   120728 77c2a03fcbd020d3ac9e8ef5d265ebbb
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:    39546 ace20e0f23ceda6c17c6944db9d9578e
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:   163096 5465e4049212942b55d99c0cb41e0331
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:    71504 3fae94531455e7d06a577dc699f788b5
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:    49922 6716833930952e537d1dd3259837e6ec
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:    42930 3cdad26825b456e0a6aeb08bebd1df10
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:    35404 c4ec4b642de30ecec3b44efc1cd04053
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:    44524 8894486acca24d5d871fa63c611690f5
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:    34052 910251c0eef5b8f7402554fb412da790
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.2-3ubuntu0.3_i386.deb
+      Size/MD5:   127366 bd0ca0d3106a025176127ead7a97018c
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:    64786 25d45f0d6a16600f79b5c135f33e5b18
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:   281830 6dc5bcdb68a51038c911c861909a7e78
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:   434278 82e22d9b39952994774b36c3ef1e42f3
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:   133744 80583290ed8846d008eeb1d66ec34199
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:    41652 b0c07a667e29547eca3eca717ed99da2
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:   178810 72d0a896130b8ddfce4538d096f09c24
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:    65742 52ff1160b5952705a442eb85619f70d9
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:    51964 a05544a1cc6a1367dd8dd05a60a4ce28
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:    43568 75332bb3178ca9c63ff17d0f3e613e0b
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:    36562 58ccf8aab05041315daf509fe0b3d8d7
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:    46024 e88faea6254cf0b570777b1bf4b7985d
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:    36308 827b6053c0a9e9c13bb54f65b1ebdacb
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.2-3ubuntu0.3_powerpc.deb
+      Size/MD5:   132688 68dc2b006c51d0902cff9e8f77b1eb97
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3-7ubuntu1.3.diff.gz
+      Size/MD5:  3222575 e97e928740ad7238f679319141199740
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3-7ubuntu1.3.dsc
+      Size/MD5:     1011 7614e37b6b1ea81abac7542a1c065d68
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3.orig.tar.gz
+      Size/MD5:  3321408 2a9d4bfbdaade7132279758ccd5c0c4f
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-docs_0.6.3-7ubuntu1.3_all.deb
+      Size/MD5:  1167206 6f4ba35ad44d62832993b1bed4623a65
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:    65264 9b8be8ca9a77104e8bac4861e9bda9a5
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:   277680 73c714c7af9f97bcbd22122ce0987a75
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:   464704 a6a9dfdce259ffdf2604c953cddc3a4f
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:   135760 f824b3eb0e86ac21f41f873754ac7e59
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:    42850 2569fcda9ef8628e2e7ae9075327e684
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:   178312 0fdcc2281704b248f2543c247cb70c88
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:    77170 aa1336c55ad965587884657f71a5a681
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:    53960 3a03103b726b9efa6689fa25e6f60c86
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:    47198 e70af7a1b70b745cd1b16ee9815f5ba3
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:    38640 c8601bef79b5799644d982f4da653019
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:    48944 010bd9bce6f7e7f3c848134dd3049dfe
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:    37570 63bb8cdb49e1073ad11f14d74b4e0a69
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-7ubuntu1.3_amd64.deb
+      Size/MD5:   144150 e2a0e5504b3a9262475353c9cc4070d6
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:    60598 676c795ee38773b51c2568284d47e3c3
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:   246944 6398c5cb6f0192d93600899554d20f97
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:   404342 137a178763f6901feb8e8842a516a12a
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:   124360 e640087202074ed22afcc64e72bf0ff3
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:    40610 53ae0870fba9740c1dbbe4b3c5f934d6
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:   159228 4d41441bb948dd228de7b480d6f35231
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:    73748 18b0c0a9215bdc633e92a614fea0e87b
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:    51688 559f1ad878864af8960c380d76af174e
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:    44726 b9509250880a92b1f725446d759ed4e1
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:    37182 4cd305f845cfdde37faf014aab43e621
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:    46294 66553de9e587f1343614f5c79ea9e514
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:    36140 d83223eb46eaada83d177528732c7188
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-7ubuntu1.3_i386.deb
+      Size/MD5:   130688 798ed64f594354f061778d6a17ee58ca
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:    65756 599a48a9d3334d2d44ad217c1a5b2353
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:   284260 2ca1853e554bf12324bd1431bb75db16
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:   441028 b3d5870495bbb66295faa4edcec0588e
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:   139470 34cc0e17ec91b97c04626ac4e7a8d88e
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:    42922 ba057f472f7f12a2b64ec776d9127035
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:   176060 0be0c544907607512e5e22429c6d3644
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:    67908 3272c4a9b8850712562a1acded93d3c8
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:    53736 b9505b3fad726d9b423b45484992fbae
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:    45352 91d2609608a477d52471e41c5472afae
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:    38358 77edae57a65747d5d9f1563b3c27aede
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:    47838 bb0fbb2b6bf5971adb927e931df77be0
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:    38434 981852c15ea846e0ec03b0d37efebed1
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-7ubuntu1.3_powerpc.deb
+      Size/MD5:   136244 463a20cb9c4086cc8423d2eb04ce7d90
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3-11ubuntu1.2.diff.gz
+      Size/MD5:  3223144 9e961c81626e78c05894a833699719f8
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3-11ubuntu1.2.dsc
+      Size/MD5:     1051 8dc19643f40a6a9159e877b52868fcbe
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_0.6.3.orig.tar.gz
+      Size/MD5:  3321408 2a9d4bfbdaade7132279758ccd5c0c4f
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-docs_0.6.3-11ubuntu1.2_all.deb
+      Size/MD5:  1167440 61446f9bc7455986b9fd2439ce422262
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:    64476 f7b00f1e0ee10b2d4972545e3291978e
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:   277768 7443c7d18d4ab410a1a96143cf931870
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:   461590 a1bf14dd4807da3daa004ac6a7f81b44
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:   132778 aff1b7046f465bcade8f58b1a4f3a6bc
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:    42298 62c231710ce0f6f9778eded7db49a11e
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:   175464 3bb5ca31d792a64c04112cd9525ac75c
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:    78584 32bf7c4364d5a88c9696fe86561991ed
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:    51950 c0cca4e61cc6036a6b557e9719006914
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:    53614 1e7a638ae846e95fec1a5206d624befe
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:    38166 a64ccc6ec93cd101a7eae772c74e702f
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:    48370 e6434dab316af509b0d20362722adeda
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:    37466 3302d30f1d7c371619626dbf0c76c89c
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-11ubuntu1.2_amd64.deb
+      Size/MD5:   141630 8c1e26c8dfc240835be5097dfe214ff1
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:    60416 6490ad9157388c3f37973e4d2418adc3
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:   245006 bfe596b52299966f025c06b5f344ccff
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:   392964 dc20121b92a6e3086529d191fc793bc6
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:   122218 3278aee4152a0a92c445b9603bba9839
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:    40294 5003aa52f686c2292a730cff3aafad5a
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:   155568 d19faab766369c064bd5603dcb3f6b9a
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:    76324 b3c5fd8573983379fe603a369647e731
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:    48314 e92b432b008bbb12f3c80208769a7bff
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:    50526 58a09db81423ab3a9d7bb37520e84af7
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:    36354 d49ebf1756667c6cb96dc4f131f62781
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:    44634 85ff3f8f50820d1b00a6207982919f66
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:    35828 1b39ed694d3e55b0987aaa32d1c64a5c
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-11ubuntu1.2_i386.deb
+      Size/MD5:   124372 f8a7c2bf7147bb1e899b5c5aa001ee75
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients-x_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:    65362 bd7ec4e47dc09d89aaf8f7fb5f9d7bc7
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-clients_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:   285258 b383142ab184e7e7db4163be4c237327
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal-dev_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:   438386 40607346abd4a8ad2676899c2693d77c
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-kdc_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:   137282 06016d9270ffd8b281c5297e292af0d7
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers-x_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:    42494 30d5d36d35a0851205ff32494d9646d0
+    http://security.ubuntu.com/ubuntu/pool/universe/h/heimdal/heimdal-servers_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:   174236 329e7052547c910ff4bba4e25dbf87ef
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libasn1-6-heimdal_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:    69260 4a5119d50a9340224c2378e8c9e0f745
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libgssapi1-heimdal_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:    51342 7d32f8ad7c04290022f77c8be5ab0ba0
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libhdb7-heimdal_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:    51778 1f95859c986cb1212d2a710c90d6a78a
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5clnt4-heimdal_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:    38130 e0dc3969176e3c352090a1f43245615d
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkadm5srv7-heimdal_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:    47286 4eb0304e933cd9a975581548abe21162
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkafs0-heimdal_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:    38200 bd24628a4a8d8724b6027a596d0ee2c8
+    http://security.ubuntu.com/ubuntu/pool/main/h/heimdal/libkrb5-17-heimdal_0.6.3-11ubuntu1.2_powerpc.deb
+      Size/MD5:   133876 3055b0380a01eaeccf6abd2b3fda1ddf
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060217/6360fcb5/attachment.pgp>
+
+From martin.pitt at canonical.com  Tue Feb 21 15:30:40 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 21 Feb 2006 16:30:40 +0100
+Subject: [USN-256-1] bluez-hcidump vulnerability
+Message-ID: <20060221153040.GB5903@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-256-1	  February 21, 2006
+bluez-hcidump vulnerability
+CVE-2006-0670
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+bluez-hcidump
+
+The problem can be corrected by upgrading the affected package to
+version 1.5-2ubuntu0.1 (for Ubuntu 4.10), 1.12-1ubuntu0.1 (for Ubuntu
+5.04), or 1.23-0ubuntu1.1 (for Ubuntu 5.10).  In general, a standard
+system upgrade is sufficient to effect the necessary changes.
+
+Details follow:
+
+Pierre Betouin discovered a Denial of Service vulnerability in the
+handling of the L2CAP (Logical Link Control and Adaptation Layer
+Protocol) layer. By sending a specially crafted L2CAP packet through a
+wireless Bluetooth connection, a remote attacker could crash hcidump.
+
+Since hcidump is mainly a debugging tool, the impact of this flaw is
+very low.
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.5-2ubuntu0.1.diff.gz
+      Size/MD5:   117334 2be393fb2b17f097d84c4bf1e41759b8
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.5-2ubuntu0.1.dsc
+      Size/MD5:      649 2cbb2217b51ce137d84487cc8c7e67fc
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.5.orig.tar.gz
+      Size/MD5:   166968 346f86c8e1824a505e976d0a2c8a0578
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.5-2ubuntu0.1_amd64.deb
+      Size/MD5:    25198 7d0d59b7597b7d64345e9255f29ea684
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.5-2ubuntu0.1_i386.deb
+      Size/MD5:    23146 93c04094444cc482058d67cb78ca7244
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.5-2ubuntu0.1_powerpc.deb
+      Size/MD5:    25446 ccfa304db68953e1d2989df0fed8259c
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.12-1ubuntu0.1.diff.gz
+      Size/MD5:     2277 09602446f4bdae6c8126e33db11f3249
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.12-1ubuntu0.1.dsc
+      Size/MD5:      663 8efc5c10713d06de9d55613055208bca
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.12.orig.tar.gz
+      Size/MD5:   102003 c64f44a05e3c3f036134850c8fb24a00
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.12-1ubuntu0.1_amd64.deb
+      Size/MD5:    39052 4f466a14a74802cb0ea83d9859d108a9
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.12-1ubuntu0.1_i386.deb
+      Size/MD5:    35048 9b767b24c3ce114a9b44cc9901335826
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.12-1ubuntu0.1_powerpc.deb
+      Size/MD5:    37636 9934f9d3c03affe2a3c7d84b00cacbed
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.23-0ubuntu1.1.diff.gz
+      Size/MD5:     2454 9ff0a74db5cd83914ed466a8acdf0beb
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.23-0ubuntu1.1.dsc
+      Size/MD5:      662 5191c2d9cabb93969ce0604548ddc696
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.23.orig.tar.gz
+      Size/MD5:   124717 24a72cfc605278f2846c786ae54230c2
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.23-0ubuntu1.1_amd64.deb
+      Size/MD5:    68856 9ed3cd8a70fdf2f494002894208029a2
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.23-0ubuntu1.1_i386.deb
+      Size/MD5:    62994 c6fab1702f2dab19af5bd2ff86af07a5
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/b/bluez-hcidump/bluez-hcidump_1.23-0ubuntu1.1_powerpc.deb
+      Size/MD5:    69474 b75ce72ab552b0b32c301c854ea7e549
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060221/75d9d187/attachment.pgp>
+
+From martin.pitt at canonical.com  Tue Feb 21 15:30:44 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 21 Feb 2006 16:30:44 +0100
+Subject: [USN-254-1] noweb vulnerability
+Message-ID: <20060221153044.GC5903@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-254-1	  February 21, 2006
+noweb vulnerability
+CVE-2005-3342
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+nowebm
+
+The problem can be corrected by upgrading the affected package to
+version 2.10c-3ubuntu1.1 (for Ubuntu 4.10), 2.10c-3.1ubuntu5.04.1 (for
+Ubuntu 5.04), or 2.10c-3.1ubuntu5.10.1 (for Ubuntu 5.10).  In general,
+a standard system upgrade is sufficient to effect the necessary
+changes.
+
+Details follow:
+
+Javier Fern?ndez-Sanguino Pe?a discovered that noweb scripts created
+temporary files in an insecure way. This could allow a symlink attack
+to create or overwrite arbitrary files with the privileges of the user
+running noweb.
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/noweb_2.10c-3ubuntu1.1.diff.gz
+      Size/MD5:    11262 c97d1934407598134e7da5d53b4c625a
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/noweb_2.10c-3ubuntu1.1.dsc
+      Size/MD5:      629 a21c779c23311c40353fee565971f7dd
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/noweb_2.10c.orig.tar.gz
+      Size/MD5:   712332 30bbacf1fb2a402410e5ad2fb600d9fc
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/nowebm_2.10c-3ubuntu1.1_amd64.deb
+      Size/MD5:   535460 2d35850c7436ec5e1c452098ab8f2f26
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/nowebm_2.10c-3ubuntu1.1_i386.deb
+      Size/MD5:   518536 7b89ab418e72de19d81aed9d1dc8aefa
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/nowebm_2.10c-3ubuntu1.1_powerpc.deb
+      Size/MD5:   522740 f5b23a14a7600e91788a6803e1453861
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/noweb_2.10c-3.1ubuntu5.04.1.diff.gz
+      Size/MD5:    11276 d692bce20df8c6e0fb64013daf7bc9e5
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/noweb_2.10c-3.1ubuntu5.04.1.dsc
+      Size/MD5:      639 6b6781615241f3d07db34b4ed951eab4
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/noweb_2.10c.orig.tar.gz
+      Size/MD5:   712332 30bbacf1fb2a402410e5ad2fb600d9fc
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/nowebm_2.10c-3.1ubuntu5.04.1_amd64.deb
+      Size/MD5:   535570 7ed60a1bfce4de9db2b6f6ca24f7544d
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/nowebm_2.10c-3.1ubuntu5.04.1_i386.deb
+      Size/MD5:   518652 973b9b6459bc21f645725f4c5013500f
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/nowebm_2.10c-3.1ubuntu5.04.1_powerpc.deb
+      Size/MD5:   522804 70fd183b24ea9c8d77ca8eb65172924f
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/noweb_2.10c-3.1ubuntu5.10.1.diff.gz
+      Size/MD5:    11275 8b1c3749cd3fc5f0f5bb0909d1db527c
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/noweb_2.10c-3.1ubuntu5.10.1.dsc
+      Size/MD5:      639 3f37d4a988691727bdc9452e459ccc46
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/noweb_2.10c.orig.tar.gz
+      Size/MD5:   712332 30bbacf1fb2a402410e5ad2fb600d9fc
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/nowebm_2.10c-3.1ubuntu5.10.1_amd64.deb
+      Size/MD5:   535562 8ce18eceec28b3bb1165156e17d06f10
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/nowebm_2.10c-3.1ubuntu5.10.1_i386.deb
+      Size/MD5:   519066 5d22ae6879e674ba5dba97a10957e6c7
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/n/noweb/nowebm_2.10c-3.1ubuntu5.10.1_powerpc.deb
+      Size/MD5:   522756 2ea6685d6400fc111cf093f01b7a4b39
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060221/c972fe8a/attachment.pgp>
+
+From martin.pitt at canonical.com  Tue Feb 21 15:30:54 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 21 Feb 2006 16:30:54 +0100
+Subject: [USN-255-1] openssh vulnerability
+Message-ID: <20060221153054.GD5903@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-255-1	  February 21, 2006
+openssh vulnerability
+CVE-2006-0225
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+openssh-client
+
+The problem can be corrected by upgrading the affected package to
+version 1:3.8.1p1-11ubuntu3.3 (for Ubuntu 4.10), 1:3.9p1-1ubuntu2.2
+(for Ubuntu 5.04), or 1:4.1p1-7ubuntu4.1 (for Ubuntu 5.10).  In
+general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+Tomas Mraz discovered a shell code injection flaw in scp. When doing
+local-to-local or remote-to-remote copying, scp expanded shell escape
+characters. By tricking an user into using scp on a specially crafted
+file name (which could also be caught by using an innocuous wild card
+like '*'), an attacker could exploit this to execute arbitrary shell
+commands with the privilege of that user.
+
+Please be aware that scp is not designed to operate securely on
+untrusted file names, since it needs to stay compatible with rcp.
+Please use sftp for automated systems and potentially untrusted file
+names.
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_3.8.1p1-11ubuntu3.3.diff.gz
+      Size/MD5:   147804 bcb9840f943cb185fa14cdb6639dc2de
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_3.8.1p1-11ubuntu3.3.dsc
+      Size/MD5:      880 64349db6679401abfe0f28f08a46559f
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_3.8.1p1.orig.tar.gz
+      Size/MD5:   795948 9ce6f2fa5b2931ce2c4c25f3af9ad50d
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh_3.8.1p1-11ubuntu3.3_all.deb
+      Size/MD5:    30202 dc2297b42ce6e0009b30f76df0778e9c
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client-udeb_3.8.1p1-11ubuntu3.3_amd64.udeb
+      Size/MD5:   160136 968b48b5666e275656b20249cb61faa7
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client_3.8.1p1-11ubuntu3.3_amd64.deb
+      Size/MD5:   526002 306594f4386fa65366fe67e1ac9c45cc
+    http://security.ubuntu.com/ubuntu/pool/universe/o/openssh/openssh-server-udeb_3.8.1p1-11ubuntu3.3_amd64.udeb
+      Size/MD5:   176398 480d6b645167bc2e9b533dd76016c429
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-server_3.8.1p1-11ubuntu3.3_amd64.deb
+      Size/MD5:   264122 df6c92305d240b32b63a9add7bfc5825
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh-askpass-gnome_3.8.1p1-11ubuntu3.3_amd64.deb
+      Size/MD5:    53394 b4f5da405cb155f72d9d064a4d50567e
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client-udeb_3.8.1p1-11ubuntu3.3_i386.udeb
+      Size/MD5:   134290 7aaca0eb6b603910f3c3bda8d30e3999
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client_3.8.1p1-11ubuntu3.3_i386.deb
+      Size/MD5:   474992 94005876a8f9c45fa315d84264f422ce
+    http://security.ubuntu.com/ubuntu/pool/universe/o/openssh/openssh-server-udeb_3.8.1p1-11ubuntu3.3_i386.udeb
+      Size/MD5:   146996 fbf6d83c68f6999aacbafc98f68eb295
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-server_3.8.1p1-11ubuntu3.3_i386.deb
+      Size/MD5:   241898 55dc4bad99928d552819478c0f4d032e
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh-askpass-gnome_3.8.1p1-11ubuntu3.3_i386.deb
+      Size/MD5:    53072 667eab23d4b9af759774640f38ec22cd
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client-udeb_3.8.1p1-11ubuntu3.3_powerpc.udeb
+      Size/MD5:   153126 e59d9aa701310152aa4585b6b3c83df5
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client_3.8.1p1-11ubuntu3.3_powerpc.deb
+      Size/MD5:   523108 59739bfa95120ae0ee193743694a74cb
+    http://security.ubuntu.com/ubuntu/pool/universe/o/openssh/openssh-server-udeb_3.8.1p1-11ubuntu3.3_powerpc.udeb
+      Size/MD5:   160376 7cbb092c954cccb014d1e564b133c1e2
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-server_3.8.1p1-11ubuntu3.3_powerpc.deb
+      Size/MD5:   258268 2e38eadac1a298db3c027ee661d8a5e5
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh-askpass-gnome_3.8.1p1-11ubuntu3.3_powerpc.deb
+      Size/MD5:    54556 131cee0bac5d5cd080675461db8bc0c6
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_3.9p1-1ubuntu2.2.diff.gz
+      Size/MD5:   140942 2193e3793b51e7024784ec047cf3277c
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_3.9p1-1ubuntu2.2.dsc
+      Size/MD5:      866 8ec4e326208aae4b8fe90f9cac0a2ca6
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_3.9p1.orig.tar.gz
+      Size/MD5:   832804 530b1dcbfe7a4a4ce4959c0775b85a5a
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh_3.9p1-1ubuntu2.2_all.deb
+      Size/MD5:    30912 0997c23a603de9b1534ee687851fd38b
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client-udeb_3.9p1-1ubuntu2.2_amd64.udeb
+      Size/MD5:   166708 bc3698453fa091e69bc7f1c67b9316ef
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client_3.9p1-1ubuntu2.2_amd64.deb
+      Size/MD5:   543786 d330f2132fb0bf0295b915e7e0a453ba
+    http://security.ubuntu.com/ubuntu/pool/universe/o/openssh/openssh-server-udeb_3.9p1-1ubuntu2.2_amd64.udeb
+      Size/MD5:   179156 7048312720471a8f0c50562c4301a21d
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-server_3.9p1-1ubuntu2.2_amd64.deb
+      Size/MD5:   279064 5402baeb9df169b4ce6a6eddfb3a6262
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh-askpass-gnome_3.9p1-1ubuntu2.2_amd64.deb
+      Size/MD5:    62514 064f02869e9c61a56b8a4e1558d18e2c
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client-udeb_3.9p1-1ubuntu2.2_i386.udeb
+      Size/MD5:   139346 9b79999219a1cabd60930e682d671e17
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client_3.9p1-1ubuntu2.2_i386.deb
+      Size/MD5:   492224 757e828a5ccf114fe9c4be9b046850c2
+    http://security.ubuntu.com/ubuntu/pool/universe/o/openssh/openssh-server-udeb_3.9p1-1ubuntu2.2_i386.udeb
+      Size/MD5:   149016 86ffa618024f36ac0097686b43b1d179
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-server_3.9p1-1ubuntu2.2_i386.deb
+      Size/MD5:   255760 11f910249c6b098fce8f8020ce6d3b27
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh-askpass-gnome_3.9p1-1ubuntu2.2_i386.deb
+      Size/MD5:    62114 d5a4d9ec3011c099d2db314cf615f646
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client-udeb_3.9p1-1ubuntu2.2_powerpc.udeb
+      Size/MD5:   159854 f1a90f3cb4151736bed6f263901a4d35
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client_3.9p1-1ubuntu2.2_powerpc.deb
+      Size/MD5:   540312 287aa744564de63043d5bb134d0745d4
+    http://security.ubuntu.com/ubuntu/pool/universe/o/openssh/openssh-server-udeb_3.9p1-1ubuntu2.2_powerpc.udeb
+      Size/MD5:   163302 1b019329cd84ff0a1f3960565a621fed
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-server_3.9p1-1ubuntu2.2_powerpc.deb
+      Size/MD5:   273126 7ec4c43399986224b54d0f41fe8e3416
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh-askpass-gnome_3.9p1-1ubuntu2.2_powerpc.deb
+      Size/MD5:    63634 b370bc059a12a2ddc3b3afe1f772049d
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_4.1p1-7ubuntu4.1.diff.gz
+      Size/MD5:   156844 b4cdb063563a640093c305e46f1fc87d
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_4.1p1-7ubuntu4.1.dsc
+      Size/MD5:      971 c80c70c3c63781792a7f39d6ae01940d
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_4.1p1.orig.tar.gz
+      Size/MD5:   909689 3709109adf0b82176668b3d3478dd033
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh_4.1p1-7ubuntu4.1_all.deb
+      Size/MD5:     1048 859ffbe5d4bd5202a2eebec6e8e9ac81
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client-udeb_4.1p1-7ubuntu4.1_amd64.udeb
+      Size/MD5:   162510 1697e11d3a83142a879d04ab7b5e0ac7
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client_4.1p1-7ubuntu4.1_amd64.deb
+      Size/MD5:   584118 3947d62111b5dca4e76344dc8cca254f
+    http://security.ubuntu.com/ubuntu/pool/universe/o/openssh/openssh-server-udeb_4.1p1-7ubuntu4.1_amd64.udeb
+      Size/MD5:   179332 51b096a5921f12614a4be6ac578c6685
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-server_4.1p1-7ubuntu4.1_amd64.deb
+      Size/MD5:   223756 e73afff943deeda07de98bd52cefb9df
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh-askpass-gnome_4.1p1-7ubuntu4.1_amd64.deb
+      Size/MD5:    77824 9ce67812f993f2e4e896a46757ccd58d
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client-udeb_4.1p1-7ubuntu4.1_i386.udeb
+      Size/MD5:   138126 eff182e04cf9c7990fa49ceeb1d8a227
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client_4.1p1-7ubuntu4.1_i386.deb
+      Size/MD5:   514306 2aa78f38fad06006ac0530af8a45b821
+    http://security.ubuntu.com/ubuntu/pool/universe/o/openssh/openssh-server-udeb_4.1p1-7ubuntu4.1_i386.udeb
+      Size/MD5:   149732 1974bc3bb64c6bd32583b78420a12047
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-server_4.1p1-7ubuntu4.1_i386.deb
+      Size/MD5:   195172 df8d26ec28a6487513e2a8a8117fe090
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh-askpass-gnome_4.1p1-7ubuntu4.1_i386.deb
+      Size/MD5:    77540 9241a0dbcde2f43ca408868be70b0523
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client-udeb_4.1p1-7ubuntu4.1_powerpc.udeb
+      Size/MD5:   155720 86eec2f79139f085454334607c10825a
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-client_4.1p1-7ubuntu4.1_powerpc.deb
+      Size/MD5:   568402 b295641a03748fa6d8477c6a3ef7b9ec
+    http://security.ubuntu.com/ubuntu/pool/universe/o/openssh/openssh-server-udeb_4.1p1-7ubuntu4.1_powerpc.udeb
+      Size/MD5:   163224 497641805869834b9959f0a8ecaf9b46
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/openssh-server_4.1p1-7ubuntu4.1_powerpc.deb
+      Size/MD5:   215272 85c392d0999eaf9ebe91230392aba50a
+    http://security.ubuntu.com/ubuntu/pool/main/o/openssh/ssh-askpass-gnome_4.1p1-7ubuntu4.1_powerpc.deb
+      Size/MD5:    79104 3b6db051e9e4eb17e0024c926aa4d2ac
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060221/c3724d87/attachment.pgp>
+
+From martin.pitt at canonical.com  Thu Feb 23 14:08:58 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Thu, 23 Feb 2006 15:08:58 +0100
+Subject: [USN-257-1] tar vulnerability
+Message-ID: <20060223140858.GI5841@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-257-1	  February 23, 2006
+tar vulnerability
+CVE-2006-0300
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+tar
+
+The problem can be corrected by upgrading the affected package to
+version 1.14-2ubuntu0.1 (for Ubuntu 5.04), or 1.15.1-2ubuntu0.1 (for
+Ubuntu 5.10).  In general, a standard system upgrade is sufficient to
+effect the necessary changes.
+
+Details follow:
+
+Jim Meyering discovered that tar did not properly verify the validity
+of certain header fields in a GNU tar archive. By tricking an user
+into processing a specially crafted tar archive, this could be
+exploited to execute arbitrary code with the privileges of the user.
+
+The tar version in Ubuntu 4.10 is not affected by this vulnerability.
+
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.14-2ubuntu0.1.diff.gz
+      Size/MD5:    21395 1f8f561b862e0eaa1d3d76ab5b0805cc
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.14-2ubuntu0.1.dsc
+      Size/MD5:      568 1ac96d117355d0c6501bcfc0603d7f35
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.14.orig.tar.gz
+      Size/MD5:  1485633 3094544702b1affa32d969f0b6459663
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.14-2ubuntu0.1_amd64.deb
+      Size/MD5:   374144 92a29882b472aae37c4f241a2b3d70b7
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.14-2ubuntu0.1_i386.deb
+      Size/MD5:   366426 bd8a627f95eea1d4dd38da1b8cb755a2
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.14-2ubuntu0.1_powerpc.deb
+      Size/MD5:   377108 8d1b6600f06a051dc7236e8e65c2032f
+
+Updated packages for Ubuntu 5.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.15.1-2ubuntu0.1.diff.gz
+      Size/MD5:    28928 e545480fd691241448cd885504e50393
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.15.1-2ubuntu0.1.dsc
+      Size/MD5:      576 c9d9bf92c8460d314cb3320666b01294
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.15.1.orig.tar.gz
+      Size/MD5:  2204322 d87021366fe6488e9dc398fcdcb6ed7d
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.15.1-2ubuntu0.1_amd64.deb
+      Size/MD5:   531590 9f7a550698b0a138f4d92ec06ecfec96
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.15.1-2ubuntu0.1_i386.deb
+      Size/MD5:   519510 fd362a5872f6924e491e2caf7639162b
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.15.1-2ubuntu0.1_powerpc.deb
+      Size/MD5:   533538 c8148419548837909a81da6983af2964
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060223/6d1986eb/attachment.pgp>
+
+From martin.pitt at canonical.com  Mon Feb 27 09:45:01 2006
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Mon, 27 Feb 2006 10:45:01 +0100
+Subject: [USN-258-1] PostgreSQL vulnerability
+Message-ID: <20060227094500.GD5883@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-258-1	  February 27, 2006
+postgresql-7.4, postgresql-8.0, postgresql vulnerability
+CVE-2006-0678
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+Ubuntu 5.10 (Breezy Badger)
+
+The following packages are affected:
+
+postgresql
+postgresql-7.4
+postgresql-8.0
+
+The problem can be corrected by upgrading the affected package to
+version 7.4.5-3ubuntu0.6 (for Ubuntu 4.10), 7.4.7-2ubuntu2.2 (for
+Ubuntu 5.04), 8.0.3-15ubuntu2.1 (postgresql-8.0 for Ubuntu 5.10), or
+1:7.4.8-17ubuntu1.1 (postgresql-7.4 for Ubuntu 5.10).  In general, a
+standard system upgrade is sufficient to effect the necessary changes.
+
+Details follow:
+
+Akio Ishida discovered that the SET SESSION AUTHORIZATION command did
+not properly verify the validity of its argument. An authenticated
+PostgreSQL user could exploit this to crash the server.
+
+However, this does not affect the official binary Ubuntu packages. The
+crash can only be triggered if the source package is rebuilt with
+assertions enabled (which is not the case in the official binary
+packages).
+
+
+Updated packages for Ubuntu 4.10:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.5-3ubuntu0.6.diff.gz
+      Size/MD5:   150900 60505a684e9fbb4e2b7636214d580b6e
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.5-3ubuntu0.6.dsc
+      Size/MD5:      993 474847204d72c17e7101d5bb24d14410
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.5.orig.tar.gz
+      Size/MD5:  9895913 a295885a36ed8e7ec7a7e887218ceabc
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-doc_7.4.5-3ubuntu0.6_all.deb
+      Size/MD5:  2256790 4811b102627db27165fa795efca783cf
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg-dev_7.4.5-3ubuntu0.6_amd64.deb
+      Size/MD5:   207274 abb48d86ef3a5b578e36bd74ae7d9496
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg4_7.4.5-3ubuntu0.6_amd64.deb
+      Size/MD5:    91676 3880e795d41b0416f98a302d52a0f786
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl-dev_7.4.5-3ubuntu0.6_amd64.deb
+      Size/MD5:    49372 fcb72c621feddeefba68c75b4b2c4025
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl_7.4.5-3ubuntu0.6_amd64.deb
+      Size/MD5:    74276 d39eda26719d30273320847649772206
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpq3_7.4.5-3ubuntu0.6_amd64.deb
+      Size/MD5:   116228 40ca95a584c8e05e83c15b47de6f1942
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-client_7.4.5-3ubuntu0.6_amd64.deb
+      Size/MD5:   518912 1c214b56bd786939612ccf1b7c489341
+    http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql/postgresql-contrib_7.4.5-3ubuntu0.6_amd64.deb
+      Size/MD5:   625018 b04748959eb94fbd10c9df857e032462
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-dev_7.4.5-3ubuntu0.6_amd64.deb
+      Size/MD5:   509936 6fdbf9acf2e85fc0497bfdaa26effedc
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.5-3ubuntu0.6_amd64.deb
+      Size/MD5:  3881874 ac80f77f6582c46a65d493f5345a8380
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg-dev_7.4.5-3ubuntu0.6_i386.deb
+      Size/MD5:   195456 4d717d0dea33265c888b774b04c35741
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg4_7.4.5-3ubuntu0.6_i386.deb
+      Size/MD5:    86198 3850b4a6b13eac9cd93f37bd42f87de7
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl-dev_7.4.5-3ubuntu0.6_i386.deb
+      Size/MD5:    48350 10c4960fe637bf6e1d272c4546ba7c01
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl_7.4.5-3ubuntu0.6_i386.deb
+      Size/MD5:    71168 7e8447f5259d6d0cd89c9fa507e78e22
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpq3_7.4.5-3ubuntu0.6_i386.deb
+      Size/MD5:   109498 645dd524987532d50399c2851e8b6ee4
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-client_7.4.5-3ubuntu0.6_i386.deb
+      Size/MD5:   492700 2e40ace10e5da945d7dd35da9d2f2775
+    http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql/postgresql-contrib_7.4.5-3ubuntu0.6_i386.deb
+      Size/MD5:   578252 fb7cf489759748970fc2cc987d724a39
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-dev_7.4.5-3ubuntu0.6_i386.deb
+      Size/MD5:   503076 a5c260c43eb0649e83826a5338635a16
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.5-3ubuntu0.6_i386.deb
+      Size/MD5:  3704604 8ceea8323b39d6185f92fcb97d2a90b1
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg-dev_7.4.5-3ubuntu0.6_powerpc.deb
+      Size/MD5:   203766 ec6129e76ecbd42699bc42e163966f93
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg4_7.4.5-3ubuntu0.6_powerpc.deb
+      Size/MD5:    93212 a35fe29c896c0b3357bcb20b8641e318
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl-dev_7.4.5-3ubuntu0.6_powerpc.deb
+      Size/MD5:    49100 c7f7fafc1db1417c6451dcae5bff4c1c
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl_7.4.5-3ubuntu0.6_powerpc.deb
+      Size/MD5:    77766 eaf498019ad8ff6fbbab51b67b5f23f2
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpq3_7.4.5-3ubuntu0.6_powerpc.deb
+      Size/MD5:   110526 fca01b28c656783e5767a03241c5edc0
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-client_7.4.5-3ubuntu0.6_powerpc.deb
+      Size/MD5:   511634 4dff9c86f5c87dbf298e6b5080ceaeaa
+    http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql/postgresql-contrib_7.4.5-3ubuntu0.6_powerpc.deb
+      Size/MD5:   637184 c8cd674af9be245a5f8094a8dbf51b01
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-dev_7.4.5-3ubuntu0.6_powerpc.deb
+      Size/MD5:   506684 a56fcd280d1c865f4849505fd5aeed95
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.5-3ubuntu0.6_powerpc.deb
+      Size/MD5:  4104852 2ab74e17000c8637292a76c8cf43a5ce
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.7-2ubuntu2.2.diff.gz
+      Size/MD5:   153581 1bf5691e5ad77e950956db87808efb5e
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.7-2ubuntu2.2.dsc
+      Size/MD5:      991 e01eb29c23fc8d47f348af5f682e1342
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.7.orig.tar.gz
+      Size/MD5:  9952102 d193c58aef02a745e8657c48038587ac
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-doc_7.4.7-2ubuntu2.2_all.deb
+      Size/MD5:  2265434 4d2b60ec6e97cca9918ceae64bfedafb
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg-dev_7.4.7-2ubuntu2.2_amd64.deb
+      Size/MD5:   208022 d20f8803b62ca48e12d9022abe376139
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg4_7.4.7-2ubuntu2.2_amd64.deb
+      Size/MD5:    94446 fcae223aceff7b4f02ea9c3d1329c71a
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl-dev_7.4.7-2ubuntu2.2_amd64.deb
+      Size/MD5:    54208 635c3d8490ce7293aeb1f77ca5ed57a9
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl_7.4.7-2ubuntu2.2_amd64.deb
+      Size/MD5:    77388 3921c11146be576b39a875a2f1b579bb
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpq3_7.4.7-2ubuntu2.2_amd64.deb
+      Size/MD5:    95306 a075dea471b97c70ee29c7d71c82405c
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-client_7.4.7-2ubuntu2.2_amd64.deb
+      Size/MD5:   347046 904271714669800102baca3ab0e3ede4
+    http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql/postgresql-contrib_7.4.7-2ubuntu2.2_amd64.deb
+      Size/MD5:   650210 c61be2d0d94f8447cf124fb75ccbbf5d
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-dev_7.4.7-2ubuntu2.2_amd64.deb
+      Size/MD5:   515416 ce81bf6d7bd0674a19dcc30789b018aa
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.7-2ubuntu2.2_amd64.deb
+      Size/MD5:  3094136 0c0024148f08b07d9744410c9ebf6727
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg-dev_7.4.7-2ubuntu2.2_i386.deb
+      Size/MD5:   203816 dbbd311660ef314592749e9297c57edb
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg4_7.4.7-2ubuntu2.2_i386.deb
+      Size/MD5:    91896 d5cab8c6e802202cce2740fa5d409ef2
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl-dev_7.4.7-2ubuntu2.2_i386.deb
+      Size/MD5:    53384 034ed61f6ff666f9e34cf697ee952f15
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl_7.4.7-2ubuntu2.2_i386.deb
+      Size/MD5:    75342 979fe6e20a912036b6b7e870cf1553fe
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpq3_7.4.7-2ubuntu2.2_i386.deb
+      Size/MD5:    90674 0b522d9812620c3c9a8b5c8f7be34036
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-client_7.4.7-2ubuntu2.2_i386.deb
+      Size/MD5:   318908 960e0396c9108aa8ab49f2b4625b5e24
+    http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql/postgresql-contrib_7.4.7-2ubuntu2.2_i386.deb
+      Size/MD5:   612732 933af0640be5825780f822aad42e057a
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-dev_7.4.7-2ubuntu2.2_i386.deb
+      Size/MD5:   509736 9fdc967c2864dc54711dc252e8ba9334
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.7-2ubuntu2.2_i386.deb
+      Size/MD5:  2956084 d5cea77b7fe7c59277cb8cc97d83512d
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg-dev_7.4.7-2ubuntu2.2_powerpc.deb
+      Size/MD5:   208564 80cda6684da32486a7fa20e8e46b8907
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libecpg4_7.4.7-2ubuntu2.2_powerpc.deb
+      Size/MD5:    98440 3f33d866c9f9cf54d1510e9c0de1d685
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl-dev_7.4.7-2ubuntu2.2_powerpc.deb
+      Size/MD5:    53320 ba962fca3474def0927e1dc781980a91
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpgtcl_7.4.7-2ubuntu2.2_powerpc.deb
+      Size/MD5:    82500 787e94a5894901542d8f91105742b65d
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/libpq3_7.4.7-2ubuntu2.2_powerpc.deb
+      Size/MD5:    93282 6de926c5c3da92166eb6f6c4f11e2e30
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-client_7.4.7-2ubuntu2.2_powerpc.deb
+      Size/MD5:   352612 c9bb9fe63ab877aed9922fa8e882a1af
+    http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql/postgresql-contrib_7.4.7-2ubuntu2.2_powerpc.deb
+      Size/MD5:   681252 0893ef5b32622637654ba9d472f7abb9
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql-dev_7.4.7-2ubuntu2.2_powerpc.deb
+      Size/MD5:   512704 f80629a0c2bd9586ab192fc87c9ce90e
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql/postgresql_7.4.7-2ubuntu2.2_powerpc.deb
+      Size/MD5:  3405002 f841182ac030f70743d9a8bb57400a9f
+
+Updated packages for Ubuntu 5.04:
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-7.4_7.4.8-17ubuntu1.1.diff.gz
+      Size/MD5:    25087 813e68293523b8b6b3306be347a09d1e
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-7.4_7.4.8-17ubuntu1.1.dsc
+      Size/MD5:     1038 358b8ee82f4bdb9979c4eef73bfdb849
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-7.4_7.4.8.orig.tar.gz
+      Size/MD5:  9947820 50ee979019622f8852444cfd67b58e7e
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-8.0_8.0.3-15ubuntu2.1.diff.gz
+      Size/MD5:    23268 48dd12a3c27ed480f2ee7bc750c63f2f
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-8.0_8.0.3-15ubuntu2.1.dsc
+      Size/MD5:     1115 f7c24c7b952700e71c1c39914ab28a1c
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-8.0_8.0.3.orig.tar.gz
+      Size/MD5: 10786924 73c804e7e55dd916732ce6807cc13318
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-doc-7.4_7.4.8-17ubuntu1.1_all.deb
+      Size/MD5:  1060472 1fea5f7bdd0e97e73e3d2bb3c617247d
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-doc-8.0_8.0.3-15ubuntu2.1_all.deb
+      Size/MD5:  1167592 0f05100201e8205c0bfff63debbaf612
+    http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql-7.4/postgresql-server-dev-7.4_7.4.8-17ubuntu1.1_all.deb
+      Size/MD5:   420812 928b1d4875af29e8963171cec8ae5fd3
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libecpg-compat2_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:    16910 8909aae5ef02a405fbb4161d877ae39d
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libecpg-dev_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:   201668 ba518712a49cc2eff58598e27404ec68
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libecpg5_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:    36468 33382f42191e97796c4ed799339afb54
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libpgtypes2_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:    39086 0c5b859963c23732ad53ecf0fded31f8
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libpq-dev_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:   161926 bb54ef0a09f7c2b52b54bcfd0f2bd49c
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/libpq3_7.4.8-17ubuntu1.1_amd64.deb
+      Size/MD5:    65256 8fca6fad1e3f249c6be224b4b81102ea
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libpq4_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:    68812 3a643470acefe13a63da6db5198de971
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-7.4_7.4.8-17ubuntu1.1_amd64.deb
+      Size/MD5:  2737900 2a50196f349dd7527258b5de04c96e05
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-8.0_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:  2978708 729f619d87a911c8f9135887ef0c9528
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-client-7.4_7.4.8-17ubuntu1.1_amd64.deb
+      Size/MD5:   470566 bf465ddd86cbd2edae4d679962a5b414
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-client-8.0_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:   595572 ccb2f1263c98c7e9a230d531000b0d67
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-contrib-7.4_7.4.8-17ubuntu1.1_amd64.deb
+      Size/MD5:   483720 6bd4490774172a8cbc4539dd6e6ce834
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-contrib-8.0_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:   534524 aabf92d72a7e7c631b3265d466a24b94
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-plperl-7.4_7.4.8-17ubuntu1.1_amd64.deb
+      Size/MD5:    22218 7e7f3bf933b1471e2e78501440fc04dc
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-plperl-8.0_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:    30534 82209d89e03e28f309242b7dfb087fa0
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-plpython-7.4_7.4.8-17ubuntu1.1_amd64.deb
+      Size/MD5:    25616 c553f441abf9f2f16006d6c70be1db4b
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-plpython-8.0_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:    27592 36fe5d92a3df097b560c297eb51aa7f2
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-pltcl-7.4_7.4.8-17ubuntu1.1_amd64.deb
+      Size/MD5:    26278 34f288c7e7c2f111d14695539eb564b5
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-pltcl-8.0_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:    27652 0d6750b98ff9d3a176eecb873b4f8ea5
+    http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql-8.0/postgresql-server-dev-8.0_8.0.3-15ubuntu2.1_amd64.deb
+      Size/MD5:   429348 fc7bd8f4fb677e7e52f9fe4cc98abf16
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libecpg-compat2_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:    15924 0770c7ef7074c8b0d99d81d8a9a1f5e5
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libecpg-dev_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:   192448 6e3c56a7f10c0e55f10a6b34b1286f46
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libecpg5_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:    34114 734dfa9298192da512fc142648bc7938
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libpgtypes2_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:    37292 df67fc722cc0c31fc9ddc4781ec88712
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libpq-dev_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:   151784 d9b3a3506f407b5a8aeeda041c6ba34b
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/libpq3_7.4.8-17ubuntu1.1_i386.deb
+      Size/MD5:    59380 485d010f91c82ab888bd87240dacc597
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libpq4_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:    62364 54f8bb6776622c3e8001280bb9c1103e
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-7.4_7.4.8-17ubuntu1.1_i386.deb
+      Size/MD5:  2583986 f48aa7b3fe1e1eaafed363a252e19abe
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-8.0_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:  2803330 7a170ea5b01afd9abcc68d6caeb60cfc
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-client-7.4_7.4.8-17ubuntu1.1_i386.deb
+      Size/MD5:   436138 76323ae5ea7189ef1b691e24499b7220
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-client-8.0_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:   538252 68e46a07246654eab53cfe26a44d6534
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-contrib-7.4_7.4.8-17ubuntu1.1_i386.deb
+      Size/MD5:   445210 c89659c8cb56d8f3300048e96255d37e
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-contrib-8.0_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:   489602 539bb986247b272880e57866c780cb35
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-plperl-7.4_7.4.8-17ubuntu1.1_i386.deb
+      Size/MD5:    21158 3063afcf06f16c09f1ff8939eda88669
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-plperl-8.0_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:    29240 e8a7a726c45a34ed2a6baa53eaf8fb37
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-plpython-7.4_7.4.8-17ubuntu1.1_i386.deb
+      Size/MD5:    23108 4b451e4b54fa09f8d39603113ba4108c
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-plpython-8.0_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:    24746 f9ada71339c0ccace843315074cfce9c
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-pltcl-7.4_7.4.8-17ubuntu1.1_i386.deb
+      Size/MD5:    24930 a7c844fdeb764f37f352fbd6cac50276
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-pltcl-8.0_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:    26410 29481ba553b7cd696542e6ee0f3dc6e6
+    http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql-8.0/postgresql-server-dev-8.0_8.0.3-15ubuntu2.1_i386.deb
+      Size/MD5:   429340 c085d162e023e71364e208b16d615a51
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libecpg-compat2_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:    17730 2d7651ef292abf4728b62c0c1c07f91e
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libecpg-dev_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:   199608 cdb1f85725314267a70d79701179d064
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libecpg5_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:    37314 d8292c8a345a9cd138514402bc255ce1
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libpgtypes2_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:    41614 86c2adaf6b72786121ad69a779fcd783
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libpq-dev_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:   158576 0784312a1a32b665c17d00ad3fd4d269
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/libpq3_7.4.8-17ubuntu1.1_powerpc.deb
+      Size/MD5:    62170 b2ca6b779b3f8c7082fbf456ca9e693b
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/libpq4_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:    65546 a7f460c12200caf5bf0e359d099405bf
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-7.4_7.4.8-17ubuntu1.1_powerpc.deb
+      Size/MD5:  3041402 4206cd4d87d1f802ede08eef8484e1be
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-8.0_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:  3281488 d3ebe260fbe7f728a6c5f4696e8e7010
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-client-7.4_7.4.8-17ubuntu1.1_powerpc.deb
+      Size/MD5:   475032 506edc60d5eb57941fa9f9f2844f4e34
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-client-8.0_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:   595454 a0b31f91e3bdfbebcb124ad41b154473
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-contrib-7.4_7.4.8-17ubuntu1.1_powerpc.deb
+      Size/MD5:   511212 3aeeee2947f0fec1e5ad239cb7c34d2d
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-contrib-8.0_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:   560660 0a8612a2916d0a2d46a0e9b28efc0b9d
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-plperl-7.4_7.4.8-17ubuntu1.1_powerpc.deb
+      Size/MD5:    22716 df49f911e8d61b6262fd90e6c9bca9c7
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-plperl-8.0_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:    31012 ae3a3ab14d469d49420978b4e6f0496d
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-plpython-7.4_7.4.8-17ubuntu1.1_powerpc.deb
+      Size/MD5:    25852 cd5eb0cb0fa91ecd3336d1d1113d8012
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-plpython-8.0_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:    27562 41f45ff70eb8d1a9907002a8676181c2
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-7.4/postgresql-pltcl-7.4_7.4.8-17ubuntu1.1_powerpc.deb
+      Size/MD5:    27416 54e2ab63530c2bb54322b125b397c1b8
+    http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-8.0/postgresql-pltcl-8.0_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:    28748 882d4224d20b489007bb46a1ae7cdcb2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql-8.0/postgresql-server-dev-8.0_8.0.3-15ubuntu2.1_powerpc.deb
+      Size/MD5:   429402 a4eacea38ed7c96cb11f624fd18d876e
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20060227/459cd950/attachment.pgp>
+

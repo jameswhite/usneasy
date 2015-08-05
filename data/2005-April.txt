@@ -1,0 +1,1174 @@
+From martin.pitt at canonical.com  Fri Apr  1 08:14:40 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Fri, 1 Apr 2005 10:14:40 +0200
+Subject: [USN-103-1] Linux kernel vulnerabilities
+Message-ID: <20050401081440.GA15626@box79162.elkhouse.de>
+
+===========================================================
+Ubuntu Security Notice USN-103-1	     April 01, 2005
+linux-source-2.6.8.1 vulnerabilities
+CAN-2005-0400, CAN-2005-0749, CAN-2005-0750, CAN-2005-0815,
+CAN-2005-0839
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+linux-image-2.6.8.1-5-386
+linux-image-2.6.8.1-5-686
+linux-image-2.6.8.1-5-686-smp
+linux-image-2.6.8.1-5-amd64-generic
+linux-image-2.6.8.1-5-amd64-k8
+linux-image-2.6.8.1-5-amd64-k8-smp
+linux-image-2.6.8.1-5-amd64-xeon
+linux-image-2.6.8.1-5-k7
+linux-image-2.6.8.1-5-k7-smp
+linux-image-2.6.8.1-5-power3
+linux-image-2.6.8.1-5-power3-smp
+linux-image-2.6.8.1-5-power4
+linux-image-2.6.8.1-5-power4-smp
+linux-image-2.6.8.1-5-powerpc
+linux-image-2.6.8.1-5-powerpc-smp
+linux-patch-debian-2.6.8.1
+
+The problem can be corrected by upgrading the affected package to
+version 2.6.8.1-16.13. You need to reboot the computer after doing a
+standard system upgrade to effect the necessary changes. 
+
+Details follow:
+
+Mathieu Lafon discovered an information leak in the ext2 file system
+driver. When a new directory was created, the ext2 block written to
+disk was not initialized, so that previous memory contents (which
+could contain sensitive data like passwords) became visible on the raw
+device. This is particularly important if the target device is
+removable and thus can be read by users other than root.
+(CAN-2005-0400)
+
+Yichen Xie discovered a Denial of Service vulnerability in the ELF
+loader. A specially crafted ELF library or executable could cause an
+attempt to free an invalid pointer, which lead to a kernel crash.
+(CAN-2005-0749)
+
+Ilja van Sprundel discovered that the bluez_sock_create() function did
+not check its "protocol" argument for negative values. A local
+attacker could exploit this to execute arbitrary code with root
+privileges by creating a Bluetooth socket with a specially crafted
+protocol number. (CAN-2005-0750)
+
+Michal Zalewski discovered that the iso9660 file system driver fails
+to check ranges properly in several cases. Mounting a specially
+crafted CD-ROM may have caused a buffer overflow leading to a kernel
+crash or even arbitrary code execution. (CAN-2005-0815)
+
+Previous kernels did not restrict the use of the N_MOUSE line
+discipline in the serial driver. This allowed an unprivileged user to
+inject mouse movement and/or keystrokes (using the sunkbd driver) into
+the input subsystem, taking over the console or an X session, where
+another user is logged in.  (CAN-2005-0839)
+
+A Denial of Service vulnerability was found in the tmpfs driver, which
+is commonly used to mount RAM disks below /dev/shm and /tmp. The
+shm_nopage() did not properly verify its address argument, which could
+be exploited by a local user to cause a kernel crash with invalid
+addresses.
+(http://linux.bkbits.net:8080/linux-2.6/cset at 420551fbRlv9-QG6Gw9Lw_bKVfPSsg)
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-source-2.6.8.1_2.6.8.1-16.13.diff.gz
+      Size/MD5:  3141166 21bb3cb0cb3411b0fc6ed4b193cc5ade
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-source-2.6.8.1_2.6.8.1-16.13.dsc
+      Size/MD5:     2121 c8109995552dbdf33155366c8b6ca574
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-source-2.6.8.1_2.6.8.1.orig.tar.gz
+      Size/MD5: 44728688 79730a3ad4773ba65fab65515369df84
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-doc-2.6.8.1_2.6.8.1-16.13_all.deb
+      Size/MD5:  6156316 ced249a61a235b9954d1ae968e2cb7ca
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-patch-debian-2.6.8.1_2.6.8.1-16.13_all.deb
+      Size/MD5:  1496926 406d8a710e1d9f95b0c8448962e3f4b7
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-source-2.6.8.1_2.6.8.1-16.13_all.deb
+      Size/MD5: 36719760 2b56398fcfbc1d6d757a968a552820d5
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-tree-2.6.8.1_2.6.8.1-16.13_all.deb
+      Size/MD5:   308292 5f63ff191ca41e39166de2bd53f8d08c
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-amd64-generic_2.6.8.1-16.13_amd64.deb
+      Size/MD5:   247868 21ff61252c900e9fb2a548f30c819789
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-amd64-k8-smp_2.6.8.1-16.13_amd64.deb
+      Size/MD5:   243858 dfda5b8d4eb53ef56e40dacea6c93379
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-amd64-k8_2.6.8.1-16.13_amd64.deb
+      Size/MD5:   247076 21c0419cd1548273b52a141ab145834d
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-amd64-xeon_2.6.8.1-16.13_amd64.deb
+      Size/MD5:   242192 011e30a52dda6f020df9c643988102d1
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5_2.6.8.1-16.13_amd64.deb
+      Size/MD5:  3179188 ba617aee377d068ce18f21ac6c89263c
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-amd64-generic_2.6.8.1-16.13_amd64.deb
+      Size/MD5: 14353262 1f3ec89ac23adf217960ed38e5d2c717
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-amd64-k8-smp_2.6.8.1-16.13_amd64.deb
+      Size/MD5: 14829032 51dc56cced68159222749538fbd115b2
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-amd64-k8_2.6.8.1-16.13_amd64.deb
+      Size/MD5: 14861698 89eb699bc0e6c2424dd5fe9c3eabf811
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-amd64-xeon_2.6.8.1-16.13_amd64.deb
+      Size/MD5: 14686210 d3b50f9f86afaa8865b30d57d6b0fa1d
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-386_2.6.8.1-16.13_i386.deb
+      Size/MD5:   277290 c3e00f0ff221ec660319606a4d19e9da
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-686-smp_2.6.8.1-16.13_i386.deb
+      Size/MD5:   271980 d1cc69e7b158ee25af65f31675943631
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-686_2.6.8.1-16.13_i386.deb
+      Size/MD5:   275018 17561ffd0e1448df572350eeba6cdb0d
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-k7-smp_2.6.8.1-16.13_i386.deb
+      Size/MD5:   272506 0cd5266261e4a4695c0f4613562c6cc3
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-k7_2.6.8.1-16.13_i386.deb
+      Size/MD5:   275150 729e035be50a7315f9b6484a2127755b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5_2.6.8.1-16.13_i386.deb
+      Size/MD5:  3219988 f89b979f9ca5aa2be0f24dca74270810
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-386_2.6.8.1-16.13_i386.deb
+      Size/MD5: 15495380 5b4a074ba11309dd403d300e01ca5d42
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-686-smp_2.6.8.1-16.13_i386.deb
+      Size/MD5: 16345080 ee2b9c141d287b4606fe6b1d23ed3c76
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-686_2.6.8.1-16.13_i386.deb
+      Size/MD5: 16513718 1e3cfff372acdfc294063e0a2e8ef485
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-k7-smp_2.6.8.1-16.13_i386.deb
+      Size/MD5: 16447908 21dfa2d945203fcb5d9d9385ee86c659
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-k7_2.6.8.1-16.13_i386.deb
+      Size/MD5: 16573202 d7440b858e2b88b56ada1fd9c3aef045
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-power3-smp_2.6.8.1-16.13_powerpc.deb
+      Size/MD5:   212896 70301c701acd9e1d0682d664e63479c7
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-power3_2.6.8.1-16.13_powerpc.deb
+      Size/MD5:   213610 3de6832705d851b4762a677ae7efcfe3
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-power4-smp_2.6.8.1-16.13_powerpc.deb
+      Size/MD5:   212694 79dcc690556561c7f6b2835cadaefc65
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-power4_2.6.8.1-16.13_powerpc.deb
+      Size/MD5:   213368 fccda4ef54e82ef7bc9ee65dd91ad9f2
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-powerpc-smp_2.6.8.1-16.13_powerpc.deb
+      Size/MD5:   213274 cb5c15759fdc1c3d67dea083fa715425
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-powerpc_2.6.8.1-16.13_powerpc.deb
+      Size/MD5:   214772 738757d77bb43291937bbb8fa8e5279b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5_2.6.8.1-16.13_powerpc.deb
+      Size/MD5:  3297198 c449b6f307be309b4b34096067854afd
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-power3-smp_2.6.8.1-16.13_powerpc.deb
+      Size/MD5: 16367564 e989eb486e57f3fdf01ba02f9aed6e5d
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-power3_2.6.8.1-16.13_powerpc.deb
+      Size/MD5: 15942266 a3c8ed4b84d39219124c4ea70caef211
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-power4-smp_2.6.8.1-16.13_powerpc.deb
+      Size/MD5: 16354794 6c528b50c53088c14353845e609bc868
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-power4_2.6.8.1-16.13_powerpc.deb
+      Size/MD5: 15926402 2210381c424e430a48e2579226ae9fca
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-powerpc-smp_2.6.8.1-16.13_powerpc.deb
+      Size/MD5: 16289246 4fd1a22f145d0abdc84e8926dfa42df8
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-powerpc_2.6.8.1-16.13_powerpc.deb
+      Size/MD5: 15975494 3424a2f8dc666e9520c5abc929b08e62
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050401/bb568340/attachment.pgp>
+
+From martin.pitt at canonical.com  Mon Apr  4 09:25:00 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Mon, 4 Apr 2005 11:25:00 +0200
+Subject: [USN-104-1] unshar vulnerability
+Message-ID: <20050404092500.GB6222@box79162.elkhouse.de>
+
+===========================================================
+Ubuntu Security Notice USN-104-1	     April 04, 2005
+sharutils vulnerability
+https://bugzilla.ubuntu.com/show_bug.cgi?id=8459
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+sharutils
+
+The problem can be corrected by upgrading the affected package to
+version 1:4.2.1-10ubuntu0.2.  In general, a standard system upgrade is
+sufficient to effect the necessary changes.
+
+Details follow:
+
+Joey Hess discovered that "unshar" created temporary files in an
+insecure manner. This could allow a symbolic link attack to create or
+overwrite arbitrary files with the privileges of the user invoking the
+program.
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/s/sharutils/sharutils_4.2.1-10ubuntu0.2.diff.gz
+      Size/MD5:     8181 7135804300d9a381cfebc2133e7239c2
+    http://security.ubuntu.com/ubuntu/pool/main/s/sharutils/sharutils_4.2.1-10ubuntu0.2.dsc
+      Size/MD5:      634 1a16efd9010325d369909b608fb59597
+    http://security.ubuntu.com/ubuntu/pool/main/s/sharutils/sharutils_4.2.1.orig.tar.gz
+      Size/MD5:   306022 b8ba1d409f07edcb335ff72a27bd9828
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/s/sharutils/sharutils-doc_4.2.1-10ubuntu0.2_all.deb
+      Size/MD5:    28000 56cd083b2fbc3e689cb157a59c760f52
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/s/sharutils/sharutils_4.2.1-10ubuntu0.2_amd64.deb
+      Size/MD5:   113908 801afa19d2f272d22f7d13f5efb0a51a
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/s/sharutils/sharutils_4.2.1-10ubuntu0.2_i386.deb
+      Size/MD5:   110766 2d3e74efceff274a2bb4a17b3c4702b1
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/s/sharutils/sharutils_4.2.1-10ubuntu0.2_powerpc.deb
+      Size/MD5:   112656 1ce41914dde0c8d548f6bcc2d3a8fbd8
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050404/0eb035b2/attachment.pgp>
+
+From martin.pitt at canonical.com  Tue Apr  5 09:02:24 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 5 Apr 2005 11:02:24 +0200
+Subject: [USN-105-1] PHP4 vulnerabilities
+Message-ID: <20050405090223.GB23274@box79162.elkhouse.de>
+
+===========================================================
+Ubuntu Security Notice USN-105-1	     April 05, 2005
+php4 vulnerabilities
+CAN-2005-0524, CAN-2005-0525
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+libapache2-mod-php4
+php4-cgi
+
+The problem can be corrected by upgrading the affected package to
+version 4:4.3.8-3ubuntu7.7.  In general, a standard system upgrade is
+sufficient to effect the necessary changes.
+
+Details follow:
+
+Two Denial of Service vulnerabilities have been discovered in the
+getimagesize() function. getimagesize() uses format specific internal
+functions php_handle_iff() and php_handle_jpeg() which get stuck in
+infinite loops when certain (invalid) size parameters are read from
+the image. In web applications that allow users to upload arbitrary
+image files, a remote attacker could render the server unavailable by
+uploading specially crafted images.
+
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8-3ubuntu7.7.diff.gz
+      Size/MD5:   614584 e1e4658c0bae269863b66a49bb1789cc
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8-3ubuntu7.7.dsc
+      Size/MD5:     1624 53c60faf1cf695e843a9fed0aab32c77
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8.orig.tar.gz
+      Size/MD5:  4832570 dd69f8c89281f088eadf4ade3dbd39ee
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-dev_4.3.8-3ubuntu7.7_all.deb
+      Size/MD5:   332096 d29a70597ebf8701dbb770a5a2df99c6
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-pear_4.3.8-3ubuntu7.7_all.deb
+      Size/MD5:   333216 214989078c962bdd8e3c68efdea24e79
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:  1688788 282c770eeceb3b622bff45dbb1f3697f
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:  3197760 688aaee04cfbedbf28f444ff78643275
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:    17270 d5b8ca553be39d5c7dc5433662b829a9
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:    40426 a222fd13d29d2ac9e8a6f3ca2332f075
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:    33490 850faabd6c74a780fc5dac1e04e77305
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:    21226 6adc5a2fec65a578637fb2c8d4d61287
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:    18402 8c830761ed1cf819bfb716cd062f2d99
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:     7990 dd174278067bea68130997ebbf8a3f36
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:    23104 acc54ef8616addca8b13bd7705715469
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:    28320 06043332850b57bec6689d08e525e77a
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:     7616 e30ee5ae5a87fe517852fa99c5541a8f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:    12976 5e08d2d6eef94a91c6dc83e1ec4a3ad1
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:    21504 3392a02bebfb734e56624fa8f6e05c9f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:    17246 94f0b4443e8df88bf8adc06ec113225b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.7_amd64.deb
+      Size/MD5:  1704842 dac6b7d637b559a8ac6f53d6c2cd4e4c
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:  1630616 84cb8a55df23a51feaecf303154d3829
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:  3044204 015a09b97c147de9a747f060c068ea13
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:    16852 cee9e1885827277cb1a16bb7deec639e
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:    35554 dac653d1fe82fd71419a0e6bace784b2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:    31068 b51bd380ad14556b0ccaeb5599cfd7c1
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:    19474 e05e15801bd839f5f9ea94cda102267d
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:    17054 d40c6352b3283626d210437f733251ae
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:     7736 eee3b5f201d4cd174732b4cef81b1479
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:    20900 63ce98c0ce7aeda7201c47eb346cbebe
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:    26064 6cbaa547ab716198142a569bd38c823c
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:     7372 5ed54eb594586ae56f202bf678451ec0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:    12320 449d214d5a3df63b798432793b837711
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:    20008 7df58c1a5dc6bf1f391ead2ce51da017
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:    15880 25572c6d71cc59b64847dde954a24412
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.7_i386.deb
+      Size/MD5:  1645276 b6bc44c59dd99f01bbaae144abe7c828
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:  1690610 3857d24f10f0a950b76e03c8b1e1d663
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:  3203548 ac2e9c91f5fd9d80f97c4e5f44256d57
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:    19076 560c45fd8cc01d6ed85bb4124a9878a7
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:    38278 e780094260109fb3127647e9f33357d2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:    34000 1222155b9a80cbdacabf345810a64848
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:    21474 e7b955ecd7c36d079af80c31a05ffc30
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:    19300 02d564e04e540773720eaceb42ad07e5
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:     9312 4ddb42c6ad8bab5f901eca499d085c25
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:    22680 65c22c805385f10129b1594e57dc66f1
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:    28398 21c858449fa712269b2fd16db5657d00
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:     9004 8284d0b18f6951c5d06693c4932d1985
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:    14322 46838ddd2207c1ced82d39df732497fd
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:    22194 f680fec5a3f461bbf31874cb1d8d7136
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:    18052 ab288cf61f4d35627ef0113438227997
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.7_powerpc.deb
+      Size/MD5:  1708412 f2d8a566456a811453039f722d2e779f
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050405/43db80b6/attachment.pgp>
+
+From martin.pitt at canonical.com  Tue Apr  5 13:07:17 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 5 Apr 2005 15:07:17 +0200
+Subject: [USN-106-1] Gaim vulnerabilities
+Message-ID: <20050405130717.GA10380@box79162.elkhouse.de>
+
+===========================================================
+Ubuntu Security Notice USN-106-1	     April 05, 2005
+gaim vulnerabilities
+CAN-2005-0965, CAN-2005-0966
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+gaim
+
+The problem can be corrected by upgrading the affected package to
+version 1:1.0.0-1ubuntu1.3. You have to restart gaim after a standard
+system upgrade to effect the necessary changes. 
+
+Details follow:
+
+Jean-Yves Lefort discovered a buffer overflow in the
+gaim_markup_strip_html() function. This caused Gaim to crash when
+receiving certain malformed HTML messages. (CAN-2005-0965)
+
+Jean-Yves Lefort also noticed that many functions that handle IRC
+commands do not escape received HTML metacharacters; this allowed
+remote attackers to cause a Denial of Service by injecting arbitrary
+HTML code into the conversation window, popping up arbitrarily many
+empty dialog boxes, or even causing Gaim to crash. (CAN-2005-0966)
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gaim/gaim_1.0.0-1ubuntu1.3.diff.gz
+      Size/MD5:    44905 d03a90434a68d12eb361fd9fbfca7d91
+    http://security.ubuntu.com/ubuntu/pool/main/g/gaim/gaim_1.0.0-1ubuntu1.3.dsc
+      Size/MD5:      853 7da3670bdef956122725699e38775026
+    http://security.ubuntu.com/ubuntu/pool/main/g/gaim/gaim_1.0.0.orig.tar.gz
+      Size/MD5:  6985979 7dde686aace751a49dce734fd0cb7ace
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gaim/gaim_1.0.0-1ubuntu1.3_amd64.deb
+      Size/MD5:  3444332 f844c3edb768a56d5404589b9c42651b
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gaim/gaim_1.0.0-1ubuntu1.3_i386.deb
+      Size/MD5:  3354832 61ef71028ec730ee598d889a75588189
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gaim/gaim_1.0.0-1ubuntu1.3_powerpc.deb
+      Size/MD5:  3418174 e0d906d95a46f99de375efabbe713781
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050405/2becd542/attachment.pgp>
+
+From martin.pitt at canonical.com  Tue Apr  5 15:59:53 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 5 Apr 2005 17:59:53 +0200
+Subject: [USN-107-1] racoon vulnerability
+Message-ID: <20050405155952.GA13359@box79162.elkhouse.de>
+
+===========================================================
+Ubuntu Security Notice USN-107-1	     April 05, 2005
+ipsec-tools vulnerability
+CAN-2005-0398
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+racoon
+
+The problem can be corrected by upgrading the affected package to
+version 0.3.3-1ubuntu0.1.  In general, a standard system upgrade is
+sufficient to effect the necessary changes.
+
+Details follow:
+
+Sebastian Krahmer discovered a Denial of Service vulnerability in the
+racoon daemon. By sending specially crafted ISAKMP packets, a remote
+attacker could trigger a buffer overflow which caused racoon to crash.
+
+This update does not introduce any source code changes affecting the
+ipsec-tools package.  It is necessary to update the version number of
+the package in order to support an update to the "racoon" package.
+Please note that racoon is not officially supported by Ubuntu (it is
+in the "universe" component of the archive).
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.3.3-1ubuntu0.1.diff.gz
+      Size/MD5:   191538 4cde6e53403236be32d6640b0c3e0482
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.3.3-1ubuntu0.1.dsc
+      Size/MD5:      705 022ba833374033ad5089ff1250dd0360
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.3.3.orig.tar.gz
+      Size/MD5:   864122 b141da8ae299c8fdc53e536f6bbc3ad0
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.3.3-1ubuntu0.1_amd64.deb
+      Size/MD5:   106112 96d79a33ea9fca8a4e62b9be790ecc91
+    http://security.ubuntu.com/ubuntu/pool/universe/i/ipsec-tools/racoon_0.3.3-1ubuntu0.1_amd64.deb
+      Size/MD5:   201304 800c93f6ea50b99b635364b8acb98d7b
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.3.3-1ubuntu0.1_i386.deb
+      Size/MD5:   101104 f36df353beb372625da1aaefd7f641e5
+    http://security.ubuntu.com/ubuntu/pool/universe/i/ipsec-tools/racoon_0.3.3-1ubuntu0.1_i386.deb
+      Size/MD5:   186172 d0213fee3f32816c0e83c227064891fc
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/i/ipsec-tools/ipsec-tools_0.3.3-1ubuntu0.1_powerpc.deb
+      Size/MD5:   108824 cc6193f450715b21e4c16b8bea002399
+    http://security.ubuntu.com/ubuntu/pool/universe/i/ipsec-tools/racoon_0.3.3-1ubuntu0.1_powerpc.deb
+      Size/MD5:   195936 4ab4dd044d8f31d17d8022bcd8539370
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050405/92e4ccd1/attachment.pgp>
+
+From martin.pitt at canonical.com  Tue Apr  5 18:43:54 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 5 Apr 2005 20:43:54 +0200
+Subject: [USN-108-1] GDK vulnerability
+Message-ID: <20050405184354.GA17114@box79162.elkhouse.de>
+
+===========================================================
+Ubuntu Security Notice USN-108-1 	     April 05, 2005
+gtk+2.0, gdk-pixbuf vulnerabilities
+CAN-2005-0891
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+libgdk-pixbuf2
+libgtk2.0-0
+
+The problem can be corrected by upgrading the affected package to
+version 0.22.0-7ubuntu1.1 (libgdk-pixbuf2) and 2.4.10-1ubuntu1.1
+(libgtk2.0-0). In general, a standard system upgrade is sufficient to
+effect the necessary changes.
+
+Details follow:
+
+Matthias Clasen discovered a Denial of Service vulnerability in the
+BMP image module of gdk. Processing a specially crafted BMP image with
+an application using gdk-pixbuf caused an allocated memory block to be
+free()'ed twice, leading to a crash of the application.  However, it
+is believed that this cannot be exploited to execute arbitrary
+attacker provided code.
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_0.22.0-7ubuntu1.1.diff.gz
+      Size/MD5:   371559 6eda65660063879e8fcb9c13f32acc8a
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_0.22.0-7ubuntu1.1.dsc
+      Size/MD5:      723 1733720ee9e346a1564ae45c4e5ab2b2
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_0.22.0.orig.tar.gz
+      Size/MD5:   519266 4db0503b5a62533db68b03908b981751
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/gtk+2.0_2.4.10-1ubuntu1.1.diff.gz
+      Size/MD5:    46203 8a6ebac91a341bfec1a4e40e22c6e4e2
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/gtk+2.0_2.4.10-1ubuntu1.1.dsc
+      Size/MD5:     1936 45ca99b8b54fb1a34716380edcdc22d2
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/gtk+2.0_2.4.10.orig.tar.gz
+      Size/MD5: 14140860 b1876ebde3b85bceb576ee5e2ecfd60b
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-common_2.4.10-1ubuntu1.1_all.deb
+      Size/MD5:  2778688 7817b2b2187db31d21ee3c3d72ef6c64
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-doc_2.4.10-1ubuntu1.1_all.deb
+      Size/MD5:  1877562 392cfa514cdfac3307a5c051a1d83be9
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gtk+2.0/gtk2.0-examples_2.4.10-1ubuntu1.1_amd64.deb
+      Size/MD5:   261990 acd7487241d60424bf0901a36ea49c20
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf-dev_0.22.0-7ubuntu1.1_amd64.deb
+      Size/MD5:   155396 824fb12f5f2c808d1fe9be57d18cc24b
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf-gnome-dev_0.22.0-7ubuntu1.1_amd64.deb
+      Size/MD5:     8524 1e22ab97a0f2ea92f13f61f1dd8e7901
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf-gnome2_0.22.0-7ubuntu1.1_amd64.deb
+      Size/MD5:     7944 83ccb50f72b4adf65e8dd83cc3112d28
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf2_0.22.0-7ubuntu1.1_amd64.deb
+      Size/MD5:   183296 412c10985e923bb6f965bba344b1b584
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-0_2.4.10-1ubuntu1.1_amd64.deb
+      Size/MD5:  2183922 2f95da8893c36ef012daacb33b64a68b
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-bin_2.4.10-1ubuntu1.1_amd64.deb
+      Size/MD5:    13934 3f15e4e19464edee9bec3e03bceb6a5a
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-dbg_2.4.10-1ubuntu1.1_amd64.deb
+      Size/MD5: 10299776 69bee0e979b89a26fc2bdfb0d0936da0
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-dev_2.4.10-1ubuntu1.1_amd64.deb
+      Size/MD5:  2841746 da7656c49d7a53144fdcc0cc30e10300
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gtk+2.0/gtk2.0-examples_2.4.10-1ubuntu1.1_i386.deb
+      Size/MD5:   258614 b4143d9c3f9508a4d02b321a83587a13
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf-dev_0.22.0-7ubuntu1.1_i386.deb
+      Size/MD5:   147238 b753bfcecffb4694572a1fd23f365f25
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf-gnome-dev_0.22.0-7ubuntu1.1_i386.deb
+      Size/MD5:     7636 69e339f1559495af69bd1e2729a969ae
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf-gnome2_0.22.0-7ubuntu1.1_i386.deb
+      Size/MD5:     7188 fd233fc7c62a0ccb3353d802aa3e347e
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf2_0.22.0-7ubuntu1.1_i386.deb
+      Size/MD5:   167464 85d56ca9adbbf4b12d90665f14cbab9d
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-0_2.4.10-1ubuntu1.1_i386.deb
+      Size/MD5:  2000760 a48d7ccb98352bdec84cb066fb6cad14
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-bin_2.4.10-1ubuntu1.1_i386.deb
+      Size/MD5:    13288 812f0d4bd1e6fbc7c1b0d85caa11c228
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-dbg_2.4.10-1ubuntu1.1_i386.deb
+      Size/MD5: 10067810 6d984fa1f6b3abaf4a1861aaa955820f
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-dev_2.4.10-1ubuntu1.1_i386.deb
+      Size/MD5:  2484426 b283dce0ceebe5cfdff2ac86960445b5
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/g/gtk+2.0/gtk2.0-examples_2.4.10-1ubuntu1.1_powerpc.deb
+      Size/MD5:   260412 de11296455cd7b06eea78e6f49a7bcd2
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf-dev_0.22.0-7ubuntu1.1_powerpc.deb
+      Size/MD5:   163118 fbde558bcf35a4334b431e362ab854ac
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf-gnome-dev_0.22.0-7ubuntu1.1_powerpc.deb
+      Size/MD5:     9162 6dd4f1856a9ccd034bb09a4aa691ca0e
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf-gnome2_0.22.0-7ubuntu1.1_powerpc.deb
+      Size/MD5:     9494 af0e66ba1520dedf6f4edd1bddc62a17
+    http://security.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/libgdk-pixbuf2_0.22.0-7ubuntu1.1_powerpc.deb
+      Size/MD5:   192186 88f579eeff03b81ce45ff03dfb260df5
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-0_2.4.10-1ubuntu1.1_powerpc.deb
+      Size/MD5:  2118578 3be811e254b9f042267f937a3b9f8171
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-bin_2.4.10-1ubuntu1.1_powerpc.deb
+      Size/MD5:    16056 8f00fc4931970ff94ef915194d81031f
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-dbg_2.4.10-1ubuntu1.1_powerpc.deb
+      Size/MD5: 10329060 9dfecd1aab94c16f2c8cf90d5e94c91d
+    http://security.ubuntu.com/ubuntu/pool/main/g/gtk+2.0/libgtk2.0-dev_2.4.10-1ubuntu1.1_powerpc.deb
+      Size/MD5:  3084834 2e84877a938df6886104119ba59c8e2a
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050405/6e86e295/attachment.pgp>
+
+From martin.pitt at canonical.com  Wed Apr  6 10:49:33 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Wed, 6 Apr 2005 12:49:33 +0200
+Subject: [USN-109-1] MySQL vulnerability
+Message-ID: <20050406104933.GA29358@box79162.elkhouse.de>
+
+===========================================================
+Ubuntu Security Notice USN-109-1	     April 06, 2005
+mysql-dfsg vulnerability
+CAN-2004-0957
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+mysql-server
+
+The problem can be corrected by upgrading the affected package to
+version 4.0.20-2ubuntu1.5.  In general, a standard system upgrade is
+sufficient to effect the necessary changes.
+
+Details follow:
+
+USN-32-1 fixed a database privilege escalation vulnerability; original
+advisory text:
+
+  "If a user was granted privileges to a database with a name
+  containing an underscore ("_"), the user also gained the ability to
+  grant privileges to other databases with similar names.
+  (CAN-2004-0957)"
+
+Recently a corner case was discovered where this vulnerability can
+still be exploited, so another update is necessary. 
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/mysql-dfsg_4.0.20-2ubuntu1.5.diff.gz
+      Size/MD5:   176049 5327f1a5d1a3827fba4f33d7292e1b41
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/mysql-dfsg_4.0.20-2ubuntu1.5.dsc
+      Size/MD5:      892 a5317ab608e8c23ad3363b4d7fe96ba9
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/mysql-dfsg_4.0.20.orig.tar.gz
+      Size/MD5:  9760117 f092867f6df2f50b34b8065312b9fb2b
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/mysql-common_4.0.20-2ubuntu1.5_all.deb
+      Size/MD5:    24778 2a297ce189a18851dd5a7423f25d905e
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/libmysqlclient-dev_4.0.20-2ubuntu1.5_amd64.deb
+      Size/MD5:  2810714 7869e26ba1893de1feb7633f409a90da
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/libmysqlclient12_4.0.20-2ubuntu1.5_amd64.deb
+      Size/MD5:   304846 86393fa9f4ecae507b17707f5e3a8eaf
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/mysql-client_4.0.20-2ubuntu1.5_amd64.deb
+      Size/MD5:   422898 67670eeeddad130ecca1045a2f9e67fd
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/mysql-server_4.0.20-2ubuntu1.5_amd64.deb
+      Size/MD5:  3577760 8357127a732b5592d3642fc9314b7154
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/libmysqlclient-dev_4.0.20-2ubuntu1.5_i386.deb
+      Size/MD5:  2774158 dabd78b39cf3a747206b3e8dd09d18d0
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/libmysqlclient12_4.0.20-2ubuntu1.5_i386.deb
+      Size/MD5:   287792 3b4dc6eacf77df5cbe9cfba2b1c75627
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/mysql-client_4.0.20-2ubuntu1.5_i386.deb
+      Size/MD5:   396908 9320dccff0733303d388deb406695ff4
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/mysql-server_4.0.20-2ubuntu1.5_i386.deb
+      Size/MD5:  3486994 7e68be99e0161424dd2f42193824b613
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/libmysqlclient-dev_4.0.20-2ubuntu1.5_powerpc.deb
+      Size/MD5:  3110200 ec39921634e29dad12e91752936b7b04
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/libmysqlclient12_4.0.20-2ubuntu1.5_powerpc.deb
+      Size/MD5:   308470 961a07fe56d137daebb7b1c13959efc1
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/mysql-client_4.0.20-2ubuntu1.5_powerpc.deb
+      Size/MD5:   452296 8dedc6992b4f66fcd33f34bf84494490
+    http://security.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg/mysql-server_4.0.20-2ubuntu1.5_powerpc.deb
+      Size/MD5:  3770438 782e8cfddf512c4ca31d4949fab25da4
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050406/6e69b362/attachment.pgp>
+
+From martin.pitt at canonical.com  Mon Apr 11 07:59:54 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Mon, 11 Apr 2005 09:59:54 +0200
+Subject: [USN-110-1] Linux kernel vulnerabilities
+Message-ID: <20050411075954.GB30056@box79162.elkhouse.de>
+
+===========================================================
+Ubuntu Security Notice USN-110-1	     April 11, 2005
+linux-source-2.6.8.1 vulnerabilities
+CAN-2005-0867, CAN-2005-0937
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+linux-image-2.6.8.1-5-386
+linux-image-2.6.8.1-5-686
+linux-image-2.6.8.1-5-686-smp
+linux-image-2.6.8.1-5-amd64-generic
+linux-image-2.6.8.1-5-amd64-k8
+linux-image-2.6.8.1-5-amd64-k8-smp
+linux-image-2.6.8.1-5-amd64-xeon
+linux-image-2.6.8.1-5-k7
+linux-image-2.6.8.1-5-k7-smp
+linux-image-2.6.8.1-5-power3
+linux-image-2.6.8.1-5-power3-smp
+linux-image-2.6.8.1-5-power4
+linux-image-2.6.8.1-5-power4-smp
+linux-image-2.6.8.1-5-powerpc
+linux-image-2.6.8.1-5-powerpc-smp
+linux-patch-debian-2.6.8.1
+linux-source-2.6.8.1
+
+The problem can be corrected by upgrading the affected package to
+version 2.6.8.1-16.14. You need to reboot the computer after doing a
+standard system upgrade to effect the necessary changes. 
+
+Details follow:
+
+Alexander Nyberg discovered an integer overflow in the
+sysfs_write_file() function. A local attacker could exploit this to
+crash the kernel or possibly even execute arbitrary code with root
+privileges by writing to an user-writable file in /sys under certain
+low-memory conditions. However, there are very few cases where a
+user-writeable sysfs file actually exists. (CAN-2005-0867)
+
+Olof Johansson discovered a Denial of Service vulnerability in the
+futex functions, which provide semaphores for exclusive locking of
+resources. A local attacker could possibly exploit this to cause a
+kernel deadlock. (CAN-2005-0937)
+
+In addition this update fixes two race conditions in the ext3 and jfs
+file system drivers, which could lead to a kernel crash under certain
+(unusual) conditions. However, these cannot easily be triggered by
+users, thus they are not security sensitive.
+(http://linux.bkbits.net:8080/linux-2.5/gnupatch at 4248d87aETPJX79hVXl4owAUwu2SmQ,
+http://linux.bkbits.net:8080/linux-2.6/cset at 1.2181.46.242)
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-source-2.6.8.1_2.6.8.1-16.14.diff.gz
+      Size/MD5:  3144256 0a80b5605fa16e50adf234c833e6bb68
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-source-2.6.8.1_2.6.8.1-16.14.dsc
+      Size/MD5:     2121 6ad2c18460ca29e1a55106beca3c9c14
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-source-2.6.8.1_2.6.8.1.orig.tar.gz
+      Size/MD5: 44728688 79730a3ad4773ba65fab65515369df84
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-doc-2.6.8.1_2.6.8.1-16.14_all.deb
+      Size/MD5:  6153992 3e521be7b01ba6eab67a17f81185c822
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-patch-debian-2.6.8.1_2.6.8.1-16.14_all.deb
+      Size/MD5:  1500544 b243f0a773dfe2f62eb382ca4d89b9db
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-source-2.6.8.1_2.6.8.1-16.14_all.deb
+      Size/MD5: 36720790 0b958d6a7e89602089cb8581f1f73032
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-tree-2.6.8.1_2.6.8.1-16.14_all.deb
+      Size/MD5:   308474 a03542000c2858203be3d89997c4e45c
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-amd64-generic_2.6.8.1-16.14_amd64.deb
+      Size/MD5:   247974 bfbbe4b32ead1dde7a8561665cc5999b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-amd64-k8-smp_2.6.8.1-16.14_amd64.deb
+      Size/MD5:   243990 3271780d4b3456de3338dffbaca1eb20
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-amd64-k8_2.6.8.1-16.14_amd64.deb
+      Size/MD5:   247200 e6abe01f3199ec0f27eda709ce002df3
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-amd64-xeon_2.6.8.1-16.14_amd64.deb
+      Size/MD5:   242362 ed9000e5985839c740e09e0c713ca350
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5_2.6.8.1-16.14_amd64.deb
+      Size/MD5:  3179516 b369ff9b759448424a89332ecffd3b9b
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-amd64-generic_2.6.8.1-16.14_amd64.deb
+      Size/MD5: 14352682 2770849b44244c93be0d3db4cffc89bf
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-amd64-k8-smp_2.6.8.1-16.14_amd64.deb
+      Size/MD5: 14829082 0e724f14e03b9f1eb1423b38a1ee1dae
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-amd64-k8_2.6.8.1-16.14_amd64.deb
+      Size/MD5: 14862760 b725acf4facfcf8d3c824a84dbfe41c4
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-amd64-xeon_2.6.8.1-16.14_amd64.deb
+      Size/MD5: 14686348 7ff1ce90107b9bc2e3e8f743e2115347
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-386_2.6.8.1-16.14_i386.deb
+      Size/MD5:   277370 4d79f89950fffb6712304f1ace572f3e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-686-smp_2.6.8.1-16.14_i386.deb
+      Size/MD5:   272128 288baa96ee39c2b2994068466efc8755
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-686_2.6.8.1-16.14_i386.deb
+      Size/MD5:   275436 390c55b2454e5157a6094dd7d6add605
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-k7-smp_2.6.8.1-16.14_i386.deb
+      Size/MD5:   272372 a94bcc0a5cd4bdc87b990ff065d9394a
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-k7_2.6.8.1-16.14_i386.deb
+      Size/MD5:   275300 7b597c48cf7697fe475ffd7270dd612e
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5_2.6.8.1-16.14_i386.deb
+      Size/MD5:  3220194 42366e9cd8611a887850c780b9f7b7b9
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-386_2.6.8.1-16.14_i386.deb
+      Size/MD5: 15495908 98f76b18e2601d1b3d718d48eb7716a0
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-686-smp_2.6.8.1-16.14_i386.deb
+      Size/MD5: 16345102 4b51792e685948a89accfee813a56d10
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-686_2.6.8.1-16.14_i386.deb
+      Size/MD5: 16514792 9e54885c125f0140c36e99a00db7f299
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-k7-smp_2.6.8.1-16.14_i386.deb
+      Size/MD5: 16449194 207a0e4785ac6b1af79d3ba0ecd216ef
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-k7_2.6.8.1-16.14_i386.deb
+      Size/MD5: 16574272 ffa3ae15b3c1205b0f67006f4bca32f3
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-power3-smp_2.6.8.1-16.14_powerpc.deb
+      Size/MD5:   213042 f3cf4d851ce3b9fa5c929797083e83ac
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-power3_2.6.8.1-16.14_powerpc.deb
+      Size/MD5:   213700 0810291588aeba3c4d050cedbd7a8e9c
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-power4-smp_2.6.8.1-16.14_powerpc.deb
+      Size/MD5:   212772 1ba6740023da09c0850599d639db9f4f
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-power4_2.6.8.1-16.14_powerpc.deb
+      Size/MD5:   213472 df7d310054813452f7e06b6767a20175
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-powerpc-smp_2.6.8.1-16.14_powerpc.deb
+      Size/MD5:   213378 974580a5d0f500e6a0beae66abcee54d
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5-powerpc_2.6.8.1-16.14_powerpc.deb
+      Size/MD5:   215064 67b77b71a38532be19f3f80058c42253
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-headers-2.6.8.1-5_2.6.8.1-16.14_powerpc.deb
+      Size/MD5:  3297442 fc97df70b40c69c8490739c938baa1c0
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-power3-smp_2.6.8.1-16.14_powerpc.deb
+      Size/MD5: 16367876 0c0cbd53006d9ff381c6a8f36df58f26
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-power3_2.6.8.1-16.14_powerpc.deb
+      Size/MD5: 15942684 3206d593c9a6cce795a2443f685953e8
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-power4-smp_2.6.8.1-16.14_powerpc.deb
+      Size/MD5: 16356236 3f0320b5c8ffc4c2e71665f9eb55a3be
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-power4_2.6.8.1-16.14_powerpc.deb
+      Size/MD5: 15928378 872b638ca6204c238ffb7b4d98dc2176
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-powerpc-smp_2.6.8.1-16.14_powerpc.deb
+      Size/MD5: 16290272 50a3fa177775e1ec7b82d9579f9e9ffe
+    http://security.ubuntu.com/ubuntu/pool/main/l/linux-source-2.6.8.1/linux-image-2.6.8.1-5-powerpc_2.6.8.1-16.14_powerpc.deb
+      Size/MD5: 15975756 1a2b899c563108c8e2d1a58074ccb145
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050411/b30dc7b0/attachment.pgp>
+
+From martin.pitt at canonical.com  Thu Apr 14 09:29:49 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Thu, 14 Apr 2005 11:29:49 +0200
+Subject: [USN-111-1] Squid vulnerability
+Message-ID: <20050414092949.GB11344@box79162.elkhouse.de>
+
+===========================================================
+Ubuntu Security Notice USN-111-1	     April 14, 2005
+squid vulnerability
+CAN-2005-0718
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+squid
+
+The problem can be corrected by upgrading the affected package to
+version 2.5.5-6ubuntu0.7. In general, a standard system upgrade is
+sufficient to effect the necessary changes.
+
+Details follow:
+
+A remote Denial of Service vulnerability has been discovered in Squid.
+If the remote end aborted the connection during a PUT or POST request,
+Squid tried to free an already freed part of memory, which eventually
+caused the server to crash.
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/s/squid/squid_2.5.5-6ubuntu0.7.diff.gz
+      Size/MD5:   275491 d294a0441d7e2de0da9341eace2c7e73
+    http://security.ubuntu.com/ubuntu/pool/main/s/squid/squid_2.5.5-6ubuntu0.7.dsc
+      Size/MD5:      652 1816d94b51dc62c5377504600fe84b91
+    http://security.ubuntu.com/ubuntu/pool/main/s/squid/squid_2.5.5.orig.tar.gz
+      Size/MD5:  1363967 6c7f3175b5fa04ab5ee68ce752e7b500
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/s/squid/squid-common_2.5.5-6ubuntu0.7_all.deb
+      Size/MD5:   190750 ff6a2988ea2399fcaa916ae5c39323e1
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/s/squid/squid-cgi_2.5.5-6ubuntu0.7_amd64.deb
+      Size/MD5:    90162 64c8782355756f2dc21a2a4bd405f512
+    http://security.ubuntu.com/ubuntu/pool/main/s/squid/squid_2.5.5-6ubuntu0.7_amd64.deb
+      Size/MD5:   812954 b2d4e53f212ce58fd33e650dd2b5014a
+    http://security.ubuntu.com/ubuntu/pool/universe/s/squid/squidclient_2.5.5-6ubuntu0.7_amd64.deb
+      Size/MD5:    71526 1ce2d80bda1f61c56b1541fd3eda4e77
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/s/squid/squid-cgi_2.5.5-6ubuntu0.7_i386.deb
+      Size/MD5:    88692 67b6ed2744f38d3e0033445f7ddd30e2
+    http://security.ubuntu.com/ubuntu/pool/main/s/squid/squid_2.5.5-6ubuntu0.7_i386.deb
+      Size/MD5:   728956 0383caf202387afd18855a77f7a349a0
+    http://security.ubuntu.com/ubuntu/pool/universe/s/squid/squidclient_2.5.5-6ubuntu0.7_i386.deb
+      Size/MD5:    70260 5765c384fdaa1bb4c172f5bb2ecf2bc8
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/s/squid/squid-cgi_2.5.5-6ubuntu0.7_powerpc.deb
+      Size/MD5:    89612 7c28105327bf3fc664d4a679e231625f
+    http://security.ubuntu.com/ubuntu/pool/main/s/squid/squid_2.5.5-6ubuntu0.7_powerpc.deb
+      Size/MD5:   796392 70e394cace6837edc6643ddd33916d45
+    http://security.ubuntu.com/ubuntu/pool/universe/s/squid/squidclient_2.5.5-6ubuntu0.7_powerpc.deb
+      Size/MD5:    71030 edc5b5f6f79e958bb701ba4f4fb9c19d
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050414/d59fa032/attachment.pgp>
+
+From martin.pitt at canonical.com  Thu Apr 14 09:33:56 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Thu, 14 Apr 2005 11:33:56 +0200
+Subject: [USN-112-1] PHP4 vulnerabilities
+Message-ID: <20050414093356.GC11344@box79162.elkhouse.de>
+
+===========================================================
+Ubuntu Security Notice USN-112-1	     April 14, 2005
+php4 vulnerabilities
+CAN-2005-1042, CAN-2005-1043
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+libapache2-mod-php4
+php4-cgi
+
+The problem can be corrected by upgrading the affected package to
+version 4:4.3.8-3ubuntu7.8. After performing a standard system upgrade
+you need to reload the PHP module in the webserver by executing
+
+  sudo /etc/init.d/apache2 reload
+
+to effect the necessary changes. 
+
+Details follow:
+
+An integer overflow was discovered in the exif_process_IFD_TAG()
+function in PHP4's EXIF module. EXIF tags with a specially crafted
+"Image File Directory" (IFD) tag caused a buffer overflow which could
+have been exploited to execute arbitrary code with the privileges of
+the PHP4 server. (CAN-2005-1042)
+
+The same module also contained a Denial of Service vulnerability. EXIF
+headers with a large IFD nesting level caused an unbound recursion
+which would eventually overflow the stack and cause the executed
+program to crash. (CAN-2005-1043)
+
+In web applications that automatically process EXIF tags of uploaded
+images, both vulnerabilities could be exploited remotely.
+
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8-3ubuntu7.8.diff.gz
+      Size/MD5:   615279 bccbf61fbd657d604778ef0807602269
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8-3ubuntu7.8.dsc
+      Size/MD5:     1624 50fb00c9c97235f29bd5e0b5be38719f
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8.orig.tar.gz
+      Size/MD5:  4832570 dd69f8c89281f088eadf4ade3dbd39ee
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-dev_4.3.8-3ubuntu7.8_all.deb
+      Size/MD5:   332212 c7b9169952458bc1c9c6bb38894e44dd
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-pear_4.3.8-3ubuntu7.8_all.deb
+      Size/MD5:   333344 8df62c694a6f3161c9856ce3ddc72880
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:  1689076 ea68676e40465cfaf63e9c040097cf5e
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:  3198192 73d27ba5818baffd5364bf600bde839d
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:    17268 af6a393057cbc02db58bf8161971c920
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:    40424 68c1a0c15a6cf8a73e34312ab4490fda
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:    33490 04e4f118c9c254f124647d3f79331b40
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:    21228 7b3a3ec6ee219d8a20b5ae4908356223
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:    18402 3ccc063e13e057bb046134106f7a4af0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:     7984 3a6f3b7fa3c05de874ff133efed8a005
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:    23106 c5eb05dc58ec37535f4abbcca2fd376b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:    28318 ba50aa51d1878db08656192e4942a672
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:     7612 492f40b7948f52691ba10aefda76509c
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:    12966 e4c676a19934de18daea3c7c5558c6bb
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:    21504 5634e0379238d42bbd446c768f19d865
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:    17244 b3ade86c59d1bf070936cc8d3e0798ec
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.8_amd64.deb
+      Size/MD5:  1704972 48b6f63a1bd9e74a32d1765f83a7a766
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:  1630966 33f6c6e64aeee06c9f4ce5529bfb5270
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:  3044286 a0d8f50a76ba83181ff3120086615610
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:    16846 452346f69df9d3610c1e49be50c20bda
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:    35546 33628c2ce0a6c4dce3ffd9191004a7c0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:    31064 d04e46c79926bfe840141ae8de168e71
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:    19464 3b1e7da084cc652c54ed7ee809262bc5
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:    17038 320f44d0b84c2d1907f85f16464b05f7
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:     7742 a82e71021460f23a3c27258a60dec76d
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:    20898 0bdc2c8eb237dcbd9fcdb65348f583d2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:    26058 0fb042c54fcdf259142a599f287597e0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:     7374 60bff288d952728c56839059830a46d0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:    12318 1873822251912089841c8b9ad5087fa2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:    20002 5073920959f7e45ba0440cc40d5d2a0b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:    15878 c5bb3e00817367294f83e239e16876ec
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.8_i386.deb
+      Size/MD5:  1645576 f0f01be88bdc787ab135d1a865f4f308
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:  1690872 071804bfe714bbfa054aade588d40023
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:  3203670 3fa86de2cf426a6eaa6e99a5c7bdd4b7
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:    19086 7acaf730006b0a0ebc103057c28b74e2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:    38282 010967a7de5cd770e9748937376f0560
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:    34008 ad454fc9b99f41b76c76b58b54a7f32f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:    21478 7a57f51114a5990b40aa326b6224afaa
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:    19312 e4d275a2e44183a608e3a120ec23175a
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:     9320 3566967bd9d610d91106222756584dcc
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:    22690 c1a2e74f03baba2cedc8dec36329e794
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:    28408 090402935f36668bcd42b459935b1fa3
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:     9006 87db57559484b64fd0e4d68909859710
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:    14322 fa6f48dc42e8734e260c83a8efbd2703
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:    22192 e4d2b2a283cfd4a8d1ac92d6e2327b0e
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:    18058 18411dc4784022996fcc5e7387b32ac7
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.8_powerpc.deb
+      Size/MD5:  1708846 82dee976e21613a81b3e5935a1e2f590
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050414/4c471f02/attachment.pgp>
+

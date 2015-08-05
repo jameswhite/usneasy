@@ -1,0 +1,2624 @@
+From martin.pitt at canonical.com  Tue Jul  5 11:30:08 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 5 Jul 2005 13:30:08 +0200
+Subject: [USN-147-1] PHP XMLRPC vulnerability
+Message-ID: <20050705113008.GA14765@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-147-1	      July 05, 2005
+php4, php4-universe vulnerability
+CAN-2005-1921
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+libapache2-mod-php4
+php4-pear
+
+The problem can be corrected by upgrading the affected package to
+version 4:4.3.8-3ubuntu7.9 (for Ubuntu 4.10), or 4:4.3.10-10ubuntu3.1
+(for Ubuntu 5.04).  In general, a standard system upgrade is
+sufficient to effect the necessary changes.
+
+Details follow:
+
+A remote code execution vulnerability has been discovered in the XMLRPC module
+of the PEAR (PHP Extension and Application Repository) extension of PHP. By
+sending specially crafted XMLRPC requests to an affected web server, a remote
+attacker could exploit this to execute arbitrary code with the web server's
+privileges.
+
+In Ubuntu 5.04 (Hoary Hedgehog), the PEAR extension is unsupported (it is
+contained in the php4-universe package which is part of universe). However,
+since this is a highly critical vulnerability, that package was fixed as well.
+
+Please note that many applications contain a copy of the affected XMLRPC code,
+which must be fixed separately. The following packages may also be affected,
+but are unsupported in Ubuntu:
+
+ - drupal
+ - wordpress
+ - phpwiki
+ - horde3
+ - ewiki
+ - egroupware
+ - phpgroupware
+
+These packages might be fixed by the community later.
+
+The following common third party applications are affected as well, but not packaged
+for Ubuntu:
+
+ - Serendipity
+ - Postnuke
+ - tikiwiki
+ - phpwebsite
+
+If you run any affected software, please upgrade them as soon as possible to
+protect your server.
+
+
+Updated packages for Ubuntu 4.10 (Warty Warthog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8-3ubuntu7.9.diff.gz
+      Size/MD5:   616004 aba83c3005406218f315dd4e10fdc93c
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8-3ubuntu7.9.dsc
+      Size/MD5:     1624 5f13453ccdc07ef678393948887d1fb5
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8.orig.tar.gz
+      Size/MD5:  4832570 dd69f8c89281f088eadf4ade3dbd39ee
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-dev_4.3.8-3ubuntu7.9_all.deb
+      Size/MD5:   332280 b4620c776b0b7a0c01e07785276bcc74
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-pear_4.3.8-3ubuntu7.9_all.deb
+      Size/MD5:   333464 37e8baf6cfecda800559359076a98c07
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:  1689172 ca905ba66abc007c6e2c1f2522f5f867
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:  3198276 0b746adc73c7f024307595d751d1046a
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:    17278 1d8408cd9a09f8f84bdae47b73049255
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:    40436 ce1f94a062c11e6a04f5d63b3ccafce1
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:    33496 31cbb8a956114af8f70eb2d501534bab
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:    21232 4a9ba4b1ac4ce2d5c2c3c3f2d7311506
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:    18410 8b519ef4c7952bbaf470bed187d53bc2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:     8000 a8449358e45b69dba6a7a75d2d5699e2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:    23112 fc767c3fe309f0294428521b1933c2b4
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:    28326 57c9957a11dab6d52888f82f8f80be46
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:     7624 19d130845dc8b370e13870c6eabd5720
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:    12984 b468564f7250de1d749a8e057eb01462
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:    21512 7605bfe517943cafa076db8551ad1e99
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:    17254 79257012aa4b000fe9fa82cfe985ed43
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.9_amd64.deb
+      Size/MD5:  1705048 8dfe9363fb64f2f4a70758958ca31ca4
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:  1631046 aef628ebbe8c897192f7267eb1b808cc
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:  3044388 ab4e7c5e83103c0d2827578552335187
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:    16846 b230772ca3c791ed8c8e64cce99f0772
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:    35560 c7a9dd11f0ad13391a344ce4b6ec8911
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:    31072 84478ec67c20782309a42b815d88f569
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:    19478 f3708205eec173f7ae3fe933d663cac3
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:    17056 c094f672d7d58fc4eb612c8edebb3f95
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:     7744 9a2e465e18275fb4e73db17da4881479
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:    20904 0f277ef545109d5d7652eb67aa3325f6
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:    26072 3b1ffa2d29510b6f9bee35593a52f515
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:     7378 f4ee9b9a7a87d678d5078ac1744eb938
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:    12320 29a8a019226abf3179b0e9d37de562ab
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:    20010 7dcd47e759aa3284414428560be8b028
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:    15876 97afbfac4a0cf0f5d65bca298d192947
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.9_i386.deb
+      Size/MD5:  1645632 d2d832b255a76a171a3c0e92358f6621
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:  1690950 93573b05ce973a986622355a61b62bc1
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:  3203746 1e6bb821114d2a9759ace2ccd228b045
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:    19082 1149a05fe9335225786afa7039c9c1fd
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:    38284 b45719d38cd9e41a358da86e12a3358f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:    34006 c0cac2a45d7da077d3948a34e1c3bd33
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:    21474 c383448d08c39bbf468f090877a8dbb0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:    19304 7d23e82a5c991f40641814cec3fa023f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:     9320 a4469b0c5c68c837ea196c44fe186af0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:    22678 71501b4952953e215c736c68f32c0678
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:    28406 5718a5a9f91cce77c7be1b089c10dca7
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:     9008 10f220191ff32538b4a0f1b6871e835f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:    14328 ca81b4fd4df4f67a6e1511fb4a4c66c7
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:    22192 1e3c119de37fef26225631959df16a21
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:    18060 9293dd511f251c830753ffbc3e74247e
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.9_powerpc.deb
+      Size/MD5:  1708946 ee126506d0023696b488d463d59923b4
+
+Updated universe packages for Ubuntu 5.04 (Hoary Hedgehog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe_4.3.10-10ubuntu3.1.diff.gz
+      Size/MD5:   269682 c95d409b39acfd20354ab6bad8b34aea
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe_4.3.10-10ubuntu3.1.dsc
+      Size/MD5:     1669 7d76d8e0b2aab57aca1e18f61d1f6ce1
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe_4.3.10.orig.tar.gz
+      Size/MD5:  4892209 73f5d1f42e34efa534a09c6091b5a21e
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-pear_4.3.10-10ubuntu3.1_all.deb
+      Size/MD5:   249512 dd075880e8c84a3f6ca86d27a87f079e
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/libapache-mod-php4_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:  1659024 1ce063ab45dc418a22431f84d695e4b0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-curl_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    17808 4da475770cbd42f1c071d41c494188b8
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-domxml_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    40782 278f335641e96382fd2939ed9fbcc6a7
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-gd_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    34264 4da35e109647012fcfde24f49552bcd0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-imap_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    37628 7beb533d0875713c5f32e929300873aa
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-ldap_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    21386 95c19c2109a87323e2db9f7b6b2b963c
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mcal_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    18864 ed029458bb75d930f5eded7bdebf42c8
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mhash_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:     8230 255b3a2437187a623951cc247125c204
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mysql_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    23522 27069dc0b9e18e0f00028cdecd9e5052
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-odbc_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    28760 cc1112d462d62b87bdfc12a6e699b76b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-recode_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:     7892 01c7bc557d520fc62e707b6057c35cdf
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-snmp_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    13656 dcd0b09085a96fd2fd1ae282a1fe1183
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-sybase_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    22428 acd62a8fabe4f825e8bbcd71dd0c4d58
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe-common_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:   124338 ffe18168230bd360df7ce16669a2bfc3
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-xslt_4.3.10-10ubuntu3.1_amd64.deb
+      Size/MD5:    17554 fa7e07ceebf5386055df1f91c62b859f
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/libapache-mod-php4_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:  1592446 707e21f8e3cb343d953d10038e6c97b6
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-curl_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    17364 61a15c5e34802afa5fc2f4328bacbfde
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-domxml_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    35924 48080f5998fd89cb63f012f4e5030a77
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-gd_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    31610 82d4dc9766c1cd2e8669b6872dc41443
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-imap_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    36212 246f5877d7381d158ee68da6084ed52e
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-ldap_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    19614 b913361fdafec3dd8db84553f799e0c7
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mcal_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    17400 450607a9e057c297705d453dd5d55a8f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mhash_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:     7982 fc89feabb82a9d888a265a00e4f6664e
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mysql_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    21246 93f63d10d78ffbd76eaff7218b9b7d6c
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-odbc_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    26386 0a25c1544d59224390b6f27a2eecdad8
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-recode_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:     7628 2ab8973f0df75b9aade1ac38b5e16602
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-snmp_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    12950 49a5b6f4bb7cf93305d24af4a3637946
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-sybase_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    20814 2658a05663d67a91fc216e9a3bd8d02b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe-common_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:   124336 50b2a7fb1f550bffb48b95b422f898b9
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-xslt_4.3.10-10ubuntu3.1_i386.deb
+      Size/MD5:    16128 593ffa1f9ad80c737a92aeb40ecd3fc7
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/libapache-mod-php4_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:  1659224 69742857d6663d339cedebb407d067b1
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-curl_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    19622 ae98a7fa9dddb9aed8904ee0dc22548f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-domxml_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    38644 36110e98b5082ef8f061fa1b372e9db3
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-gd_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    34508 a51a2814ec40e7a7975e8b067359c4c4
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-imap_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    37690 5fc59fca49e04d9a80a1037761264baf
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-ldap_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    21388 323d9d15c74b23bacb9f03396fd19f00
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mcal_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    19716 5fe02ca3292206337b92b2055bd83c1f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mhash_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:     9562 d35a225e1e6e62896ea143cbbd0ee47e
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mysql_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    23018 ca861573b6f71711b6be19f33281b579
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-odbc_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    28660 e1b4401b903b3c6d4b820efa311157d4
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-recode_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:     9266 b4a3aa306f992f8d1bf40d7a9c26af06
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-snmp_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    14950 d4d41593b653b89b460ce913fc404742
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-sybase_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    23038 6501ba86450496dc6005d12de9eb8fb9
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe-common_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:   124350 134a58a05ba4939e32e00d6abe6db286
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-xslt_4.3.10-10ubuntu3.1_powerpc.deb
+      Size/MD5:    18256 01c05bf4a68f681bd340f213bb14744a
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050705/cce243ac/attachment.pgp>
+
+From martin.pitt at canonical.com  Wed Jul  6 14:12:56 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Wed, 6 Jul 2005 16:12:56 +0200
+Subject: [USN-148-1] zlib vulnerability
+Message-ID: <20050706141256.GA2325@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-148-1	      July 06, 2005
+zlib vulnerability
+CAN-2005-2096
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+zlib1g
+
+The problem can be corrected by upgrading the affected package to
+version 1:1.2.1.1-3ubuntu1.1 (for Ubuntu 4.10), or 1:1.2.2-4ubuntu1.1
+(for Ubuntu 5.04). A standard system upgrade is NOT SUFFICIENT to
+effect the necessary changes! If you can afford to reboot your
+machine, this is the easiest way to ensure that all services using
+this library are restarted correctly. If not, please manually restart
+all server applications.
+
+Details follow:
+
+Tavis Ormandy discovered that zlib did not properly verify data
+streams.  Decompressing certain invalid compressed files caused
+corruption of internal data structures, which caused applications
+which link to zlib to crash.  Specially crafted input might even have
+allowed arbitrary code execution.
+
+zlib is used by hundreds of server and client applications, so this
+vulnerability could be exploited to cause Denial of Service attacks to
+almost all services provided by an Ubuntu system.
+
+
+Updated packages for Ubuntu 4.10 (Warty Warthog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.1.1-3ubuntu1.1.diff.gz
+      Size/MD5:    15294 f90b9336bb009307dee87f0677cb07c4
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.1.1-3ubuntu1.1.dsc
+      Size/MD5:      615 887dceeeda873436c0ce2b4660e63377
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.1.1.orig.tar.gz
+      Size/MD5:   345935 a98b37434fb4508cb90d5606bfe8c716
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.1.1-3ubuntu1.1_amd64.deb
+      Size/MD5:    27118 77ac7d268147f196ff8a4feaa6866dd8
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.1.1-3ubuntu1.1_amd64.deb
+      Size/MD5:   423318 5e5f70c5c94c033da2f64ea4a82d08c8
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.1.1-3ubuntu1.1_amd64.udeb
+      Size/MD5:    42886 1e36349fb14a54dc56202d4b6640716c
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.1.1-3ubuntu1.1_amd64.deb
+      Size/MD5:    66528 f412e92660ecc41753414ea5d102dbbd
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.1.1-3ubuntu1.1_i386.deb
+      Size/MD5:    24534 ec183c8a2dd78e89223221645eecdd9f
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.1.1-3ubuntu1.1_i386.deb
+      Size/MD5:   403758 3672c8a4f230da49e3e16864470f7ab8
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.1.1-3ubuntu1.1_i386.udeb
+      Size/MD5:    37376 7257b1ea59d4b44eec00697b029e57cc
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.1.1-3ubuntu1.1_i386.deb
+      Size/MD5:    61050 feee9d9af349d90187c03e1be78632ec
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.1.1-3ubuntu1.1_powerpc.deb
+      Size/MD5:    29202 d58be04c1b03d8f93e1b17a9edc549bb
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.1.1-3ubuntu1.1_powerpc.deb
+      Size/MD5:   442080 47e9e0793350614629efe7773e26a785
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.1.1-3ubuntu1.1_powerpc.udeb
+      Size/MD5:    44776 b6157cc917d46b09f7cab5572c4470eb
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.1.1-3ubuntu1.1_powerpc.deb
+      Size/MD5:    68632 2af71690bbc01ce9f529ac757498bb3e
+
+Updated packages for Ubuntu 5.04 (Hoary Hedgehog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.2-4ubuntu1.1.diff.gz
+      Size/MD5:    14745 c5ced6c988fcb1e8180f16cc1f9e8d65
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.2-4ubuntu1.1.dsc
+      Size/MD5:      691 853cdc541aff78f04b7bbf13ade880c8
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.2.orig.tar.gz
+      Size/MD5:   430700 d43dabe3d374e299f2631c5fc5ce31f5
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.2-4ubuntu1.1_amd64.deb
+      Size/MD5:    28218 86c4889da912f447bad2ab386f131690
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.2-4ubuntu1.1_amd64.deb
+      Size/MD5:   503058 b2f83435552a145880af3fa4b54ed9f3
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.2-4ubuntu1.1_amd64.udeb
+      Size/MD5:    42918 e858fbf107b7ca9c9c4763bcb33358fc
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.2-4ubuntu1.1_amd64.deb
+      Size/MD5:    67790 179d1749c638e9764fbbdc8ecaa8ed9b
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.2-4ubuntu1.1_i386.deb
+      Size/MD5:    25488 2798762828ab44c404de6dd193ff84b3
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.2-4ubuntu1.1_i386.deb
+      Size/MD5:   483792 5d9d1e58b33084101f8679e0319b5af0
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.2-4ubuntu1.1_i386.udeb
+      Size/MD5:    37400 8fe0adc941ee1fbc4d8b00c5cde1d89a
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.2-4ubuntu1.1_i386.deb
+      Size/MD5:    62330 910f69ead9ae59caa3e04985bf08a9a1
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.2-4ubuntu1.1_powerpc.deb
+      Size/MD5:    30272 6a474a56695c5ec180acc63b0915d17e
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.2-4ubuntu1.1_powerpc.deb
+      Size/MD5:   522986 ba9c4d53d8b223141460d33f781019c8
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.2-4ubuntu1.1_powerpc.udeb
+      Size/MD5:    44792 7f4796a14f6a3a06a6a1c89555437b11
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.2-4ubuntu1.1_powerpc.deb
+      Size/MD5:    69918 09101f2dda0bddef945b8681de9bf8d5
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050706/653994ff/attachment.pgp>
+
+From martin.pitt at canonical.com  Wed Jul  6 14:51:45 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Wed, 6 Jul 2005 16:51:45 +0200
+Subject: [USN-147-2] Fixed php4-pear packages for USN-147-1
+Message-ID: <20050706145145.GA2810@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-147-2	      July 06, 2005
+php4, php4-universe fixed packages
+https://bugzilla.ubuntu.com/show_bug.cgi?id=12426
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+php4-pear
+
+The problem can be corrected by upgrading the affected package to
+version 4:4.3.8-3ubuntu7.10 (for Ubuntu 4.10), or 4:4.3.10-10ubuntu3.2
+(for Ubuntu 5.04).  In general, a standard system upgrade is
+sufficient to effect the necessary changes.
+
+Details follow:
+
+USN-147-1 [1] fixed a remote code execution vulnerability in the
+XMLRPC module of the PEAR library. Unfortunately the packages
+announced in USN-147-1 were faulty and shipped broken xmlrpc modules.
+The updated packages ship correct modules.
+
+We apologize for the inconvenience.
+
+[1] https://www.ubuntulinux.org/support/documentation/usn/usn-147-1
+
+
+Updated packages for Ubuntu 4.10 (Warty Warthog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8-3ubuntu7.10.diff.gz
+      Size/MD5:   616071 98485600b0aa10939786f7b01cd34b40
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8-3ubuntu7.10.dsc
+      Size/MD5:     1626 ab42301d25d717d49a72bef2e8b019fc
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4_4.3.8.orig.tar.gz
+      Size/MD5:  4832570 dd69f8c89281f088eadf4ade3dbd39ee
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-dev_4.3.8-3ubuntu7.10_all.deb
+      Size/MD5:   332318 3eeeec677634895e34a0f4c64560af40
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-pear_4.3.8-3ubuntu7.10_all.deb
+      Size/MD5:   333482 5e4864185f8136b6f0e804b696462b9f
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:  1689232 75ba6d495b73990899eaa1f0d405c128
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:  3198332 601a21f8449eddacba10660ab36b558a
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:    17268 8dd71d3afe702f8b11826aa5339cafae
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:    40430 519b201f31f8861f68999e2e116b9d16
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:    33498 b11241d1a7032b483a5322036e4dba46
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:    21232 a5e962ce382b89a298989a8745e5e6f1
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:    18406 686f05eba89af3ae8123e18638962e2a
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:     7994 acbd7c447b7863cf6fed1683c6f9aadc
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:    23112 c9b66886124d1b588d7a8167973ae0cb
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:    28328 aa25c1dcca5329b35c3b9fd02a0ed771
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:     7614 c8032d7825a2863790baf9b50e8525a1
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:    12974 316382090d8df0689a713097987b2019
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:    21506 3d324c8ca134197f27a3e36e6cd604e2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:    17246 ea7ab011e7b3a5bfb48b754e0d736e64
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.10_amd64.deb
+      Size/MD5:  1705100 4633e5daa738bb510e66b3f0cad4a556
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:  1631100 4df16813ce3dbde17d511574d2835f01
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:  3044444 e611e74c9b0c13a58f0e0b431d691273
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:    16848 f2d48c8ba1d1622f978682e92c1cd3f4
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:    35558 47d4d480234a911d8471ad3e6cd1d6ca
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:    31068 313918ec087902d10568b954f259d2f0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:    19470 3d5cb8779e17acb207ef37b59340761a
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:    17054 8f30ecfb3da96557de89b6738b1e31e8
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:     7744 01b97d99746fd39f08fd61c54f74d48c
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:    20904 993932ed1d15e6045119184527d35a70
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:    26072 587207e34023175239c88f7bca3508cf
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:     7376 27849cbb53c0eb153c4ffed82bfe4bdf
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:    12322 16ed6ad76a5c2d4591d1a8fd90ea13ed
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:    20006 57aa51e658f0ff1211f8a68caaedfbf8
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:    15884 8ee4b1bcff9902d36ecfc134da1246e0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.10_i386.deb
+      Size/MD5:  1645714 28d22d5cd74e68976a084d73f3b9ef21
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/libapache2-mod-php4_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:  1690996 035299c8a28817f9cb799ba0facf141a
+    http://security.ubuntu.com/ubuntu/pool/main/p/php4/php4-cgi_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:  3203834 e078602ee13671d317f5b1f1f3b991bf
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-curl_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:    19080 987fdd203d15c645e88817070169a67d
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-domxml_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:    38274 5ab71279aba56e87053b30460e6a936f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-gd_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:    34002 dcee79daa77c2c967a2279ad6d093004
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-ldap_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:    21474 bae76feca9a4c0cc8c74a47037cd1b58
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mcal_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:    19306 05501076697f42d188b10fa5fe63c843
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mhash_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:     9318 33f167a6c034fef7bef16cfa8cf3363a
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-mysql_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:    22682 889a0196350a4a797386b8b42d3c71a9
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-odbc_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:    28404 97fce0b81ce498e666d9c28ef1ca9ef1
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-recode_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:     9000 53d0b5f737cac1a92cc7a513a451285b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-snmp_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:    14326 ef06feac47fad7569770559e1e135e61
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-sybase_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:    22194 f01f7617a77f3894baeb11c2eee07b0a
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4-xslt_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:    18056 5225235a376e29310e382687ae25e46b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4/php4_4.3.8-3ubuntu7.10_powerpc.deb
+      Size/MD5:  1708984 e43d5c25d7fefd300df0941d9e2027f8
+
+Updated packages for Ubuntu 5.04 (Hoary Hedgehog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe_4.3.10-10ubuntu3.2.diff.gz
+      Size/MD5:   269758 01c5a92086852e2e5900cad3999e98dd
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe_4.3.10-10ubuntu3.2.dsc
+      Size/MD5:     1669 b960c23f8c8b730e5d8799cfbb6c5173
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe_4.3.10.orig.tar.gz
+      Size/MD5:  4892209 73f5d1f42e34efa534a09c6091b5a21e
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-pear_4.3.10-10ubuntu3.2_all.deb
+      Size/MD5:   249540 c31e3c6a1b683d179505a9b7710f307d
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/libapache-mod-php4_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:  1659024 34d1e64a99e988315f1942bcf0fd9620
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-curl_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    17812 4d7bfd832b6b3f074abc3eab9478919f
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-domxml_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    40782 95c5a91556330d58deadfcc8e1514404
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-gd_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    34258 d44093a3e2cd126a1418f7291de721a7
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-imap_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    37624 f3003362ad2fced35b4fce327756d93c
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-ldap_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    21388 99ac24bd1434d6ed8c3563b535de57a2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mcal_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    18868 ea13013a299967c3cc15c6eaf75acc2e
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mhash_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:     8232 396b159e54961ce84bc07d463a9ea6e0
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mysql_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    23528 006990406eab8d4a978a1c084f128aa7
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-odbc_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    28764 c0c033d64e26589df81419c5f3d41143
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-recode_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:     7900 f1ffcefca7d2ab9d7f2789c9ef115e79
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-snmp_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    13662 90b61d201efd208c29ff951fdff45210
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-sybase_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    22430 d23981d933115b7e2ced3215fbda863c
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe-common_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:   124412 9f28af310afcb9906a400b0ea6c05ecb
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-xslt_4.3.10-10ubuntu3.2_amd64.deb
+      Size/MD5:    17556 0337e1e0549bd8fa0251ee6547052c35
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/libapache-mod-php4_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:  1592414 5a2ec508949734627c40d3f66893a174
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-curl_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    17370 3c5279ab34b084ccb26d0a42e5c4dba5
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-domxml_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    35928 640521c68860580a07b816eed7aab330
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-gd_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    31614 56a195209ada388c30c248eb219819d8
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-imap_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    36222 cb8afd75b98404a5af2e35a3b95d50e2
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-ldap_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    19622 ca83e936ff6025b04478b79c92ee7b04
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mcal_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    17410 8baab110e3b4c49e55e7473ed013f90c
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mhash_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:     7988 609cdd0cc8432e1aa15a6005be0a2bb4
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mysql_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    21258 94d11f69605010e5eb5dbe04d449d08a
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-odbc_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    26392 829a91425f33e82091053808d9facb86
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-recode_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:     7632 85e1f6f9a35896eccd9e56d51dbbfb21
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-snmp_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    12964 e4bb39db6afd4c03fee36ca345e3f80b
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-sybase_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    20820 13adbef148418d84ce1a3804ce744985
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe-common_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:   124398 0bfde2d2936d4e4a036f0ee7e5255ff5
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-xslt_4.3.10-10ubuntu3.2_i386.deb
+      Size/MD5:    16128 cdcdaa2e315c41e09887f1986ba42aa3
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/libapache-mod-php4_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:  1659148 7f31060c0c14a6babd862424e2c26742
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-curl_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    19628 d8f6c918a6531f983096c069e409322c
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-domxml_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    38652 3a7ffd1fb5c34fcb77532018cbe17aee
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-gd_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    34516 0a44b039e699db5135a567d11c554f2d
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-imap_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    37694 974fef5ea02d7f0954c7ef5fb6c5af97
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-ldap_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    21396 dabf93ded4945294610ea21868f997aa
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mcal_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    19720 358bc7e4b61b5c69ba4738235bb7a3a8
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mhash_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:     9566 5d64357b88cd0fca9d06ff331880e027
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-mysql_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    23022 f15a75e595a4ef5c3f98699dc9874b9e
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-odbc_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    28674 76d00c859f2c42f01259ad57636c58bc
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-recode_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:     9270 998c38572b6668a285eaf73e9e885ada
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-snmp_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    14954 7f667098d459481ddda0431b4f1a9956
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-sybase_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    23044 52ad965beaa6d3cefd34a1445ad1fcf9
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-universe-common_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:   124410 1e918030db29790acd32ba0075b45e3d
+    http://security.ubuntu.com/ubuntu/pool/universe/p/php4-universe/php4-xslt_4.3.10-10ubuntu3.2_powerpc.deb
+      Size/MD5:    18262 2a0a02272722c892415eeeb3b73afaf5
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050706/2da1b73b/attachment.pgp>
+
+From martin.pitt at canonical.com  Thu Jul 21 07:13:51 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Thu, 21 Jul 2005 09:13:51 +0200
+Subject: [USN-149-1] Firefox vulnerabilities
+Message-ID: <20050721071351.GA7091@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-149-1	      July 21, 2005
+mozilla-firefox vulnerabilities
+CAN-2005-1937, CAN-2005-2260, CAN-2005-2261, CAN-2005-2263,
+CAN-2005-2264, CAN-2005-2265, CAN-2005-2266, CAN-2005-2267,
+CAN-2005-2268, CAN-2005-2269, CAN-2005-2270
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+mozilla-firefox
+
+The problem can be corrected by upgrading the affected package to
+version 1.0.2-0ubuntu5.4. After a standard system upgrade you need to
+restart Firefox to effect the necessary changes.
+
+Please note that the Ubuntu 4.10 version is also affected; an upgrade
+is in preparation.
+
+Details follow:
+
+Secunia.com reported that one of the recent security patches in
+Firefox reintroduced the frame injection patch that was originally
+known as CAN-2004-0718. This allowed a malicious web site to spoof the
+contents of other web sites. (CAN-2005-1937)
+
+In several places the browser user interface did not correctly
+distinguish between true user events, such as mouse clicks or
+keystrokes, and synthetic events genenerated by web content. This
+could be exploited by malicious web sites to generate e. g. mouse
+clicks that install malicious plugins. Synthetic events are now
+prevented from reaching the browser UI entirely. (CAN-2005-2260)
+
+Scripts in XBL controls from web content continued to be run even when
+Javascript was disabled. This could be combined with most script-based
+exploits to attack people running vulnerable versions who thought
+disabling Javascript would protect them. (CAN-2005-2261)
+
+Matthew Mastracci discovered a flaw in the addons installation
+launcher. By forcing a page navigation immediately after calling the
+install method a callback function could end up running in the context
+of the new page selected by the attacker. This callback script could
+steal data from the new page such as cookies or passwords, or perform
+actions on the user's behalf such as make a purchase if the user is
+already logged into the target site. However, the default settings
+allow only http://addons.mozilla.org to bring up this install dialog.
+This could only be exploited if users have added untrustworthy sites
+to the installation whitelist, and if a malicious site can convince
+you to install from their site. (CAN-2005-2263)
+
+Kohei Yoshino discovered a Javascript injection vulnerability in the
+sidebar. Sites can use the _search target to open links in the Firefox
+sidebar. A missing security check allowed the sidebar to inject
+"data:" URLs containing scripts into any page open in the browser.
+This could be used to steal cookies, passwords or other sensitive
+data. (CAN-2005-2264)
+
+The function for version comparison in the addons installer did not
+properly verify the type of its argument. By passing specially crafted
+Javascript objects to it, a malicious web site could crash the browser
+and possibly even execute arbitrary code with the privilege of the
+user account Firefox runs in. (CAN-2005-2265)
+
+A child frame can call top.focus() even if the framing page comes from
+a different origin and has overridden the focus() routine. Andreas
+Sandblad discovered that the call is made in the context of the child
+frame. This could be exploited to steal cookies and passwords from the
+framed page, or take actions on behalf of a signed-in user. However,
+web sites with above properties are not very common. (CAN-2005-2266)
+
+Several media players, for example Flash and QuickTime, support
+scripted content with the ability to open URLs in the default browser.
+The default behavior for Firefox was to replace the currently open
+browser window's content with the externally opened content. Michael
+Krax discovered that if the external URL was a javascript: URL it
+would run as if it came from the site that served the previous
+content, which could be used to steal sensitive information such as
+login cookies or passwords. If the media player content first caused a
+privileged chrome: url to load then the subsequent javascript: url
+could execute arbitrary code. (CAN-2005-2267)
+
+Alerts and prompts created by scripts in web pages were presented with
+the generic title [JavaScript Application] which sometimes made it
+difficult to know which site created them. A malicious page could
+exploit this by causing a prompt to appear in front of a trusted site
+in an attempt to extract information such as passwords from the user.
+In the fixed version these prompts contain the hostname of the page
+which created it. (CAN-2005-2268)
+
+The XHTML DOM node handler did not take namespaces into account when
+verifying node types based on their names. For example, an XHTML
+document could contain an <IMG> tag with malicious contents, which
+would then be processed as the standard trusted HTML <img> tag. By
+tricking an user to view malicious web sites, this could be exploited
+to execute attacker-specified code with the full privileges of the
+user. (CAN-2005-2269)
+
+It was discovered that some objects were not created appropriately.
+This allowed malicious web content scripts to trace back the creation
+chain until they found a privileged object and execute code with
+higher privileges than allowed by the current site.  (CAN-2005-2270)
+
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.2-0ubuntu5.4.diff.gz
+      Size/MD5:   901156 7d129844042561aec3373c338ae50da6
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.2-0ubuntu5.4.dsc
+      Size/MD5:     1058 91c2a87189e22af2dcc03e5e2cfc69db
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.2.orig.tar.gz
+      Size/MD5: 41023585 7e98ce4aefc5ea9b5f1f35b7a0c58f60
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-dev_1.0.2-0ubuntu5.4_amd64.deb
+      Size/MD5:  2631798 331c9f3d9ae8a842130f889423cbae07
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla-firefox/mozilla-firefox-dom-inspector_1.0.2-0ubuntu5.4_amd64.deb
+      Size/MD5:   157476 1984a251769899721cb3524b4e7d34cf
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-gnome-support_1.0.2-0ubuntu5.4_amd64.deb
+      Size/MD5:    56730 4f6ebca89f5b503c3678354938b28d63
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.2-0ubuntu5.4_amd64.deb
+      Size/MD5:  9764306 ce853daaf0039025b5a911345c519e87
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-dev_1.0.2-0ubuntu5.4_i386.deb
+      Size/MD5:  2631766 1fd464e44cc272526ac48634e7fd2b08
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla-firefox/mozilla-firefox-dom-inspector_1.0.2-0ubuntu5.4_i386.deb
+      Size/MD5:   152370 585a235429807cd05b0b0621fc3e9db3
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-gnome-support_1.0.2-0ubuntu5.4_i386.deb
+      Size/MD5:    53344 21da121beb266f5f99973e7f7f9e327e
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.2-0ubuntu5.4_i386.deb
+      Size/MD5:  8793476 83ed14939ec232417f80a14165ec2261
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-dev_1.0.2-0ubuntu5.4_powerpc.deb
+      Size/MD5:  2631838 d4197428d1b5a923cb0855896740d2c2
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla-firefox/mozilla-firefox-dom-inspector_1.0.2-0ubuntu5.4_powerpc.deb
+      Size/MD5:   151184 06ce5e6001caf2f419edd4c99d4c434c
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-gnome-support_1.0.2-0ubuntu5.4_powerpc.deb
+      Size/MD5:    55982 ae0309f3ef3d5440716e58f9b722b2b7
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.2-0ubuntu5.4_powerpc.deb
+      Size/MD5:  8455944 02e721acebbcb9106b4a806baf4e53be
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050721/d8cb594b/attachment.pgp>
+
+From martin.pitt at canonical.com  Thu Jul 21 09:27:11 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Thu, 21 Jul 2005 11:27:11 +0200
+Subject: [USN-150-1] KDE library vulnerability
+Message-ID: <20050721092711.GB15909@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-150-1	      July 21, 2005
+kdelibs vulnerability
+CAN-2005-1920
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+kdelibs4
+
+The problem can be corrected by upgrading the affected package to
+version 4:3.4.0-0ubuntu3.3. In general, a standard system upgrade is
+sufficient to effect the necessary changes.
+
+Details follow:
+
+Kate and Kwrite create a backup file before saving a modified file.
+These backup files were created with default permissions, even if the
+original file had more strict permissions set, so that other local
+users could possibly read the backup file even if they are not
+permitted to read the original file.
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs_3.4.0-0ubuntu3.3.diff.gz
+      Size/MD5:   358430 a8ea51e8e6fee9c82b2224e844698f68
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs_3.4.0-0ubuntu3.3.dsc
+      Size/MD5:     1334 f5cd48f8456e4f17df93e6531972cd1a
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs_3.4.0.orig.tar.gz
+      Size/MD5: 20024253 471740de13cfed37d35eb180fc1b9b38
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs-data_3.4.0-0ubuntu3.3_all.deb
+      Size/MD5:  8012946 34fea4958effee0bd5023accfed2cf5e
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs4-doc_3.4.0-0ubuntu3.3_all.deb
+      Size/MD5: 12073028 9b5073d96a623e02613723547542d440
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs_3.4.0-0ubuntu3.3_all.deb
+      Size/MD5:    20140 73ea0c759d078ccc98cbb2874b499e7c
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs-bin_3.4.0-0ubuntu3.3_amd64.deb
+      Size/MD5:   921514 359b27d378a663a10766aa793c759e11
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs4-dev_3.4.0-0ubuntu3.3_amd64.deb
+      Size/MD5:  1303422 ed1a2de56e3060aed872399dafb09936
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs4_3.4.0-0ubuntu3.3_amd64.deb
+      Size/MD5:  8969178 d31c4f092a67ad5e176dc8c748f4d759
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs-bin_3.4.0-0ubuntu3.3_i386.deb
+      Size/MD5:   839502 e5c1926a15a11fa9cfd5aa96be7fc80a
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs4-dev_3.4.0-0ubuntu3.3_i386.deb
+      Size/MD5:  1300806 8e97350ddc67c93e33c2596e41dd4ac8
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs4_3.4.0-0ubuntu3.3_i386.deb
+      Size/MD5:  8396554 86311699499de6ca7d92ba3fbe88fb95
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs-bin_3.4.0-0ubuntu3.3_powerpc.deb
+      Size/MD5:   904426 a3957d296c1a1de06b02b90e6c69cc0f
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs4-dev_3.4.0-0ubuntu3.3_powerpc.deb
+      Size/MD5:  1304172 5ca784e03ea3c2d9d95240da53dca4a7
+    http://security.ubuntu.com/ubuntu/pool/main/k/kdelibs/kdelibs4_3.4.0-0ubuntu3.3_powerpc.deb
+      Size/MD5:  8367822 1406ddf6609da78750a2d9f5e46fa6ec
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050721/6750f067/attachment.pgp>
+
+From martin.pitt at canonical.com  Thu Jul 21 10:01:38 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Thu, 21 Jul 2005 12:01:38 +0200
+Subject: [USN-151-1] zlib vulnerability
+Message-ID: <20050721100138.GA16454@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-151-1	      July 21, 2005
+zlib vulnerability
+CAN-2005-1849
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+zlib1g
+
+The problem can be corrected by upgrading the affected package to
+version 1:1.2.1.1-3ubuntu1.2 (for Ubuntu 4.10), or 1:1.2.2-4ubuntu1.2
+(for Ubuntu 5.04). 
+
+A standard system upgrade is NOT SUFFICIENT to effect the necessary
+changes! If you can afford to reboot your machine, this is the easiest
+way to ensure that all services using this library are restarted
+correctly. If not, please manually restart all server applications.
+
+Details follow:
+
+USN-148-1 fixed an improver input verification of zlib
+(CAN-2005-2096). Markus Oberhumer discovered additional ways a
+disrupted stream could trigger a buffer overflow and crash the
+application using zlib, so another update is necessary.
+
+zlib is used by hundreds of server and client applications, so this
+vulnerability could be exploited to cause Denial of Service attacks to
+almost all services provided by an Ubuntu system.
+
+Updated packages for Ubuntu 4.10 (Warty Warthog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.1.1-3ubuntu1.2.diff.gz
+      Size/MD5:    15670 c9f25a7839f5a5c103ce683213e98110
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.1.1-3ubuntu1.2.dsc
+      Size/MD5:      615 3c59d27929838076fd33dbb71f8d64d3
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.1.1.orig.tar.gz
+      Size/MD5:   345935 a98b37434fb4508cb90d5606bfe8c716
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.1.1-3ubuntu1.2_amd64.deb
+      Size/MD5:    27194 3e0dd478fb932b26ae44d7b5d2b648b6
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.1.1-3ubuntu1.2_amd64.deb
+      Size/MD5:   423402 b6f656fa91f566abf059fed47b16a5bf
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.1.1-3ubuntu1.2_amd64.udeb
+      Size/MD5:    42886 91a34004dbf0f27159d0fafb29e20662
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.1.1-3ubuntu1.2_amd64.deb
+      Size/MD5:    66610 0e38cf14dcc7fcb4f2ecce443eee1db2
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.1.1-3ubuntu1.2_i386.deb
+      Size/MD5:    24598 260d26e6f16655ad34165bc61bcd562b
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.1.1-3ubuntu1.2_i386.deb
+      Size/MD5:   403864 1377635e147cbe87012ad485fe540fcc
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.1.1-3ubuntu1.2_i386.udeb
+      Size/MD5:    37378 5fe41e0adc5cc363da7df70bb542ef84
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.1.1-3ubuntu1.2_i386.deb
+      Size/MD5:    61122 02c57d6b9c2fff96f068a3e55478a46d
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.1.1-3ubuntu1.2_powerpc.deb
+      Size/MD5:    29276 b3d70bc4dd8f602847ae6cacb757856c
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.1.1-3ubuntu1.2_powerpc.deb
+      Size/MD5:   442116 f82df965fd614de3e372856611ca767c
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.1.1-3ubuntu1.2_powerpc.udeb
+      Size/MD5:    44778 cbb30266486666a2c6bada98fa0c3590
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.1.1-3ubuntu1.2_powerpc.deb
+      Size/MD5:    68712 a8ee86ad9b5ccffb88b060745482b3c8
+
+Updated packages for Ubuntu 5.04 (Hoary Hedgehog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.2-4ubuntu1.2.diff.gz
+      Size/MD5:    15117 e6d6ecb1aa566866cdbf1514f24a9fef
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.2-4ubuntu1.2.dsc
+      Size/MD5:      691 958db7bd20c218a240d212d23f740e48
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib_1.2.2.orig.tar.gz
+      Size/MD5:   430700 d43dabe3d374e299f2631c5fc5ce31f5
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.2-4ubuntu1.2_amd64.deb
+      Size/MD5:    28284 7f8be8ea9f1f07f0fb85a9a05d26fb80
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.2-4ubuntu1.2_amd64.deb
+      Size/MD5:   503050 ad5a80352f07abfe7b22b22171969249
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.2-4ubuntu1.2_amd64.udeb
+      Size/MD5:    42920 437a7c8359db9540cace6c4305fd516d
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.2-4ubuntu1.2_amd64.deb
+      Size/MD5:    67868 2dd68a25dfa7803067c6b2616865367e
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.2-4ubuntu1.2_i386.deb
+      Size/MD5:    25568 be825d29e03b67083757defc390e6a42
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.2-4ubuntu1.2_i386.deb
+      Size/MD5:   483986 4ce5a8181cb12ecea1bee98d876d677f
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.2-4ubuntu1.2_i386.udeb
+      Size/MD5:    37402 8503f5c38be3a1551198a56f9d06394f
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.2-4ubuntu1.2_i386.deb
+      Size/MD5:    62416 a9db1c1d89e2b80cd0d4a7a77a41d501
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/z/zlib/zlib-bin_1.2.2-4ubuntu1.2_powerpc.deb
+      Size/MD5:    30344 2294d0e743c50ecbfd2e998ddc797b06
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-dev_1.2.2-4ubuntu1.2_powerpc.deb
+      Size/MD5:   523122 71c0cce57a9b9d33f24b05f6fa0d7177
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g-udeb_1.2.2-4ubuntu1.2_powerpc.udeb
+      Size/MD5:    44788 f78614ffae7658d92f0b58524f04909e
+    http://security.ubuntu.com/ubuntu/pool/main/z/zlib/zlib1g_1.2.2-4ubuntu1.2_powerpc.deb
+      Size/MD5:    69998 95b5de13a5d4c9c7c2aa3962f2cd1b18
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050721/137889f5/attachment.pgp>
+
+From martin.pitt at canonical.com  Thu Jul 21 14:12:21 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Thu, 21 Jul 2005 16:12:21 +0200
+Subject: [USN-152-1] PAM/NSS LDAP vulnerabilitiy
+Message-ID: <20050721141221.GA7042@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-152-1	      July 21, 2005
+openldap2, libpam-ldap, libnss-ldap vulnerabilities
+CAN-2005-2069
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+libnss-ldap
+libpam-ldap
+slapd
+
+On Ubuntu 4.10, the problem can be corrected by upgrading the affected
+packages to version 2.1.30-2ubuntu4.1 (slapd), 164-2ubuntu0.1
+(libpam-ldap), and 220-1ubuntu0.1 (libnss-ldap).
+
+On Ubuntu 5.04, the problem can be corrected by upgrading the affected
+packages to version 2.1.30-3ubuntu3.1 (slapd), 169-1ubuntu0.1
+(libpam-ldap), and 220-1ubuntu0.1 (libnss-ldap).
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+(Please note that libnss-ldap and libpam-ldap are not officially
+supported by Ubuntu, they are in the "universe" suite of the archive.)
+
+Details follow:
+
+Andrea Barisani discovered a flaw in the SSL handling of pam-ldap and
+libnss-ldap. When a client connected to a slave LDAP server using SSL,
+the slave server did not use SSL as well when contacting the LDAP
+master server. This caused passwords and other confident information
+to be transmitted unencrypted between the slave and the master.
+
+
+Updated packages for Ubuntu 4.10 (Warty Warthog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_211-4ubuntu0.1.diff.gz
+      Size/MD5:    40012 180bfdaf8ddf765fbffd5a671c2e08e5
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_211-4ubuntu0.1.dsc
+      Size/MD5:      687 6b1c2784a1033e5ec81903976c950331
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_211.orig.tar.gz
+      Size/MD5:   221013 34adcab5d46a436617ae686cc7c5e78f
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_164-2ubuntu0.1.diff.gz
+      Size/MD5:    31544 8d085bc008fe5ac70b2a0ad6d56f92f8
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_164-2ubuntu0.1.dsc
+      Size/MD5:      678 da1e9384d50f7b968adf547d829b7315
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_164.orig.tar.gz
+      Size/MD5:   116873 0b5d6ef6735480210d27a3d969f59e12
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/openldap2_2.1.30-2ubuntu4.1.diff.gz
+      Size/MD5:   116650 89863ef77edba510914cfdad0d3348ef
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/openldap2_2.1.30-2ubuntu4.1.dsc
+      Size/MD5:      971 a430e9d325011aa5707b511f64d239dd
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/openldap2_2.1.30.orig.tar.gz
+      Size/MD5:  2044673 e2ae8148c4bed07d7a70edd930bdc403
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libslapd2-dev_2.1.30-2ubuntu4.1_all.deb
+      Size/MD5:    71854 f2b7772fa613690daa5eb85afcd13a34
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/ldap-utils_2.1.30-2ubuntu4.1_amd64.deb
+      Size/MD5:   125906 79af7aa37ff71b874214b90ee9ecae1e
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2-dev_2.1.30-2ubuntu4.1_amd64.deb
+      Size/MD5:   360024 986821f16397c44875c6f9631e376620
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2_2.1.30-2ubuntu4.1_amd64.deb
+      Size/MD5:   308242 d4047e25be22bcf3064f3401d3827a4f
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_211-4ubuntu0.1_amd64.deb
+      Size/MD5:    69096 4dce5370da2e0f675d274801f993ac05
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_164-2ubuntu0.1_amd64.deb
+      Size/MD5:    49546 bdda10f11dae5c0eb89aae5dcb58f17d
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/slapd_2.1.30-2ubuntu4.1_amd64.deb
+      Size/MD5:  1000922 d0cccba6c649de288204b677c051763c
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/ldap-utils_2.1.30-2ubuntu4.1_i386.deb
+      Size/MD5:   111448 146b9142a0148940068a0e583c0f05bd
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2-dev_2.1.30-2ubuntu4.1_i386.deb
+      Size/MD5:   316880 5828ac19e41a9dfd6f42acc754cb3c5d
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2_2.1.30-2ubuntu4.1_i386.deb
+      Size/MD5:   283620 2750618047fc01d8393a773caea6ee4f
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_211-4ubuntu0.1_i386.deb
+      Size/MD5:    67978 a2a3f9a58c2a01b9e03f8f7e28575b80
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_164-2ubuntu0.1_i386.deb
+      Size/MD5:    49208 cd423f7aa2211f49110913d661f9effe
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/slapd_2.1.30-2ubuntu4.1_i386.deb
+      Size/MD5:   902696 5acca424b573c4359cfd26e41677ce0c
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/ldap-utils_2.1.30-2ubuntu4.1_powerpc.deb
+      Size/MD5:   127948 1a88da127a39484da2c2d0fb782ae0ac
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2-dev_2.1.30-2ubuntu4.1_powerpc.deb
+      Size/MD5:   371714 e3579e3bedba4e79e4817178aae191de
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2_2.1.30-2ubuntu4.1_powerpc.deb
+      Size/MD5:   301834 207ffdaf7d6a59efeed541c1186826be
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_211-4ubuntu0.1_powerpc.deb
+      Size/MD5:    70402 4dd21e0f29aacf85c3e8caef7ac04ccb
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_164-2ubuntu0.1_powerpc.deb
+      Size/MD5:    49762 c10ceae89d679444cab7d150d709d09c
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/slapd_2.1.30-2ubuntu4.1_powerpc.deb
+      Size/MD5:   975904 b3c3f67196e71eb563e501f55bc97dd8
+
+Updated packages for Ubuntu 5.04 (Hoary Hedgehog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_220-1ubuntu0.1.diff.gz
+      Size/MD5:    26873 59ccd69249e345d2f535a4b6bdf323dd
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_220-1ubuntu0.1.dsc
+      Size/MD5:      687 660f621b904c8cc6db16a1027bca370c
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_220.orig.tar.gz
+      Size/MD5:   204826 d401485fcabf4ea40d244c2c9a19247e
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_169-1ubuntu0.1.diff.gz
+      Size/MD5:    26203 f6618a137174a52f3eaa2c6dc357b434
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_169-1ubuntu0.1.dsc
+      Size/MD5:      678 ba2b65635fcc64aefc6a12c2c90b3bd0
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_169.orig.tar.gz
+      Size/MD5:   119817 62abfe9c5d62e7d112c12d0e5863129f
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/openldap2_2.1.30-3ubuntu3.1.diff.gz
+      Size/MD5:   117295 743d542b68dd5d743527ac15500b8b51
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/openldap2_2.1.30-3ubuntu3.1.dsc
+      Size/MD5:      988 abcae0bb7933a4634c0562c41b17a4d5
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/openldap2_2.1.30.orig.tar.gz
+      Size/MD5:  2044673 e2ae8148c4bed07d7a70edd930bdc403
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libslapd2-dev_2.1.30-3ubuntu3.1_all.deb
+      Size/MD5:    72308 60a8341fad6776f7da90291b0c0a41e5
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/ldap-utils_2.1.30-3ubuntu3.1_amd64.deb
+      Size/MD5:   126282 504170293b367b3d3960c19619386368
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2-dev_2.1.30-3ubuntu3.1_amd64.deb
+      Size/MD5:   361172 fc2aaa72ddc00c7ea6e9118d18532672
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2_2.1.30-3ubuntu3.1_amd64.deb
+      Size/MD5:   309092 62bb57d16d2e0b7ef505d9023eacc687
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_220-1ubuntu0.1_amd64.deb
+      Size/MD5:    74590 f1087a8146dd42601bbc990f8d1c755d
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_169-1ubuntu0.1_amd64.deb
+      Size/MD5:    52078 6057c9f1597d80a2c162837b25f2e9a7
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/slapd_2.1.30-3ubuntu3.1_amd64.deb
+      Size/MD5:  1087990 a8a2b8b425be64cb3fcf5a32a8d83416
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/ldap-utils_2.1.30-3ubuntu3.1_i386.deb
+      Size/MD5:   110644 d52d6dd0c45e8532c6170ddf1a52f19c
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2-dev_2.1.30-3ubuntu3.1_i386.deb
+      Size/MD5:   317990 4e54bf4ec7dc799de00bf8bf0711bded
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2_2.1.30-3ubuntu3.1_i386.deb
+      Size/MD5:   284484 89c8c1a89831713025896642ccccd900
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_220-1ubuntu0.1_i386.deb
+      Size/MD5:    73536 ed6ee791428191886b86d29063997565
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_169-1ubuntu0.1_i386.deb
+      Size/MD5:    51670 384be799688e0277feb86b4508288699
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/slapd_2.1.30-3ubuntu3.1_i386.deb
+      Size/MD5:   979238 3e2fad1ffb1b9d7eac366467da98e3ce
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/ldap-utils_2.1.30-3ubuntu3.1_powerpc.deb
+      Size/MD5:   129544 bb935cbb6fc5e7670646607d0c481ff6
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2-dev_2.1.30-3ubuntu3.1_powerpc.deb
+      Size/MD5:   373102 fbd4736d7f2167db5a204609f08076e6
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/libldap2_2.1.30-3ubuntu3.1_powerpc.deb
+      Size/MD5:   302728 8e97eb53df941a8d4546f3de39477aa7
+    http://security.ubuntu.com/ubuntu/pool/universe/libn/libnss-ldap/libnss-ldap_220-1ubuntu0.1_powerpc.deb
+      Size/MD5:    75784 8d77afd6f2a602294cc1d953b9995c38
+    http://security.ubuntu.com/ubuntu/pool/universe/libp/libpam-ldap/libpam-ldap_169-1ubuntu0.1_powerpc.deb
+      Size/MD5:    52180 40ef599a113e873a235b76f315a444d2
+    http://security.ubuntu.com/ubuntu/pool/main/o/openldap2/slapd_2.1.30-3ubuntu3.1_powerpc.deb
+      Size/MD5:  1058104 59a515083487c2218c4acefb99bee97d
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050721/21383406/attachment.pgp>
+
+From martin.pitt at canonical.com  Fri Jul 22 14:54:06 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Fri, 22 Jul 2005 16:54:06 +0200
+Subject: Problems with recent Firefox security update
+Message-ID: <20050722145406.GA18037@box79162.elkhouse.de>
+
+Dear Hoary users,
+
+yesterday a security update for Mozilla Firefox was relased
+(USN-149-1). Many users seem to have problems with the new version, it
+crashes very often.
+
+The problem is that one of the security patches changed the API (the
+interface that extensions use to integrate with the browser), which
+breaks many extensions. Similar problems happen with the upstream
+release 1.0.6, so using that does not help very much.
+
+To get an usable browser quickly, you have two options:
+
+1) Uninstall extensions. Some extensions (like mozilla-tabextension,
+   which is also packaged in Ubuntu universe) that rely on the old
+   interface cause the browser to crash. Other extensions (like AdBlock)
+   run fine.
+
+or
+
+2) Downgrade to the Hoary version:
+
+   sudo apt-get install mozilla-firefox=1.0.2-0ubuntu5 mozilla-firefox-gnome-support=1.0.2-0ubuntu5
+
+   However, this will expose you to a lot of vulnerabilities.
+
+This issue is also tracked in Bugzilla:
+
+  https://bugzilla.ubuntu.com/show_bug.cgi?id=12854
+
+We will continue to track this issue and try to find a long term solution.
+
+We apologize for the inconvenience,
+
+Martin Pitt
+Ubuntu Security Team leader
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050722/db36a628/attachment.pgp>
+
+From martin.pitt at canonical.com  Fri Jul 22 16:48:59 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Fri, 22 Jul 2005 18:48:59 +0200
+Subject: [USN-151-2] zlib vulnerabilities
+Message-ID: <20050722164859.GA8434@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-151-2	      July 22, 2005
+dpkg, ia32-libs, amd64-libs vulnerabilities
+CAN-2005-1849, CAN-2005-2096
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+amd64-libs
+amd64-libs-dev
+dpkg
+dpkg-dev
+dselect
+ia32-libs
+ia32-libs-dev
+
+On Ubuntu 4.10, the problem can be corrected by upgrading the affected
+package to version 0.5ubuntu2.1 (ia32-libs and ia32-libs-dev),
+1.0ubuntu3.1 (amd64-libs and amd64-libs-dev), and 1.10.22ubuntu2.1
+(dpkg, dpkg-dev, dpkg-doc and dselect).
+
+On Ubuntu 5.04, the problem can be corrected by upgrading the affected
+package to version 0.5ubuntu3.1 (ia32-libs and ia32-libs-dev),
+1.1ubuntu0.1 (amd64-libs and amd64-libs-dev), and 1.10.27ubuntu1.1
+(dpkg, dpkg-dev, dpkg-doc and dselect).  
+
+In general, a standard system upgrade is sufficient to effect the
+necessary changes.
+
+Details follow:
+
+USN-148-1 and USN-151-1 fixed two security flaws in zlib, which could
+be exploited to cause Denial of Service attacks or even arbitrary code
+execution with malicious data streams.
+
+Most applications use the shared library provided by the "zlib1g"
+package; however, some packages contain copies of the affected zlib
+code, so they need to be upgraded as well.
+
+
+Updated packages for Ubuntu 4.10 (Warty Warthog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/a/amd64-libs/amd64-libs_1.0ubuntu3.1.dsc
+      Size/MD5:      566 597900edb4fcbc1f6b6bb844ec97c36f
+    http://security.ubuntu.com/ubuntu/pool/main/a/amd64-libs/amd64-libs_1.0ubuntu3.1.tar.gz
+      Size/MD5: 49207700 da5e4434540b089c37ecce6cd64daedb
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.10.22ubuntu2.1.dsc
+      Size/MD5:      685 f28488761e95199837ac7e69d3fad589
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.10.22ubuntu2.1.tar.gz
+      Size/MD5:  1724814 e66d889e3bad96722e235179a6be1a2d
+    http://security.ubuntu.com/ubuntu/pool/main/i/ia32-libs/ia32-libs_0.5ubuntu2.1.dsc
+      Size/MD5:      569 6708cdc169856401811296f4d1a0a577
+    http://security.ubuntu.com/ubuntu/pool/main/i/ia32-libs/ia32-libs_0.5ubuntu2.1.tar.gz
+      Size/MD5: 116066186 a90e9f2b245bffca461f8fb8564390e8
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg-dev_1.10.22ubuntu2.1_all.deb
+      Size/MD5:   165928 de79b4016b3d513e48aadf5d133e5471
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg-doc_1.10.22ubuntu2.1_all.deb
+      Size/MD5:    10634 74e028be2ace14e94337eb4371b4185d
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.10.22ubuntu2.1_amd64.deb
+      Size/MD5:  1300476 85d20f6a8dcf63f214a09b4aa5189587
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dselect_1.10.22ubuntu2.1_amd64.deb
+      Size/MD5:   124242 ac29013f8aea0d158b803140f110bd2f
+    http://security.ubuntu.com/ubuntu/pool/main/i/ia32-libs/ia32-libs-dev_0.5ubuntu2.1_amd64.deb
+      Size/MD5:  2168452 b13960c23aceaf24ce34a5ca59dc15bf
+    http://security.ubuntu.com/ubuntu/pool/main/i/ia32-libs/ia32-libs_0.5ubuntu2.1_amd64.deb
+      Size/MD5:  7340220 2a1c4fbd03d40a5c1d5bcbb2fa38f6c2
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/a/amd64-libs/amd64-libs-dev_1.0ubuntu3.1_i386.deb
+      Size/MD5: 18578394 e7de564f64d09a60ef01fca731dfb212
+    http://security.ubuntu.com/ubuntu/pool/main/a/amd64-libs/amd64-libs_1.0ubuntu3.1_i386.deb
+      Size/MD5:  4491436 9d68ffa8ebf723669dd736176b78d1ed
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.10.22ubuntu2.1_i386.deb
+      Size/MD5:  1270512 9d0dea1f9a4859d044dbd3092db04941
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dselect_1.10.22ubuntu2.1_i386.deb
+      Size/MD5:   117126 4607019cfb6916086f368a703270cf3b
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.10.22ubuntu2.1_powerpc.deb
+      Size/MD5:  1299160 8314f4a3a1385ea3b1cec4eac9c56b62
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dselect_1.10.22ubuntu2.1_powerpc.deb
+      Size/MD5:   125660 fe036e45cf73ad31e923ce8a7639b3bd
+
+Updated packages for Ubuntu 5.04 (Hoary Hedgehog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/a/amd64-libs/amd64-libs_1.1ubuntu0.1.dsc
+      Size/MD5:      559 6faab22d1f08ee941b9f7c77df4dee6b
+    http://security.ubuntu.com/ubuntu/pool/main/a/amd64-libs/amd64-libs_1.1ubuntu0.1.tar.gz
+      Size/MD5: 49205918 1782974f00a630deb7117ae2e65e1d3b
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.10.27ubuntu1.1.dsc
+      Size/MD5:      756 7c2ceea00047dc018305a4e8c7b921b9
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.10.27ubuntu1.1.tar.gz
+      Size/MD5:  2115640 4ad640f42b0a186e1cd11155fad4488e
+    http://security.ubuntu.com/ubuntu/pool/main/i/ia32-libs/ia32-libs_0.5ubuntu3.1.dsc
+      Size/MD5:      580 6c9abd5ab7ad0434731ac2bb42e9d4d5
+    http://security.ubuntu.com/ubuntu/pool/main/i/ia32-libs/ia32-libs_0.5ubuntu3.1.tar.gz
+      Size/MD5: 150314670 c49ebe0b41858f8b19438e48615a8ebd
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg-dev_1.10.27ubuntu1.1_all.deb
+      Size/MD5:   166736 a4f4c32feb4e6a77378aaad2d3a2e8c7
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg-doc_1.10.27ubuntu1.1_all.deb
+      Size/MD5:    10610 12e8d712d0196aca0f8bd4ea01cb43c1
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.10.27ubuntu1.1_amd64.deb
+      Size/MD5:  1758074 3b1f6ed0624d1e51fba27a034cdef5c4
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dselect_1.10.27ubuntu1.1_amd64.deb
+      Size/MD5:   124312 1b1c95376c42a30b49b18f06fe932188
+    http://security.ubuntu.com/ubuntu/pool/main/i/ia32-libs/ia32-libs-dev_0.5ubuntu3.1_amd64.deb
+      Size/MD5:  2168448 e380e70fa36262325f2a64841460e8b5
+    http://security.ubuntu.com/ubuntu/pool/main/i/ia32-libs/ia32-libs_0.5ubuntu3.1_amd64.deb
+      Size/MD5:  7340126 1d950a66ec1b6a8f0bde791d62ae79c8
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/a/amd64-libs/amd64-libs-dev_1.1ubuntu0.1_i386.deb
+      Size/MD5: 18578320 17b3cd5a7d9450b82117c4d4f4c6358a
+    http://security.ubuntu.com/ubuntu/pool/main/a/amd64-libs/amd64-libs_1.1ubuntu0.1_i386.deb
+      Size/MD5:  4491660 18409adee3747a554565a2f4ac883d52
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.10.27ubuntu1.1_i386.deb
+      Size/MD5:  1726710 80786e07cb0a0d23e41929ea33e77580
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dselect_1.10.27ubuntu1.1_i386.deb
+      Size/MD5:   116966 35d53d10d6787a06596743325d52bf4a
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.10.27ubuntu1.1_powerpc.deb
+      Size/MD5:  1762542 38296bfcd1e1ee1d426d38de9d682710
+    http://security.ubuntu.com/ubuntu/pool/main/d/dpkg/dselect_1.10.27ubuntu1.1_powerpc.deb
+      Size/MD5:   125738 008f6431cc6919f46eae3b19b20be637
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050722/6d3132e5/attachment.pgp>
+
+From martin.pitt at canonical.com  Mon Jul 25 22:50:46 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 26 Jul 2005 00:50:46 +0200
+Subject: [USN-149-2] Fixed Firefox packages for USN-149-1
+Message-ID: <20050725225046.GA18808@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-149-2	      July 25, 2005
+mozilla-firefox regressions
+Ubuntu bugs #10681, #12854, #12882
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+mozilla-firefox
+mozilla-firefox-gnome-support
+
+The problem can be corrected by upgrading the affected package to
+version 1.0.6-0ubuntu0.1.  After performing a standard system upgrade
+you need to restart Firefox to effect the necessary changes.
+
+Details follow:
+
+USN-149-1 fixed several vulnerabilities in the Firefox web browser.
+Unfortunately that update introduced a lot of regressions, especially
+when using extensions, so another update is necessary. The new
+packages ship Firefox version 1.0.6 which should now work well with
+most extensions (one known exception is the package
+"mozilla-tabextensions").
+
+We apologize for the inconvenience.
+
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6-0ubuntu0.1.diff.gz
+      Size/MD5:   803519 26bfebaba4a7620e9cc204e3a073df3c
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6-0ubuntu0.1.dsc
+      Size/MD5:     1058 061d91945032d56e7860a35e4eeae179
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6.orig.tar.gz
+      Size/MD5: 40214302 5b3ad16b600896478d8ba6fe9321e4e1
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-dev_1.0.6-0ubuntu0.1_amd64.deb
+      Size/MD5:  2632554 d0bbb48d47d277b1fa981e847c3a7ea9
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla-firefox/mozilla-firefox-dom-inspector_1.0.6-0ubuntu0.1_amd64.deb
+      Size/MD5:   157610 45e72b4deb2bd4a8bf821a23d921503f
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-gnome-support_1.0.6-0ubuntu0.1_amd64.deb
+      Size/MD5:    56892 5fe4c19a590797c29a36a542be55d17f
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6-0ubuntu0.1_amd64.deb
+      Size/MD5:  9772088 9a601daf7a05615af7f0f539e358d540
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-dev_1.0.6-0ubuntu0.1_i386.deb
+      Size/MD5:  2632550 2675c991f31b239cc1e4a8586d78fc32
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla-firefox/mozilla-firefox-dom-inspector_1.0.6-0ubuntu0.1_i386.deb
+      Size/MD5:   152524 1ccb57abfe68f62296a9d4b8904c3417
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-gnome-support_1.0.6-0ubuntu0.1_i386.deb
+      Size/MD5:    53496 de9d4f9e368e217343e221bc616adcc0
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6-0ubuntu0.1_i386.deb
+      Size/MD5:  8800876 6af186bcc93affaf17a228834ce74f69
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-dev_1.0.6-0ubuntu0.1_powerpc.deb
+      Size/MD5:  2632678 fa986e65212904f5c4333dfb590cce6f
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla-firefox/mozilla-firefox-dom-inspector_1.0.6-0ubuntu0.1_powerpc.deb
+      Size/MD5:   151330 435fe6ec13bf39050149b5d0d80816bf
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox-gnome-support_1.0.6-0ubuntu0.1_powerpc.deb
+      Size/MD5:    56120 de45cd234d0c480d1f8d43b0f27bdb6d
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6-0ubuntu0.1_powerpc.deb
+      Size/MD5:  8462030 f79157273d748091f2273e1622f141c9
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050726/754779c1/attachment.pgp>
+
+From martin.pitt at canonical.com  Tue Jul 26 10:38:32 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 26 Jul 2005 12:38:32 +0200
+Subject: [USN-153-1] fetchmail vulnerability
+Message-ID: <20050726103832.GA10622@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-153-1	      July 26, 2005
+fetchmail vulnerability
+CAN-2005-2335
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+fetchmail
+
+The problem can be corrected by upgrading the affected package to
+version 6.2.5-8ubuntu2.1 (for Ubuntu 4.10), or 6.2.5-12ubuntu1.1 (for
+Ubuntu 5.04). In general, a standard system upgrade is sufficient to
+effect the necessary changes.
+
+Details follow:
+
+Ross Boylan discovered a remote buffer overflow in fetchmail. By
+sending invalid responses with very long UIDs, a faulty or malicious
+POP server could crash fetchmail or execute arbitrary code with the
+privileges of the user invoking fetchmail.
+
+fetchmail is commonly run as root to fetch mail for multiple user
+accounts; in this case, this vulnerability could be exploited to
+compromise the whole system.
+
+
+Updated packages for Ubuntu 4.10 (Warty Warthog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5-8ubuntu2.1.diff.gz
+      Size/MD5:   136209 d982f973b3675ce97816a2f551e63996
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5-8ubuntu2.1.dsc
+      Size/MD5:      639 5f2255e5e60e93b117686154bd748329
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5.orig.tar.gz
+      Size/MD5:  1257376 9956b30139edaa4f5f77c4d0dbd80225
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/f/fetchmail/fetchmailconf_6.2.5-8ubuntu2.1_all.deb
+      Size/MD5:   101418 a4ffcc8ebdb17707de6369db25ea7e52
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5-8ubuntu2.1_amd64.deb
+      Size/MD5:   555560 0b695cf0702e535bb8146bec44f5f13c
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5-8ubuntu2.1_i386.deb
+      Size/MD5:   546196 1455931de7ac299e5b8b1ff3c0763493
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5-8ubuntu2.1_powerpc.deb
+      Size/MD5:   556014 b48d28fec277b18a0e52738901461c18
+
+Updated packages for Ubuntu 5.04 (Hoary Hedgehog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5-12ubuntu1.1.diff.gz
+      Size/MD5:   150286 b30b78bd0affc998fe6d9a192902e766
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5-12ubuntu1.1.dsc
+      Size/MD5:      656 3a3527e59e6402ac8800491a675f4f70
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5.orig.tar.gz
+      Size/MD5:  1257376 9956b30139edaa4f5f77c4d0dbd80225
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/universe/f/fetchmail/fetchmail-ssl_6.2.5-12ubuntu1.1_all.deb
+      Size/MD5:    42260 dfc95a76d0f6716d7f6bbefcaf0bd071
+    http://security.ubuntu.com/ubuntu/pool/universe/f/fetchmail/fetchmailconf_6.2.5-12ubuntu1.1_all.deb
+      Size/MD5:   101284 451d0af692ad0855377e151c6e93b5bc
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5-12ubuntu1.1_amd64.deb
+      Size/MD5:   296788 fe851a27dca46bd2d9972c88aaa8af74
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5-12ubuntu1.1_i386.deb
+      Size/MD5:   286052 eeb6ecb0dbc43fadd84297cc85f9e1d7
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/f/fetchmail/fetchmail_6.2.5-12ubuntu1.1_powerpc.deb
+      Size/MD5:   296080 bb012afc1d28ec40c801410b9d0612c4
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050726/7164faad/attachment.pgp>
+
+From martin.pitt at canonical.com  Tue Jul 26 13:42:54 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 26 Jul 2005 15:42:54 +0200
+Subject: [USN-154-1] vim vulnerability
+Message-ID: <20050726134254.GA22280@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-154-1	      July 26, 2005
+vim vulnerability
+http://www.guninski.com/where_do_you_want_billg_to_go_today_5.html
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+kvim
+kvim-perl
+kvim-python
+kvim-tcl
+vim
+vim-gnome
+vim-gtk
+vim-lesstif
+vim-perl
+vim-python
+vim-tcl
+
+The problem can be corrected by upgrading the affected package to
+version 1:6.3-025+1ubuntu2.3 (for Ubuntu 4.10), or
+1:6.3-046+1ubuntu7.1 (for Ubuntu 5.04).  In general, a standard system
+upgrade is sufficient to effect the necessary changes.
+
+Details follow:
+
+Georgi Guninski discovered that it was possible to construct Vim
+modelines that execute arbitrary shell commands by wrapping them in
+glob() or expand() function calls. If an attacker tricked an user to
+open a file with a specially crafted modeline, he could exploit this
+to execute arbitrary commands with the user's privileges.
+
+
+Updated packages for Ubuntu 4.10 (Warty Warthog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3-025+1ubuntu2.3.diff.gz
+      Size/MD5:   425402 46df91478804bd8012a9668c586cbcb9
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3-025+1ubuntu2.3.dsc
+      Size/MD5:     1122 a704610235ce19ca0543972f3bf3d7b0
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3.orig.tar.gz
+      Size/MD5:  5624622 de1c964ceedbc13538da87d2d73fd117
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim-common_6.3-025+1ubuntu2.3_all.deb
+      Size/MD5:  3421110 e3b442a4a638156fbc42cfc12a5af52d
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim-doc_6.3-025+1ubuntu2.3_all.deb
+      Size/MD5:  1646908 0f4b3523857e3c6fa89d0ca1637114c9
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim_6.3-025+1ubuntu2.3_amd64.deb
+      Size/MD5:     2586 e8509546623b703acdb8638f9f26c3e5
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim-gnome_6.3-025+1ubuntu2.3_amd64.deb
+      Size/MD5:   805746 016a733b0545c73a3a78f28d2680f935
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-gtk_6.3-025+1ubuntu2.3_amd64.deb
+      Size/MD5:   802474 8bb3bb58053c7c2170ec3a1dd587e505
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-lesstif_6.3-025+1ubuntu2.3_amd64.deb
+      Size/MD5:   784112 8c8566c6beb776582eec475a68826823
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-perl_6.3-025+1ubuntu2.3_amd64.deb
+      Size/MD5:   809150 3e660c1659fb8b5ceef3b63fdec54efb
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-python_6.3-025+1ubuntu2.3_amd64.deb
+      Size/MD5:   802482 95b7643d58d92f1b75470829ebf15637
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-tcl_6.3-025+1ubuntu2.3_amd64.deb
+      Size/MD5:   801214 4f00d2f0f446f2ffa1a6d5bb88b79126
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3-025+1ubuntu2.3_amd64.deb
+      Size/MD5:   765242 92db4aa0afedf6560e6d814106fc39bd
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim_6.3-025+1ubuntu2.3_i386.deb
+      Size/MD5:     2582 569dff747e323ffbecc51dfc46231eae
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim-gnome_6.3-025+1ubuntu2.3_i386.deb
+      Size/MD5:   702714 b6ccf017bc4ede502cc3f7de2633d8d8
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-gtk_6.3-025+1ubuntu2.3_i386.deb
+      Size/MD5:   700032 9192290f1ee400f32792c018fc400794
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-lesstif_6.3-025+1ubuntu2.3_i386.deb
+      Size/MD5:   682460 28ee7bfe4bb7f5db3fc62a913b789e2b
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-perl_6.3-025+1ubuntu2.3_i386.deb
+      Size/MD5:   707766 c803b8d61f37c1c11b9a6604d6dd7cb3
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-python_6.3-025+1ubuntu2.3_i386.deb
+      Size/MD5:   700046 44a50e1630e7fc2f3324c5e9e17967d8
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-tcl_6.3-025+1ubuntu2.3_i386.deb
+      Size/MD5:   699644 0fc4d26312a3efe74c68c179617acaeb
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3-025+1ubuntu2.3_i386.deb
+      Size/MD5:   680364 6522a45f622db9606a49f2e279aedd85
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim_6.3-025+1ubuntu2.3_powerpc.deb
+      Size/MD5:     2586 51bb0268530d68f4d6accd8ac91c6034
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim-gnome_6.3-025+1ubuntu2.3_powerpc.deb
+      Size/MD5:   788070 be7fd4db97ecae833b657212b9fc1192
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-gtk_6.3-025+1ubuntu2.3_powerpc.deb
+      Size/MD5:   785426 b49f7f79b503b4eb88958a660e2be6de
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-lesstif_6.3-025+1ubuntu2.3_powerpc.deb
+      Size/MD5:   769950 b711cc88b16ad3a1667e875aeb405a1d
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-perl_6.3-025+1ubuntu2.3_powerpc.deb
+      Size/MD5:   792554 92782eccb7325d9392b7cae97b8701a7
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-python_6.3-025+1ubuntu2.3_powerpc.deb
+      Size/MD5:   785436 5ffa9b0c49799fa084b0739ea1166a44
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-tcl_6.3-025+1ubuntu2.3_powerpc.deb
+      Size/MD5:   784680 6a5668dac91865f401fca0500c880696
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3-025+1ubuntu2.3_powerpc.deb
+      Size/MD5:   754792 c9883d66dca90ccdae1502f949001021
+
+Updated packages for Ubuntu 5.04 (Hoary Hedgehog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3-046+1ubuntu7.1.diff.gz
+      Size/MD5:   450699 eeae6f784198638fe22e0fb9b4059526
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3-046+1ubuntu7.1.dsc
+      Size/MD5:     1158 e299658c7896e93efc973d7734285c45
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3.orig.tar.gz
+      Size/MD5:  5624622 de1c964ceedbc13538da87d2d73fd117
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim-common_6.3-046+1ubuntu7.1_all.deb
+      Size/MD5:  3422002 cfc4e75008273ad7fecef65edb01b68b
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim-doc_6.3-046+1ubuntu7.1_all.deb
+      Size/MD5:  1599848 5c1bc833e4476508a2e8883720406b7f
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim-perl_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   929292 67231fe6f041e650a7a16818035232ad
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim-python_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   922458 4acb994818d57741bedeafaa59162f20
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim-tcl_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   880502 a78fe2f10d94c2b6b60f356ff4c901d5
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/kvim_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   922556 24391c4a94fdb951e9e461cdfee9fc87
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim-gnome_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   805754 2972c0afcd3bfacd02e86bc9ff317bde
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-gtk_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   803084 014e6c6bcb0a6a0abbe09de6f8ba5505
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-lesstif_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   783614 69ca26b900196fc09fdadc8dfdd90632
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-perl_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   809558 f6c371ca6625e3ce1bf2e8d8469810da
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-python_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   803100 85df978e39de3674eb18d37aa3e4611f
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-tcl_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   763210 a26548a49bb3d56eb4998a7c8f9a9f52
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3-046+1ubuntu7.1_amd64.deb
+      Size/MD5:   768434 2586fb240bb4d64b26639ee4b7cbb902
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim-perl_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   830852 17c7d608b5bd48562518a55752d83981
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim-python_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   824368 75cf8bc7d3c14b75f4eb4f6e96eed13c
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim-tcl_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   781820 7472daf1c24079b55bafd09c71ee6021
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/kvim_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   824478 7339ff8e39518ba52f96a2eb3a59a943
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim-gnome_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   701422 e09e1d3ec4b3cc62db58235ac3f3d3ac
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-gtk_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   699414 443baeff48ccaea338d36cd1a2fc886c
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-lesstif_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   681288 99075faa2aaa28e9b3ed5ba054fd9e77
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-perl_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   706964 557b4e74547160070dc7d52e8ba01d35
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-python_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   699422 078226d68630da3730cfceff27420f38
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-tcl_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   660104 ab1bd893eb7eb1d027da38112af1a196
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3-046+1ubuntu7.1_i386.deb
+      Size/MD5:   688162 b040b9a0527aee33789113186ac7a84f
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim-perl_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   914962 f1e687aa0600d392f3b2eb1b1da676d1
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim-python_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   907440 64b803346a6a52315e3eaba6b5c123bd
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/kvim-tcl_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   864418 b1ce07cbfe3e161523f148a0dc612b9f
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/kvim_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   907536 0a7cbc632a48118980ce2c0c03723315
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim-gnome_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   788114 d78cd2bdd4addd55780f7765734b6a01
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-gtk_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   786034 221063d416add0709f6bb6ccbc160246
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-lesstif_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   769730 1944e9137f227f487c64486b48ff8412
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-perl_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   793164 33b54d6a7f45122eeec12c300adbd836
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-python_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   786050 57d16f0c8b161927bbca8febeb05be36
+    http://security.ubuntu.com/ubuntu/pool/universe/v/vim/vim-tcl_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   745090 f9288ea7b5c161c42b2d8f73600b9a5b
+    http://security.ubuntu.com/ubuntu/pool/main/v/vim/vim_6.3-046+1ubuntu7.1_powerpc.deb
+      Size/MD5:   757766 fdf7d4727c036b69c3100203df9ba8a7
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050726/26f4b24d/attachment.pgp>
+
+From martin.pitt at canonical.com  Thu Jul 28 10:16:31 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Thu, 28 Jul 2005 12:16:31 +0200
+Subject: [USN-149-3] Ubuntu 4.10 update for Firefox vulnerabilities
+Message-ID: <20050728101631.GA21616@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-149-3	      July 28, 2005
+mozilla-firefox vulnerabilities
+CAN-2004-1156, CAN-2004-1381, CAN-2005-0141, CAN-2005-0142,
+CAN-2005-0143, CAN-2005-0144, CAN-2005-0145, CAN-2005-0146,
+CAN-2005-0147, CAN-2005-0150, CAN-2005-0230, CAN-2005-0231,
+CAN-2005-0232, CAN-2005-0233, CAN-2005-0255, CAN-2005-0399,
+CAN-2005-0401, CAN-2005-0402, CAN-2005-0578, CAN-2005-0584,
+CAN-2005-0585, CAN-2005-0586, CAN-2005-0587, CAN-2005-0588,
+CAN-2005-0589, CAN-2005-0590, CAN-2005-0591, CAN-2005-0592,
+CAN-2005-0593, CAN-2005-0752, CAN-2005-0989, CAN-2005-1153,
+CAN-2005-1154, CAN-2005-1155, CAN-2005-1156, CAN-2005-1157,
+CAN-2005-1158, CAN-2005-1159, CAN-2005-1160, CAN-2005-1531,
+CAN-2005-1532, CAN-2005-1937, CAN-2005-2260, CAN-2005-2261,
+CAN-2005-2262, CAN-2005-2263, CAN-2005-2264, CAN-2005-2265,
+CAN-2005-2266, CAN-2005-2267, CAN-2005-2268, CAN-2005-2269,
+CAN-2005-2270
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+mozilla-firefox
+mozilla-firefox-locale-ca
+mozilla-firefox-locale-de
+mozilla-firefox-locale-es
+mozilla-firefox-locale-fr
+mozilla-firefox-locale-it
+mozilla-firefox-locale-ja
+mozilla-firefox-locale-nb
+mozilla-firefox-locale-pl
+mozilla-firefox-locale-tr
+mozilla-firefox-locale-uk
+
+The problem can be corrected by upgrading the affected package to
+version 1.0.6-0ubuntu0.0.1 (mozilla-firefox) and 1.0.6-0ubuntu0.1
+(mozilla-firefox-locale-... packages).
+
+Please note that the new version does not work with the already
+existing translation packages (mozilla-firefox-locale-...). New
+packages have been provided which are compatible to the new Firefox
+version of this security update, so they need to be upgraded as well
+(a standard system upgrade will take care of this).
+
+After a standard system upgrade you need to restart Firefox to effect
+the necessary changes.
+
+We apologize for the huge delay of this update; we changed our update
+strategy for Mozilla products to make sure that such long delays will
+not happen again.
+
+Details follow:
+
+USN-149-1 fixed some vulnerabilities in the Ubuntu 5.04 (Hoary
+Hedgehog) version of Firefox. The version shipped with Ubuntu 4.10
+(Warty Warthog) is also vulnerable to these flaws, so it needs to be
+upgraded as well. Please see
+
+  http://www.ubuntulinux.org/support/documentation/usn/usn-149-1
+
+for the original advisory.
+
+This update also fixes several older vulnerabilities; Some of them
+could be exploited to execute arbitrary code with full user privileges
+if the user visited a malicious web site. (MFSA-2005-01 to
+MFSA-2005-44; please see the following web site for details:
+http://www.mozilla.org/projects/security/known-vulnerabilities.html)
+
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-ca/mozilla-firefox-locale-ca_1.0-0ubuntu0.1.dsc
+      Size/MD5:      586 c6a4ba172beb50212cc8dd63cf53fe21
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-ca/mozilla-firefox-locale-ca_1.0-0ubuntu0.1.tar.gz
+      Size/MD5:   413206 818b085a5c467e10da863e9d08d0fe20
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-de/mozilla-firefox-locale-de_1.0-0ubuntu0.1.dsc
+      Size/MD5:      634 ce6ada2229be234d78b7a3ed9b51c6f7
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-de/mozilla-firefox-locale-de_1.0-0ubuntu0.1.tar.gz
+      Size/MD5:   378461 cf83507e00cbcbde71a983143c8b2d08
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-es/mozilla-firefox-locale-es_1.0-0ubuntu0.1.dsc
+      Size/MD5:      601 0a97fd79d8862e5482e0d558e995c539
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-es/mozilla-firefox-locale-es_1.0-0ubuntu0.1.tar.gz
+      Size/MD5:    99717 8cbf0adeb41feb8d6b018608a962dab6
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-fr/mozilla-firefox-locale-fr_1.0-0ubuntu0.2.dsc
+      Size/MD5:      578 b1568bcc4255541cee642fcf4f01b026
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-fr/mozilla-firefox-locale-fr_1.0-0ubuntu0.2.tar.gz
+      Size/MD5:   411735 51e401a49e6622b063c5abc44c0338b4
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-it/mozilla-firefox-locale-it_1.0-0ubuntu0.1.dsc
+      Size/MD5:      623 77ab520968ac64c4ff032b9d1a348dbf
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-it/mozilla-firefox-locale-it_1.0-0ubuntu0.1.tar.gz
+      Size/MD5:   378699 5dc1756e4e5177ca07bc0b89a53fb4b5
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-ja/mozilla-firefox-locale-ja_1.0-0ubuntu0.1.dsc
+      Size/MD5:      612 b2858d47a7d517efe9fd16a4e8fd6435
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-ja/mozilla-firefox-locale-ja_1.0-0ubuntu0.1.tar.gz
+      Size/MD5:   169527 f580ce82d1768dedf952f816614fd176
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-nb/mozilla-firefox-locale-nb_1.0-0ubuntu0.1.dsc
+      Size/MD5:      587 d5fb0d5f4a17e2a92e094c0f94c41de5
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-nb/mozilla-firefox-locale-nb_1.0-0ubuntu0.1.tar.gz
+      Size/MD5:   849909 7a3e92d44123b91e6e431ac8c961c4e4
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-pl/mozilla-firefox-locale-pl_1.0-0ubuntu0.1.dsc
+      Size/MD5:      620 153b29244c33886c6590f8d4560f1668
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-pl/mozilla-firefox-locale-pl_1.0-0ubuntu0.1.tar.gz
+      Size/MD5:   779142 5fc8e81e27ff3a93a86282ec5381a650
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-tr/mozilla-firefox-locale-tr_1.0-0ubuntu0.1.dsc
+      Size/MD5:      582 fee3e204e79115f5b5cb7aab4bd6e18e
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-tr/mozilla-firefox-locale-tr_1.0-0ubuntu0.1.tar.gz
+      Size/MD5:    86633 3669dd55cf3b945638af495a1179abe6
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-uk/mozilla-firefox-locale-uk_1.0-0ubuntu0.1.dsc
+      Size/MD5:      578 830521a0572242e5c84d90fdf89b003f
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-uk/mozilla-firefox-locale-uk_1.0-0ubuntu0.1.tar.gz
+      Size/MD5:   119114 717e7522a6824b4af9004fd5fa479b6d
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6-0ubuntu0.0.1.diff.gz
+      Size/MD5:   232845 81ff86fde63392bec52076c5c222669f
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6-0ubuntu0.0.1.dsc
+      Size/MD5:      987 abbcca4640b3c8fe9435b935f0c305b7
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6.orig.tar.gz
+      Size/MD5: 40214302 5b3ad16b600896478d8ba6fe9321e4e1
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-ca/mozilla-firefox-locale-ca_1.0-0ubuntu0.1_all.deb
+      Size/MD5:   410280 fdeb997e756e0d4511d26476cdcbcdb5
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-de/mozilla-firefox-locale-de_1.0-0ubuntu0.1_all.deb
+      Size/MD5:   375336 c6e0e4a5c7669474ce7d1bdcc4ac886f
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-es/mozilla-firefox-locale-es_1.0-0ubuntu0.1_all.deb
+      Size/MD5:    99100 e4b16d51ddb909984f49646e50071f37
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-fr/mozilla-firefox-locale-fr_1.0-0ubuntu0.2_all.deb
+      Size/MD5:   410730 61f1c94f99b77af55e716eb1fe79c072
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-it/mozilla-firefox-locale-it_1.0-0ubuntu0.1_all.deb
+      Size/MD5:   376952 f6756bc0d15480a1e6684fe54c8a05e9
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-ja/mozilla-firefox-locale-ja_1.0-0ubuntu0.1_all.deb
+      Size/MD5:   169420 251604405347e9bdebc131b9be2a1f35
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-nb/mozilla-firefox-locale-nb_1.0-0ubuntu0.1_all.deb
+      Size/MD5:   850174 9e566347c0666b80293492222d506dd1
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-pl/mozilla-firefox-locale-pl_1.0-0ubuntu0.1_all.deb
+      Size/MD5:   777800 6aae0f82e190eeeca89b604858bb6728
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-tr/mozilla-firefox-locale-tr_1.0-0ubuntu0.1_all.deb
+      Size/MD5:    85352 884bbc4ad0d50f08d4f7c1abc0bb6a5d
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox-locale-uk/mozilla-firefox-locale-uk_1.0-0ubuntu0.1_all.deb
+      Size/MD5:   120272 ce1588fae7a1854e08a5b6d523876258
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla-firefox/mozilla-firefox-dom-inspector_1.0.6-0ubuntu0.0.1_amd64.deb
+      Size/MD5:   147374 1a8aa083386d98e3fb74e6965090acb1
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6-0ubuntu0.0.1_amd64.deb
+      Size/MD5: 10673248 f90ed3698968b4609102d6e0737600d7
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla-firefox/mozilla-firefox-dom-inspector_1.0.6-0ubuntu0.0.1_i386.deb
+      Size/MD5:   142280 7988203c7c0c7ff141a551a517a28b1c
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6-0ubuntu0.0.1_i386.deb
+      Size/MD5:  9844756 b216dfb17fbdfb90b2deba1b2f1cc4f3
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla-firefox/mozilla-firefox-dom-inspector_1.0.6-0ubuntu0.0.1_powerpc.deb
+      Size/MD5:   141018 4a5925ed52aa151843d3f1cbb1d951c9
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla-firefox/mozilla-firefox_1.0.6-0ubuntu0.0.1_powerpc.deb
+      Size/MD5:  9502076 2ce0a7d8260fdac867001461a15b6e69
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050728/bcf3b19f/attachment.pgp>
+
+From martin.pitt at canonical.com  Thu Jul 28 19:38:42 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Thu, 28 Jul 2005 21:38:42 +0200
+Subject: [USN-155-2] Updated Epiphany packages to match Mozilla security
+	update
+Message-ID: <20050728193842.GA11967@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-155-2	      July 28, 2005
+epiphany-browser regressions
+https://bugzilla.ubuntu.com/show_bug.cgi?id=13041
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+
+The following packages are affected:
+
+epiphany-browser
+
+The problem can be corrected by upgrading the affected package to
+version 1.4.4-0ubuntu2.1.  After a standard system upgrade you need to
+restart Epiphany to effect the necessary changes.
+
+Details follow:
+
+USN-155-1 fixed some security vulnerabilities of the Mozilla suite.
+Unfortunately this update caused regressions in the Epiphany web
+browser, which uses parts of the Mozilla browser. The updated packages
+fix these problems.
+
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/e/epiphany-browser/epiphany-browser_1.4.4-0ubuntu2.1.diff.gz
+      Size/MD5:    10444 722f5a62053980e2d528d8d694f6b2bd
+    http://security.ubuntu.com/ubuntu/pool/main/e/epiphany-browser/epiphany-browser_1.4.4-0ubuntu2.1.dsc
+      Size/MD5:     1991 be1cad27e897e68d4a51981b9d8191fd
+    http://security.ubuntu.com/ubuntu/pool/main/e/epiphany-browser/epiphany-browser_1.4.4.orig.tar.gz
+      Size/MD5:  4944377 6a77c7f33c9a84d90d1ce1616649d09a
+
+  Architecture independent packages:
+
+    http://security.ubuntu.com/ubuntu/pool/main/e/epiphany-browser/epiphany-browser-dev_1.4.4-0ubuntu2.1_all.deb
+      Size/MD5:   161556 c52390446288cdb37d8593b3b9e4a489
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/e/epiphany-browser/epiphany-browser_1.4.4-0ubuntu2.1_amd64.deb
+      Size/MD5:  2878486 29b3d42e5239adec4ab36791f1415253
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/e/epiphany-browser/epiphany-browser_1.4.4-0ubuntu2.1_i386.deb
+      Size/MD5:  2852102 da9e1980facf911a937fcc95085a0a75
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/e/epiphany-browser/epiphany-browser_1.4.4-0ubuntu2.1_powerpc.deb
+      Size/MD5:  2850124 baf52c7b42143717ce4209acaa1570a2
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050728/5a446484/attachment.pgp>
+
+From martin.pitt at canonical.com  Tue Jul 26 19:34:26 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Tue, 26 Jul 2005 21:34:26 +0200
+Subject: [USN-155-1] Mozilla vulnerabilities
+Message-ID: <20050726193426.GB7610@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-155-1	      July 26, 2005
+mozilla vulnerabilities
+CAN-2005-1531, CAN-2005-1532, CAN-2005-1937, CAN-2005-2260,
+CAN-2005-2261, CAN-2005-2263, CAN-2005-2265, CAN-2005-2266,
+CAN-2005-2268, CAN-2005-2269, CAN-2005-2270
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+mozilla-browser
+mozilla-mailnews
+
+The problem can be corrected by upgrading the affected package to
+version 2:1.7.10-0ubuntu04.10 (for Ubuntu 4.10), or
+2:1.7.10-0ubuntu05.04 (for Ubuntu 5.04).  After a standard system
+upgrade you need to restart Mozilla to effect the necessary changes.
+
+Details follow:
+
+Secunia.com reported that one of the recent security patches in
+Firefox reintroduced the frame injection patch that was originally
+known as CAN-2004-0718. This allowed a malicious web site to spoof the
+contents of other web sites. (CAN-2005-1937)
+
+It was discovered that a malicious website could inject arbitrary
+scripts into a target site by loading it into a frame and navigating
+back to a previous Javascript URL that contained an eval() call. This
+could be used to steal cookies or other confidential data from the
+target site. (MFSA 2005-42)
+
+Michael Krax, Georgi Guninski, and L. David Baron found that the
+security checks that prevent script injection could be bypassed by
+wrapping a javascript: url in another pseudo-protocol like
+"view-source:" or "jar:". (CAN-2005-1531)
+
+A variant of the attack described in CAN-2005-1160 (see USN-124-1) was
+discovered. Additional checks were added to make sure Javascript eval
+and script objects are run with the privileges of the context that
+created them, not the potentially elevated privilege of the context
+calling them. (CAN-2005-1532)
+
+In several places the browser user interface did not correctly
+distinguish between true user events, such as mouse clicks or
+keystrokes, and synthetic events genenerated by web content. This
+could be exploited by malicious web sites to generate e. g. mouse clicks
+that install malicious plugins. Synthetic events are now prevented
+from reaching the browser UI entirely. (CAN-2005-2260)
+
+Scripts in XBL controls from web content continued to be run even when
+Javascript was disabled. This could be combined with most script-based
+exploits to attack people running vulnerable versions who thought
+disabling Javascript would protect them. (CAN-2005-2261)
+
+Matthew Mastracci discovered a flaw in the addons installation
+launcher. By forcing a page navigation immediately after calling the
+install method a callback function could end up running in the context
+of the new page selected by the attacker. This callback script could
+steal data from the new page such as cookies or passwords, or perform
+actions on the user's behalf such as make a purchase if the user is
+already logged into the target site. However, the default settings
+allow only http://addons.mozilla.org to bring up this install dialog.
+This could only be exploited if users have added untrustworthy sites
+to the installation whitelist, and if a malicious site can convince
+you to install from their site. (CAN-2005-2263)
+
+The function for version comparison in the addons installer did not
+properly verify the type of its argument. By passing specially crafted
+Javascript objects to it, a malicious web site could crash the browser
+and possibly even execute arbitrary code with the privilege of the
+user account Firefox runs in. (CAN-2005-2265)
+
+A child frame can call top.focus() even if the framing page comes from
+a different origin and has overridden the focus() routine. Andreas
+Sandblad discovered that the call is made in the context of the child
+frame. This could be exploited to steal cookies and passwords from the
+framed page, or take actions on behalf of a signed-in user. However,
+web sites with above properties are not very common. (CAN-2005-2266)
+
+Alerts and prompts created by scripts in web pages were presented with
+the generic title [Javascript Application] which sometimes made it
+difficult to know which site created them. A malicious page could
+exploit this by causing a prompt to appear in front of a trusted site
+in an attempt to extract information such as passwords from the user.
+In the fixed version these prompts contain the hostname of the page
+which created it. (CAN-2005-2268)
+
+The XHTML DOM node handler did not take namespaces into account when
+verifying node types based on their names. For example, an XHTML
+document could contain an <IMG> tag with malicious contents, which
+would then be processed as the standard trusted HTML <img> tag. By
+tricking an user to view malicious web sites, this could be exploited
+to execute attacker-specified code with the full privileges of the
+user. (CAN-2005-2269)
+
+It was discovered that some objects were not created appropriately.
+This allowed malicious web content scripts to trace back the creation
+chain until they found a privileged object and execute code with
+higher privileges than allowed by the current site. (CAN-2005-2270)
+
+The update for Ubuntu 4.10 (Warty Warthog) also fixes several
+vulnerabilities which are not present in the Ubuntu 5.04 version. Some
+of them could be exploited to execute arbitrary code with full user
+privileges if the user visited a malicious web site. (MFSA-2005-01 to
+MFSA-2005-41; please see the following web site for details:
+http://www.mozilla.org/projects/security/known-vulnerabilities.html). We
+apologize for the huge delay of this update; we changed our update
+strategy for Mozilla products to make sure that such long delays will
+not happen again.
+
+Updated packages for Ubuntu 4.10 (Warty Warthog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla_1.7.10-0ubuntu04.10.diff.gz
+      Size/MD5:   787895 d1b93dab379d90229aff0b6444cd7958
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla_1.7.10-0ubuntu04.10.dsc
+      Size/MD5:     1114 54a79bdf1055da5a4cef2cb2dafc96f5
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla_1.7.10.orig.tar.gz
+      Size/MD5: 30583956 46d33c8977831c434759f1f8be8349b9
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr-dev_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:   168072 5f73543a027ca48255fb49b7d5698ba6
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr4_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:   139562 0cd70033ad7d3722795f88c6366eff27
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss-dev_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:   184958 76dc43e6c0b49378f52c6eaeb21a7c5c
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss3_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:   708258 6b961f2168030777d6cf8eb2d6332f1e
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-browser_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5: 11419236 ea48391b5a5e050f23b1a0650a956783
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-calendar_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:   403268 ed929a52dbdbc5b06e79ec0fb81ff9fa
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-chatzilla_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:   158326 86b385a15b6c85e4b915bacdced31314
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-dev_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:  3350360 e1f4ca50e4bd19d34eee93290fb82629
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-dom-inspector_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:   121136 eef79c168a357b87409c153c1f201e36
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-js-debugger_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:   204150 190f1f37a6a477cbba26f8f6f53dbc43
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-mailnews_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:  1937826 cf26eb285ceef89fcda0830758cc5bfd
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-psm_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:   204162 c83dc89bda3406a94923c07178adbda3
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla_1.7.10-0ubuntu04.10_amd64.deb
+      Size/MD5:     1036 b38a32c79d53150543aa65bd17344012
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr-dev_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:   168060 8c98d3b292d402cd22b11b420b54312b
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr4_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:   126116 bb9174988c7e3c7ba95d152e66a512c0
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss-dev_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:   184946 a5e0cf933a97e2580f89ad2a8bd1800e
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss3_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:   637908 68482be695882a1e245e72cd197395d9
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-browser_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5: 10602576 53124ed462188a86b8a75dc27faa7be3
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-calendar_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:   403266 02b39a072c2c9d286fe1735ca7507a66
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-chatzilla_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:   158320 8879f23c27a1787c49e3695c9a4fcfe5
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-dev_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:  3343192 6b9057c17c18b2c1a73154500c70cc42
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-dom-inspector_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:   115810 2b31e6c96b80615c2f916969f855a79f
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-js-debugger_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:   204140 c60f89e46ca9827c8bdc62990325738b
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-mailnews_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:  1780920 93f92d8d66349f7bd8e59f5e4fc76ef6
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-psm_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:   188206 41231266c644d9760779988908efbc5c
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla_1.7.10-0ubuntu04.10_i386.deb
+      Size/MD5:     1030 f12e02b92ae890afeac4d8d41a85f276
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr-dev_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:   168072 ba80600f62884978df2b2f04c322f06c
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr4_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:   124770 b17ebc91a1b791816f313746f52a6402
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss-dev_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:   184950 3e7c8c7cc16c9615b9255ce3fcc73b7c
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss3_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:   712682 dc25643199535a3c8e4e48f766fa8e99
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-browser_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5: 10164662 5d494ec9f05ac4f910642f41264b8c60
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-calendar_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:   403276 65484c2dc4f038d104746f5fa2fc7489
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-chatzilla_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:   158332 05369072e2805e665dcb2eb0ed311ec4
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-dev_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:  3338534 623c77253ad680985c7c00fee1ea28e3
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-dom-inspector_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:   114542 f4f3f3baa8b6b0e7c0129ccca3ffd7da
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-js-debugger_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:   204158 ddd745af7c8ec2ac86cb1a23e0b20a5c
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-mailnews_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:  1642582 b6406c9fcf0720da67ebe2161884b8fb
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-psm_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:   175472 80bc4b4730e0cfc1c1d15ad41debf97e
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla_1.7.10-0ubuntu04.10_powerpc.deb
+      Size/MD5:     1036 4a8d43ad6703ee277fd33f558fc0ba10
+
+Updated packages for Ubuntu 5.04 (Hoary Hedgehog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla_1.7.10-0ubuntu05.04.diff.gz
+      Size/MD5:   310547 9114a0520dfd1ec3f1e8840cc7b209d4
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla_1.7.10-0ubuntu05.04.dsc
+      Size/MD5:     1136 9c2b49a4c6127860bd5873c902df7103
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla_1.7.10.orig.tar.gz
+      Size/MD5: 30583956 46d33c8977831c434759f1f8be8349b9
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr-dev_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:   168066 01ffef9884ce28174557a52f83733ef5
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr4_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:   140028 c8f9228d7793a031ab73f1f4e690dd3b
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss-dev_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:   184940 0e591f14f97cfce7af277aa7315009d7
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss3_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:   708860 a599ff95ab1687f2769c54bca8a0c920
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-browser_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5: 10604772 ec3f043c5605adaaa40c53cbee400711
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-calendar_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:   403258 d1a734b01463eff486bf73b71c72b95e
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-chatzilla_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:   158322 b6adcb39d0eb40d51bc747bbf2dacb65
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-dev_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:  3350388 3a4978438779c894f1b2e531127a976a
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-dom-inspector_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:   121180 fe31f51e8c1ddce8d00c55a0ffaa0609
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-js-debugger_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:   204144 6f30f8a5aab9a79d67010d3d6f30ba2d
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-mailnews_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:  1935902 e9237f23592a8210eb455372ce860fc7
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-psm_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:   204122 93173df651b43c76a9b9377f098df9a5
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla_1.7.10-0ubuntu05.04_amd64.deb
+      Size/MD5:     1032 126b185c4886fc68a69dec48d0683ee7
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr-dev_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:   168064 5a0e70ac2d5e8c98ed086794e142c7b2
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr4_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:   126702 8415469bef6048d35e37fedd5f3962c6
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss-dev_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:   184954 f9e1e504981b3d82bc4e997b63a87dc6
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss3_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:   638694 74c6379cf3bb2ad963d969d31c501537
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-browser_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:  9617280 8b3ab23e5c32f8afd5122d52d8951949
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-calendar_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:   403268 61436ebff7bac70672a2fa5ba184fb68
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-chatzilla_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:   158324 2d9bdc79894dedd525ec7b51078207a8
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-dev_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:  3342872 0fa8ce7b49a5bf9099e876c45d7e294e
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-dom-inspector_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:   115828 901524c4341f6e9c187c325823af9995
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-js-debugger_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:   204148 a8d9a4a49d53984d8a0b028333cbe0d1
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-mailnews_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:  1780858 267c6c6389de344bf71332ea0248ac00
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-psm_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:   188192 cbdc25cfb559cf8080f8430251fa5334
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla_1.7.10-0ubuntu05.04_i386.deb
+      Size/MD5:     1040 0059e2b4cae42fcce02d9a6e999973fa
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr-dev_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:   168072 ce35aab4bac03e2e597205fa0c07ef7f
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnspr4_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:   125410 b9f7aca9a2c1b4a5849f99bf019f545c
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss-dev_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:   184944 cb2727093d228450f2eda33edde7fbc8
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/libnss3_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:   713078 220b0e60522361ae8f004d39412948c1
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-browser_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:  9168634 ef5834e1946c772b82dd6556bbbb3b41
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-calendar_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:   403272 1d25b0888c9e5f26cddcaf098262ffb2
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-chatzilla_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:   158330 0ef7507f9bf5afe90a169aaa6857f041
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-dev_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:  3338630 3b1dbdbd8c43564ff5f93dd06ee22670
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-dom-inspector_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:   114568 a67a49248469e7f890cd3a91e6248f9a
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-js-debugger_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:   204156 6cc870984199c8f9edea55d89333f784
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla-mailnews_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:  1642886 0569609ed88d459aaad2e83877dea6c1
+    http://security.ubuntu.com/ubuntu/pool/main/m/mozilla/mozilla-psm_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:   175486 d494cff4442b868bc3ec0942c2881e29
+    http://security.ubuntu.com/ubuntu/pool/universe/m/mozilla/mozilla_1.7.10-0ubuntu05.04_powerpc.deb
+      Size/MD5:     1034 f4c3ac4e8b6e1623dd3b98ca804d5146
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050726/8723dea1/attachment.pgp>
+
+From martin.pitt at canonical.com  Fri Jul 29 09:47:30 2005
+From: martin.pitt at canonical.com (Martin Pitt)
+Date: Fri, 29 Jul 2005 11:47:30 +0200
+Subject: [USN-156-1] TIFF vulnerability
+Message-ID: <20050729094730.GA12158@piware.de>
+
+===========================================================
+Ubuntu Security Notice USN-156-1	      July 29, 2005
+tiff vulnerability
+https://bugzilla.ubuntu.com/show_bug.cgi?id=12008
+===========================================================
+
+A security issue affects the following Ubuntu releases:
+
+Ubuntu 4.10 (Warty Warthog)
+Ubuntu 5.04 (Hoary Hedgehog)
+
+The following packages are affected:
+
+libtiff4
+
+The problem can be corrected by upgrading the affected package to
+version 3.6.1-1.1ubuntu1.4 (for Ubuntu 4.10), or 3.6.1-5ubuntu0.2 (for
+Ubuntu 5.04). After a standard system upgrade you need to restart
+your CUPS server with
+
+  sudo /etc/init.d/cupsys restart
+
+  to effect the necessary changes.
+
+
+Details follow:
+
+Wouter Hanegraaff discovered that the TIFF library did not
+sufficiently validate the "YCbCr subsampling" value in TIFF image
+headers. Decoding a malicious image with a zero value resulted in an
+arithmetic exception, which caused the program that uses the TIFF
+library to crash. This leads to a Denial of Service in server
+applications that use libtiff (like the CUPS printing system) and can
+cause data loss in, for example, the Evolution email client.
+
+Updated packages for Ubuntu 4.10 (Warty Warthog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.6.1-1.1ubuntu1.4.diff.gz
+      Size/MD5:    23357 6c334b45e84578a8c2dfb835eb7e477e
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.6.1-1.1ubuntu1.4.dsc
+      Size/MD5:      646 27f079e25cd7f0f8770eb7e1cc6c119b
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.6.1.orig.tar.gz
+      Size/MD5:   848760 bd252167a20ac7910ab3bd2b3ee9e955
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-tools_3.6.1-1.1ubuntu1.4_amd64.deb
+      Size/MD5:   172912 df244a7355b6108d17777d0f7ee635e2
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.6.1-1.1ubuntu1.4_amd64.deb
+      Size/MD5:   458490 aae7d9f8d13150371ea323d6c7f7afff
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.6.1-1.1ubuntu1.4_amd64.deb
+      Size/MD5:   111710 17e5aba420a429f3b8e1a995d8898424
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-tools_3.6.1-1.1ubuntu1.4_i386.deb
+      Size/MD5:   157254 bf807eec54e754c17f2a37028cab8577
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.6.1-1.1ubuntu1.4_i386.deb
+      Size/MD5:   439678 7e793ec244af0b761d5488ae1dbbbacb
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.6.1-1.1ubuntu1.4_i386.deb
+      Size/MD5:   102658 a63eef903a62203bf97d9ac307ac1bb0
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/universe/t/tiff/libtiff-tools_3.6.1-1.1ubuntu1.4_powerpc.deb
+      Size/MD5:   187866 edff62a781e24543101dd8c953df0861
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.6.1-1.1ubuntu1.4_powerpc.deb
+      Size/MD5:   462568 facec7aa38830d67e844712d85129eb1
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.6.1-1.1ubuntu1.4_powerpc.deb
+      Size/MD5:   112834 be335d26fd3036982e63755e8d34b974
+
+Updated packages for Ubuntu 5.04 (Hoary Hedgehog):
+
+  Source archives:
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.6.1-5ubuntu0.2.diff.gz
+      Size/MD5:    23937 fc03e1e226cb8f3dc68bcc9c68508216
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.6.1-5ubuntu0.2.dsc
+      Size/MD5:      681 024be8a278b67c21bd23d6407ff8dbca
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_3.6.1.orig.tar.gz
+      Size/MD5:   848760 bd252167a20ac7910ab3bd2b3ee9e955
+
+  amd64 architecture (Athlon64, Opteron, EM64T Xeon)
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.6.1-5ubuntu0.2_amd64.deb
+      Size/MD5:   172924 cd4bd17a871243ca6843fbc088617ae0
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.6.1-5ubuntu0.2_amd64.deb
+      Size/MD5:   458564 b19faf6cebe2aae301599b7727b92470
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.6.1-5ubuntu0.2_amd64.deb
+      Size/MD5:   111820 cbfcbf747bfc57b32f94922875301536
+
+  i386 architecture (x86 compatible Intel/AMD)
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.6.1-5ubuntu0.2_i386.deb
+      Size/MD5:   155942 903dc99568c986a392792fe1b817891e
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.6.1-5ubuntu0.2_i386.deb
+      Size/MD5:   439768 03b5da71622c1071dc78baf563c887c3
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.6.1-5ubuntu0.2_i386.deb
+      Size/MD5:   102814 d2f292f44d899fa2aa58cd9df819627a
+
+  powerpc architecture (Apple Macintosh G3/G4/G5)
+
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-tools_3.6.1-5ubuntu0.2_powerpc.deb
+      Size/MD5:   188188 76cf89e38b5c8bb1365abeb6f60f8e1b
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4-dev_3.6.1-5ubuntu0.2_powerpc.deb
+      Size/MD5:   462612 eb9033efe7d5b180cc003854e26ef751
+    http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff4_3.6.1-5ubuntu0.2_powerpc.deb
+      Size/MD5:   113006 bbe7ac5d4209b07422e9b4370cc390bd
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20050729/2dad7af6/attachment.pgp>
+

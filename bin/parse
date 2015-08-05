@@ -1,0 +1,55 @@
+#!/usr/bin/env perl
+use Mail::Internet;
+use Data::Dumper;
+use Time::Piece;
+use FileHandle;
+use strict;
+
+my $directory = $ARGV[0];
+opendir(my $dh, $directory);
+my @mboxes = sort_mboxes(grep { /.txt$/ && -f "$directory/$_" } readdir($dh));
+closedir $dh;
+# print Data::Dumper->Dump([@mboxes]);
+my $mails = [];
+my $current_mail = [];
+
+foreach my $mbox (@mboxes){
+    my $fh = FileHandle->new("${directory}/$mbox", "r");
+        if (defined $fh) {
+            while( my $line=<$fh> ){
+              if($line=~m/^From /){
+                
+                push(@{$mails},Mail::Internet->new( $current_mail )) if $#{$current_mail} > 0;
+                $current_mail = [];
+              }
+              push(@{$current_mail}, $line);
+            }
+            undef $fh;       # automatically closes the file
+        }
+}
+print Data::Dumper->Dump([$mails]);
+exit 0;
+
+################################################################################
+sub sort_mboxes(){
+    my @mailboxes = @_;
+    my $idx = { 'January'   => '01', 'February'  => '02', 'March'     => '03',
+                'April'     => '04', 'May'       => '05', 'June'      => '06',
+                'July'      => '07', 'August'    => '08', 'September' => '09',
+                'October'   => '10', 'November'  => '11', 'December'  => '12' };
+    my $ridx = {};
+    foreach my $i (keys(%{$idx})){ $ridx->{ $idx->{$i} } = $i; }
+    my @numerical_mboxes;
+    foreach my $mbox (@mailboxes){
+      $mbox=~s/.txt//g;
+      if($mbox=~m/-(.*)/){ my $month=$1 ; $mbox=~s/-$month/$idx->{$month}/; }
+      push(@numerical_mboxes,$mbox);
+    }
+    my @result;
+    foreach my $mbox ( sort @numerical_mboxes ){
+      if($mbox=~m/([0-9]{4})([0-9]{2})/){ push(@result, "$1-$ridx->{$2}.txt"); }
+    }
+    return @result;
+}
+
+

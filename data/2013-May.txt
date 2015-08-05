@@ -1,0 +1,3289 @@
+From john.johansen at canonical.com  Wed May  1 17:24:43 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Wed, 01 May 2013 10:24:43 -0700
+Subject: [USN-1809-1] Linux kernel vulnerabilities
+Message-ID: <51814FDB.3060707@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1809-1
+May 01, 2013
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Mathias Krause discovered an information leak in the Linux kernel's UDF
+file system implementation. A local user could exploit this flaw to examine
+some of the kernel's heap memory. (CVE-2012-6548)
+
+Mathias Krause discovered an information leak in the Linux kernel's ISO
+9660 CDROM file system driver. A local user could exploit this flaw to
+examine some of the kernel's heap memory. (CVE-2012-6549)
+
+An integer overflow was discovered in the Direct Rendering Manager (DRM)
+subsystem for the i915 video driver in the Linux kernel. A local user could
+exploit this flaw to cause a denial of service (crash) or potentially
+escalate privileges. (CVE-2013-0913)
+
+Andrew Honig discovered a flaw in guest OS time updates in the Linux
+kernel's KVM (Kernel-based Virtual Machine). A privileged guest user could
+exploit this flaw to cause a denial of service (crash host system) or
+potential escalate privilege to the host kernel level. (CVE-2013-1796)
+
+Andrew Honig discovered a use after free error in guest OS time updates in
+the Linux kernel;s KVM (Kernel-based Virtual Machine). A privileged guest
+user could exploit this flaw to escalate privilege to the host kernel
+level. (CVE-2013-1797)
+
+Andrew Honig reported a flaw in the way KVM (Kernel-based Virtual Machine)
+emulated the IOAPIC. A privileged guest user could exploit this flaw to
+read host memory or cause a denial of service (crash the host).
+(CVE-2013-1798)
+
+A format-string bug was discovered in the Linux kernel's ext3 filesystem
+driver. A local user could exploit this flaw to possibly escalate
+privileges on the system. (CVE-2013-1848)
+
+A buffer overflow was discovered in the Linux Kernel's USB subsystem for
+devices reporting the cdc-wdm class. A specially crafted USB device when
+plugged-in could cause a denial of service (system crash) or possibly
+execute arbitrary code. (CVE-2013-1860)
+
+An information leak in the Linux kernel's dcb netlink interface was
+discovered. A local user could obtain sensitive information by examining
+kernel stack memory. (CVE-2013-2634)
+
+A kernel stack information leak was discovered in the RTNETLINK component
+of the Linux kernel. A local user could read sensitive information from the
+kernel stack. (CVE-2013-2635)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-41-generic    3.2.0-41.66
+  linux-image-3.2.0-41-generic-pae  3.2.0-41.66
+  linux-image-3.2.0-41-highbank   3.2.0-41.66
+  linux-image-3.2.0-41-omap       3.2.0-41.66
+  linux-image-3.2.0-41-powerpc-smp  3.2.0-41.66
+  linux-image-3.2.0-41-powerpc64-smp  3.2.0-41.66
+  linux-image-3.2.0-41-virtual    3.2.0-41.66
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1809-1
+  CVE-2012-6548, CVE-2012-6549, CVE-2013-0913, CVE-2013-1796,
+  CVE-2013-1797, CVE-2013-1798, CVE-2013-1848, CVE-2013-1860,
+  CVE-2013-2634, CVE-2013-2635
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.2.0-41.66
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130501/72bb7258/attachment.pgp>
+
+From john.johansen at canonical.com  Wed May  1 17:37:49 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Wed, 01 May 2013 10:37:49 -0700
+Subject: [USN-1811-1] Linux kernel (OMAP4) vulnerabilities
+Message-ID: <518152ED.8030004@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1811-1
+May 01, 2013
+
+linux-ti-omap4 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ti-omap4: Linux kernel for OMAP4
+
+Details:
+
+Mathias Krause discovered an information leak in the Linux kernel's UDF
+file system implementation. A local user could exploit this flaw to examine
+some of the kernel's heap memory. (CVE-2012-6548)
+
+Mathias Krause discovered an information leak in the Linux kernel's ISO
+9660 CDROM file system driver. A local user could exploit this flaw to
+examine some of the kernel's heap memory. (CVE-2012-6549)
+
+An integer overflow was discovered in the Direct Rendering Manager (DRM)
+subsystem for the i915 video driver in the Linux kernel. A local user could
+exploit this flaw to cause a denial of service (crash) or potentially
+escalate privileges. (CVE-2013-0913)
+
+A format-string bug was discovered in the Linux kernel's ext3 filesystem
+driver. A local user could exploit this flaw to possibly escalate
+privileges on the system. (CVE-2013-1848)
+
+A buffer overflow was discovered in the Linux Kernel's USB subsystem for
+devices reporting the cdc-wdm class. A specially crafted USB device when
+plugged-in could cause a denial of service (system crash) or possibly
+execute arbitrary code. (CVE-2013-1860)
+
+An information leak in the Linux kernel's dcb netlink interface was
+discovered. A local user could obtain sensitive information by examining
+kernel stack memory. (CVE-2013-2634)
+
+A kernel stack information leak was discovered in the RTNETLINK component
+of the Linux kernel. A local user could read sensitive information from the
+kernel stack. (CVE-2013-2635)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-1430-omap4    3.2.0-1430.39
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1811-1
+  CVE-2012-6548, CVE-2012-6549, CVE-2013-0913, CVE-2013-1848,
+  CVE-2013-1860, CVE-2013-2634, CVE-2013-2635
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ti-omap4/3.2.0-1430.39
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130501/5551fabe/attachment.pgp>
+
+From john.johansen at canonical.com  Wed May  1 18:18:21 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Wed, 01 May 2013 11:18:21 -0700
+Subject: [USN-1812-1] Linux kernel (Quantal HWE) vulnerabilities
+Message-ID: <51815C6D.7000405@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1812-1
+May 01, 2013
+
+linux-lts-quantal vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-lts-quantal: Linux hardware enablement kernel from Quantal
+
+Details:
+
+Mathias Krause discovered an information leak in the Linux kernel's UDF
+file system implementation. A local user could exploit this flaw to examine
+some of the kernel's heap memory. (CVE-2012-6548)
+
+Mathias Krause discovered an information leak in the Linux kernel's ISO
+9660 CDROM file system driver. A local user could exploit this flaw to
+examine some of the kernel's heap memory. (CVE-2012-6549)
+
+An integer overflow was discovered in the Direct Rendering Manager (DRM)
+subsystem for the i915 video driver in the Linux kernel. A local user could
+exploit this flaw to cause a denial of service (crash) or potentially
+escalate privileges. (CVE-2013-0913)
+
+Andrew Honig discovered a flaw in guest OS time updates in the Linux
+kernel's KVM (Kernel-based Virtual Machine). A privileged guest user could
+exploit this flaw to cause a denial of service (crash host system) or
+potentially escalate privilege to the host kernel level. (CVE-2013-1796)
+
+Andrew Honig discovered a use after free error in guest OS time updates in
+the Linux kernel's KVM (Kernel-based Virtual Machine). A privileged guest
+user could exploit this flaw to escalate privilege to the host kernel
+level. (CVE-2013-1797)
+
+Andrew Honig reported a flaw in the way KVM (Kernel-based Virtual Machine)
+emulated the IOAPIC. A privileged guest user could exploit this flaw to
+read host memory or cause a denial of service (crash the host).
+(CVE-2013-1798)
+
+A format-string bug was discovered in the Linux kernel's ext3 filesystem
+driver. A local user could exploit this flaw to possibly escalate
+privileges on the system. (CVE-2013-1848)
+
+A buffer overflow was discovered in the Linux Kernel's USB subsystem for
+devices reporting the cdc-wdm class. A specially crafted USB device when
+plugged-in could cause a denial of service (system crash) or possibly
+execute arbitrary code. (CVE-2013-1860)
+
+An information leak in the Linux kernel's dcb netlink interface was
+discovered. A local user could obtain sensitive information by examining
+kernel stack memory. (CVE-2013-2634)
+
+A kernel stack information leak was discovered in the RTNETLINK component
+of the Linux kernel. A local user could read sensitive information from the
+kernel stack. (CVE-2013-2635)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.5.0-28-generic    3.5.0-28.48~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1812-1
+  CVE-2012-6548, CVE-2012-6549, CVE-2013-0913, CVE-2013-1796,
+  CVE-2013-1797, CVE-2013-1798, CVE-2013-1848, CVE-2013-1860,
+  CVE-2013-2634, CVE-2013-2635
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-quantal/3.5.0-28.48~precise1
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130501/5044404c/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May  2 11:14:35 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 02 May 2013 04:14:35 -0700
+Subject: [USN-1813-1] Linux kernel vulnerabilities
+Message-ID: <51824A9B.3090900@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1813-1
+May 02, 2013
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.10
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Mathias Krause discovered an information leak in the Linux kernel's UDF
+file system implementation. A local user could exploit this flaw to examine
+some of the kernel's heap memory. (CVE-2012-6548)
+
+Mathias Krause discovered an information leak in the Linux kernel's ISO
+9660 CDROM file system driver. A local user could exploit this flaw to
+examine some of the kernel's heap memory. (CVE-2012-6549)
+
+An integer overflow was discovered in the Direct Rendering Manager (DRM)
+subsystem for the i915 video driver in the Linux kernel. A local user could
+exploit this flaw to cause a denial of service (crash) or potentially
+escalate privileges. (CVE-2013-0913)
+
+Andrew Honig discovered a flaw in guest OS time updates in the Linux
+kernel's KVM (Kernel-based Virtual Machine). A privileged guest user could
+exploit this flaw to cause a denial of service (crash host system) or
+potential escalate privilege to the host kernel level. (CVE-2013-1796)
+
+Andrew Honig discovered a use after free error in guest OS time updates in
+the Linux kernel;s KVM (Kernel-based Virtual Machine). A privileged guest
+user could exploit this flaw to escalate privilege to the host kernel
+level. (CVE-2013-1797)
+
+Andrew Honig reported a flaw in the way KVM (Kernel-based Virtual Machine)
+emulated the IOAPIC. A privileged guest user could exploit this flaw to
+read host memory or cause a denial of service (crash the host).
+(CVE-2013-1798)
+
+A format-string bug was discovered in the Linux kernel's ext3 filesystem
+driver. A local user could exploit this flaw to possibly escalate
+privileges on the system. (CVE-2013-1848)
+
+A buffer overflow was discovered in the Linux Kernel's USB subsystem for
+devices reporting the cdc-wdm class. A specially crafted USB device when
+plugged-in could cause a denial of service (system crash) or possibly
+execute arbitrary code. (CVE-2013-1860)
+
+An information leak in the Linux kernel's dcb netlink interface was
+discovered. A local user could obtain sensitive information by examining
+kernel stack memory. (CVE-2013-2634)
+
+A kernel stack information leak was discovered in the RTNETLINK component
+of the Linux kernel. A local user could read sensitive information from the
+kernel stack. (CVE-2013-2635)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.10:
+  linux-image-3.5.0-28-generic    3.5.0-28.48
+  linux-image-3.5.0-28-highbank   3.5.0-28.48
+  linux-image-3.5.0-28-omap       3.5.0-28.48
+  linux-image-3.5.0-28-powerpc-smp  3.5.0-28.48
+  linux-image-3.5.0-28-powerpc64-smp  3.5.0-28.48
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1813-1
+  CVE-2012-6548, CVE-2012-6549, CVE-2013-0913, CVE-2013-1796,
+  CVE-2013-1797, CVE-2013-1798, CVE-2013-1848, CVE-2013-1860,
+  CVE-2013-2634, CVE-2013-2635
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.5.0-28.48
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130502/23aa8918/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May  2 11:32:43 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 02 May 2013 04:32:43 -0700
+Subject: [USN-1814-1] Linux kernel (OMAP4) vulnerabilities
+Message-ID: <51824EDB.2080106@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1814-1
+May 02, 2013
+
+linux-ti-omap4 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.10
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ti-omap4: Linux kernel for OMAP4
+
+Details:
+
+Mathias Krause discovered an information leak in the Linux kernel's UDF
+file system implementation. A local user could exploit this flaw to examine
+some of the kernel's heap memory. (CVE-2012-6548)
+
+Mathias Krause discovered an information leak in the Linux kernel's ISO
+9660 CDROM file system driver. A local user could exploit this flaw to
+examine some of the kernel's heap memory. (CVE-2012-6549)
+
+An integer overflow was discovered in the Direct Rendering Manager (DRM)
+subsystem for the i915 video driver in the Linux kernel. A local user could
+exploit this flaw to cause a denial of service (crash) or potentially
+escalate privileges. (CVE-2013-0913)
+
+A format-string bug was discovered in the Linux kernel's ext3 filesystem
+driver. A local user could exploit this flaw to possibly escalate
+privileges on the system. (CVE-2013-1848)
+
+A buffer overflow was discovered in the Linux Kernel's USB subsystem for
+devices reporting the cdc-wdm class. A specially crafted USB device when
+plugged-in could cause a denial of service (system crash) or possibly
+execute arbitrary code. (CVE-2013-1860)
+
+An information leak in the Linux kernel's dcb netlink interface was
+discovered. A local user could obtain sensitive information by examining
+kernel stack memory. (CVE-2013-2634)
+
+A kernel stack information leak was discovered in the RTNETLINK component
+of the Linux kernel. A local user could read sensitive information from the
+kernel stack. (CVE-2013-2635)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.10:
+  linux-image-3.5.0-223-omap4     3.5.0-223.34
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1814-1
+  CVE-2012-6548, CVE-2012-6549, CVE-2013-0913, CVE-2013-1848,
+  CVE-2013-1860, CVE-2013-2634, CVE-2013-2635
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ti-omap4/3.5.0-223.34
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130502/137d1b68/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May  2 22:16:11 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 02 May 2013 15:16:11 -0700
+Subject: [USN-1815-1] Linux kernel vulnerabilities
+Message-ID: <5182E5AB.9020904@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1815-1
+May 02, 2013
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Andy Lutomirski discover an error in the Linux kernel's credential handling
+on unix sockets. A local user could exploit this flaw to gain
+administrative privileges. (CVE-2013-1979)
+
+Andy Lutomirski discovered a privilege escalation in the Linux kernel's
+user namespaces. A local user could exploit the flaw to gain administrative
+privileges. (CVE-2013-1959)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  linux-image-3.8.0-19-generic    3.8.0-19.30
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1815-1
+  CVE-2013-1959, CVE-2013-1979
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.8.0-19.30
+
+
+From john.johansen at canonical.com  Thu May  2 22:18:14 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 02 May 2013 15:18:14 -0700
+Subject: [USN-1815-1] Linux kernel vulnerabilities
+Message-ID: <5182E626.3060900@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1815-1
+May 02, 2013
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Andy Lutomirski discover an error in the Linux kernel's credential handling
+on unix sockets. A local user could exploit this flaw to gain
+administrative privileges. (CVE-2013-1979)
+
+Andy Lutomirski discovered a privilege escalation in the Linux kernel's
+user namespaces. A local user could exploit the flaw to gain administrative
+privileges. (CVE-2013-1959)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  linux-image-3.8.0-19-generic    3.8.0-19.30
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1815-1
+  CVE-2013-1959, CVE-2013-1979
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.8.0-19.30
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130502/ebd3a679/attachment.pgp>
+
+From seth.arnold at canonical.com  Fri May  3 17:15:28 2013
+From: seth.arnold at canonical.com (Seth Arnold)
+Date: Fri, 3 May 2013 10:15:28 -0700
+Subject: [USN-1816-1] ClamAV vulnerabilities
+Message-ID: <20130503171528.GA1574@hunt>
+
+==========================================================================
+Ubuntu Security Notice USN-1816-1
+May 03, 2013
+
+clamav vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+- Ubuntu 12.10
+- Ubuntu 12.04 LTS
+- Ubuntu 11.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+ClamAV could be made to crash or run programs if it opened a specially
+crafted file.
+
+Software Description:
+- clamav: Anti-virus utility for Unix
+
+Details:
+
+It was discovered that ClamAV would incorrectly parse a UPX-packed
+executable, leading to possible inappropriate heap reads. An attacker
+could use this issue to cause ClamAV to crash, resulting in a denial of
+service, or possibly execute arbitrary code. (CVE-2013-2020)
+
+It was discovered that ClamAV would incorrectly parse a PDF document,
+potentially writing beyond the size of a static array. An attacker could
+use this issue to cause ClamAV to crash, resulting in a denial of service,
+or possibly execute arbitrary code. (CVE-2013-2021)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  clamav                          0.97.8+dfsg-1ubuntu1.13.04.1
+
+Ubuntu 12.10:
+  clamav                          0.97.8+dfsg-1ubuntu1.12.10.1
+
+Ubuntu 12.04 LTS:
+  clamav                          0.97.8+dfsg-1ubuntu1.12.04.1
+
+Ubuntu 11.10:
+  clamav                          0.97.8+dfsg-1ubuntu1.11.10.1
+
+Ubuntu 10.04 LTS:
+  clamav                          0.97.8+dfsg-1ubuntu1.10.04.1
+
+This update uses a new upstream release, which includes additional bug
+fixes. After a standard system update you need to restart ClamAV to
+make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1816-1
+  CVE-2013-2020, CVE-2013-2021
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/clamav/0.97.8+dfsg-1ubuntu1.13.04.1
+  https://launchpad.net/ubuntu/+source/clamav/0.97.8+dfsg-1ubuntu1.12.10.1
+  https://launchpad.net/ubuntu/+source/clamav/0.97.8+dfsg-1ubuntu1.12.04.1
+  https://launchpad.net/ubuntu/+source/clamav/0.97.8+dfsg-1ubuntu1.11.10.1
+  https://launchpad.net/ubuntu/+source/clamav/0.97.8+dfsg-1ubuntu1.10.04.1
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 490 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130503/df8d5b86/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue May  7 13:17:04 2013
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 07 May 2013 09:17:04 -0400
+Subject: [USN-1817-1] libxml2 vulnerability
+Message-ID: <5188FED0.30803@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1817-1
+May 07, 2013
+
+libxml2 vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+
+Summary:
+
+libxml2 could be made to crash or run programs if it opened a specially
+crafted file.
+
+Software Description:
+- libxml2: GNOME XML library
+
+Details:
+
+It was discovered that libxml2 incorrectly handled memory management when
+parsing certain XML files. An attacker could use this flaw to cause libxml2
+to crash, resulting in a denial of service, or to possibly execute
+arbitrary code.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  libxml2                         2.9.0+dfsg1-4ubuntu4.1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1817-1
+  CVE-2013-1969
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/libxml2/2.9.0+dfsg1-4ubuntu4.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130507/01449553/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue May  7 13:17:28 2013
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 07 May 2013 09:17:28 -0400
+Subject: [USN-1818-1] Mesa vulnerability
+Message-ID: <5188FEE8.9030208@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1818-1
+May 07, 2013
+
+mesa vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Mesa could be made to crash or run programs if it processed specially
+crafted data.
+
+Software Description:
+- mesa: free implementation of the EGL API
+
+Details:
+
+It was discovered that Mesa incorrectly handled certain arrays. An attacker
+could use this issue to cause Mesa to crash, resulting in a denial of
+service, or possibly execute arbitrary code.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  libegl1-mesa                    8.0.4-0ubuntu0.5
+  libgbm1                         8.0.4-0ubuntu0.5
+  libgl1-mesa-dri                 8.0.4-0ubuntu0.5
+  libgl1-mesa-glx                 8.0.4-0ubuntu0.5
+  libgl1-mesa-swx11               8.0.4-0ubuntu0.5
+  libglapi-mesa                   8.0.4-0ubuntu0.5
+  libgles1-mesa                   8.0.4-0ubuntu0.5
+  libgles2-mesa                   8.0.4-0ubuntu0.5
+  libglu1-mesa                    8.0.4-0ubuntu0.5
+  libopenvg1-mesa                 8.0.4-0ubuntu0.5
+  libosmesa6                      8.0.4-0ubuntu0.5
+  libxatracker1                   8.0.4-0ubuntu0.5
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1818-1
+  CVE-2012-5129
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/mesa/8.0.4-0ubuntu0.5
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130507/71c053c7/attachment.pgp>
+
+From jamie at canonical.com  Tue May  7 18:04:42 2013
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Tue, 07 May 2013 13:04:42 -0500
+Subject: [USN-1819-1] OpenJDK 6 vulnerabilities
+In-Reply-To: <20130507175405.145FB26C273A@lillypilly.canonical.com>
+References: <20130507175405.145FB26C273A@lillypilly.canonical.com>
+Message-ID: <5189423A.9020300@canonical.com>
+
+
+==========================================================================
+Ubuntu Security Notice USN-1819-1
+May 07, 2013
+
+openjdk-6 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+- Ubuntu 11.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in OpenJDK 6.
+
+Software Description:
+- openjdk-6: Open Source Java implementation
+
+Details:
+
+Ben Murphy discovered a vulnerability in the OpenJDK JRE related to
+information disclosure and data integrity. An attacker could exploit this
+to execute arbitrary code. (CVE-2013-0401)
+
+James Forshaw discovered a vulnerability in the OpenJDK JRE related to
+information disclosure, data integrity and availability. An attacker could
+exploit this to execute arbitrary code. (CVE-2013-1488)
+
+Several vulnerabilities were discovered in the OpenJDK JRE related to
+information disclosure, data integrity and availability. An attacker could
+exploit these to cause a denial of service or expose sensitive data over
+the network. (CVE-2013-1518, CVE-2013-1537, CVE-2013-1557, CVE-2013-1558,
+CVE-2013-1569, CVE-2013-2383, CVE-2013-2384, CVE-2013-2420, CVE-2013-2421,
+CVE-2013-2422, CVE-2013-2426, CVE-2013-2429, CVE-2013-2430, CVE-2013-2431,
+CVE-2013-2436)
+
+Two vulnerabilities were discovered in the OpenJDK JRE related to
+confidentiality. An attacker could exploit these to expose sensitive data
+over the network. (CVE-2013-2415, CVE-2013-2424)
+
+Two vulnerabilities were discovered in the OpenJDK JRE related to
+availability. An attacker could exploit these to cause a denial of service.
+(CVE-2013-2417, CVE-2013-2419)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  icedtea-6-jre-cacao             6b27-1.12.5-0ubuntu0.12.04.1
+  icedtea-6-jre-jamvm             6b27-1.12.5-0ubuntu0.12.04.1
+  openjdk-6-jre                   6b27-1.12.5-0ubuntu0.12.04.1
+  openjdk-6-jre-headless          6b27-1.12.5-0ubuntu0.12.04.1
+  openjdk-6-jre-lib               6b27-1.12.5-0ubuntu0.12.04.1
+  openjdk-6-jre-zero              6b27-1.12.5-0ubuntu0.12.04.1
+
+Ubuntu 11.10:
+  icedtea-6-jre-cacao             6b27-1.12.5-0ubuntu0.11.10.1
+  icedtea-6-jre-jamvm             6b27-1.12.5-0ubuntu0.11.10.1
+  openjdk-6-jre                   6b27-1.12.5-0ubuntu0.11.10.1
+  openjdk-6-jre-headless          6b27-1.12.5-0ubuntu0.11.10.1
+  openjdk-6-jre-lib               6b27-1.12.5-0ubuntu0.11.10.1
+  openjdk-6-jre-zero              6b27-1.12.5-0ubuntu0.11.10.1
+
+Ubuntu 10.04 LTS:
+  icedtea-6-jre-cacao             6b27-1.12.5-0ubuntu0.10.04.1
+  openjdk-6-jre                   6b27-1.12.5-0ubuntu0.10.04.1
+  openjdk-6-jre-headless          6b27-1.12.5-0ubuntu0.10.04.1
+  openjdk-6-jre-lib               6b27-1.12.5-0ubuntu0.10.04.1
+  openjdk-6-jre-zero              6b27-1.12.5-0ubuntu0.10.04.1
+
+This update uses a new upstream release, which includes additional bug
+fixes. After a standard system update you need to restart any Java
+applications or applets to make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1819-1
+  CVE-2013-0401, CVE-2013-1488, CVE-2013-1518, CVE-2013-1537,
+  CVE-2013-1557, CVE-2013-1558, CVE-2013-1569, CVE-2013-2383,
+  CVE-2013-2384, CVE-2013-2415, CVE-2013-2417, CVE-2013-2419,
+  CVE-2013-2420, CVE-2013-2421, CVE-2013-2422, CVE-2013-2424,
+  CVE-2013-2426, CVE-2013-2429, CVE-2013-2430, CVE-2013-2431
+
+Package Information:
+
+https://launchpad.net/ubuntu/+source/openjdk-6/6b27-1.12.5-0ubuntu0.12.04.1
+
+https://launchpad.net/ubuntu/+source/openjdk-6/6b27-1.12.5-0ubuntu0.11.10.1
+
+https://launchpad.net/ubuntu/+source/openjdk-6/6b27-1.12.5-0ubuntu0.10.04.1
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130507/d6c90c28/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed May  8 18:42:22 2013
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 08 May 2013 14:42:22 -0400
+Subject: [USN-1820-1] gpsd vulnerability
+Message-ID: <518A9C8E.9060909@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1820-1
+May 08, 2013
+
+gpsd vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+gpsd could be made to crash or possibly run programs if it received
+specially crafted input.
+
+Software Description:
+- gpsd: Global Positioning System - daemon
+
+Details:
+
+It was discovered that gpsd incorrectly handled certain malformed GPS data.
+An attacker could use this issue to cause gpsd to crash, resulting in a
+denial of service, or possibly execute arbitrary code.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  gpsd                            3.4-2ubuntu0.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1820-1
+  CVE-2013-2038
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/gpsd/3.4-2ubuntu0.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130508/17f07b91/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu May  9 14:54:31 2013
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 09 May 2013 10:54:31 -0400
+Subject: [USN-1821-1] telepathy-idle vulnerability
+Message-ID: <518BB8A7.40501@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1821-1
+May 09, 2013
+
+telepathy-idle vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+- Ubuntu 12.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+telepathy-idle could be made to expose sensitive information over the
+network.
+
+Software Description:
+- telepathy-idle: IRC connection manager for Telepathy
+
+Details:
+
+It was discovered that telepathy-idle did not perform any server
+certificate validation when using SSL connections. If a remote attacker
+were able to perform a man-in-the-middle attack, this flaw could be
+exploited to alter or compromise confidential information.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  telepathy-idle                  0.1.14-1ubuntu0.1
+
+Ubuntu 12.10:
+  telepathy-idle                  0.1.12-1ubuntu0.1
+
+Ubuntu 12.04 LTS:
+  telepathy-idle                  0.1.11-2ubuntu0.1
+
+After a standard system update you need to restart your session to make all
+the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1821-1
+  CVE-2007-6746
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/telepathy-idle/0.1.14-1ubuntu0.1
+  https://launchpad.net/ubuntu/+source/telepathy-idle/0.1.12-1ubuntu0.1
+  https://launchpad.net/ubuntu/+source/telepathy-idle/0.1.11-2ubuntu0.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130509/9f7d4db3/attachment.pgp>
+
+From adconrad at ubuntu.com  Thu May  9 20:03:39 2013
+From: adconrad at ubuntu.com (Adam Conrad)
+Date: Thu, 9 May 2013 14:03:39 -0600
+Subject: Ubuntu 10.04 (Lucid Lynx) Desktop End of Life reached on May 9, 2013
+Message-ID: <20130509200338.GR29056@0c3.net>
+
+This is a follow-up to the End of Life warning sent last month to
+confirm that as of today (May 9, 2013), Ubuntu 10.04 Desktop is no
+longer supported.  This announcement is for the desktop product only,
+Ubuntu 10.04 Server is still supported for another two years.
+
+The original End of Life warning follows, with upgrade instructions:
+
+Ubuntu announced its 10.04 (Lucid Lynx) release almost 3 years ago,
+on April 29, 2010.  As with the earlier LTS releases, Ubuntu committed
+to ongoing security and critical fixes for a period of 3 years on the
+desktop. The support period is now nearing its end and Ubuntu 10.04
+Desktop will reach end of life on Thursday, May 9th.  At that time,
+Ubuntu Security Notices will no longer include information or updated
+packages for Ubuntu 10.04 Desktop.  Ubuntu 10.04 Server continues to
+be supported for another 2 years.
+
+The supported upgrade path from Ubuntu 10.04 is via Ubuntu 12.04.
+Instructions and caveats for the upgrade may be found at
+https://help.ubuntu.com/community/PreciseUpgrades.  Ubuntu 12.04
+continues to be actively supported with security updates and
+select high-impact bug fixes. All announcements of official security
+updates for Ubuntu releases are sent to the ubuntu-security-announce
+mailing list, information about which may be found at
+https://lists.ubuntu.com/mailman/listinfo/ubuntu-security-announce.
+
+Since its launch in October 2004 Ubuntu has become one of the most
+highly regarded Linux distributions with millions of users in homes,
+schools, businesses and governments around the world. Ubuntu is Open
+Source software, costs nothing to download, and users are free to
+customise or alter their software in order to meet their needs.
+
+On behalf of the Ubuntu Release Team,
+
+Adam Conrad
+
+
+
+From adconrad at ubuntu.com  Thu May  9 20:05:04 2013
+From: adconrad at ubuntu.com (Adam Conrad)
+Date: Thu, 9 May 2013 14:05:04 -0600
+Subject: Ubuntu 8.04 (Hardy Heron) End of Life reached on May 9, 2013
+Message-ID: <20130509200504.GS29056@0c3.net>
+
+This is a follow-up to the End of Life warning sent last month to
+confirm that as of today (May 9, 2013), Ubuntu 8.04 is no longer
+supported.  No more package updates will be accepted to 8.04, and
+it will be archived to old-releases.ubuntu.com in the coming weeks.
+
+The original End of Life warning follows, with upgrade instructions:
+
+Ubuntu announced its 8.04 (Hardy Heron) release almost 5 years ago,
+on April 24, 2008.  As with the earlier LTS releases, Ubuntu committed
+to ongoing security and critical fixes for a period of 5 years. The
+support period is now nearing its end and Ubuntu 8.04 will reach end
+of life on Thursday, May 9th.  At that time, Ubuntu Security Notices
+will no longer include information or updated packages for Ubuntu 8.04.
+
+The supported upgrade path from Ubuntu 8.04 is via Ubuntu 10.04.
+Users are encouraged to evaluate and upgrade to our latest 12.04 LTS
+release via 10.04.  Instructions and caveats for the upgrades may be
+found at https://help.ubuntu.com/community/LucidUpgrades and
+https://help.ubuntu.com/community/PreciseUpgrades.  Ubuntu 10.04 and
+12.04 continue to be actively supported with security updates and
+select high-impact bug fixes. All announcements of official security
+updates for Ubuntu releases are sent to the ubuntu-security-announce
+mailing list, information about which may be found at
+https://lists.ubuntu.com/mailman/listinfo/ubuntu-security-announce.
+
+Since its launch in October 2004 Ubuntu has become one of the most
+highly regarded Linux distributions with millions of users in homes,
+schools, businesses and governments around the world. Ubuntu is Open
+Source software, costs nothing to download, and users are free to
+customise or alter their software in order to meet their needs.
+
+On behalf of the Ubuntu Release Team,
+
+Adam Conrad
+
+
+
+From adconrad at ubuntu.com  Thu May  9 20:06:34 2013
+From: adconrad at ubuntu.com (Adam Conrad)
+Date: Thu, 9 May 2013 14:06:34 -0600
+Subject: Ubuntu 11.10 (Oneiric Ocelot) End of Life reached on May 9, 2013
+Message-ID: <20130509200634.GT29056@0c3.net>
+
+This is a follow-up to the End of Life warning sent last month to
+confirm that as of today (May 9, 2013), Ubuntu 11.10 is no longer
+supported.  No more package updates will be accepted to 11.10, and
+it will be archived to old-releases.ubuntu.com in the coming weeks.
+
+The original End of Life warning follows, with upgrade instructions:
+
+Ubuntu announced its 11.10 (Oneiric Ocelot) release almost 18 months
+ago, on October 13, 2011.  As with the earlier releases, Ubuntu
+committed to ongoing security and critical fixes for a period of 18
+months. The support period is now nearing its end and Ubuntu 11.10
+will reach end of life on Thursday, May 9th.  At that time, Ubuntu
+Security Notices will no longer include information or updated
+packages for Ubuntu 11.10.
+
+The supported upgrade path from Ubuntu 11.10 is via Ubuntu 12.04.
+Instructions and caveats for the upgrade may be found at
+https://help.ubuntu.com/community/PreciseUpgrades.  Ubuntu 12.04
+continues to be actively supported with security updates and
+select high-impact bug fixes. All announcements of official security
+updates for Ubuntu releases are sent to the ubuntu-security-announce
+mailing list, information about which may be found at
+https://lists.ubuntu.com/mailman/listinfo/ubuntu-security-announce.
+
+Since its launch in October 2004 Ubuntu has become one of the most
+highly regarded Linux distributions with millions of users in homes,
+schools, businesses and governments around the world. Ubuntu is Open
+Source software, costs nothing to download, and users are free to
+customise or alter their software in order to meet their needs.
+
+On behalf of the Ubuntu Release Team,
+
+Adam Conrad
+
+
+
+From chris.coulson at canonical.com  Tue May 14 20:20:13 2013
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Tue, 14 May 2013 21:20:13 +0100
+Subject: [USN-1822-1] Firefox vulnerabilities
+Message-ID: <51929C7D.9040804@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1822-1
+May 14, 2013
+
+firefox vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+- Ubuntu 12.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Firefox could be made to crash or run programs as your login if it
+opened a malicious website.
+
+Software Description:
+- firefox: Mozilla Open Source web browser
+
+Details:
+
+Multiple memory safety issues were discovered in Firefox. If the user were
+tricked into opening a specially crafted page, an attacker could possibly
+exploit these to cause a denial of service via application crash, or
+potentially execute code with the privileges of the user invoking Firefox.
+(CVE-2013-0801, CVE-2013-1669)
+
+Cody Crews discovered that some constructors could be used to bypass
+restrictions enforced by their Chrome Object Wrapper (COW). An attacker
+could exploit this to conduct cross-site scripting (XSS) attacks.
+(CVE-2013-1670)
+
+It was discovered that the file input element could expose the full local
+path under certain conditions. An attacker could potentially exploit this
+to steal sensitive information. (CVE-2013-1671)
+
+A use-after-free was discovered when resizing video content whilst it is
+playing. An attacker could potentially exploit this to execute code with
+the privileges of the user invoking Firefox. (CVE-2013-1674)
+
+It was discovered that some DOMSVGZoomEvent functions could be used
+without being properly initialized, which could lead to information
+leakage. (CVE-2013-1675)
+
+Abhishek Arya discovered multiple memory safety issues in Firefox. If
+the user were tricked into opening a specially crafted page, an attacker
+could possibly exploit these to cause a denial of service via application
+crash, or potentially execute code with the privileges of the user
+invoking Firefox. (CVE-2013-1676, CVE-2013-1677, CVE-2013-1678,
+CVE-2013-1679, CVE-2013-1680, CVE-2013-1681)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  firefox                         21.0+build2-0ubuntu0.13.04.2
+
+Ubuntu 12.10:
+  firefox                         21.0+build2-0ubuntu0.12.10.2
+
+Ubuntu 12.04 LTS:
+  firefox                         21.0+build2-0ubuntu0.12.04.3
+
+After a standard system update you need to restart Firefox to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1822-1
+  CVE-2013-0801, CVE-2013-1669, CVE-2013-1670, CVE-2013-1671,
+  CVE-2013-1674, CVE-2013-1675, CVE-2013-1676, CVE-2013-1677,
+  CVE-2013-1678, CVE-2013-1679, CVE-2013-1680, CVE-2013-1681,
+  https://launchpad.net/bugs/1178277
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/firefox/21.0+build2-0ubuntu0.13.04.2
+  https://launchpad.net/ubuntu/+source/firefox/21.0+build2-0ubuntu0.12.10.2
+  https://launchpad.net/ubuntu/+source/firefox/21.0+build2-0ubuntu0.12.04.3
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 555 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130514/a093e68e/attachment.pgp>
+
+From chris.coulson at canonical.com  Tue May 14 21:58:27 2013
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Tue, 14 May 2013 22:58:27 +0100
+Subject: [USN-1823-1] Thunderbird vulnerabilities
+Message-ID: <5192B383.2060502@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1823-1
+May 14, 2013
+
+thunderbird vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+- Ubuntu 12.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in Thunderbird.
+
+Software Description:
+- thunderbird: Mozilla Open Source mail and newsgroup client
+
+Details:
+
+Multiple memory safety issues were discovered in Thunderbird. If the user
+were tricked into opening a specially crafted message with scripting
+enabled, an attacker could possibly exploit these to cause a denial of
+service via application crash, or potentially execute code with the
+privileges of the user invoking Thunderbird. (CVE-2013-0801,
+CVE-2013-1669)
+
+Cody Crews discovered that some constructors could be used to bypass
+restrictions enforced by their Chrome Object Wrapper (COW). If a user had
+scripting enabled, an attacker could exploit this to conduct cross-site
+scripting (XSS) attacks. (CVE-2013-1670)
+
+A use-after-free was discovered when resizing video content whilst it is
+playing. If a user had scripting enabled, an attacker could potentially
+exploit this to execute code with the privileges of the user invoking
+Thunderbird. (CVE-2013-1674)
+
+It was discovered that some DOMSVGZoomEvent functions could be used
+without being properly initialized, which could lead to information
+leakage. (CVE-2013-1675)
+
+Abhishek Arya discovered multiple memory safety issues in Thunderbird. If
+the user were tricked into opening a specially crafted message, an
+attacker could possibly exploit these to cause a denial of service via
+application crash, or potentially execute code with the privileges of
+the user invoking Thunderbird. (CVE-2013-1676, CVE-2013-1677,
+CVE-2013-1678, CVE-2013-1679, CVE-2013-1680, CVE-2013-1681)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  thunderbird                     17.0.6+build1-0ubuntu0.13.04.1
+
+Ubuntu 12.10:
+  thunderbird                     17.0.6+build1-0ubuntu0.12.10.1
+
+Ubuntu 12.04 LTS:
+  thunderbird                     17.0.6+build1-0ubuntu0.12.04.1
+
+After a standard system update you need to restart Thunderbird to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1823-1
+  CVE-2013-0801, CVE-2013-1669, CVE-2013-1670, CVE-2013-1674,
+  CVE-2013-1675, CVE-2013-1676, CVE-2013-1677, CVE-2013-1678,
+  CVE-2013-1679, CVE-2013-1680, CVE-2013-1681, https://launchpad.net/bugs/1178649
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/thunderbird/17.0.6+build1-0ubuntu0.13.04.1
+  https://launchpad.net/ubuntu/+source/thunderbird/17.0.6+build1-0ubuntu0.12.10.1
+  https://launchpad.net/ubuntu/+source/thunderbird/17.0.6+build1-0ubuntu0.12.04.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 555 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130514/7cd19255/attachment.pgp>
+
+From john.johansen at canonical.com  Wed May 15 17:22:15 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Wed, 15 May 2013 10:22:15 -0700
+Subject: [USN-1824-1] Linux kernel vulnerabilities
+Message-ID: <5193C447.2010903@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1824-1
+May 15, 2013
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Mathias Krause discovered an information leak in the Linux kernel's ISO
+9660 CDROM file system driver. A local user could exploit this flaw to
+examine some of the kernel's heap memory. (CVE-2012-6549)
+
+Mathias Krause discovered a flaw in xfrm_user in the Linux kernel. A local
+attacker with NET_ADMIN capability could potentially exploit this flaw to
+escalate privileges. (CVE-2013-1826)
+
+A buffer overflow was discovered in the Linux Kernel's USB subsystem for
+devices reporting the cdc-wdm class. A specially crafted USB device when
+plugged-in could cause a denial of service (system crash) or possibly
+execute arbitrary code. (CVE-2013-1860)
+
+An information leak was discovered in the Linux kernel's /dev/dvb device. A
+local user could exploit this flaw to obtain sensitive information from the
+kernel's stack memory. (CVE-2013-1928)
+
+An information leak in the Linux kernel's dcb netlink interface was
+discovered. A local user could obtain sensitive information by examining
+kernel stack memory. (CVE-2013-2634)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  linux-image-2.6.32-47-386       2.6.32-47.109
+  linux-image-2.6.32-47-generic   2.6.32-47.109
+  linux-image-2.6.32-47-generic-pae  2.6.32-47.109
+  linux-image-2.6.32-47-ia64      2.6.32-47.109
+  linux-image-2.6.32-47-lpia      2.6.32-47.109
+  linux-image-2.6.32-47-powerpc   2.6.32-47.109
+  linux-image-2.6.32-47-powerpc-smp  2.6.32-47.109
+  linux-image-2.6.32-47-powerpc64-smp  2.6.32-47.109
+  linux-image-2.6.32-47-preempt   2.6.32-47.109
+  linux-image-2.6.32-47-server    2.6.32-47.109
+  linux-image-2.6.32-47-sparc64   2.6.32-47.109
+  linux-image-2.6.32-47-sparc64-smp  2.6.32-47.109
+  linux-image-2.6.32-47-versatile  2.6.32-47.109
+  linux-image-2.6.32-47-virtual   2.6.32-47.109
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1824-1
+  CVE-2012-6549, CVE-2013-1826, CVE-2013-1860, CVE-2013-1928,
+  CVE-2013-2634
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/2.6.32-47.109
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130515/6008ee62/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May 16 01:47:04 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Wed, 15 May 2013 18:47:04 -0700
+Subject: [USN-1825-1] Linux kernel vulnerability
+Message-ID: <51943A98.8000105@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1825-1
+May 16, 2013
+
+linux vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+The system could be made to run programs as an administrator.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+An flaw was discovered in the Linux kernel's perf_events interface. A local
+user could exploit this flaw to escalate privileges on the system.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-43-generic    3.2.0-43.68
+  linux-image-3.2.0-43-generic-pae  3.2.0-43.68
+  linux-image-3.2.0-43-highbank   3.2.0-43.68
+  linux-image-3.2.0-43-omap       3.2.0-43.68
+  linux-image-3.2.0-43-powerpc-smp  3.2.0-43.68
+  linux-image-3.2.0-43-powerpc64-smp  3.2.0-43.68
+  linux-image-3.2.0-43-virtual    3.2.0-43.68
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1825-1
+  CVE-2013-2094
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.2.0-43.68
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130515/ea4023e6/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May 16 01:54:51 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Wed, 15 May 2013 18:54:51 -0700
+Subject: [USN-1826-1] Linux kernel vulnerability
+Message-ID: <51943C6B.3060100@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1826-1
+May 16, 2013
+
+linux vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.10
+
+Summary:
+
+The system could be made to run programs as an administrator.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+An flaw was discovered in the Linux kernel's perf_events interface. A local
+user could exploit this flaw to escalate privileges on the system.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.10:
+  linux-image-3.5.0-30-generic    3.5.0-30.51
+  linux-image-3.5.0-30-highbank   3.5.0-30.51
+  linux-image-3.5.0-30-omap       3.5.0-30.51
+  linux-image-3.5.0-30-powerpc-smp  3.5.0-30.51
+  linux-image-3.5.0-30-powerpc64-smp  3.5.0-30.51
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1826-1
+  CVE-2013-2094
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.5.0-30.51
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130515/7c3738d4/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May 16 02:10:03 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Wed, 15 May 2013 19:10:03 -0700
+Subject: [USN-1827-1] Linux kernel vulnerability
+Message-ID: <51943FFB.7040800@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1827-1
+May 16, 2013
+
+linux vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+
+Summary:
+
+The system could be made to run programs as an administrator.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+An flaw was discovered in the Linux kernel's perf_events interface. A local
+user could exploit this flaw to escalate privileges on the system.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  linux-image-3.8.0-21-generic    3.8.0-21.32
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1827-1
+  CVE-2013-2094
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.8.0-21.32
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130515/fdcc3d8c/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May 16 02:16:29 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Wed, 15 May 2013 19:16:29 -0700
+Subject: [USN-1828-1] Linux kernel (Quantal HWE) vulnerability
+Message-ID: <5194417D.4060705@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1828-1
+May 16, 2013
+
+linux-lts-quantal vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+The system could be made to run programs as an administrator.
+
+Software Description:
+- linux-lts-quantal: Linux hardware enablement kernel from Quantal
+
+Details:
+
+An flaw was discovered in the Linux kernel's perf_events interface. A local
+user could exploit this flaw to escalate privileges on the system.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.5.0-30-generic    3.5.0-30.51~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1828-1
+  CVE-2013-2094
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-quantal/3.5.0-30.51~precise1
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130515/86a8d4d1/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May 16 20:08:13 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 16 May 2013 13:08:13 -0700
+Subject: [USN-1829-1] Linux kernel (EC2) vulnerabilities
+Message-ID: <51953CAD.1070704@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1829-1
+May 16, 2013
+
+linux-ec2 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ec2: Linux kernel for EC2
+
+Details:
+
+Mathias Krause discovered an information leak in the Linux kernel's ISO
+9660 CDROM file system driver. A local user could exploit this flaw to
+examine some of the kernel's heap memory. (CVE-2012-6549)
+
+Mathias Krause discovered a flaw in xfrm_user in the Linux kernel. A local
+attacker with NET_ADMIN capability could potentially exploit this flaw to
+escalate privileges. (CVE-2013-1826)
+
+A buffer overflow was discovered in the Linux Kernel's USB subsystem for
+devices reporting the cdc-wdm class. A specially crafted USB device when
+plugged-in could cause a denial of service (system crash) or possibly
+execute arbitrary code. (CVE-2013-1860)
+
+An information leak was discovered in the Linux kernel's /dev/dvb device. A
+local user could exploit this flaw to obtain sensitive information from the
+kernel's stack memory. (CVE-2013-1928)
+
+An information leak in the Linux kernel's dcb netlink interface was
+discovered. A local user could obtain sensitive information by examining
+kernel stack memory. (CVE-2013-2634)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  linux-image-2.6.32-352-ec2      2.6.32-352.65
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1829-1
+  CVE-2012-6549, CVE-2013-1826, CVE-2013-1860, CVE-2013-1928,
+  CVE-2013-2634
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ec2/2.6.32-352.65
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130516/1653b0ba/attachment.pgp>
+
+From jamie at canonical.com  Thu May 16 23:55:19 2013
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 16 May 2013 18:55:19 -0500
+Subject: [USN-1830-1] OpenStack Keystone vulnerability
+In-Reply-To: <20130516234556.A9C2C26C2931@lillypilly.canonical.com>
+References: <20130516234556.A9C2C26C2931@lillypilly.canonical.com>
+Message-ID: <519571E7.1070504@canonical.com>
+
+
+==========================================================================
+Ubuntu Security Notice USN-1830-1
+May 16, 2013
+
+keystone vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+- Ubuntu 12.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Keystone would allow unintended access over the network.
+
+Software Description:
+- keystone: OpenStack identity service
+
+Details:
+
+Sam Stoelinga discovered that Keystone would not immediately invalidate
+tokens when deleting users via the v2 API. A deleted user would be able to
+continue to use resources until the token lifetime expired.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  python-keystone                 1:2013.1-0ubuntu1.1
+
+Ubuntu 12.10:
+  python-keystone
+2012.2.3+stable-20130206-82c87e56-0ubuntu2.1
+
+Ubuntu 12.04 LTS:
+  python-keystone
+2012.1.3+stable-20130423-f48dd0fc-0ubuntu1.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1830-1
+  CVE-2013-2059
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/keystone/1:2013.1-0ubuntu1.1
+
+https://launchpad.net/ubuntu/+source/keystone/2012.2.3+stable-20130206-82c87e56-0ubuntu2.1
+
+https://launchpad.net/ubuntu/+source/keystone/2012.1.3+stable-20130423-f48dd0fc-0ubuntu1.1
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130516/68799590/attachment.pgp>
+
+From jamie at canonical.com  Thu May 16 23:59:53 2013
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 16 May 2013 18:59:53 -0500
+Subject: [USN-1831-1] OpenStack Nova vulnerability
+In-Reply-To: <20130516235729.EB03E26C2932@lillypilly.canonical.com>
+References: <20130516235729.EB03E26C2932@lillypilly.canonical.com>
+Message-ID: <519572F9.4070107@canonical.com>
+
+
+==========================================================================
+Ubuntu Security Notice USN-1831-1
+May 16, 2013
+
+nova vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+- Ubuntu 12.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Nova could be made to crash the system if instances used a specially
+crafted image.
+
+Software Description:
+- nova: OpenStack Compute cloud infrastructure
+
+Details:
+
+Loganathan Parthipan discovered that Nova did not verify the size of QCOW2
+instance storage. An authenticated attacker could exploit this to cause a
+denial of service by creating an image with a large virtual size with
+little data, then filling the virtual disk.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  python-nova                     1:2013.1-0ubuntu2.1
+
+Ubuntu 12.10:
+  python-nova                     2012.2.3-0ubuntu2.1
+
+Ubuntu 12.04 LTS:
+  python-nova
+2012.1.3+stable-20130423-e52e6912-0ubuntu1.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1831-1
+  CVE-2013-2096
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/nova/1:2013.1-0ubuntu2.1
+  https://launchpad.net/ubuntu/+source/nova/2012.2.3-0ubuntu2.1
+
+https://launchpad.net/ubuntu/+source/nova/2012.1.3+stable-20130423-e52e6912-0ubuntu1.1
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130516/d8d4cccf/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue May 21 16:58:56 2013
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 21 May 2013 12:58:56 -0400
+Subject: [USN-1832-1] LibTIFF vulnerabilities
+Message-ID: <519BA7D0.7050805@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1832-1
+May 21, 2013
+
+tiff vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+- Ubuntu 12.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+LibTIFF could be made to crash or run programs as your login if it opened a
+specially crafted file.
+
+Software Description:
+- tiff: Tag Image File Format (TIFF) library
+
+Details:
+
+Emmanuel Bouillon discovered that LibTIFF incorrectly handled certain
+malformed images when using the tiff2pdf tool. If a user or automated
+system were tricked into opening a specially crafted TIFF image, a remote
+attacker could crash the application, leading to a denial of service, or
+possibly execute arbitrary code with user privileges.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  libtiff5                        4.0.2-4ubuntu2.1
+
+Ubuntu 12.10:
+  libtiff5                        4.0.2-1ubuntu2.2
+
+Ubuntu 12.04 LTS:
+  libtiff4                        3.9.5-2ubuntu1.5
+
+Ubuntu 10.04 LTS:
+  libtiff4                        3.9.2-2ubuntu0.13
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1832-1
+  CVE-2013-1960, CVE-2013-1961
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/tiff/4.0.2-4ubuntu2.1
+  https://launchpad.net/ubuntu/+source/tiff/4.0.2-1ubuntu2.2
+  https://launchpad.net/ubuntu/+source/tiff/3.9.5-2ubuntu1.5
+  https://launchpad.net/ubuntu/+source/tiff/3.9.2-2ubuntu0.13
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130521/f8962a21/attachment.pgp>
+
+From john.johansen at canonical.com  Fri May 24 09:02:45 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 24 May 2013 02:02:45 -0700
+Subject: [USN-1833-1] Linux kernel vulnerabilities
+Message-ID: <519F2CB5.4030106@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1833-1
+May 24, 2013
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Andy Lutomirski discover an error in the Linux kernel's credential handling
+on unix sockets. A local user could exploit this flaw to gain
+administrative privileges. (CVE-2013-1979)
+
+A buffer overflow vulnerability was discovered in the Broadcom tg3 ethernet
+driver for the Linux kernel. A local user could exploit this flaw to cause
+a denial of service (crash the system) or potentially escalate privileges
+on the system. (CVE-2013-1929)
+
+A flaw was discovered in the Linux kernel's ftrace subsystem interface. A
+local user could exploit this flaw to cause a denial of service (system
+crash). (CVE-2013-3301)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-44-generic    3.2.0-44.69
+  linux-image-3.2.0-44-generic-pae  3.2.0-44.69
+  linux-image-3.2.0-44-highbank   3.2.0-44.69
+  linux-image-3.2.0-44-omap       3.2.0-44.69
+  linux-image-3.2.0-44-powerpc-smp  3.2.0-44.69
+  linux-image-3.2.0-44-powerpc64-smp  3.2.0-44.69
+  linux-image-3.2.0-44-virtual    3.2.0-44.69
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1833-1
+  CVE-2013-1929, CVE-2013-1979, CVE-2013-3301
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.2.0-44.69
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130524/99b9b68c/attachment.pgp>
+
+From john.johansen at canonical.com  Fri May 24 09:51:11 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 24 May 2013 02:51:11 -0700
+Subject: [USN-1834-1] Linux kernel (Quantal HWE) vulnerabilities
+Message-ID: <519F380F.7020707@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1834-1
+May 24, 2013
+
+linux-lts-quantal vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-lts-quantal: Linux hardware enablement kernel from Quantal
+
+Details:
+
+A buffer overflow vulnerability was discovered in the Broadcom tg3 ethernet
+driver for the Linux kernel. A local user could exploit this flaw to cause
+a denial of service (crash the system) or potentially escalate privileges
+on the system. (CVE-2013-1929)
+
+A flaw was discovered in the Linux kernel's ftrace subsystem interface. A
+local user could exploit this flaw to cause a denial of service (system
+crash). (CVE-2013-3301)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.5.0-31-generic    3.5.0-31.52~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1834-1
+  CVE-2013-1929, CVE-2013-3301
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-quantal/3.5.0-31.52~precise1
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130524/4d471c5a/attachment.pgp>
+
+From john.johansen at canonical.com  Fri May 24 09:51:50 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 24 May 2013 02:51:50 -0700
+Subject: [USN-1835-1] Linux kernel vulnerabilities
+Message-ID: <519F3836.4060407@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1835-1
+May 24, 2013
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.10
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+A buffer overflow vulnerability was discovered in the Broadcom tg3 ethernet
+driver for the Linux kernel. A local user could exploit this flaw to cause
+a denial of service (crash the system) or potentially escalate privileges
+on the system. (CVE-2013-1929)
+
+A flaw was discovered in the Linux kernel's ftrace subsystem interface. A
+local user could exploit this flaw to cause a denial of service (system
+crash). (CVE-2013-3301)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.10:
+  linux-image-3.5.0-31-generic    3.5.0-31.52
+  linux-image-3.5.0-31-highbank   3.5.0-31.52
+  linux-image-3.5.0-31-omap       3.5.0-31.52
+  linux-image-3.5.0-31-powerpc-smp  3.5.0-31.52
+  linux-image-3.5.0-31-powerpc64-smp  3.5.0-31.52
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1835-1
+  CVE-2013-1929, CVE-2013-3301
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.5.0-31.52
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130524/df120a0c/attachment.pgp>
+
+From john.johansen at canonical.com  Fri May 24 09:52:29 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 24 May 2013 02:52:29 -0700
+Subject: [USN-1836-1] Linux kernel (OMAP4) vulnerabilities
+Message-ID: <519F385D.50703@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1836-1
+May 24, 2013
+
+linux-ti-omap4 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.10
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ti-omap4: Linux kernel for OMAP4
+
+Details:
+
+An flaw was discovered in the Linux kernel's perf_events interface. A local
+user could exploit this flaw to escalate privileges on the system.
+(CVE-2013-2094)
+
+A buffer overflow vulnerability was discovered in the Broadcom tg3 ethernet
+driver for the Linux kernel. A local user could exploit this flaw to cause
+a denial of service (crash the system) or potentially escalate privileges
+on the system. (CVE-2013-1929)
+
+A flaw was discovered in the Linux kernel's ftrace subsystem interface. A
+local user could exploit this flaw to cause a denial of service (system
+crash). (CVE-2013-3301)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.10:
+  linux-image-3.5.0-225-omap4     3.5.0-225.36
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1836-1
+  CVE-2013-1929, CVE-2013-2094, CVE-2013-3301
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ti-omap4/3.5.0-225.36
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130524/086bae32/attachment.pgp>
+
+From john.johansen at canonical.com  Fri May 24 09:55:10 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 24 May 2013 02:55:10 -0700
+Subject: [USN-1837-1] Linux kernel vulnerabilities
+Message-ID: <519F38FE.50208@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1837-1
+May 24, 2013
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+An information leak was discovered in the Linux kernel's crypto API. A
+local user could exploit this flaw to examine potentially sensitive
+information from the kernel's stack memory. (CVE-2013-3076)
+
+An information leak was discovered in the Linux kernel's rcvmsg path for
+ATM (Asynchronous Transfer Mode). A local user could exploit this flaw to
+examine potentially sensitive information from the kernel's stack memory.
+(CVE-2013-3222)
+
+An information leak was discovered in the Linux kernel's recvmsg path for
+ax25 address family. A local user could exploit this flaw to examine
+potentially sensitive information from the kernel's stack memory.
+(CVE-2013-3223)
+
+An information leak was discovered in the Linux kernel's recvmsg path for
+the bluetooth address family. A local user could exploit this flaw to
+examine potentially sensitive information from the kernel's stack memory.
+(CVE-2013-3224)
+
+An information leak was discovered in the Linux kernel's bluetooth rfcomm
+protocol support. A local user could exploit this flaw to examine
+potentially sensitive information from the kernel's stack memory.
+(CVE-2013-3225)
+
+An information leak was discovered in the Linux kernel's bluetooth SCO
+sockets implementation. A local user could exploit this flaw to examine
+potentially sensitive information from the kernel's stack memory.
+(CVE-2013-3226)
+
+An information leak was discovered in the Linux kernel's CAIF protocol
+implementation. A local user could exploit this flaw to examine potentially
+sensitive information from the kernel's stack memory. (CVE-2013-3227)
+
+An information leak was discovered in the Linux kernel's IRDA (infrared)
+support subsystem. A local user could exploit this flaw to examine
+potentially sensitive information from the kernel's stack memory.
+(CVE-2013-3228)
+
+An information leak was discovered in the Linux kernel's s390 - z/VM
+support. A local user could exploit this flaw to examine potentially
+sensitive information from the kernel's stack memory. (CVE-2013-3229)
+
+An information leak was discovered in the Linux kernel's l2tp (Layer Two
+Tunneling Protocol) implementation. A local user could exploit this flaw to
+examine potentially sensitive information from the kernel's stack memory.
+(CVE-2013-3230)
+
+An information leak was discovered in the Linux kernel's llc (Logical Link
+Layer 2) support. A local user could exploit this flaw to examine
+potentially sensitive information from the kernel's stack memory.
+(CVE-2013-3231)
+
+An information leak was discovered in the Linux kernel's nfc (near field
+communication) support. A local user could exploit this flaw to examine
+potentially sensitive information from the kernel's stack memory.
+(CVE-2013-3233)
+
+An information leak was discovered in the Linux kernel's Rose X.25 protocol
+layer. A local user could exploit this flaw to examine potentially
+sensitive information from the kernel's stack memory. (CVE-2013-3234)
+
+An information leak was discovered in the Linux kernel's TIPC (Transparent
+Inter Process Communication) protocol implementation. A local user could
+exploit this flaw to examine potentially sensitive information from the
+kernel's stack memory. (CVE-2013-3235)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  linux-image-3.8.0-22-generic    3.8.0-22.33
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1837-1
+  CVE-2013-3076, CVE-2013-3222, CVE-2013-3223, CVE-2013-3224,
+  CVE-2013-3225, CVE-2013-3226, CVE-2013-3227, CVE-2013-3228,
+  CVE-2013-3229, CVE-2013-3230, CVE-2013-3231, CVE-2013-3233,
+  CVE-2013-3234, CVE-2013-3235
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.8.0-22.33
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130524/a8a172cf/attachment.pgp>
+
+From john.johansen at canonical.com  Tue May 28 12:21:19 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Tue, 28 May 2013 05:21:19 -0700
+Subject: [USN-1839-1] Linux kernel (OMAP4) vulnerabilities
+Message-ID: <51A4A13F.5040800@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1839-1
+May 28, 2013
+
+linux-ti-omap4 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ti-omap4: Linux kernel for OMAP4
+
+Details:
+
+A flaw was discovered in the Linux kernel's perf_events interface. A local
+user could exploit this flaw to escalate privileges on the system.
+(CVE-2013-2094)
+
+Andy Lutomirski discover an error in the Linux kernel's credential handling
+on unix sockets. A local user could exploit this flaw to gain
+administrative privileges. (CVE-2013-1979)
+
+A buffer overflow vulnerability was discovered in the Broadcom tg3 ethernet
+driver for the Linux kernel. A local user could exploit this flaw to cause
+a denial of service (crash the system) or potentially escalate privileges
+on the system. (CVE-2013-1929)
+
+A flaw was discovered in the Linux kernel's ftrace subsystem interface. A
+local user could exploit this flaw to cause a denial of service (system
+crash). (CVE-2013-3301)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-1432-omap4    3.2.0-1432.41
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1839-1
+  CVE-2013-1929, CVE-2013-1979, CVE-2013-2094, CVE-2013-3301
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ti-omap4/3.2.0-1432.41
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130528/33abb403/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue May 28 17:28:29 2013
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 28 May 2013 13:28:29 -0400
+Subject: [USN-1841-1] Tomcat vulnerabilities
+Message-ID: <51A4E93D.5040404@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1841-1
+May 28, 2013
+
+tomcat6, tomcat7 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+- Ubuntu 12.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in Tomcat.
+
+Software Description:
+- tomcat7: Servlet and JSP engine
+- tomcat6: Servlet and JSP engine
+
+Details:
+
+It was discovered that Tomcat incorrectly handled certain requests
+submitted using chunked transfer encoding. A remote attacker could use this
+flaw to cause the Tomcat server to stop responding, resulting in a denial
+of service. This issue only affected Ubuntu 10.04 LTS and Ubuntu 12.04 LTS.
+(CVE-2012-3544)
+
+It was discovered that Tomcat incorrectly handled certain authentication
+requests. A remote attacker could possibly use this flaw to inject a
+request that would get executed with a victim's credentials. This issue
+only affected Ubuntu 10.04 LTS, Ubuntu 12.04 LTS, and Ubuntu 12.10.
+(CVE-2013-2067)
+
+It was discovered that Tomcat sometimes exposed elements of a previous
+request to the current request. This could allow a remote attacker to
+possibly obtain sensitive information. This issue only affected Ubuntu
+12.10 and Ubuntu 13.04. (CVE-2013-2071)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  libtomcat7-java                 7.0.35-1~exp2ubuntu1.1
+
+Ubuntu 12.10:
+  libtomcat7-java                 7.0.30-0ubuntu1.2
+
+Ubuntu 12.04 LTS:
+  libtomcat6-java                 6.0.35-1ubuntu3.3
+
+Ubuntu 10.04 LTS:
+  libtomcat6-java                 6.0.24-2ubuntu1.13
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1841-1
+  CVE-2012-3544, CVE-2013-2067, CVE-2013-2071
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/tomcat7/7.0.35-1~exp2ubuntu1.1
+  https://launchpad.net/ubuntu/+source/tomcat7/7.0.30-0ubuntu1.2
+  https://launchpad.net/ubuntu/+source/tomcat6/6.0.35-1ubuntu3.3
+  https://launchpad.net/ubuntu/+source/tomcat6/6.0.24-2ubuntu1.13
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130528/c929aa6d/attachment.pgp>
+
+From jamie at canonical.com  Wed May 29 03:26:57 2013
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Tue, 28 May 2013 22:26:57 -0500
+Subject: [USN-1831-2] OpenStack Nova regression
+In-Reply-To: <20130529004756.CA04826C2583@lillypilly.canonical.com>
+References: <20130529004756.CA04826C2583@lillypilly.canonical.com>
+Message-ID: <51A57581.2000604@canonical.com>
+
+
+==========================================================================
+Ubuntu Security Notice USN-1831-2
+May 29, 2013
+
+nova regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.10
+
+Summary:
+
+USN-1831-1 introduced a regression in OpenStack Nova.
+
+Software Description:
+- nova: OpenStack Compute cloud infrastructure
+
+Details:
+
+USN-1831-1 fixed a vulnerability in OpenStack Nova. The upstream fix
+introduced a regression where instances using uncached QCOW2 images would
+fail to start. This update fixes the problem.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ Loganathan Parthipan discovered that Nova did not verify the size of QCOW2
+ instance storage. An authenticated attacker could exploit this to cause a
+ denial of service by creating an image with a large virtual size with
+ little data, then filling the virtual disk.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.10:
+  python-nova                     2012.2.3-0ubuntu2.2
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1831-2
+  http://www.ubuntu.com/usn/usn-1831-1
+  https://launchpad.net/bugs/1183606
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/nova/2012.2.3-0ubuntu2.2
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130528/d46e18bb/attachment.pgp>
+
+From jamie at canonical.com  Wed May 29 13:23:04 2013
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Wed, 29 May 2013 08:23:04 -0500
+Subject: [USN-1842-1] KDE-Libs vulnerability
+In-Reply-To: <20130529071311.EEC9026C20BD@lillypilly.canonical.com>
+References: <20130529071311.EEC9026C20BD@lillypilly.canonical.com>
+Message-ID: <51A60138.1040600@canonical.com>
+
+
+==========================================================================
+Ubuntu Security Notice USN-1842-1
+May 29, 2013
+
+kde4libs vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+- Ubuntu 12.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+KDE-Libs could be made to expose web credentials.
+
+Software Description:
+- kde4libs: KDE 4 core applications and libraries
+
+Details:
+
+It was discovered that KIO would sometimes display web authentication
+credentials under certain error conditions. If a user were tricked into
+opening a specially crafted web page, an attacker could potentially exploit
+this to expose confidential information.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  libkio5                         4:4.10.2-0ubuntu2.2
+
+Ubuntu 12.10:
+  libkio5                         4:4.9.5-0ubuntu0.2
+
+Ubuntu 12.04 LTS:
+  libkio5                         4:4.8.5-0ubuntu0.2
+
+After a standard system update you need to restart any applications that
+use KIO from KDE-Libs, such as Konqueror, to make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1842-1
+  CVE-2013-2074
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/kde4libs/4:4.10.2-0ubuntu2.2
+  https://launchpad.net/ubuntu/+source/kde4libs/4:4.9.5-0ubuntu0.2
+  https://launchpad.net/ubuntu/+source/kde4libs/4:4.8.5-0ubuntu0.2
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130529/4d08bfd6/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed May 29 18:20:38 2013
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 29 May 2013 14:20:38 -0400
+Subject: [USN-1843-1] GnuTLS vulnerability
+Message-ID: <51A646F6.6030909@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1843-1
+May 29, 2013
+
+gnutls26 vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+- Ubuntu 12.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+GnuTLS could be made to crash if it received specially crafted network
+traffic.
+
+Software Description:
+- gnutls26: GNU TLS library
+
+Details:
+
+It was discovered that GnuTLS incorrectly handled certain padding bytes. A
+remote attacker could use this flaw to cause an application using GnuTLS to
+crash, leading to a denial of service.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  libgnutls26                     2.12.23-1ubuntu1.1
+
+Ubuntu 12.10:
+  libgnutls26                     2.12.14-5ubuntu4.3
+
+Ubuntu 12.04 LTS:
+  libgnutls26                     2.12.14-5ubuntu3.4
+
+Ubuntu 10.04 LTS:
+  libgnutls26                     2.8.5-2ubuntu0.4
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1843-1
+  CVE-2013-2116
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/gnutls26/2.12.23-1ubuntu1.1
+  https://launchpad.net/ubuntu/+source/gnutls26/2.12.14-5ubuntu4.3
+  https://launchpad.net/ubuntu/+source/gnutls26/2.12.14-5ubuntu3.4
+  https://launchpad.net/ubuntu/+source/gnutls26/2.8.5-2ubuntu0.4
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130529/a96e137e/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May 30 09:17:33 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 30 May 2013 02:17:33 -0700
+Subject: [USN-1838-1] Linux kernel (OMAP4) vulnerabilities
+Message-ID: <51A7192D.2050008@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1838-1
+May 30, 2013
+
+linux-ti-omap4 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ti-omap4: Linux kernel for OMAP4
+
+Details:
+
+An flaw was discovered in the Linux kernel's perf_events interface. A local
+user could exploit this flaw to escalate privileges on the system.
+(CVE-2013-2094)
+
+A buffer overflow vulnerability was discovered in the Broadcom tg3 ethernet
+driver for the Linux kernel. A local user could exploit this flaw to cause
+a denial of service (crash the system) or potentially escalate privileges
+on the system. (CVE-2013-1929)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  linux-image-3.5.0-225-omap4     3.5.0-225.36
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1838-1
+  CVE-2013-1929, CVE-2013-2094
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ti-omap4/3.5.0-225.36
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130530/02ae54df/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May 30 23:58:29 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 30 May 2013 16:58:29 -0700
+Subject: [USN-1844-1] Linux kernel vulnerability
+Message-ID: <51A7E7A5.6010200@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1844-1
+May 30, 2013
+
+linux vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+The system could be made to crash or run programs as an administrator if
+it received specially crafted network traffic.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Kees Cook discovered a flaw in the Linux kernel's iSCSI subsystem. A remote
+unauthenticated attacker could exploit this flaw to cause a denial of
+service (system crash) or potentially gain administrative privileges.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-45-generic    3.2.0-45.70
+  linux-image-3.2.0-45-generic-pae  3.2.0-45.70
+  linux-image-3.2.0-45-highbank   3.2.0-45.70
+  linux-image-3.2.0-45-omap       3.2.0-45.70
+  linux-image-3.2.0-45-powerpc-smp  3.2.0-45.70
+  linux-image-3.2.0-45-powerpc64-smp  3.2.0-45.70
+  linux-image-3.2.0-45-virtual    3.2.0-45.70
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1844-1
+  CVE-2013-2850
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.2.0-45.70
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130530/5770cfb1/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May 30 23:59:07 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 30 May 2013 16:59:07 -0700
+Subject: [USN-1845-1] Linux kernel (Quantal HWE) vulnerability
+Message-ID: <51A7E7CB.5070403@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1845-1
+May 30, 2013
+
+linux-lts-quantal vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+The system could be made to crash or run programs as an administrator if
+it received specially crafted network traffic.
+
+Software Description:
+- linux-lts-quantal: Linux hardware enablement kernel from Quantal
+
+Details:
+
+Kees Cook discovered a flaw in the Linux kernel's iSCSI subsystem. A remote
+unauthenticated attacker could exploit this flaw to cause a denial of
+service (system crash) or potentially gain administrative privileges.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.5.0-32-generic    3.5.0-32.53~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1845-1
+  CVE-2013-2850
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-quantal/3.5.0-32.53~precise1
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130530/296d8f5e/attachment.pgp>
+
+From john.johansen at canonical.com  Thu May 30 23:59:47 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 30 May 2013 16:59:47 -0700
+Subject: [USN-1846-1] Linux kernel vulnerability
+Message-ID: <51A7E7F3.8000703@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1846-1
+May 30, 2013
+
+linux vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.10
+
+Summary:
+
+The system could be made to crash or run programs as an administrator if
+it received specially crafted network traffic.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Kees Cook discovered a flaw in the Linux kernel's iSCSI subsystem. A remote
+unauthenticated attacker could exploit this flaw to cause a denial of
+service (system crash) or potentially gain administrative privileges.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.10:
+  linux-image-3.5.0-32-generic    3.5.0-32.53
+  linux-image-3.5.0-32-highbank   3.5.0-32.53
+  linux-image-3.5.0-32-omap       3.5.0-32.53
+  linux-image-3.5.0-32-powerpc-smp  3.5.0-32.53
+  linux-image-3.5.0-32-powerpc64-smp  3.5.0-32.53
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1846-1
+  CVE-2013-2850
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.5.0-32.53
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130530/ae39fd62/attachment.pgp>
+
+From john.johansen at canonical.com  Fri May 31 00:00:22 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 30 May 2013 17:00:22 -0700
+Subject: [USN-1847-1] Linux kernel vulnerability
+Message-ID: <51A7E816.4000201@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1847-1
+May 30, 2013
+
+linux vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.04
+
+Summary:
+
+The system could be made to crash or run programs as an administrator if
+it received specially crafted network traffic.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Kees Cook discovered a flaw in the Linux kernel's iSCSI subsystem. A remote
+unauthenticated attacker could exploit this flaw to cause a denial of
+service (system crash) or potentially gain administrative privileges.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.04:
+  linux-image-3.8.0-23-generic    3.8.0-23.34
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1847-1
+  CVE-2013-2850
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.8.0-23.34
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130530/d1d38e92/attachment.pgp>
+
+From john.johansen at canonical.com  Fri May 31 05:04:08 2013
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 30 May 2013 22:04:08 -0700
+Subject: [USN-1849-1] Linux kernel (Raring HWE) vulnerability
+Message-ID: <51A82F48.80902@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1849-1
+May 31, 2013
+
+linux-lts-raring vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+The system could be made to crash or run programs as an administrator if
+it received specially crafted network traffic.
+
+Software Description:
+- linux-lts-raring: Linux hardware enablement kernel from Raring
+
+Details:
+
+Kees Cook discovered a flaw in the Linux kernel's iSCSI subsystem. A remote
+unauthenticated attacker could exploit this flaw to cause a denial of
+service (system crash) or potentially gain administrative privileges.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.8.0-23-generic    3.8.0-23.34~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1849-1
+  CVE-2013-2094
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-raring/3.8.0-23.34~precise1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 899 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20130530/0466cff2/attachment.pgp>
+

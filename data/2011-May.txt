@@ -1,0 +1,1829 @@
+From marc.deslauriers at canonical.com  Mon May  2 15:41:28 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 02 May 2011 11:41:28 -0400
+Subject: [USN-1127-1] usb-creator vulnerability
+Message-ID: <1304350888.3151.242.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1127-1
+May 02, 2011
+
+usb-creator vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+An attacker could use usb-creator to unmount arbitrary disks or perform
+other unauthorized disk operations.
+
+Software Description:
+- usb-creator: create a startup disk using a CD or disc image (common files)
+
+Details:
+
+Evan Broder discovered that usb-creator did not properly enforce
+restrictions when performing privileged disk operations. A local attacker
+could use this flaw to perform certain disk operations, such as unmount
+arbitrary mountpoints.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  usb-creator-common              0.2.28.3
+
+Ubuntu 10.10:
+  usb-creator-common              0.2.25.3
+
+Ubuntu 10.04 LTS:
+  usb-creator-common              0.2.22.3
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  CVE-2011-1828
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/usb-creator/0.2.28.3
+  https://launchpad.net/ubuntu/+source/usb-creator/0.2.25.3
+  https://launchpad.net/ubuntu/+source/usb-creator/0.2.22.3
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110502/760a571c/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon May  2 17:51:32 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 02 May 2011 13:51:32 -0400
+Subject: [USN-1128-1] Vino vulnerabilities
+Message-ID: <1304358692.3151.249.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1128-1
+May 02, 2011
+
+vino vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+An attacker could send crafted input to Vino and cause it to crash.
+
+Software Description:
+- vino: VNC server for GNOME
+
+Details:
+
+Kevin Chen discovered that Vino incorrectly handled certain client
+framebuffer requests. A remote attacker could use this flaw to cause Vino
+to crash, leading to a denial of service.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  vino                            2.32.1-0ubuntu2.1
+
+Ubuntu 10.10:
+  vino                            2.32.0-0ubuntu1.2
+
+Ubuntu 10.04 LTS:
+  vino                            2.28.2-0ubuntu2.1
+
+Ubuntu 8.04 LTS:
+  vino                            2.22.2-0ubuntu1.1
+
+After a standard system update you need to restart your session to make
+all the necessary changes.
+
+References:
+  CVE-2011-0904, CVE-2011-0905
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/vino/2.32.1-0ubuntu2.1
+  https://launchpad.net/ubuntu/+source/vino/2.32.0-0ubuntu1.2
+  https://launchpad.net/ubuntu/+source/vino/2.28.2-0ubuntu2.1
+  https://launchpad.net/ubuntu/+source/vino/2.22.2-0ubuntu1.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110502/e447f635/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue May  3 14:50:04 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 03 May 2011 10:50:04 -0400
+Subject: [USN-1129-1] Perl vulnerabilities
+Message-ID: <1304434204.3826.4.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1129-1
+May 03, 2011
+
+perl vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+- Ubuntu 6.06 LTS
+
+Summary:
+
+An attacker could send crafted input to Perl and bypass intended
+restrictions.
+
+Software Description:
+- perl: Larry Wall's Practical Extraction and Report Language
+
+Details:
+
+It was discovered that the Safe.pm Perl module incorrectly handled
+Safe::reval and Safe::rdo access restrictions. An attacker could use this
+flaw to bypass intended restrictions and possibly execute arbitrary code.
+(CVE-2010-1168, CVE-2010-1447)
+
+It was discovered that the CGI.pm Perl module incorrectly handled certain
+MIME boundary strings. An attacker could use this flaw to inject arbitrary
+HTTP headers and perform HTTP response splitting and cross-site scripting
+attacks. This issue only affected Ubuntu 6.06 LTS, 8.04 LTS, 10.04 LTS and
+10.10. (CVE-2010-2761, CVE-2010-4411)
+
+It was discovered that the CGI.pm Perl module incorrectly handled newline
+characters. An attacker could use this flaw to inject arbitrary HTTP
+headers and perform HTTP response splitting and cross-site scripting
+attacks. This issue only affected Ubuntu 6.06 LTS, 8.04 LTS, 10.04 LTS and
+10.10. (CVE-2010-4410)
+
+It was discovered that the lc, lcfirst, uc, and ucfirst functions did not
+properly apply the taint attribute when processing tainted input. An
+attacker could use this flaw to bypass intended restrictions. This issue
+only affected Ubuntu 8.04 LTS, 10.04 LTS and 10.10. (CVE-2011-1487)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  perl                            5.10.1-17ubuntu4.1
+
+Ubuntu 10.10:
+  perl                            5.10.1-12ubuntu2.1
+
+Ubuntu 10.04 LTS:
+  perl                            5.10.1-8ubuntu2.1
+
+Ubuntu 8.04 LTS:
+  perl                            5.8.8-12ubuntu0.5
+
+Ubuntu 6.06 LTS:
+  perl                            5.8.7-10ubuntu1.3
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  CVE-2010-1168, CVE-2010-1447, CVE-2010-2761, CVE-2010-4410,
+  CVE-2010-4411, CVE-2011-1487
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/perl/5.10.1-17ubuntu4.1
+  https://launchpad.net/ubuntu/+source/perl/5.10.1-12ubuntu2.1
+  https://launchpad.net/ubuntu/+source/perl/5.10.1-8ubuntu2.1
+  https://launchpad.net/ubuntu/+source/perl/5.8.8-12ubuntu0.5
+  https://launchpad.net/ubuntu/+source/perl/5.8.7-10ubuntu1.3
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110503/4dc8b1d7/attachment.pgp>
+
+From sbeattie at ubuntu.com  Thu May  5 02:42:58 2011
+From: sbeattie at ubuntu.com (Steve Beattie)
+Date: Wed, 4 May 2011 19:42:58 -0700
+Subject: [USN-1126-2] PHP Regressions
+Message-ID: <20110505024258.GF9670@nxnw.org>
+
+==========================================================================
+Ubuntu Security Notice USN-1126-2
+May 05, 2011
+
+php5 regressions
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 9.10
+- Ubuntu 8.04 LTS
+- Ubuntu 6.06 LTS
+
+Summary:
+
+USN 1126-1 introduced two regressions in PHP.
+
+Software Description:
+- php5: HTML-embedded scripting language interpreter
+
+Details:
+
+USN 1126-1 fixed several vulnerabilities in PHP. The fix for
+CVE-2010-4697 introduced an incorrect reference counting regression
+in the Zend engine that caused the PHP interpreter to segfault. This
+regression affects Ubuntu 6.06 LTS and Ubuntu 8.04 LTS.
+
+The fixes for CVE-2011-1072 and CVE-2011-1144 introduced a regression
+in the PEAR installer that prevented it from creating its cache
+directory and reporting errors correctly.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ Stephane Chazelas discovered that the /etc/cron.d/php5 cron job for
+ PHP 5.3.5 allows local users to delete arbitrary files via a symlink
+ attack on a directory under /var/lib/php5/. (CVE-2011-0441)
+ 
+ Raphael Geisert and Dan Rosenberg discovered that the PEAR installer
+ allows local users to overwrite arbitrary files via a symlink attack on
+ the package.xml file, related to the (1) download_dir, (2) cache_dir,
+ (3) tmp_dir, and (4) pear-build-download directories. (CVE-2011-1072,
+ CVE-2011-1144)
+ 
+ Ben Schmidt discovered that a use-after-free vulnerability in the PHP
+ Zend engine could allow an attacker to cause a denial of service (heap
+ memory corruption) or possibly execute arbitrary code. (CVE-2010-4697)
+ 
+ Martin Barbella discovered a buffer overflow in the PHP GD extension
+ that allows an attacker to cause a denial of service (application crash)
+ via a large number of anti- aliasing steps in an argument to the
+ imagepstext function. (CVE-2010-4698)
+ 
+ It was discovered that PHP accepts the \0 character in a pathname,
+ which might allow an attacker to bypass intended access restrictions
+ by placing a safe file extension after this character. This issue
+ is addressed in Ubuntu 10.04 LTS, Ubuntu 10.10, and Ubuntu 11.04.
+ (CVE-2006-7243)
+ 
+ Maksymilian Arciemowicz discovered that the grapheme_extract function
+ in the PHP Internationalization extension (Intl) for ICU allow
+ an attacker to cause a denial of service (crash) via an invalid
+ size argument, which triggers a NULL pointer dereference. This
+ issue affected Ubuntu 10.04 LTS, Ubuntu 10.10, and Ubuntu
+ 11.04. (CVE-2011-0420)
+ 
+ Maksymilian Arciemowicz discovered that the _zip_name_locate
+ function in the PHP Zip extension does not properly handle a
+ ZIPARCHIVE::FL_UNCHANGED argument, which might allow an attacker to
+ cause a denial of service (NULL pointer dereference) via an empty
+ ZIP archive. This issue affected Ubuntu 8.04 LTS, Ubuntu 9.10, Ubuntu
+ 10.04 LTS, Ubuntu 10.10, and Ubuntu 11.04. (CVE-2011-0421)
+ 
+ Luca Carettoni discovered that the PHP Exif extension performs an
+ incorrect cast on 64bit platforms, which allows a remote attacker
+ to cause a denial of service (application crash) via an image with
+ a crafted Image File Directory (IFD). (CVE-2011-0708)
+ 
+ Jose Carlos Norte discovered that an integer overflow in the PHP
+ shmop extension could allow an attacker to cause a denial of service
+ (crash) and possibly read sensitive memory function. (CVE-2011-1092)
+ 
+ Felipe Pena discovered that a use-after-free vulnerability in the
+ substr_replace function allows an attacker to cause a denial of
+ service (memory corruption) or possibly execute arbitrary code.
+ (CVE-2011-1148)
+ 
+ Felipe Pena discovered multiple format string vulnerabilities in the
+ PHP phar extension. These could allow an attacker to obtain sensitive
+ information from process memory, cause a denial of service (memory
+ corruption), or possibly execute arbitrary code. This issue affected
+ Ubuntu 10.04 LTS, Ubuntu 10.10, and Ubuntu 11.04.(CVE-2011-1153)
+ 
+ It was discovered that a buffer overflow occurs in the strval function
+ when the precision configuration option has a large value. The default
+ compiler options for Ubuntu 8.04 LTS, Ubuntu 9.10, Ubuntu 10.04 LTS,
+ Ubuntu 10.10, and Ubuntu 11.04 should reduce the vulnerability to a
+ denial of service. (CVE-2011-1464)
+ 
+ It was discovered that an integer overflow in the SdnToJulian function
+ in the PHP Calendar extension could allow an attacker to cause a
+ denial of service (application crash). (CVE-2011-1466)
+ 
+ Tomas Hoger discovered that an integer overflow in the
+ NumberFormatter::setSymbol function in the PHP Intl extension
+ could allow an attacker to cause a denial of service (application
+ crash). This issue affected Ubuntu 10.04 LTS, Ubuntu 10.10, and Ubuntu
+ 11.04. (CVE-2011-1467)
+ 
+ It was discovered that multiple memory leaks in the PHP OpenSSL
+ extension might allow a remote attacker to cause a denial of service
+ (memory consumption). This issue affected Ubuntu 10.04 LTS, Ubuntu
+ 10.10, and Ubuntu 11.04. (CVE-2011-1468)
+ 
+ Daniel Buschke discovered that the PHP Streams component in PHP
+ handled types improperly, possibly allowing an attacker to cause a
+ denial of service (application crash). (CVE-2011-1469)
+ 
+ It was discovered that the PHP Zip extension could allow an attacker to
+ cause a denial of service (application crash) via a ziparchive stream
+ that is not properly handled by the stream_get_contents function. This
+ issue affected Ubuntu 8.04 LTS, Ubuntu 9.10, Ubuntu 10.04 LTS, Ubuntu
+ 10.10, and Ubuntu 11.04. (CVE-2011-1470)
+ 
+ It was discovered that an integer signedness error in the PHP Zip
+ extension could allow an attacker to cause a denial of service (CPU
+ consumption) via a malformed archive file.  This issue affected
+ Ubuntu 8.04 LTS, Ubuntu 9.10, Ubuntu 10.04 LTS, Ubuntu 10.10, and
+ Ubuntu 11.04. (CVE-2011-1470) (CVE-2011-1471)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  libapache2-mod-php5             5.3.5-1ubuntu7.2
+  php-pear                        5.3.5-1ubuntu7.2
+  php5                            5.3.5-1ubuntu7.2
+  php5-cgi                        5.3.5-1ubuntu7.2
+  php5-cli                        5.3.5-1ubuntu7.2
+  php5-common                     5.3.5-1ubuntu7.2
+
+Ubuntu 10.10:
+  libapache2-mod-php5             5.3.3-1ubuntu9.5
+  php-pear                        5.3.3-1ubuntu9.5
+  php5                            5.3.3-1ubuntu9.5
+  php5-cgi                        5.3.3-1ubuntu9.5
+  php5-cli                        5.3.3-1ubuntu9.5
+  php5-common                     5.3.3-1ubuntu9.5
+
+Ubuntu 10.04 LTS:
+  libapache2-mod-php5             5.3.2-1ubuntu4.9
+  php-pear                        5.3.2-1ubuntu4.9
+  php5                            5.3.2-1ubuntu4.9
+  php5-cgi                        5.3.2-1ubuntu4.9
+  php5-cli                        5.3.2-1ubuntu4.9
+  php5-common                     5.3.2-1ubuntu4.9
+
+Ubuntu 9.10:
+  libapache2-mod-php5             5.2.10.dfsg.1-2ubuntu6.10
+  php-pear                        5.2.10.dfsg.1-2ubuntu6.10
+  php5                            5.2.10.dfsg.1-2ubuntu6.10
+  php5-cgi                        5.2.10.dfsg.1-2ubuntu6.10
+  php5-cli                        5.2.10.dfsg.1-2ubuntu6.10
+  php5-common                     5.2.10.dfsg.1-2ubuntu6.10
+
+Ubuntu 8.04 LTS:
+  libapache2-mod-php5             5.2.4-2ubuntu5.17
+  php-pear                        5.2.4-2ubuntu5.17
+  php5                            5.2.4-2ubuntu5.17
+  php5-cgi                        5.2.4-2ubuntu5.17
+  php5-cli                        5.2.4-2ubuntu5.17
+  php5-common                     5.2.4-2ubuntu5.17
+
+Ubuntu 6.06 LTS:
+  libapache2-mod-php5             5.1.2-1ubuntu3.24
+  php-pear                        5.1.2-1ubuntu3.24
+  php5                            5.1.2-1ubuntu3.24
+  php5-cgi                        5.1.2-1ubuntu3.24
+  php5-cli                        5.1.2-1ubuntu3.24
+  php5-common                     5.1.2-1ubuntu3.24
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  https://launchpad.net/bugs/774452, https://launchpad.net/bugs/776642
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/php5/5.3.5-1ubuntu7.2
+  https://launchpad.net/ubuntu/+source/php5/5.3.3-1ubuntu9.5
+  https://launchpad.net/ubuntu/+source/php5/5.3.2-1ubuntu4.9
+  https://launchpad.net/ubuntu/+source/php5/5.2.10.dfsg.1-2ubuntu6.10
+  https://launchpad.net/ubuntu/+source/php5/5.2.4-2ubuntu5.17
+  https://launchpad.net/ubuntu/+source/php5/5.1.2-1ubuntu3.24
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110504/79e2765f/attachment.pgp>
+
+From micah at canonical.com  Thu May  5 07:28:32 2011
+From: micah at canonical.com (Micah Gersten)
+Date: Thu, 05 May 2011 02:28:32 -0500
+Subject: [USN-1122-1] Thunderbird vulnerabilities
+Message-ID: <4DC251A0.2060509@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1122-1
+May 05, 2011
+
+thunderbird vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Thunderbird could be made to run programs as your login if it opened
+specially crafted mail.
+
+Software Description:
+- thunderbird: mail/news client with RSS and integrated spam filter support
+
+Details:
+
+It was discovered that there was a vulnerability in the memory handling of
+certain types of content. An attacker could exploit this to possibly run
+arbitrary code as the user running Thunderbird. (CVE-2011-0081)
+
+It was discovered that Thunderbird incorrectly handled certain JavaScript
+requests. If JavaScript were enabled, an attacker could exploit this to
+possibly run arbitrary code as the user running Thunderbird.
+(CVE-2011-0069)
+
+Ian Beer discovered a vulnerability in the memory handling of a certain
+types of documents. An attacker could exploit this to possibly run
+arbitrary code as the user running Thunderbird. (CVE-2011-0070)
+
+Bob Clary, Henri Sivonen, Marco Bonardo, Mats Palmgren and Jesse Ruderman
+discovered several memory vulnerabilities. An attacker could exploit these
+to possibly run arbitrary code as the user running Thunderbird.
+(CVE-2011-0080)
+
+Aki Helin discovered multiple vulnerabilities in the HTML rendering code.
+An attacker could exploit these to possibly run arbitrary code as the user
+running Thunderbird. (CVE-2011-0074, CVE-2011-0075)
+
+Ian Beer discovered multiple overflow vulnerabilities. An attacker could
+exploit these to possibly run arbitrary code as the user running
+Thunderbird. (CVE-2011-0077, CVE-2011-0078)
+
+Martin Barbella discovered a memory vulnerability in the handling of
+certain DOM elements. An attacker could exploit this to possibly run
+arbitrary code as the user running Thunderbird. (CVE-2011-0072)
+
+It was discovered that there were use-after-free vulnerabilities in
+Thunderbird's mChannel and mObserverList objects. An attacker could exploit
+these to possibly run arbitrary code as the user running Thunderbird.
+(CVE-2011-0065, CVE-2011-0066)
+
+It was discovered that there was a vulnerability in the handling of the
+nsTreeSelection element. An attacker sending a specially crafted E-Mail
+could exploit this to possibly run arbitrary code as the user running
+Thunderbird. (CVE-2011-0073)
+
+Paul Stone discovered a vulnerability in the handling of Java applets. If
+plugins were enabled, an attacker could use this to mimic interaction with
+form autocomplete controls and steal entries from the form history.
+(CVE-2011-0067)
+
+Soroush Dalili discovered a vulnerability in the resource: protocol. This
+could potentially allow an attacker to load arbitrary files that were
+accessible to the user running Thunderbird. (CVE-2011-0071)
+
+Chris Evans discovered a vulnerability in Thunderbird's XSLT generate-id()
+function. An attacker could possibly use this vulnerability to make other
+attacks more reliable. (CVE-2011-1202)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.10:
+  thunderbird                     3.1.10+build1+nobinonly-0ubuntu0.10.10.1
+
+Ubuntu 10.04 LTS:
+  thunderbird                     3.1.10+build1+nobinonly-0ubuntu0.10.04.1
+
+After a standard system update you need to restart Thunderbird to make
+all the necessary changes.
+
+References:
+  CVE-2011-0065, CVE-2011-0066, CVE-2011-0067, CVE-2011-0069,
+  CVE-2011-0070, CVE-2011-0071, CVE-2011-0072, CVE-2011-0073,
+  CVE-2011-0074, CVE-2011-0075, CVE-2011-0077, CVE-2011-0078,
+  CVE-2011-0080, CVE-2011-0081, CVE-2011-1202
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/thunderbird/3.1.10+build1+nobinonly-0ubuntu0.10.10.1
+  https://launchpad.net/ubuntu/+source/thunderbird/3.1.10+build1+nobinonly-0ubuntu0.10.04.1
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110505/273a26fe/attachment.pgp>
+
+From micah at canonical.com  Thu May  5 09:02:55 2011
+From: micah at canonical.com (Micah Gersten)
+Date: Thu, 05 May 2011 04:02:55 -0500
+Subject: [USN-1122-2] Thunderbird vulnerabilities
+Message-ID: <4DC267BF.70402@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1122-2
+May 05, 2011
+
+thunderbird vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+
+Summary:
+
+Thunderbird could be made to run programs as your login if it opened
+specially crafted mail.
+
+Software Description:
+- thunderbird: mail/news client with RSS and integrated spam filter support
+
+Details:
+
+USN-1122-1 fixed vulnerabilities in Thunderbird for Lucid and Maverick.
+This update provides the corresponding fixes for Natty.
+
+Original advisory details:
+
+ It was discovered that there was a vulnerability in the memory handling of
+ certain types of content. An attacker could exploit this to possibly run
+ arbitrary code as the user running Thunderbird. (CVE-2011-0081)
+ 
+ It was discovered that Thunderbird incorrectly handled certain JavaScript
+ requests. If JavaScript were enabled, an attacker could exploit this to
+ possibly run arbitrary code as the user running Thunderbird.
+ (CVE-2011-0069)
+ 
+ Ian Beer discovered a vulnerability in the memory handling of a certain
+ types of documents. An attacker could exploit this to possibly run
+ arbitrary code as the user running Thunderbird. (CVE-2011-0070)
+ 
+ Bob Clary, Henri Sivonen, Marco Bonardo, Mats Palmgren and Jesse Ruderman
+ discovered several memory vulnerabilities. An attacker could exploit these
+ to possibly run arbitrary code as the user running Thunderbird.
+ (CVE-2011-0080)
+ 
+ Aki Helin discovered multiple vulnerabilities in the HTML rendering code.
+ An attacker could exploit these to possibly run arbitrary code as the user
+ running Thunderbird. (CVE-2011-0074, CVE-2011-0075)
+ 
+ Ian Beer discovered multiple overflow vulnerabilities. An attacker could
+ exploit these to possibly run arbitrary code as the user running
+ Thunderbird. (CVE-2011-0077, CVE-2011-0078)
+ 
+ Martin Barbella discovered a memory vulnerability in the handling of
+ certain DOM elements. An attacker could exploit this to possibly run
+ arbitrary code as the user running Thunderbird. (CVE-2011-0072)
+ 
+ It was discovered that there were use-after-free vulnerabilities in
+ Thunderbird's mChannel and mObserverList objects. An attacker could exploit
+ these to possibly run arbitrary code as the user running Thunderbird.
+ (CVE-2011-0065, CVE-2011-0066)
+ 
+ It was discovered that there was a vulnerability in the handling of the
+ nsTreeSelection element. An attacker sending a specially crafted E-Mail
+ could exploit this to possibly run arbitrary code as the user running
+ Thunderbird. (CVE-2011-0073)
+ 
+ Paul Stone discovered a vulnerability in the handling of Java applets. If
+ plugins were enabled, an attacker could use this to mimic interaction with
+ form autocomplete controls and steal entries from the form history.
+ (CVE-2011-0067)
+ 
+ Soroush Dalili discovered a vulnerability in the resource: protocol. This
+ could potentially allow an attacker to load arbitrary files that were
+ accessible to the user running Thunderbird. (CVE-2011-0071)
+ 
+ Chris Evans discovered a vulnerability in Thunderbird's XSLT generate-id()
+ function. An attacker could possibly use this vulnerability to make other
+ attacks more reliable. (CVE-2011-1202)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  thunderbird                     3.1.10+build1+nobinonly-0ubuntu0.11.04.1
+
+After a standard system update you need to restart Thunderbird to make
+all the necessary changes.
+
+References:
+  CVE-2011-0065, CVE-2011-0066, CVE-2011-0067, CVE-2011-0069,
+  CVE-2011-0070, CVE-2011-0071, CVE-2011-0072, CVE-2011-0073,
+  CVE-2011-0074, CVE-2011-0075, CVE-2011-0077, CVE-2011-0078,
+  CVE-2011-0080, CVE-2011-0081, CVE-2011-1202
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/thunderbird/3.1.10+build1+nobinonly-0ubuntu0.11.04.1
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110505/daa59331/attachment.pgp>
+
+From kees at ubuntu.com  Thu May  5 21:17:21 2011
+From: kees at ubuntu.com (Kees Cook)
+Date: Thu, 5 May 2011 14:17:21 -0700
+Subject: [USN-1111-1] Linux kernel vulnerabilities
+Message-ID: <20110505211721.GH28888@outflux.net>
+
+==========================================================================
+Ubuntu Security Notice USN-1111-1
+May 05, 2011
+
+linux-source-2.6.15 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 6.06 LTS
+
+Summary:
+
+Multiple flaws fixed in the Linux kernel.
+
+Software Description:
+- linux-source-2.6.15: Linux kernel
+
+Details:
+
+Dan Rosenberg discovered multiple flaws in the X.25 facilities parsing. If
+a system was using X.25, a remote attacker could exploit this to crash the
+system, leading to a denial of service. (CVE-2010-4164)
+
+Vegard Nossum discovered that memory garbage collection was not handled
+correctly for active sockets. A local attacker could exploit this to
+allocate all available kernel memory, leading to a denial of service.
+(CVE-2010-4249)
+
+Nelson Elhage discovered that the kernel did not correctly handle process
+cleanup after triggering a recoverable kernel bug. If a local attacker were
+able to trigger certain kinds of kernel bugs, they could create a specially
+crafted process to gain root privileges. (CVE-2010-4258)
+
+Nelson Elhage discovered that Econet did not correctly handle AUN packets
+over UDP. A local attacker could send specially crafted traffic to crash
+the system, leading to a denial of service. (CVE-2010-4342)
+
+Dan Rosenberg discovered that the OSS subsystem did not handle name
+termination correctly. A local attacker could exploit this crash the system
+or gain root privileges. (CVE-2010-4527)
+
+Dan Rosenberg discovered that IRDA did not correctly check the size of
+buffers. On non-x86 systems, a local attacker could exploit this to read
+kernel heap memory, leading to a loss of privacy. (CVE-2010-4529)
+
+Dan Carpenter discovered that the TTPCI DVB driver did not check certain
+values during an ioctl. If the dvb-ttpci module was loaded, a local
+attacker could exploit this to crash the system, leading to a denial of
+service, or possibly gain root privileges. (CVE-2011-0521)
+
+Jens Kuehnel discovered that the InfiniBand driver contained a race
+condition. On systems using InfiniBand, a local attacker could send
+specially crafted requests to crash the system, leading to a denial of
+service. (CVE-2011-0695)
+
+Timo Warns discovered that the LDM disk partition handling code did not
+correctly handle certain values. By inserting a specially crafted disk
+device, a local attacker could exploit this to gain root privileges.
+(CVE-2011-1017)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 6.06 LTS:
+  linux-image-2.6.15-57-386       2.6.15-57.97
+  linux-image-2.6.15-57-686       2.6.15-57.97
+  linux-image-2.6.15-57-amd64-generic  2.6.15-57.97
+  linux-image-2.6.15-57-amd64-k8  2.6.15-57.97
+  linux-image-2.6.15-57-amd64-server  2.6.15-57.97
+  linux-image-2.6.15-57-amd64-xeon  2.6.15-57.97
+  linux-image-2.6.15-57-hppa32    2.6.15-57.97
+  linux-image-2.6.15-57-hppa32-smp  2.6.15-57.97
+  linux-image-2.6.15-57-hppa64    2.6.15-57.97
+  linux-image-2.6.15-57-hppa64-smp  2.6.15-57.97
+  linux-image-2.6.15-57-itanium   2.6.15-57.97
+  linux-image-2.6.15-57-itanium-smp  2.6.15-57.97
+  linux-image-2.6.15-57-k7        2.6.15-57.97
+  linux-image-2.6.15-57-mckinley  2.6.15-57.97
+  linux-image-2.6.15-57-mckinley-smp  2.6.15-57.97
+  linux-image-2.6.15-57-powerpc   2.6.15-57.97
+  linux-image-2.6.15-57-powerpc-smp  2.6.15-57.97
+  linux-image-2.6.15-57-powerpc64-smp  2.6.15-57.97
+  linux-image-2.6.15-57-server    2.6.15-57.97
+  linux-image-2.6.15-57-server-bigiron  2.6.15-57.97
+  linux-image-2.6.15-57-sparc64   2.6.15-57.97
+  linux-image-2.6.15-57-sparc64-smp  2.6.15-57.97
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  CVE-2010-4164, CVE-2010-4249, CVE-2010-4258, CVE-2010-4342,
+  CVE-2010-4527, CVE-2010-4529, CVE-2011-0521, CVE-2011-0695,
+  CVE-2011-1017
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-source-2.6.15/2.6.15-57.97
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 874 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110505/8d11a7a1/attachment.pgp>
+
+From kees at ubuntu.com  Tue May 10 21:04:07 2011
+From: kees at ubuntu.com (Kees Cook)
+Date: Tue, 10 May 2011 14:04:07 -0700
+Subject: [USN-1130-1] Exim vulnerability
+Message-ID: <20110510210407.GB28888@outflux.net>
+
+==========================================================================
+Ubuntu Security Notice USN-1130-1
+May 10, 2011
+
+exim4 vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Exim could be made to run arbitrary code under some conditions.
+
+Software Description:
+- exim4: Exim mail transfer agent
+
+Details:
+
+It was discovered that the Exim daemon did not correctly handle format
+strings in DKIM headers. An unauthenticated remote attacker could send
+specially crafted email to run arbitrary code as the Exim user. The
+default compiler options for affected releases reduces the vulnerability
+to a denial of service under most conditions.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  exim4-daemon-custom             4.74-1ubuntu1.1
+  exim4-daemon-heavy              4.74-1ubuntu1.1
+  exim4-daemon-light              4.74-1ubuntu1.1
+
+Ubuntu 10.10:
+  exim4-daemon-custom             4.72-1ubuntu1.2
+  exim4-daemon-heavy              4.72-1ubuntu1.2
+  exim4-daemon-light              4.72-1ubuntu1.2
+
+Ubuntu 10.04 LTS:
+  exim4-daemon-custom             4.71-3ubuntu1.2
+  exim4-daemon-heavy              4.71-3ubuntu1.2
+  exim4-daemon-light              4.71-3ubuntu1.2
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  CVE-2011-1764
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/exim4/4.74-1ubuntu1.1
+  https://launchpad.net/ubuntu/+source/exim4/4.72-1ubuntu1.2
+  https://launchpad.net/ubuntu/+source/exim4/4.71-3ubuntu1.2
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 874 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110510/ee78adcb/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed May 11 09:54:37 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 11 May 2011 05:54:37 -0400
+Subject: [USN-1131-1] Postfix vulnerability
+Message-ID: <1305107677.19040.82.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1131-1
+May 11, 2011
+
+postfix vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+- Ubuntu 6.06 LTS
+
+Summary:
+
+An attacker could send crafted input to Postfix and cause it to crash or
+run programs.
+
+Software Description:
+- postfix: High-performance mail transport agent
+
+Details:
+
+Thomas Jarosch discovered that Postfix incorrectly handled authentication
+mechanisms other than PLAIN and LOGIN when the Cyrus SASL library is used.
+A remote attacker could use this to cause Postfix to crash, leading to a
+denial of service, or possibly execute arbitrary code as the postfix user.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  postfix                         2.8.2-1ubuntu2.1
+
+Ubuntu 10.10:
+  postfix                         2.7.1-1ubuntu0.2
+
+Ubuntu 10.04 LTS:
+  postfix                         2.7.0-1ubuntu0.2
+
+Ubuntu 8.04 LTS:
+  postfix                         2.5.1-2ubuntu1.4
+
+Ubuntu 6.06 LTS:
+  postfix                         2.2.10-1ubuntu0.4
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  CVE-2011-1720
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/postfix/2.8.2-1ubuntu2.1
+  https://launchpad.net/ubuntu/+source/postfix/2.7.1-1ubuntu0.2
+  https://launchpad.net/ubuntu/+source/postfix/2.7.0-1ubuntu0.2
+  https://launchpad.net/ubuntu/+source/postfix/2.5.1-2ubuntu1.4
+  https://launchpad.net/ubuntu/+source/postfix/2.2.10-1ubuntu0.4
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110511/02b3a0d8/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon May 16 20:49:44 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 16 May 2011 16:49:44 -0400
+Subject: [USN-1132-1] apturl vulnerability
+Message-ID: <1305578984.3729.81.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1132-1
+May 16, 2011
+
+apturl vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+apturl could be made to cause your desktop to crash if it opened a very
+long URL.
+
+Software Description:
+- apturl: installs packages using the apt protocol
+
+Details:
+
+It was discovered that apturl incorrectly handled certain long URLs. If
+a user were tricked into opening a very long URL, an attacker could cause
+their desktop session to crash, leading to a denial of service.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  apturl-common                   0.4.2ubuntu5.1
+
+Ubuntu 10.10:
+  apturl-common                   0.4.1ubuntu7.1
+
+Ubuntu 10.04 LTS:
+  apturl-common                   0.4.1ubuntu4.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  https://launchpad.net/bugs/783594
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/apturl/0.4.2ubuntu5.1
+  https://launchpad.net/ubuntu/+source/apturl/0.4.1ubuntu7.1
+  https://launchpad.net/ubuntu/+source/apturl/0.4.1ubuntu4.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110516/42231ff7/attachment.pgp>
+
+From kees at ubuntu.com  Tue May 24 16:48:29 2011
+From: kees at ubuntu.com (Kees Cook)
+Date: Tue, 24 May 2011 09:48:29 -0700
+Subject: [USN-1133-1] Linux kernel vulnerabilities
+Message-ID: <20110524164829.GW25448@outflux.net>
+
+==========================================================================
+Ubuntu Security Notice USN-1133-1
+May 24, 2011
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 8.04 LTS
+
+Summary:
+
+Multiple flaws in the Linux kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Nelson Elhage discovered that Econet did not correctly handle AUN packets
+over UDP. A local attacker could send specially crafted traffic to crash
+the system, leading to a denial of service. (CVE-2010-4342)
+
+Dan Rosenberg discovered that the OSS subsystem did not handle name
+termination correctly. A local attacker could exploit this crash the system
+or gain root privileges. (CVE-2010-4527)
+
+Dan Rosenberg discovered that IRDA did not correctly check the size of
+buffers. On non-x86 systems, a local attacker could exploit this to read
+kernel heap memory, leading to a loss of privacy. (CVE-2010-4529)
+
+Dan Carpenter discovered that the TTPCI DVB driver did not check certain
+values during an ioctl. If the dvb-ttpci module was loaded, a local
+attacker could exploit this to crash the system, leading to a denial of
+service, or possibly gain root privileges. (CVE-2011-0521)
+
+Dan Rosenberg discovered that XFS did not correctly initialize memory. A
+local attacker could make crafted ioctl calls to leak portions of kernel
+stack memory, leading to a loss of privacy. (CVE-2011-0711)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 8.04 LTS:
+  linux-image-2.6.24-29-386       2.6.24-29.89
+  linux-image-2.6.24-29-generic   2.6.24-29.89
+  linux-image-2.6.24-29-hppa32    2.6.24-29.89
+  linux-image-2.6.24-29-hppa64    2.6.24-29.89
+  linux-image-2.6.24-29-itanium   2.6.24-29.89
+  linux-image-2.6.24-29-lpia      2.6.24-29.89
+  linux-image-2.6.24-29-lpiacompat  2.6.24-29.89
+  linux-image-2.6.24-29-mckinley  2.6.24-29.89
+  linux-image-2.6.24-29-openvz    2.6.24-29.89
+  linux-image-2.6.24-29-powerpc   2.6.24-29.89
+  linux-image-2.6.24-29-powerpc-smp  2.6.24-29.89
+  linux-image-2.6.24-29-powerpc64-smp  2.6.24-29.89
+  linux-image-2.6.24-29-rt        2.6.24-29.89
+  linux-image-2.6.24-29-server    2.6.24-29.89
+  linux-image-2.6.24-29-sparc64   2.6.24-29.89
+  linux-image-2.6.24-29-sparc64-smp  2.6.24-29.89
+  linux-image-2.6.24-29-virtual   2.6.24-29.89
+  linux-image-2.6.24-29-xen       2.6.24-29.89
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  CVE-2010-4342, CVE-2010-4527, CVE-2010-4529, CVE-2011-0521,
+  CVE-2011-0711
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/2.6.24-29.89
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 874 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110524/2ba53d60/attachment.pgp>
+
+From sbeattie at ubuntu.com  Tue May 24 20:37:26 2011
+From: sbeattie at ubuntu.com (Steve Beattie)
+Date: Tue, 24 May 2011 13:37:26 -0700
+Subject: [USN-1134-1] APR vulnerabilities
+Message-ID: <20110524203726.GA7016@nxnw.org>
+
+==========================================================================
+Ubuntu Security Notice USN-1134-1
+May 24, 2011
+
+apache2, apr vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+- Ubuntu 6.06 LTS
+
+Summary:
+
+A denial of service issue exists that affects the Apache web server.
+
+Software Description:
+- apr: The Apache Portable Runtime Library
+- apache2: a scalable, extensible web server
+
+Details:
+
+Maksymilian Arciemowicz reported that a flaw in the fnmatch()
+implementation in the Apache Portable Runtime (APR) library could allow
+an attacker to cause a denial of service. This can be demonstrated
+in a remote denial of service attack against mod_autoindex in the
+Apache web server. (CVE-2011-0419)
+
+Is was discovered that the fix for CVE-2011-0419 introduced a different
+flaw in the fnmatch() implementation that could also result in a
+denial of service. (CVE-2011-1928)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  libapr1                         1.4.2-7ubuntu2.1
+
+Ubuntu 10.10:
+  libapr1                         1.4.2-3ubuntu1.1
+
+Ubuntu 10.04 LTS:
+  libapr1                         1.3.8-1ubuntu0.3
+
+Ubuntu 8.04 LTS:
+  libapr1                         1.2.11-1ubuntu0.2
+
+Ubuntu 6.06 LTS:
+  libapr0                         2.0.55-4ubuntu2.13
+
+After a standard system update you need to restart the Apache web
+server or any other service that depends on the APR library to make
+all the necessary changes.
+
+References:
+  CVE-2011-0419, CVE-2011-1928
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/apr/1.4.2-7ubuntu2.1
+  https://launchpad.net/ubuntu/+source/apr/1.4.2-3ubuntu1.1
+  https://launchpad.net/ubuntu/+source/apr/1.3.8-1ubuntu0.3
+  https://launchpad.net/ubuntu/+source/apr/1.2.11-1ubuntu0.2
+  https://launchpad.net/ubuntu/+source/apache2/2.0.55-4ubuntu2.13
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110524/23378a07/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed May 25 17:35:11 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 25 May 2011 13:35:11 -0400
+Subject: [USN-1136-1] rdesktop vulnerability
+Message-ID: <1306344911.2911.36.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1136-1
+May 25, 2011
+
+rdesktop vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+An attacker could access your files if rdesktop connected to a malicious
+server.
+
+Software Description:
+- rdesktop: RDP client for Windows NT/2000 Terminal Server
+
+Details:
+
+It was discovered that rdesktop incorrectly handled specially crafted
+paths when using disk redirection. If a user were tricked into connecting
+to a malicious server, an attacker could access arbitrary files on the
+user's filesystem.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  rdesktop                        1.6.0-3ubuntu4.1
+
+Ubuntu 10.10:
+  rdesktop                        1.6.0-3ubuntu2.1
+
+Ubuntu 10.04 LTS:
+  rdesktop                        1.6.0-2ubuntu3.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  CVE-2011-1595
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/rdesktop/1.6.0-3ubuntu4.1
+  https://launchpad.net/ubuntu/+source/rdesktop/1.6.0-3ubuntu2.1
+  https://launchpad.net/ubuntu/+source/rdesktop/1.6.0-2ubuntu3.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110525/ba6516e8/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed May 25 17:34:24 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 25 May 2011 13:34:24 -0400
+Subject: [USN-1135-1] Exim vulnerability
+Message-ID: <1306344864.2911.35.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1135-1
+May 25, 2011
+
+exim4 vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+An attacker could send crafted input to Exim and cause it to run programs
+as the Exim user.
+
+Software Description:
+- exim4: metapackage to ease Exim MTA (v4) installation
+
+Details:
+
+It was discovered that the Exim daemon did not correctly handle certain
+DKIM identities. A remote attacker could send specially crafted email to
+run arbitrary code as the Exim user.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  exim4-daemon-custom             4.74-1ubuntu1.2
+  exim4-daemon-heavy              4.74-1ubuntu1.2
+  exim4-daemon-light              4.74-1ubuntu1.2
+
+Ubuntu 10.10:
+  exim4-daemon-custom             4.72-1ubuntu1.3
+  exim4-daemon-heavy              4.72-1ubuntu1.3
+  exim4-daemon-light              4.72-1ubuntu1.3
+
+Ubuntu 10.04 LTS:
+  exim4-daemon-custom             4.71-3ubuntu1.3
+  exim4-daemon-heavy              4.71-3ubuntu1.3
+  exim4-daemon-light              4.71-3ubuntu1.3
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  CVE-2011-1407
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/exim4/4.74-1ubuntu1.2
+  https://launchpad.net/ubuntu/+source/exim4/4.72-1ubuntu1.3
+  https://launchpad.net/ubuntu/+source/exim4/4.71-3ubuntu1.3
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110525/721afb83/attachment.pgp>
+
+From jamie at canonical.com  Thu May 26 15:09:18 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 26 May 2011 10:09:18 -0500
+Subject: [USN-1137-1] Eucalyptus vulnerability
+Message-ID: <1306422558.6969.160.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1137-1
+May 26, 2011
+
+eucalyptus, rampart vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+An attacker could send crafted input to Eucalyptus to run commands as
+a valid user.
+
+Software Description:
+- eucalyptus: Elastic Utility Computing Architecture
+- rampart: Apache web services security engine
+
+Details:
+
+Juraj Somorovsky, Jorg Schwenk, Meiko Jensen and Xiaofeng Lou discovered
+that Eucalyptus did not properly validate SOAP requests. An unauthenticated
+remote attacker could exploit this to submit arbitrary commands to the
+Eucalyptus SOAP interface in the context of an authenticated user.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  eucalyptus-cloud                2.0.1+bzr1256-0ubuntu4.1
+  librampart0                     1.3.0-1ubuntu2.1
+
+Ubuntu 10.10:
+  eucalyptus-cloud                2.0+bzr1241-0ubuntu4.2
+  librampart0                     1.3.0-1ubuntu1.1
+
+Ubuntu 10.04 LTS:
+  eucalyptus-cloud                1.6.2-0ubuntu30.5
+  librampart0                     1.3.0-0ubuntu7.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  CVE-2011-0730
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/eucalyptus/2.0.1+bzr1256-0ubuntu4.1
+  https://launchpad.net/ubuntu/+source/rampart/1.3.0-1ubuntu2.1
+  https://launchpad.net/ubuntu/+source/eucalyptus/2.0+bzr1241-0ubuntu4.2
+  https://launchpad.net/ubuntu/+source/rampart/1.3.0-1ubuntu1.1
+  https://launchpad.net/ubuntu/+source/eucalyptus/1.6.2-0ubuntu30.5
+  https://launchpad.net/ubuntu/+source/rampart/1.3.0-0ubuntu7.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110526/377bb107/attachment.pgp>
+
+From kate.stewart at ubuntu.com  Thu May 26 21:40:11 2011
+From: kate.stewart at ubuntu.com (Kate Stewart)
+Date: Thu, 26 May 2011 16:40:11 -0500
+Subject: Ubuntu 9.10 (Karmic Koala) end-of-life reached on April 30, 2011.
+Message-ID: <1306446011.2483.5821.camel@veni>
+
+This note is just to confirm that the support period for Ubuntu 9.10
+(Karmic Koala) formally ended on May 1, 2011 and Ubuntu Security Notices
+no longer includes information or updated packages for Ubuntu 9.10.  
+
+The supported upgrade path from Ubuntu 9.10 is via Ubuntu 10.04 LTS
+(Lucid Lynx).  Instructions and caveats for the upgrade may be found at
+https://help.ubuntu.com/community/LucidUpgrades.  Ubuntu
+10.04 LTS continues to be actively supported with security updates and
+select high-impact bug fixes. All announcements of official security
+updates for Ubuntu releases are sent to the ubuntu-security-announce
+mailing list, information about which may be found at
+https://lists.ubuntu.com/mailman/listinfo/ubuntu-security-announce. 
+
+Since its launch in October 2004 Ubuntu has become one of the most
+highly regarded Linux distributions with millions of users in homes,
+schools, businesses and governments around the world. Ubuntu is Open
+Source software, costs nothing to download, and users are free to
+customize or alter their software in order to meet their needs. 
+
+Kate Stewart
+Ubuntu Release Manager
+
+
+
+
+From jamie at canonical.com  Thu May 26 21:58:07 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 26 May 2011 16:58:07 -0500
+Subject: [USN-1138-1] DBus-GLib vulnerability
+Message-ID: <1306447087.14069.0.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1138-1
+May 26, 2011
+
+dbus-glib vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+An attacker could send crafted input to applications using DBus-GLib and
+cause them to crash.
+
+Software Description:
+- dbus-glib: GLib bindings for DBus
+
+Details:
+
+It was discovered that DBus-GLib did not properly verify the access flag of
+exported GObject properties under certain circumstances. A local attacker
+could exploit this to bypass intended access restrictions or possibly
+cause a denial of service.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  libdbus-glib-1-2                0.84-1ubuntu0.2
+
+Ubuntu 8.04 LTS:
+  libdbus-glib-1-2                0.74-2ubuntu0.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  CVE-2010-1172
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/dbus-glib/0.84-1ubuntu0.2
+  https://launchpad.net/ubuntu/+source/dbus-glib/0.74-2ubuntu0.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110526/a67a8532/attachment.pgp>
+
+From jamie at canonical.com  Fri May 27 02:21:39 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 26 May 2011 21:21:39 -0500
+Subject: [USN-1138-2] NetworkManager and ModemManager update
+Message-ID: <1306462899.14069.1.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1138-2
+May 27, 2011
+
+network-manager, modemmanger update
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+An attacker could send crafted input to NetworkManager and ModemManager
+and cause them to crash.
+
+Software Description:
+- modemmanager: Modem connection manager
+- network-manager: Network connection manager
+
+Details:
+
+USN-1138-1 fixed a vulnerability in DBus-GLib. NetworkManager and
+ModemManager required rebuilding against the updated DBus-GLib to
+incorporate the changes.
+
+Original advisory details:
+
+ It was discovered that DBus-GLib did not properly verify the access flag of
+ exported GObject properties under certain circumstances. A local attacker
+ could exploit this to bypass intended access restrictions or possibly
+ cause a denial of service.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  libnm-glib2                     0.8-0ubuntu3.2
+  modemmanager                    0.3-0ubuntu2.2
+
+Ubuntu 8.04 LTS:
+  libnm-glib0                     0.6.6-0ubuntu5.8.04.3
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  https://launchpad.net/bugs/616517
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/modemmanager/0.3-0ubuntu2.2
+  https://launchpad.net/ubuntu/+source/network-manager/0.8-0ubuntu3.2
+  https://launchpad.net/ubuntu/+source/network-manager/0.6.6-0ubuntu5.8.04.3
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110526/1d553044/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon May 30 15:11:52 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 30 May 2011 11:11:52 -0400
+Subject: [USN-1140-1] PAM vulnerabilities
+Message-ID: <1306768312.2663.12.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1140-1
+May 30, 2011
+
+pam vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+An attacker could cause PAM to read or delete arbitrary files or cause it
+to crash.
+
+Software Description:
+- pam: Pluggable Authentication Modules
+
+Details:
+
+Marcus Granado discovered that PAM incorrectly handled configuration files
+with non-ASCII usernames. A remote attacker could use this flaw to cause a
+denial of service, or possibly obtain login access with a different users
+username. This issue only affected Ubuntu 8.04 LTS. (CVE-2009-0887)
+
+It was discovered that the PAM pam_xauth, pam_env and pam_mail modules
+incorrectly handled dropping privileges when performing operations. A local
+attacker could use this flaw to read certain arbitrary files, and access
+other sensitive information. (CVE-2010-3316, CVE-2010-3430, CVE-2010-3431,
+CVE-2010-3435)
+
+It was discovered that the PAM pam_namespace module incorrectly cleaned the
+environment during execution of the namespace.init script. A local attacker
+could use this flaw to possibly gain privileges. (CVE-2010-3853)
+
+It was discovered that the PAM pam_xauth module incorrectly handled certain
+failures. A local attacker could use this flaw to delete certain unintended
+files. (CVE-2010-4706)
+
+It was discovered that the PAM pam_xauth module incorrectly verified
+certain file properties. A local attacker could use this flaw to cause a
+denial of service. (CVE-2010-4707)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  libpam-modules                  1.1.2-2ubuntu8.2
+
+Ubuntu 10.10:
+  libpam-modules                  1.1.1-4ubuntu2.2
+
+Ubuntu 10.04 LTS:
+  libpam-modules                  1.1.1-2ubuntu5.2
+
+Ubuntu 8.04 LTS:
+  libpam-modules                  0.99.7.1-5ubuntu6.3
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  CVE-2009-0887, CVE-2010-3316, CVE-2010-3430, CVE-2010-3431,
+  CVE-2010-3435, CVE-2010-3853, CVE-2010-4706, CVE-2010-4707
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/pam/1.1.2-2ubuntu8.2
+  https://launchpad.net/ubuntu/+source/pam/1.1.1-4ubuntu2.2
+  https://launchpad.net/ubuntu/+source/pam/1.1.1-2ubuntu5.2
+  https://launchpad.net/ubuntu/+source/pam/0.99.7.1-5ubuntu6.3
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110530/b4542b0d/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon May 30 15:11:24 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 30 May 2011 11:11:24 -0400
+Subject: [USN-1139-1] Bind vulnerabilities
+Message-ID: <1306768284.2663.11.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1139-1
+May 30, 2011
+
+bind9 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+An attacker could send crafted input to Bind and cause it to crash.
+
+Software Description:
+- bind9: Internet Domain Name Server
+
+Details:
+
+It was discovered that Bind incorrectly handled certain bad signatures if
+multiple trust anchors existed for a single zone. A remote attacker could
+use this flaw to cause Bind to stop responding, resulting in a denial of
+service. This issue only affected Ubuntu 8.04 LTS and 10.04 LTS.
+(CVE-2010-3762)
+
+Frank Kloeker and Michael Sinatra discovered that Bind incorrectly handled
+certain very large RRSIG RRsets included in negative responses. A remote
+attacker could use this flaw to cause Bind to stop responding, resulting in
+a denial of service. (CVE-2011-1910)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  libdns69                        1:9.7.3.dfsg-1ubuntu2.1
+
+Ubuntu 10.10:
+  libdns66                        1:9.7.1.dfsg.P2-2ubuntu0.3
+
+Ubuntu 10.04 LTS:
+  libdns64                        1:9.7.0.dfsg.P1-1ubuntu0.2
+
+Ubuntu 8.04 LTS:
+  libdns36                        1:9.4.2.dfsg.P2-2ubuntu0.7
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  CVE-2010-3762, CVE-2011-1910
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/bind9/1:9.7.3.dfsg-1ubuntu2.1
+  https://launchpad.net/ubuntu/+source/bind9/1:9.7.1.dfsg.P2-2ubuntu0.3
+  https://launchpad.net/ubuntu/+source/bind9/1:9.7.0.dfsg.P1-1ubuntu0.2
+  https://launchpad.net/ubuntu/+source/bind9/1:9.4.2.dfsg.P2-2ubuntu0.7
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110530/2ed98935/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue May 31 17:39:10 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 31 May 2011 13:39:10 -0400
+Subject: [USN-1140-2] PAM regression
+Message-ID: <1306863550.2663.78.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1140-2
+May 31, 2011
+
+pam regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+The USN-1140-1 PAM update caused cron to stop working.
+
+Software Description:
+- pam: Pluggable Authentication Modules
+
+Details:
+
+USN-1140-1 fixed vulnerabilities in PAM. A regression was found that caused 
+cron to stop working with a "Module is unknown" error. As a result, systems 
+configured with automatic updates will not receive updates until cron is
+restarted, these updates are installed or the system is rebooted. This
+update fixes the problem.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ Marcus Granado discovered that PAM incorrectly handled configuration files
+ with non-ASCII usernames. A remote attacker could use this flaw to cause a
+ denial of service, or possibly obtain login access with a different users
+ username. This issue only affected Ubuntu 8.04 LTS. (CVE-2009-0887)
+ 
+ It was discovered that the PAM pam_xauth, pam_env and pam_mail modules
+ incorrectly handled dropping privileges when performing operations. A local
+ attacker could use this flaw to read certain arbitrary files, and access
+ other sensitive information. (CVE-2010-3316, CVE-2010-3430, CVE-2010-3431,
+ CVE-2010-3435)
+ 
+ It was discovered that the PAM pam_namespace module incorrectly cleaned the
+ environment during execution of the namespace.init script. A local attacker
+ could use this flaw to possibly gain privileges. (CVE-2010-3853)
+ 
+ It was discovered that the PAM pam_xauth module incorrectly handled certain
+ failures. A local attacker could use this flaw to delete certain unintended
+ files. (CVE-2010-4706)
+ 
+ It was discovered that the PAM pam_xauth module incorrectly verified
+ certain file properties. A local attacker could use this flaw to cause a
+ denial of service. (CVE-2010-4707)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  libpam-modules                  1.1.2-2ubuntu8.3
+  libpam0g                        1.1.2-2ubuntu8.3
+
+Ubuntu 10.10:
+  libpam-modules                  1.1.1-4ubuntu2.3
+  libpam0g                        1.1.1-4ubuntu2.3
+
+Ubuntu 10.04 LTS:
+  libpam-modules                  1.1.1-2ubuntu5.3
+  libpam0g                        1.1.1-2ubuntu5.3
+
+Ubuntu 8.04 LTS:
+  libpam-modules                  0.99.7.1-5ubuntu6.4
+  libpam0g                        0.99.7.1-5ubuntu6.4
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  https://launchpad.net/bugs/790538
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/pam/1.1.2-2ubuntu8.3
+  https://launchpad.net/ubuntu/+source/pam/1.1.1-4ubuntu2.3
+  https://launchpad.net/ubuntu/+source/pam/1.1.1-2ubuntu5.3
+  https://launchpad.net/ubuntu/+source/pam/0.99.7.1-5ubuntu6.4
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110531/d63ee97c/attachment.pgp>
+

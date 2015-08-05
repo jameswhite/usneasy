@@ -1,0 +1,3116 @@
+From jamie at canonical.com  Sat Oct  1 00:38:44 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Fri, 30 Sep 2011 19:38:44 -0500
+Subject: [USN-1223-1] Puppet vulnerabilities
+Message-ID: <1317429524.25355.0.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1223-1
+September 30, 2011
+
+puppet vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Puppet could be made to overwrite files and run programs with administrator
+privileges.
+
+Software Description:
+- puppet: Centralized configuration management
+
+Details:
+
+It was discovered that Puppet unsafely opened files when the k5login type
+is used to manage files. A local attacker could exploit this to overwrite
+arbitrary files which could be used to escalate privileges. (CVE-2011-3869)
+
+Ricky Zhou discovered that Puppet did not drop privileges when creating
+SSH authorized_keys files. A local attacker could exploit this to overwrite
+arbitrary files as root. (CVE-2011-3870)
+
+It was discovered that Puppet used a predictable filename when using the
+--edit resource. A local attacker could exploit this to edit arbitrary
+files or run arbitrary code as the user invoking the program, typically
+root. (CVE-2011-3871)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  puppet-common                   2.6.4-2ubuntu2.3
+
+Ubuntu 10.10:
+  puppet-common                   2.6.1-0ubuntu2.2
+
+Ubuntu 10.04 LTS:
+  puppet-common                   0.25.4-2ubuntu6.3
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1223-1
+  CVE-2011-3869, CVE-2011-3870, CVE-2011-3871
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/puppet/2.6.4-2ubuntu2.3
+  https://launchpad.net/ubuntu/+source/puppet/2.6.1-0ubuntu2.2
+  https://launchpad.net/ubuntu/+source/puppet/0.25.4-2ubuntu6.3
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20110930/174c9868/attachment.pgp>
+
+From jamie at canonical.com  Mon Oct  3 21:29:15 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Mon, 03 Oct 2011 16:29:15 -0500
+Subject: [USN-1224-1] rsyslog vulnerability
+Message-ID: <1317677355.8058.30.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1224-1
+October 03, 2011
+
+rsyslog vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+
+Summary:
+
+Rsyslog could be made to crash if it processed a specially crafted message.
+
+Software Description:
+- rsyslog: enhanced multi-threaded syslogd
+
+Details:
+
+It was discovered that rsyslog had an off-by-two error when parsing legacy
+syslog messages. An attacker could potentially exploit this to cause a
+denial of service via application crash.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  rsyslog                         4.6.4-2ubuntu4.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1224-1
+  CVE-2011-3200
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/rsyslog/4.6.4-2ubuntu4.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111003/fac9577c/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct  4 12:49:48 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 04 Oct 2011 08:49:48 -0400
+Subject: [USN-1225-1] Linux kernel vulnerabilities
+Message-ID: <1317732588.2683.13.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1225-1
+October 04, 2011
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 8.04 LTS
+
+Summary:
+
+Multiple kernel flaws have been fixed.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Timo Warns discovered that the EFI GUID partition table was not correctly
+parsed. A physically local attacker that could insert mountable devices
+could exploit this to crash the system or possibly gain root privileges.
+(CVE-2011-1776)
+
+Dan Rosenberg discovered that the IPv4 diagnostic routines did not
+correctly validate certain requests. A local attacker could exploit this to
+consume CPU resources, leading to a denial of service. (CVE-2011-2213)
+
+Dan Rosenberg discovered that the Bluetooth stack incorrectly handled
+certain L2CAP requests. If a system was using Bluetooth, a remote attacker
+could send specially crafted traffic to crash the system or gain root
+privileges. (CVE-2011-2497)
+
+Fernando Gont discovered that the IPv6 stack used predictable fragment
+identification numbers. A remote attacker could exploit this to exhaust
+network resources, leading to a denial of service. (CVE-2011-2699)
+
+Time Warns discovered that long symlinks were incorrectly handled on Be
+filesystems. A local attacker could exploit this with a malformed Be
+filesystem and crash the system, leading to a denial of service.
+(CVE-2011-2928)
+
+Darren Lavender discovered that the CIFS client incorrectly handled certain
+large values. A remote attacker with a malicious server could exploit this
+to crash the system or possibly execute arbitrary code as the root user.
+(CVE-2011-3191)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 8.04 LTS:
+  linux-image-2.6.24-29-386       2.6.24-29.94
+  linux-image-2.6.24-29-generic   2.6.24-29.94
+  linux-image-2.6.24-29-hppa32    2.6.24-29.94
+  linux-image-2.6.24-29-hppa64    2.6.24-29.94
+  linux-image-2.6.24-29-itanium   2.6.24-29.94
+  linux-image-2.6.24-29-lpia      2.6.24-29.94
+  linux-image-2.6.24-29-lpiacompat  2.6.24-29.94
+  linux-image-2.6.24-29-mckinley  2.6.24-29.94
+  linux-image-2.6.24-29-openvz    2.6.24-29.94
+  linux-image-2.6.24-29-powerpc   2.6.24-29.94
+  linux-image-2.6.24-29-powerpc-smp  2.6.24-29.94
+  linux-image-2.6.24-29-powerpc64-smp  2.6.24-29.94
+  linux-image-2.6.24-29-rt        2.6.24-29.94
+  linux-image-2.6.24-29-server    2.6.24-29.94
+  linux-image-2.6.24-29-sparc64   2.6.24-29.94
+  linux-image-2.6.24-29-sparc64-smp  2.6.24-29.94
+  linux-image-2.6.24-29-virtual   2.6.24-29.94
+  linux-image-2.6.24-29-xen       2.6.24-29.94
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1225-1
+  CVE-2011-1776, CVE-2011-2213, CVE-2011-2497, CVE-2011-2699,
+  CVE-2011-2928, CVE-2011-3191
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/2.6.24-29.94
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111004/30aa7841/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct  4 20:20:50 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 04 Oct 2011 16:20:50 -0400
+Subject: [USN-1226-1] Samba vulnerabilities
+Message-ID: <1317759650.2756.10.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1226-1
+October 04, 2011
+
+samba vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+An attacker could trick Samba into corrupting the system mtab file.
+
+Software Description:
+- samba: SMB/CIFS file, print, and login server for Unix
+
+Details:
+
+Dan Rosenberg discovered that Samba incorrectly handled changes to the mtab
+file. A local attacker could use this issue to corrupt the mtab file,
+possibly leading to a denial of service. (CVE-2011-1678)
+
+Jan Lieskovsky discovered that Samba incorrectly filtered certain strings
+being added to the mtab file. A local attacker could use this issue to
+corrupt the mtab file, possibly leading to a denial of service. This issue
+only affected Ubuntu 10.04 LTS. (CVE-2011-2724)
+
+Dan Rosenberg discovered that Samba incorrectly handled the mtab lock file.
+A local attacker could use this issue to create a stale lock file, possibly
+leading to a denial of service. (CVE-2011-3585)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  smbfs                           2:3.4.7~dfsg-1ubuntu3.8
+
+Ubuntu 8.04 LTS:
+  smbfs                           3.0.28a-1ubuntu4.16
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1226-1
+  CVE-2011-1678, CVE-2011-2724, CVE-2011-3585
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/samba/2:3.4.7~dfsg-1ubuntu3.8
+  https://launchpad.net/ubuntu/+source/samba/3.0.28a-1ubuntu4.16
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111004/4eb565be/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct  4 20:21:02 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 04 Oct 2011 16:21:02 -0400
+Subject: [USN-1226-2] cifs-utils vulnerabilities
+Message-ID: <1317759662.2756.11.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1226-2
+October 04, 2011
+
+cifs-utils vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+
+Summary:
+
+An attacker could trick cifs-utils into corrupting the system mtab file.
+
+Software Description:
+- cifs-utils: Common Internet File System utilities
+
+Details:
+
+Dan Rosenberg discovered that cifs-utils incorrectly handled changes to the
+mtab file. A local attacker could use this issue to corrupt the mtab file,
+possibly leading to a denial of service. (CVE-2011-1678)
+
+Jan Lieskovsky discovered that cifs-utils incorrectly filtered certain
+strings being added to the mtab file. A local attacker could use this issue
+to corrupt the mtab file, possibly leading to a denial of service.
+(CVE-2011-2724)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  smbfs                           2:4.5-2ubuntu0.11.04.1
+
+Ubuntu 10.10:
+  smbfs                           2:4.5-2ubuntu0.10.10.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1226-2
+  http://www.ubuntu.com/usn/usn-1226-1
+  CVE-2011-1678, CVE-2011-2724
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/cifs-utils/2:4.5-2ubuntu0.11.04.1
+  https://launchpad.net/ubuntu/+source/cifs-utils/2:4.5-2ubuntu0.10.10.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111004/b36ff6ac/attachment.pgp>
+
+From micah at canonical.com  Tue Oct  4 23:03:51 2011
+From: micah at canonical.com (Micah Gersten)
+Date: Tue, 04 Oct 2011 18:03:51 -0500
+Subject: [USN-1222-2] Mozvoikko, ubufox, webfav update
+In-Reply-To: <20111004225156.23F26D48008@lillypilly.canonical.com>
+References: <20111004225156.23F26D48008@lillypilly.canonical.com>
+Message-ID: <4E8B90D7.60805@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1222-2
+October 04, 2011
+
+mozvoikko, ubufox, webfav update
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+
+Summary:
+
+This update provides packages compatible with Firefox 7.
+
+Software Description:
+- mozvoikko: Finnish spell-checker extension for Firefox
+- ubufox: Ubuntu Firefox specific configuration defaults and apt support
+- webfav: Firefox extension for saving web favorites (bookmarks)
+
+Details:
+
+USN-1222-1 fixed vulnerabilities in Firefox. This update provides updated
+packages for use with Firefox 7.
+
+Original advisory details:
+
+ Benjamin Smedberg, Bob Clary, Jesse Ruderman, Bob Clary, Andrew McCreight,
+ Andreas Gal, Gary Kwong, Igor Bukanov, Jason Orendorff, Jesse Ruderman, and
+ Marcia Knous discovered multiple memory vulnerabilities in the browser
+ rendering engine. An attacker could use these to possibly execute arbitrary
+ code with the privileges of the user invoking Firefox. (CVE-2011-2995,
+ CVE-2011-2997)
+ 
+ Boris Zbarsky discovered that a frame named "location" could shadow the
+ window.location object unless a script in a page grabbed a reference to the
+ true object before the frame was created. This is in violation of the Same
+ Origin Policy. A malicious website could possibly use this to access
+ another website or the local file system. (CVE-2011-2999)
+ 
+ Ian Graham discovered that when multiple Location headers were present,
+ Firefox would use the second one resulting in a possible CRLF injection
+ attack. CRLF injection issues can result in a wide variety of attacks, such
+ as XSS (Cross-Site Scripting) vulnerabilities, browser cache poisoning, and
+ cookie theft. (CVE-2011-3000)
+ 
+ Mariusz Mlynski discovered that if the user could be convinced to hold down
+ the enter key, a malicious website could potential pop up a download dialog
+ and the default open action would be selected or lead to the installation
+ of an arbitrary add-on. This would result in potentially malicious content
+ being run with privileges of the user invoking Firefox. (CVE-2011-2372,
+ CVE-2011-3001)
+ 
+ Michael Jordon and Ben Hawkes discovered flaws in WebGL. If a user were
+ tricked into opening a malicious page, an attacker could cause the browser
+ to crash. (CVE-2011-3002, CVE-2011-3003)
+ 
+ It was discovered that Firefox did not properly free memory when processing
+ ogg files. If a user were tricked into opening a malicious page, an
+ attacker could cause the browser to crash. (CVE-2011-3005)
+ 
+ David Rees and Aki Helin discovered a problems in the JavaScript engine. An
+ attacker could exploit this to crash the browser or potentially escalate
+ privileges within the browser. (CVE-2011-3232)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  xul-ext-mozvoikko               1.10.0-0ubuntu0.11.04.1
+  xul-ext-ubufox                  0.9.2-0ubuntu0.11.04.1
+  xul-ext-webfav                  1.17-0ubuntu5.2
+
+After a standard system update you need to restart Firefox to make all the
+necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1222-2
+  http://www.ubuntu.com/usn/usn-1222-1
+  https://launchpad.net/bugs/857098
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/mozvoikko/1.10.0-0ubuntu0.11.04.1
+  https://launchpad.net/ubuntu/+source/ubufox/0.9.2-0ubuntu0.11.04.1
+  https://launchpad.net/ubuntu/+source/webfav/1.17-0ubuntu5.2
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111004/fa0531cb/attachment.pgp>
+
+From jamie at canonical.com  Wed Oct  5 22:12:55 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Wed, 05 Oct 2011 17:12:55 -0500
+Subject: [USN-1223-2] Puppet regression
+Message-ID: <1317852775.5853.5.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1223-2
+October 05, 2011
+
+puppet regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+USN-1223-1 caused a regression with managing SSH authorized_keys files.
+
+Software Description:
+- puppet: Centralized configuration management
+
+Details:
+
+USN-1223-1 fixed vulnerabilities in Puppet. A regression was found on
+Ubuntu 10.04 LTS that caused permission denied errors when managing SSH
+authorized_keys files with Puppet. This update fixes the problem.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ It was discovered that Puppet unsafely opened files when the k5login type
+ is used to manage files. A local attacker could exploit this to overwrite
+ arbitrary files which could be used to escalate privileges. (CVE-2011-3869)
+ 
+ Ricky Zhou discovered that Puppet did not drop privileges when creating
+ SSH authorized_keys files. A local attacker could exploit this to overwrite
+ arbitrary files as root. (CVE-2011-3870)
+ 
+ It was discovered that Puppet used a predictable filename when using the
+ --edit resource. A local attacker could exploit this to edit arbitrary
+ files or run arbitrary code as the user invoking the program, typically
+ root. (CVE-2011-3871)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  puppet-common                   0.25.4-2ubuntu6.4
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1223-2
+  http://www.ubuntu.com/usn/usn-1223-1
+  https://launchpad.net/bugs/865462
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/puppet/0.25.4-2ubuntu6.4
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111005/df3847e1/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 11 12:34:56 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 11 Oct 2011 08:34:56 -0400
+Subject: [USN-1227-1] Linux kernel vulnerabilities
+Message-ID: <1318336496.461.81.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1227-1
+October 11, 2011
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.10
+
+Summary:
+
+Multiple kernel flaws have been fixed.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Ryan Sweat discovered that the kernel incorrectly handled certain VLAN
+packets. On some systems, a remote attacker could send specially crafted
+traffic to crash the system, leading to a denial of service.
+(CVE-2011-1576)
+
+Timo Warns discovered that the EFI GUID partition table was not correctly
+parsed. A physically local attacker that could insert mountable devices
+could exploit this to crash the system or possibly gain root privileges.
+(CVE-2011-1776)
+
+Vasiliy Kulikov and Dan Rosenberg discovered that ecryptfs did not
+correctly check the origin of mount points. A local attacker could exploit
+this to trick the system into unmounting arbitrary mount points, leading to
+a denial of service. (CVE-2011-1833)
+
+Dan Rosenberg discovered that the IPv4 diagnostic routines did not
+correctly validate certain requests. A local attacker could exploit this to
+consume CPU resources, leading to a denial of service. (CVE-2011-2213)
+
+Dan Rosenberg discovered that the Bluetooth stack incorrectly handled
+certain L2CAP requests. If a system was using Bluetooth, a remote attacker
+could send specially crafted traffic to crash the system or gain root
+privileges. (CVE-2011-2497)
+
+Fernando Gont discovered that the IPv6 stack used predictable fragment
+identification numbers. A remote attacker could exploit this to exhaust
+network resources, leading to a denial of service. (CVE-2011-2699)
+
+Mauro Carvalho Chehab discovered that the si4713 radio driver did not
+correctly check the length of memory copies. If this hardware was
+available, a local attacker could exploit this to crash the system or gain
+root privileges. (CVE-2011-2700)
+
+Herbert Xu discovered that certain fields were incorrectly handled when
+Generic Receive Offload (CVE-2011-2723)
+
+The performance counter subsystem did not correctly handle certain
+counters. A local attacker could exploit this to crash the system, leading
+to a denial of service. (CVE-2011-2918)
+
+Time Warns discovered that long symlinks were incorrectly handled on Be
+filesystems. A local attacker could exploit this with a malformed Be
+filesystem and crash the system, leading to a denial of service.
+(CVE-2011-2928)
+
+Darren Lavender discovered that the CIFS client incorrectly handled certain
+large values. A remote attacker with a malicious server could exploit this
+to crash the system or possibly execute arbitrary code as the root user.
+(CVE-2011-3191)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.10:
+  linux-image-2.6.35-30-generic   2.6.35-30.60
+  linux-image-2.6.35-30-generic-pae  2.6.35-30.60
+  linux-image-2.6.35-30-omap      2.6.35-30.60
+  linux-image-2.6.35-30-powerpc   2.6.35-30.60
+  linux-image-2.6.35-30-powerpc-smp  2.6.35-30.60
+  linux-image-2.6.35-30-powerpc64-smp  2.6.35-30.60
+  linux-image-2.6.35-30-server    2.6.35-30.60
+  linux-image-2.6.35-30-versatile  2.6.35-30.60
+  linux-image-2.6.35-30-virtual   2.6.35-30.60
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1227-1
+  CVE-2011-1576, CVE-2011-1776, CVE-2011-1833, CVE-2011-2213,
+  CVE-2011-2497, CVE-2011-2699, CVE-2011-2700, CVE-2011-2723,
+  CVE-2011-2918, CVE-2011-2928, CVE-2011-3191
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/2.6.35-30.60
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111011/21b8609c/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed Oct 12 12:27:06 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 12 Oct 2011 08:27:06 -0400
+Subject: [USN-1228-1] Linux kernel (OMAP4) vulnerabilities
+Message-ID: <1318422426.2688.40.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1228-1
+October 12, 2011
+
+linux-ti-omap4 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ti-omap4: Linux kernel for OMAP4
+
+Details:
+
+Timo Warns discovered that the EFI GUID partition table was not correctly
+parsed. A physically local attacker that could insert mountable devices
+could exploit this to crash the system or possibly gain root privileges.
+(CVE-2011-1776)
+
+Dan Rosenberg discovered that the IPv4 diagnostic routines did not
+correctly validate certain requests. A local attacker could exploit this to
+consume CPU resources, leading to a denial of service. (CVE-2011-2213)
+
+Dan Rosenberg discovered that the Bluetooth stack incorrectly handled
+certain L2CAP requests. If a system was using Bluetooth, a remote attacker
+could send specially crafted traffic to crash the system or gain root
+privileges. (CVE-2011-2497)
+
+It was discovered that the EXT4 filesystem contained multiple off-by-one
+flaws. A local attacker could exploit this to crash the system, leading to
+a denial of service. (CVE-2011-2695)
+
+Mauro Carvalho Chehab discovered that the si4713 radio driver did not
+correctly check the length of memory copies. If this hardware was
+available, a local attacker could exploit this to crash the system or gain
+root privileges. (CVE-2011-2700)
+
+Herbert Xu discovered that certain fields were incorrectly handled when
+Generic Receive Offload (CVE-2011-2723)
+
+Time Warns discovered that long symlinks were incorrectly handled on Be
+filesystems. A local attacker could exploit this with a malformed Be
+filesystem and crash the system, leading to a denial of service.
+(CVE-2011-2928)
+
+Dan Kaminsky discovered that the kernel incorrectly handled random sequence
+number generation. An attacker could use this flaw to possibly predict
+sequence numbers and inject packets. (CVE-2011-3188)
+
+Darren Lavender discovered that the CIFS client incorrectly handled certain
+large values. A remote attacker with a malicious server could exploit this
+to crash the system or possibly execute arbitrary code as the root user.
+(CVE-2011-3191)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  linux-image-2.6.38-1209-omap4   2.6.38-1209.16
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1228-1
+  CVE-2011-1776, CVE-2011-2213, CVE-2011-2497, CVE-2011-2695,
+  CVE-2011-2700, CVE-2011-2723, CVE-2011-2928, CVE-2011-3188,
+  CVE-2011-3191
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ti-omap4/2.6.38-1209.16
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111012/c43163c5/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Oct 13 13:24:02 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 13 Oct 2011 09:24:02 -0400
+Subject: [USN-1229-1] PostgreSQL vulnerability
+Message-ID: <1318512242.16204.2.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1229-1
+October 13, 2011
+
+postgresql-8.3, postgresql-8.4 vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+PostgreSQL incorrectly handled blowfish passwords.
+
+Software Description:
+- postgresql-8.4: Object-relational SQL database
+- postgresql-8.3: Object-relational SQL database
+
+Details:
+
+It was discovered that the blowfish algorithm in the pgcrypto module
+incorrectly handled certain 8-bit characters, resulting in the password
+hashes being easier to crack than expected. An attacker who could obtain
+the password hashes would be able to recover the plaintext with less
+effort.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  postgresql-8.4                  8.4.9-0ubuntu0.11.04
+
+Ubuntu 10.10:
+  postgresql-8.4                  8.4.9-0ubuntu0.10.10
+
+Ubuntu 10.04 LTS:
+  postgresql-8.4                  8.4.9-0ubuntu0.10.04
+
+Ubuntu 8.04 LTS:
+  postgresql-8.3                  8.3.16-0ubuntu0.8.04
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1229-1
+  CVE-2011-2483
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/postgresql-8.4/8.4.9-0ubuntu0.11.04
+  https://launchpad.net/ubuntu/+source/postgresql-8.4/8.4.9-0ubuntu0.10.10
+  https://launchpad.net/ubuntu/+source/postgresql-8.4/8.4.9-0ubuntu0.10.04
+  https://launchpad.net/ubuntu/+source/postgresql-8.3/8.3.16-0ubuntu0.8.04
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111013/197a327e/attachment.pgp>
+
+From tyhicks at canonical.com  Fri Oct 14 06:20:52 2011
+From: tyhicks at canonical.com (Tyler Hicks)
+Date: Fri, 14 Oct 2011 01:20:52 -0500
+Subject: [USN-1230-1] Quassel vulnerability
+Message-ID: <20111014062052.GB11899@boyd>
+
+==========================================================================
+Ubuntu Security Notice USN-1230-1
+October 14, 2011
+
+quassel vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+An unprivileged user could read files in the data and logging directories,
+including an automatically generated SSL certificate, used by the quasselcore
+daemon.
+
+Software Description:
+- quassel: KDE/Qt-based IRC client
+
+Details:
+
+Felix Geyer discovered that the quassel-core post installation script created
+data and logging directories which were readable by all users. The post
+installation script also generated a certificate, in the data directory, which
+was readable by all users.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  quassel-core                    0.7.2-0ubuntu2.3
+
+Ubuntu 10.10:
+  quassel-core                    0.7.1-0ubuntu1.2
+
+Ubuntu 10.04 LTS:
+  quassel-core                    0.6.1-0ubuntu1.3
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1230-1
+  https://launchpad.net/bugs/846922
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/quassel/0.7.2-0ubuntu2.3
+  https://launchpad.net/ubuntu/+source/quassel/0.7.1-0ubuntu1.2
+  https://launchpad.net/ubuntu/+source/quassel/0.6.1-0ubuntu1.3
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111014/bfc1bfbe/attachment.pgp>
+
+From sbeattie at ubuntu.com  Tue Oct 18 06:39:17 2011
+From: sbeattie at ubuntu.com (Steve Beattie)
+Date: Mon, 17 Oct 2011 23:39:17 -0700
+Subject: [USN-1231-1] PHP Vulnerabilities
+Message-ID: <20111018063917.GA5570@nxnw.org>
+
+==========================================================================
+Ubuntu Security Notice USN-1231-1
+October 18, 2011
+
+php5 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.10
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+Several security issues were fixed in PHP.
+
+Software Description:
+- php5: HTML-embedded scripting language interpreter
+
+Details:
+
+Mateusz Kocielski, Marek Kroemeke and Filip Palian discovered that a
+stack-based buffer overflow existed in the socket_connect function's
+handling of long pathnames for AF_UNIX sockets. A remote attacker
+might be able to exploit this to execute arbitrary code; however,
+the default compiler options for affected releases should reduce
+the vulnerability to a denial of service. This issue affected Ubuntu
+10.04 LTS, Ubuntu 10.10 and Ubuntu 11.04. (CVE-2011-1938)
+
+Krzysztof Kotowicz discovered that the PHP post handler function
+does not properly restrict filenames in multipart/form-data POST
+requests. This may allow remote attackers to conduct absolute
+path traversal attacks and possibly create or overwrite arbitrary
+files. This issue affected Ubuntu 8.04 LTS, Ubuntu 10.04 LTS, Ubuntu
+10.10 and Ubuntu 11.04. (CVE-2011-2202)
+
+It was discovered that the crypt function for blowfish does not
+properly handle 8-bit characters. This could make it easier for an
+attacker to discover a cleartext password containing an 8-bit character
+that has a matching blowfish crypt value. This issue affected Ubuntu
+10.04 LTS, Ubuntu 10.10 and Ubuntu 11.04. (CVE-2011-2483)
+
+It was discovered that PHP did not properly check the return values of
+the malloc(3), calloc(3) and realloc(3) library functions in multiple
+locations. This could allow an attacker to cause a denial of service
+via a NULL pointer dereference or possibly execute arbitrary code.
+This issue affected Ubuntu 8.04 LTS, Ubuntu 10.04 LTS, Ubuntu 10.10
+and Ubuntu 11.04. (CVE-2011-3182)
+
+Maksymilian Arciemowicz discovered that PHP did not properly implement
+the error_log function. This could allow an attacker to cause a denial
+of service via an application crash. This issue affected Ubuntu 10.04
+LTS, Ubuntu 10.10, Ubuntu 11.04 and Ubuntu 11.10. (CVE-2011-3267)
+
+Maksymilian Arciemowicz discovered that the ZipArchive functions
+addGlob() and addPattern() did not properly check their flag arguments.
+This could allow a malicious script author to cause a denial of
+service via application crash. This issue affected Ubuntu 10.04 LTS,
+Ubuntu 10.10, Ubuntu 11.04 and Ubuntu 11.10. (CVE-2011-1657)
+
+It was discovered that the Xend opcode parser in PHP could be interrupted
+while handling the shift-left, shift-right, and bitwise-xor opcodes.
+This could allow a malicious script author to expose memory
+contents. This issue affected Ubuntu 10.04 LTS. (CVE-2010-1914)
+
+It was discovered that the strrchr function in PHP could be interrupted
+by a malicious script, allowing the exposure of memory contents. This
+issue affected Ubuntu 8.04 LTS. (CVE-2010-2484)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.10:
+  libapache2-mod-php5             5.3.6-13ubuntu3.2
+  php5-cgi                        5.3.6-13ubuntu3.2
+  php5-cli                        5.3.6-13ubuntu3.2
+  php5-common                     5.3.6-13ubuntu3.2
+
+Ubuntu 11.04:
+  libapache2-mod-php5             5.3.5-1ubuntu7.3
+  php5-cgi                        5.3.5-1ubuntu7.3
+  php5-cli                        5.3.5-1ubuntu7.3
+  php5-common                     5.3.5-1ubuntu7.3
+
+Ubuntu 10.10:
+  libapache2-mod-php5             5.3.3-1ubuntu9.6
+  php5-cgi                        5.3.3-1ubuntu9.6
+  php5-cli                        5.3.3-1ubuntu9.6
+  php5-common                     5.3.3-1ubuntu9.6
+
+Ubuntu 10.04 LTS:
+  libapache2-mod-php5             5.3.2-1ubuntu4.10
+  php5-cgi                        5.3.2-1ubuntu4.10
+  php5-cli                        5.3.2-1ubuntu4.10
+  php5-common                     5.3.2-1ubuntu4.10
+
+Ubuntu 8.04 LTS:
+  libapache2-mod-php5             5.2.4-2ubuntu5.18
+  php5-cgi                        5.2.4-2ubuntu5.18
+  php5-cli                        5.2.4-2ubuntu5.18
+  php5-common                     5.2.4-2ubuntu5.18
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1231-1
+  CVE-2010-1914, CVE-2010-2484, CVE-2011-1657, CVE-2011-1938,
+  CVE-2011-2202, CVE-2011-2483, CVE-2011-3182, CVE-2011-3267
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/php5/5.3.6-13ubuntu3.2
+  https://launchpad.net/ubuntu/+source/php5/5.3.5-1ubuntu7.3
+  https://launchpad.net/ubuntu/+source/php5/5.3.3-1ubuntu9.6
+  https://launchpad.net/ubuntu/+source/php5/5.3.2-1ubuntu4.10
+  https://launchpad.net/ubuntu/+source/php5/5.2.4-2ubuntu5.18
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111017/7de9332a/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 18 16:25:24 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 18 Oct 2011 12:25:24 -0400
+Subject: [USN-1232-1] X.Org X server vulnerabilities
+Message-ID: <1318955124.5781.9.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1232-1
+October 18, 2011
+
+xorg-server vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.10
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+The X server could be made to crash, run programs as an administrator, or
+read arbitrary files.
+
+Software Description:
+- xorg-server: X.Org X server
+
+Details:
+
+It was discovered that the X server incorrectly handled certain malformed
+input. An authorized attacker could exploit this to cause the X server to
+crash, leading to a denial or service, or possibly execute arbitrary code
+with root privileges. This issue only affected Ubuntu 10.04 LTS and 10.10.
+(CVE-2010-4818)
+
+It was discovered that the X server incorrectly handled certain malformed
+input. An authorized attacker could exploit this to cause the X server to
+crash, leading to a denial or service, or possibly read arbitrary data from
+the X server process. This issue only affected Ubuntu 10.04 LTS.
+(CVE-2010-4819)
+
+Vladz discovered that the X server incorrectly handled lock files. A local
+attacker could use this flaw to determine if a file existed or not.
+(CVE-2011-4028)
+
+Vladz discovered that the X server incorrectly handled setting lock file
+permissions. A local attacker could use this flaw to gain read permissions
+on arbitrary files and view sensitive information. (CVE-2011-4029)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.10:
+  xserver-xorg-core               2:1.10.4-1ubuntu4.1
+
+Ubuntu 11.04:
+  xserver-xorg-core               2:1.10.1-1ubuntu1.3
+
+Ubuntu 10.10:
+  xserver-xorg-core               2:1.9.0-0ubuntu7.5
+
+Ubuntu 10.04 LTS:
+  xserver-xorg-core               2:1.7.6-2ubuntu7.8
+
+After a standard system update you need to restart your session to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1232-1
+  CVE-2010-4818, CVE-2010-4819, CVE-2011-4028, CVE-2011-4029
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/xorg-server/2:1.10.4-1ubuntu4.1
+  https://launchpad.net/ubuntu/+source/xorg-server/2:1.10.1-1ubuntu1.3
+  https://launchpad.net/ubuntu/+source/xorg-server/2:1.9.0-0ubuntu7.5
+  https://launchpad.net/ubuntu/+source/xorg-server/2:1.7.6-2ubuntu7.8
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111018/3a8d0335/attachment.pgp>
+
+From sbeattie at ubuntu.com  Tue Oct 18 23:47:28 2011
+From: sbeattie at ubuntu.com (Steve Beattie)
+Date: Tue, 18 Oct 2011 16:47:28 -0700
+Subject: [USN-1233-1] Kerberos Vulnerabilities
+Message-ID: <20111018234728.GC5570@nxnw.org>
+
+==========================================================================
+Ubuntu Security Notice USN-1233-1
+October 18, 2011
+
+krb5 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.10
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several denial of service issues were fixed in the Kerberos Key
+Distribution Center (KDC).
+
+Software Description:
+- krb5: MIT Kerberos Network Authentication Protocol
+
+Details:
+
+Nalin Dahyabhai, Andrej Ota and Kyle Moffett discovered a NULL
+pointer dereference in the KDC LDAP backend. An unauthenticated
+remote attacker could use this to cause a denial of service. This
+issue affected Ubuntu 11.10. (CVE-2011-1527)
+
+Mark Deneen discovered that an assert() could be triggered in the
+krb5_ldap_lockout_audit() function in the KDC LDAP backend and
+the krb5_db2_lockout_audit() function in the KDC DB2 backend. An
+unauthenticated remote attacker could use this to cause a denial of
+service. (CVE-2011-1528)
+
+It was discovered that a NULL pointer dereference could occur in the
+lookup_lockout_policy() function in the KDC LDAP and DB2 backends.
+An unauthenticated remote attacker could use this to cause a denial of
+service. (CVE-2011-1529)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.10:
+  krb5-kdc                        1.9.1+dfsg-1ubuntu1.1
+  krb5-kdc-ldap                   1.9.1+dfsg-1ubuntu1.1
+
+Ubuntu 11.04:
+  krb5-kdc                        1.8.3+dfsg-5ubuntu2.2
+  krb5-kdc-ldap                   1.8.3+dfsg-5ubuntu2.2
+
+Ubuntu 10.10:
+  krb5-kdc                        1.8.1+dfsg-5ubuntu0.8
+  krb5-kdc-ldap                   1.8.1+dfsg-5ubuntu0.8
+
+Ubuntu 10.04 LTS:
+  krb5-kdc                        1.8.1+dfsg-2ubuntu0.10
+  krb5-kdc-ldap                   1.8.1+dfsg-2ubuntu0.10
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1233-1
+  CVE-2011-1527, CVE-2011-1528, CVE-2011-1529
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/krb5/1.9.1+dfsg-1ubuntu1.1
+  https://launchpad.net/ubuntu/+source/krb5/1.8.3+dfsg-5ubuntu2.2
+  https://launchpad.net/ubuntu/+source/krb5/1.8.1+dfsg-5ubuntu0.8
+  https://launchpad.net/ubuntu/+source/krb5/1.8.1+dfsg-2ubuntu0.10
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111018/b206f9c0/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed Oct 19 21:13:40 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 19 Oct 2011 17:13:40 -0400
+Subject: [USN-1232-2] X.Org X server regression
+Message-ID: <1319058820.12439.4.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1232-2
+October 19, 2011
+
+xorg-server regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+USN-1232-1 caused a regression with GLX support.
+
+Software Description:
+- xorg-server: X.Org X server
+
+Details:
+
+USN-1232-1 fixed vulnerabilities in the X.Org X server. A regression was
+found on Ubuntu 10.04 LTS that affected GLX support.
+
+This update temporarily disables the fix for CVE-2010-4818 that introduced
+the regression.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ It was discovered that the X server incorrectly handled certain malformed
+ input. An authorized attacker could exploit this to cause the X server to
+ crash, leading to a denial or service, or possibly execute arbitrary code
+ with root privileges. This issue only affected Ubuntu 10.04 LTS and 10.10.
+ (CVE-2010-4818)
+ 
+ It was discovered that the X server incorrectly handled certain malformed
+ input. An authorized attacker could exploit this to cause the X server to
+ crash, leading to a denial or service, or possibly read arbitrary data from
+ the X server process. This issue only affected Ubuntu 10.04 LTS.
+ (CVE-2010-4819)
+ 
+ Vladz discovered that the X server incorrectly handled lock files. A local
+ attacker could use this flaw to determine if a file existed or not.
+ (CVE-2011-4028)
+ 
+ Vladz discovered that the X server incorrectly handled setting lock file
+ permissions. A local attacker could use this flaw to gain read permissions
+ on arbitrary files and view sensitive information. (CVE-2011-4029)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  xserver-xorg-core               2:1.7.6-2ubuntu7.9
+
+After a standard system update you need to restart your session to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1232-2
+  http://www.ubuntu.com/usn/usn-1232-1
+  https://launchpad.net/bugs/877905
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/xorg-server/2:1.7.6-2ubuntu7.9
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111019/e44e6fac/attachment.pgp>
+
+From micah at canonical.com  Wed Oct 19 21:35:39 2011
+From: micah at canonical.com (Micah Gersten)
+Date: Wed, 19 Oct 2011 16:35:39 -0500
+Subject: [USN-1192-3] Libvoikko regression
+In-Reply-To: <20111019210548.0CD7E26C28C6@lillypilly.canonical.com>
+References: <20111019210548.0CD7E26C28C6@lillypilly.canonical.com>
+Message-ID: <4E9F42AB.9050806@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-1192-3
+October 19, 2011
+
+libvoikko regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+
+Summary:
+
+A regression caused Firefox to crash while spell checking in Finnish.
+
+Software Description:
+- libvoikko: Library of Finnish language tools
+
+Details:
+
+USN-1192-1 provided Firefox 6 as a security upgrade. Unfortunately, this
+caused a regression in libvoikko which caused Firefox to crash while spell
+checking words with hyphens. This update corrects the issue. We apologize
+for the inconvenience.
+
+Original advisory details:
+
+ Aral Yaman discovered a vulnerability in the WebGL engine. An attacker
+ could potentially use this to crash Firefox or execute arbitrary code with
+ the privileges of the user invoking Firefox. (CVE-2011-2989)
+ 
+ Vivekanand Bolajwar discovered a vulnerability in the JavaScript engine. An
+ attacker could potentially use this to crash Firefox or execute arbitrary
+ code with the privileges of the user invoking Firefox. (CVE-2011-2991)
+ 
+ Bert Hubert and Theo Snelleman discovered a vulnerability in the Ogg
+ reader. An attacker could potentially use this to crash Firefox or execute
+ arbitrary code with the privileges of the user invoking Firefox.
+ (CVE-2011-2991)
+ 
+ Robert Kaiser, Jesse Ruderman, Gary Kwong, Christoph Diehl, Martijn
+ Wargers, Travis Emmitt, Bob Clary, and Jonathan Watt discovered multiple
+ memory vulnerabilities in the browser rendering engine. An attacker could
+ use these to possibly execute arbitrary code with the privileges of the
+ user invoking Firefox. (CVE-2011-2985)
+ 
+ Rafael Gieschke discovered that unsigned JavaScript could call into a
+ script inside a signed JAR. This could allow an attacker to execute
+ arbitrary code with the identity and permissions of the signed JAR.
+ (CVE-2011-2993)
+ 
+ Michael Jordon discovered that an overly long shader program could cause a
+ buffer overrun. An attacker could potentially use this to crash Firefox or
+ execute arbitrary code with the privileges of the user invoking Firefox.
+ (CVE-2011-2988)
+ 
+ Michael Jordon discovered a heap overflow in the ANGLE library used in
+ Firefox's WebGL implementation. An attacker could potentially use this to
+ crash Firefox or execute arbitrary code with the privileges of the user
+ invoking Firefox. (CVE-2011-2987)
+ 
+ It was discovered that an SVG text manipulation routine contained a
+ dangling pointer vulnerability. An attacker could potentially use this to
+ crash Firefox or execute arbitrary code with the privileges of the user
+ invoking Firefox. (CVE-2011-0084)
+ 
+ Mike Cardwell discovered that Content Security Policy violation reports
+ failed to strip out proxy authorization credentials from the list of
+ request headers. This could allow a malicious website to capture proxy
+ authorization credentials. Daniel Veditz discovered that redirecting to a
+ website with Content Security Policy resulted in the incorrect resolution
+ of hosts in the constructed policy. This could allow a malicious website to
+ circumvent the Content Security Policy of another website. (CVE-2011-2990)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  libvoikko1                      3.1-1ubuntu0.1
+
+After a standard system update you need to restart Firefox to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1192-3
+  http://www.ubuntu.com/usn/usn-1192-1
+  https://launchpad.net/bugs/832582
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/libvoikko/3.1-1ubuntu0.1
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111019/6d6a21be/attachment.pgp>
+
+From jamie at canonical.com  Thu Oct 20 19:49:20 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 20 Oct 2011 14:49:20 -0500
+Subject: [USN-1234-1] acpid vulnerability
+Message-ID: <1319140160.3097.2.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1234-1
+October 20, 2011
+
+acpid vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+acpid could be made to stall under certain conditions.
+
+Software Description:
+- acpid: Advanced Configuration and Power Interface event daemon
+
+Details:
+
+Vasiliy Kulikov discovered that acpid did not properly handle connections
+from poorly behaving clients. A local attacker could potentially exploit
+this to cause a denial of service.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  acpid                           1:2.0.7-1ubuntu2.1
+
+Ubuntu 10.10:
+  acpid                           1.0.10-5ubuntu4.1
+
+Ubuntu 10.04 LTS:
+  acpid                           1.0.10-5ubuntu2.2
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1234-1
+  CVE-2011-1159
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/acpid/1:2.0.7-1ubuntu2.1
+  https://launchpad.net/ubuntu/+source/acpid/1.0.10-5ubuntu4.1
+  https://launchpad.net/ubuntu/+source/acpid/1.0.10-5ubuntu2.2
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111020/43019ee0/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Oct 20 20:41:06 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 20 Oct 2011 16:41:06 -0400
+Subject: [USN-1236-1] Linux kernel vulnerabilities
+Message-ID: <1319143266.22929.21.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1236-1
+October 20, 2011
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 8.04 LTS
+
+Summary:
+
+Multiple kernel flaws have been fixed.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+It was discovered that the Auerswald usb driver incorrectly handled lengths
+of the USB string descriptors. A local attacker with physical access could
+insert a specially crafted USB device and gain root privileges.
+(CVE-2009-4067)
+
+It was discovered that the Stream Control Transmission Protocol (SCTP)
+implementation incorrectly calculated lengths. If the net.sctp.addip_enable
+variable was turned on, a remote attacker could send specially crafted
+traffic to crash the system. (CVE-2011-1573)
+
+Vasiliy Kulikov discovered that taskstats did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2494)
+
+Vasiliy Kulikov discovered that /proc/PID/io did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2495)
+
+Dan Kaminsky discovered that the kernel incorrectly handled random sequence
+number generation. An attacker could use this flaw to possibly predict
+sequence numbers and inject packets. (CVE-2011-3188)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 8.04 LTS:
+  linux-image-2.6.24-29-386       2.6.24-29.95
+  linux-image-2.6.24-29-generic   2.6.24-29.95
+  linux-image-2.6.24-29-hppa32    2.6.24-29.95
+  linux-image-2.6.24-29-hppa64    2.6.24-29.95
+  linux-image-2.6.24-29-itanium   2.6.24-29.95
+  linux-image-2.6.24-29-lpia      2.6.24-29.95
+  linux-image-2.6.24-29-lpiacompat  2.6.24-29.95
+  linux-image-2.6.24-29-mckinley  2.6.24-29.95
+  linux-image-2.6.24-29-openvz    2.6.24-29.95
+  linux-image-2.6.24-29-powerpc   2.6.24-29.95
+  linux-image-2.6.24-29-powerpc-smp  2.6.24-29.95
+  linux-image-2.6.24-29-powerpc64-smp  2.6.24-29.95
+  linux-image-2.6.24-29-rt        2.6.24-29.95
+  linux-image-2.6.24-29-server    2.6.24-29.95
+  linux-image-2.6.24-29-sparc64   2.6.24-29.95
+  linux-image-2.6.24-29-sparc64-smp  2.6.24-29.95
+  linux-image-2.6.24-29-virtual   2.6.24-29.95
+  linux-image-2.6.24-29-xen       2.6.24-29.95
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1236-1
+  CVE-2009-4067, CVE-2011-1573, CVE-2011-2494, CVE-2011-2495,
+  CVE-2011-3188
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/2.6.24-29.95
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111020/db07211f/attachment.pgp>
+
+From jamie at canonical.com  Thu Oct 20 21:17:33 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 20 Oct 2011 16:17:33 -0500
+Subject: [USN-1235-1] Open-iSCSI vulnerability
+Message-ID: <1319145453.3097.3.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1235-1
+October 20, 2011
+
+open-iscsi vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 8.04 LTS
+
+Summary:
+
+iscsi_discovery in open-iscsi could be made to overwrite files as the
+administrator.
+
+Software Description:
+- open-iscsi: Open Source iSCSI implementation
+
+Details:
+
+Colin Watson discovered that iscsi_discovery in Open-iSCSI did not safely
+create temporary files. A local attacker could exploit this to to overwrite
+arbitrary files with root privileges.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 8.04 LTS:
+  open-iscsi                      2.0.865-1ubuntu3.5
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1235-1
+  CVE-2009-1297
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/open-iscsi/2.0.865-1ubuntu3.5
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111020/39481320/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Oct 20 23:19:07 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 20 Oct 2011 19:19:07 -0400
+Subject: [USN-1232-3] X.Org X server vulnerability
+Message-ID: <1319152747.22929.25.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1232-3
+October 20, 2011
+
+xorg-server vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+The X server could be made to crash or run programs as an administrator.
+
+Software Description:
+- xorg-server: X.Org X server
+
+Details:
+
+USN-1232-1 fixed vulnerabilities in the X.Org X server. A regression was
+found on Ubuntu 10.04 LTS that affected GLX support, and USN-1232-2 was
+released to temporarily disable the problematic security fix. This update
+includes a revised fix for CVE-2010-4818.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ It was discovered that the X server incorrectly handled certain malformed
+ input. An authorized attacker could exploit this to cause the X server to
+ crash, leading to a denial or service, or possibly execute arbitrary code
+ with root privileges. This issue only affected Ubuntu 10.04 LTS and 10.10.
+ (CVE-2010-4818)
+ 
+ It was discovered that the X server incorrectly handled certain malformed
+ input. An authorized attacker could exploit this to cause the X server to
+ crash, leading to a denial or service, or possibly read arbitrary data from
+ the X server process. This issue only affected Ubuntu 10.04 LTS.
+ (CVE-2010-4819)
+ 
+ Vladz discovered that the X server incorrectly handled lock files. A local
+ attacker could use this flaw to determine if a file existed or not.
+ (CVE-2011-4028)
+ 
+ Vladz discovered that the X server incorrectly handled setting lock file
+ permissions. A local attacker could use this flaw to gain read permissions
+ on arbitrary files and view sensitive information. (CVE-2011-4029)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.10:
+  xserver-xorg-core               2:1.9.0-0ubuntu7.6
+
+Ubuntu 10.04 LTS:
+  xserver-xorg-core               2:1.7.6-2ubuntu7.10
+
+After a standard system update you need to restart your session to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1232-3
+  http://www.ubuntu.com/usn/usn-1232-1
+  CVE-2010-4818
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/xorg-server/2:1.9.0-0ubuntu7.6
+  https://launchpad.net/ubuntu/+source/xorg-server/2:1.7.6-2ubuntu7.10
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111020/65779832/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon Oct 24 19:17:02 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 24 Oct 2011 15:17:02 -0400
+Subject: [USN-1237-1] PAM vulnerabilities
+Message-ID: <1319483822.11244.4.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1237-1
+October 24, 2011
+
+pam vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.10
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+PAM could be made to crash or run programs as an administrator.
+
+Software Description:
+- pam: Pluggable Authentication Modules
+
+Details:
+
+Kees Cook discovered that the PAM pam_env module incorrectly handled
+certain malformed environment files. A local attacker could use this flaw
+to cause a denial of service, or possibly gain privileges. The default
+compiler options for affected releases should reduce the vulnerability to a
+denial of service. (CVE-2011-3148)
+
+Kees Cook discovered that the PAM pam_env module incorrectly handled
+variable expansion. A local attacker could use this flaw to cause a denial
+of service. (CVE-2011-3149)
+
+Stephane Chazelas discovered that the PAM pam_motd module incorrectly
+cleaned the environment during execution of the motd scripts. In certain
+environments, a local attacker could use this to execute arbitrary code
+as root, and gain privileges.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.10:
+  libpam-modules                  1.1.3-2ubuntu2.1
+
+Ubuntu 11.04:
+  libpam-modules                  1.1.2-2ubuntu8.4
+
+Ubuntu 10.10:
+  libpam-modules                  1.1.1-4ubuntu2.4
+
+Ubuntu 10.04 LTS:
+  libpam-modules                  1.1.1-2ubuntu5.4
+
+Ubuntu 8.04 LTS:
+  libpam-modules                  0.99.7.1-5ubuntu6.5
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1237-1
+  CVE-2011-3148, CVE-2011-3149, CVE-2011-3628
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/pam/1.1.3-2ubuntu2.1
+  https://launchpad.net/ubuntu/+source/pam/1.1.2-2ubuntu8.4
+  https://launchpad.net/ubuntu/+source/pam/1.1.1-4ubuntu2.4
+  https://launchpad.net/ubuntu/+source/pam/1.1.1-2ubuntu5.4
+  https://launchpad.net/ubuntu/+source/pam/0.99.7.1-5ubuntu6.5
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111024/61c4ff51/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon Oct 24 22:30:05 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 24 Oct 2011 18:30:05 -0400
+Subject: [USN-1238-1] Puppet vulnerability
+Message-ID: <1319495405.11244.14.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1238-1
+October 24, 2011
+
+puppet vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.10
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+The Puppet master server could be impersonated in certain configurations.
+
+Software Description:
+- puppet: Centralized configuration management
+
+Details:
+
+It was discovered that Puppet incorrectly handled the non-default
+"certdnsnames" option when generating certificates. If this setting was
+added to puppet.conf, the puppet master?s DNS alt names were added to the
+X.509 Subject Alternative Name field of all certificates, not just the
+puppet master?s certificate. An attacker that has an incorrect agent
+certificate in his possession can use it to impersonate the puppet master
+in a man-in-the-middle attack.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.10:
+  puppet-common                   2.7.1-1ubuntu3.2
+
+Ubuntu 11.04:
+  puppet-common                   2.6.4-2ubuntu2.5
+
+Ubuntu 10.10:
+  puppet-common                   2.6.1-0ubuntu2.4
+
+Ubuntu 10.04 LTS:
+  puppet-common                   0.25.4-2ubuntu6.5
+
+In general, a standard system update will make all the necessary changes.
+
+If your puppet master's puppet.conf file has ever contained the
+"certdnsnames" setting, you must reissue your site certificates, or apply
+another mitigation technique. Please see the upstream advisory for more
+information:
+
+http://puppetlabs.com/security/cve/cve-2011-3872/
+
+References:
+  http://www.ubuntu.com/usn/usn-1238-1
+  CVE-2011-3872
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/puppet/2.7.1-1ubuntu3.2
+  https://launchpad.net/ubuntu/+source/puppet/2.6.4-2ubuntu2.5
+  https://launchpad.net/ubuntu/+source/puppet/2.6.1-0ubuntu2.4
+  https://launchpad.net/ubuntu/+source/puppet/0.25.4-2ubuntu6.5
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111024/865d17b9/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 25 15:03:23 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 25 Oct 2011 11:03:23 -0400
+Subject: [USN-1242-1] Linux kernel (Maverick backport) vulnerabilities
+Message-ID: <1319555003.11244.46.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1242-1
+October 25, 2011
+
+linux-lts-backport-maverick vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-lts-backport-maverick: Linux kernel backport from Maverick
+
+Details:
+
+It was discovered that the security fix for CVE-2010-4250 introduced a
+regression. A remote attacker could exploit this to crash the system,
+leading to a denial of service. (CVE-2011-1479)
+
+Vasiliy Kulikov discovered that taskstats did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2494)
+
+Vasiliy Kulikov discovered that /proc/PID/io did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2495)
+
+It was discovered that the EXT4 filesystem contained multiple off-by-one
+flaws. A local attacker could exploit this to crash the system, leading to
+a denial of service. (CVE-2011-2695)
+
+Christian Ohm discovered that the perf command looks for configuration
+files in the current directory. If a privileged user were tricked into
+running perf in a directory containing a malicious configuration file, an
+attacker could run arbitrary commands and possibly gain privileges.
+(CVE-2011-2905)
+
+Vasiliy Kulikov discovered that the Comedi driver did not correctly clear
+memory. A local attacker could exploit this to read kernel stack memory,
+leading to a loss of privacy. (CVE-2011-2909)
+
+Dan Kaminsky discovered that the kernel incorrectly handled random sequence
+number generation. An attacker could use this flaw to possibly predict
+sequence numbers and inject packets. (CVE-2011-3188)
+
+Yogesh Sharma discovered that CIFS did not correctly handle UNCs that had
+no prefixpaths. A local attacker with access to a CIFS partition could
+exploit this to crash the system, leading to a denial of service.
+(CVE-2011-3363)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  linux-image-2.6.35-30-generic   2.6.35-30.61~lucid1
+  linux-image-2.6.35-30-generic-pae  2.6.35-30.61~lucid1
+  linux-image-2.6.35-30-server    2.6.35-30.61~lucid1
+  linux-image-2.6.35-30-virtual   2.6.35-30.61~lucid1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1242-1
+  CVE-2011-1479, CVE-2011-2494, CVE-2011-2495, CVE-2011-2695,
+  CVE-2011-2905, CVE-2011-2909, CVE-2011-3188, CVE-2011-3363
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-backport-maverick/2.6.35-30.61~lucid1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/30b29089/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 25 15:04:08 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 25 Oct 2011 11:04:08 -0400
+Subject: [USN-1244-1] Linux kernel (OMAP4) vulnerabilities
+Message-ID: <1319555048.11244.48.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1244-1
+October 25, 2011
+
+linux-ti-omap4 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.10
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ti-omap4: Linux kernel for OMAP4
+
+Details:
+
+Dan Rosenberg discovered that the Linux kernel X.25 implementation
+incorrectly parsed facilities. A remote attacker could exploit this to
+crash the kernel, leading to a denial of service. (CVE-2010-3873)
+
+Andrea Righi discovered a race condition in the KSM memory merging support.
+If KSM was being used, a local attacker could exploit this to crash the
+system, leading to a denial of service. (CVE-2011-2183)
+
+Vasily Averin discovered that the NFS Lock Manager (NLM) incorrectly
+handled unlock requests. A local attacker could exploit this to cause a
+denial of service. (CVE-2011-2491)
+
+Vasiliy Kulikov discovered that taskstats did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2494)
+
+Vasiliy Kulikov discovered that /proc/PID/io did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2495)
+
+It was discovered that the wireless stack incorrectly verified SSID
+lengths. A local attacker could exploit this to cause a denial of service
+or gain root privileges. (CVE-2011-2517)
+
+It was discovered that the EXT4 filesystem contained multiple off-by-one
+flaws. A local attacker could exploit this to crash the system, leading to
+a denial of service. (CVE-2011-2695)
+
+Christian Ohm discovered that the perf command looks for configuration
+files in the current directory. If a privileged user were tricked into
+running perf in a directory containing a malicious configuration file, an
+attacker could run arbitrary commands and possibly gain privileges.
+(CVE-2011-2905)
+
+Vasiliy Kulikov discovered that the Comedi driver did not correctly clear
+memory. A local attacker could exploit this to read kernel stack memory,
+leading to a loss of privacy. (CVE-2011-2909)
+
+Yogesh Sharma discovered that CIFS did not correctly handle UNCs that had
+no prefixpaths. A local attacker with access to a CIFS partition could
+exploit this to crash the system, leading to a denial of service.
+(CVE-2011-3363)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.10:
+  linux-image-2.6.35-903-omap4    2.6.35-903.26
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1244-1
+  CVE-2010-3873, CVE-2011-2183, CVE-2011-2491, CVE-2011-2494,
+  CVE-2011-2495, CVE-2011-2517, CVE-2011-2695, CVE-2011-2905,
+  CVE-2011-2909, CVE-2011-3363
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ti-omap4/2.6.35-903.26
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/d12be49a/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 25 15:02:35 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 25 Oct 2011 11:02:35 -0400
+Subject: [USN-1240-1] Linux kernel (Marvell DOVE) vulnerabilities
+Message-ID: <1319554955.11244.44.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1240-1
+October 25, 2011
+
+linux-mvl-dove vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-mvl-dove: Linux kernel for DOVE
+
+Details:
+
+Ryan Sweat discovered that the kernel incorrectly handled certain VLAN
+packets. On some systems, a remote attacker could send specially crafted
+traffic to crash the system, leading to a denial of service.
+(CVE-2011-1576)
+
+Vasiliy Kulikov and Dan Rosenberg discovered that ecryptfs did not
+correctly check the origin of mount points. A local attacker could exploit
+this to trick the system into unmounting arbitrary mount points, leading to
+a denial of service. (CVE-2011-1833)
+
+Vasiliy Kulikov discovered that taskstats did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2494)
+
+Vasiliy Kulikov discovered that /proc/PID/io did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2495)
+
+Dan Rosenberg discovered that the Bluetooth stack incorrectly handled
+certain L2CAP requests. If a system was using Bluetooth, a remote attacker
+could send specially crafted traffic to crash the system or gain root
+privileges. (CVE-2011-2497)
+
+It was discovered that the EXT4 filesystem contained multiple off-by-one
+flaws. A local attacker could exploit this to crash the system, leading to
+a denial of service. (CVE-2011-2695)
+
+Fernando Gont discovered that the IPv6 stack used predictable fragment
+identification numbers. A remote attacker could exploit this to exhaust
+network resources, leading to a denial of service. (CVE-2011-2699)
+
+Christian Ohm discovered that the perf command looks for configuration
+files in the current directory. If a privileged user were tricked into
+running perf in a directory containing a malicious configuration file, an
+attacker could run arbitrary commands and possibly gain privileges.
+(CVE-2011-2905)
+
+Time Warns discovered that long symlinks were incorrectly handled on Be
+filesystems. A local attacker could exploit this with a malformed Be
+filesystem and crash the system, leading to a denial of service.
+(CVE-2011-2928)
+
+Dan Kaminsky discovered that the kernel incorrectly handled random sequence
+number generation. An attacker could use this flaw to possibly predict
+sequence numbers and inject packets. (CVE-2011-3188)
+
+Darren Lavender discovered that the CIFS client incorrectly handled certain
+large values. A remote attacker with a malicious server could exploit this
+to crash the system or possibly execute arbitrary code as the root user.
+(CVE-2011-3191)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  linux-image-2.6.32-219-dove     2.6.32-219.37
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1240-1
+  CVE-2011-1576, CVE-2011-1833, CVE-2011-2494, CVE-2011-2495,
+  CVE-2011-2497, CVE-2011-2695, CVE-2011-2699, CVE-2011-2905,
+  CVE-2011-2928, CVE-2011-3188, CVE-2011-3191
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-mvl-dove/2.6.32-219.37
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/0b1ab44e/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 25 15:04:30 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 25 Oct 2011 11:04:30 -0400
+Subject: [USN-1245-1] Linux kernel (Marvell DOVE) vulnerabilities
+Message-ID: <1319555070.11244.49.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1245-1
+October 25, 2011
+
+linux-mvl-dove vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.10
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-mvl-dove: Linux kernel for DOVE
+
+Details:
+
+Ryan Sweat discovered that the kernel incorrectly handled certain VLAN
+packets. On some systems, a remote attacker could send specially crafted
+traffic to crash the system, leading to a denial of service.
+(CVE-2011-1576)
+
+Vasiliy Kulikov and Dan Rosenberg discovered that ecryptfs did not
+correctly check the origin of mount points. A local attacker could exploit
+this to trick the system into unmounting arbitrary mount points, leading to
+a denial of service. (CVE-2011-1833)
+
+Vasiliy Kulikov discovered that taskstats did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2494)
+
+Vasiliy Kulikov discovered that /proc/PID/io did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2495)
+
+Dan Rosenberg discovered that the Bluetooth stack incorrectly handled
+certain L2CAP requests. If a system was using Bluetooth, a remote attacker
+could send specially crafted traffic to crash the system or gain root
+privileges. (CVE-2011-2497)
+
+It was discovered that the EXT4 filesystem contained multiple off-by-one
+flaws. A local attacker could exploit this to crash the system, leading to
+a denial of service. (CVE-2011-2695)
+
+Fernando Gont discovered that the IPv6 stack used predictable fragment
+identification numbers. A remote attacker could exploit this to exhaust
+network resources, leading to a denial of service. (CVE-2011-2699)
+
+Christian Ohm discovered that the perf command looks for configuration
+files in the current directory. If a privileged user were tricked into
+running perf in a directory containing a malicious configuration file, an
+attacker could run arbitrary commands and possibly gain privileges.
+(CVE-2011-2905)
+
+Time Warns discovered that long symlinks were incorrectly handled on Be
+filesystems. A local attacker could exploit this with a malformed Be
+filesystem and crash the system, leading to a denial of service.
+(CVE-2011-2928)
+
+Dan Kaminsky discovered that the kernel incorrectly handled random sequence
+number generation. An attacker could use this flaw to possibly predict
+sequence numbers and inject packets. (CVE-2011-3188)
+
+Darren Lavender discovered that the CIFS client incorrectly handled certain
+large values. A remote attacker with a malicious server could exploit this
+to crash the system or possibly execute arbitrary code as the root user.
+(CVE-2011-3191)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.10:
+  linux-image-2.6.32-419-dove     2.6.32-419.37
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1245-1
+  CVE-2011-1576, CVE-2011-1833, CVE-2011-2494, CVE-2011-2495,
+  CVE-2011-2497, CVE-2011-2695, CVE-2011-2699, CVE-2011-2905,
+  CVE-2011-2928, CVE-2011-3188, CVE-2011-3191
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-mvl-dove/2.6.32-419.37
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/b39e7192/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 25 15:02:12 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 25 Oct 2011 11:02:12 -0400
+Subject: [USN-1239-1] Linux kernel (EC2) vulnerabilities
+Message-ID: <1319554932.11244.43.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1239-1
+October 25, 2011
+
+linux-ec2 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ec2: Linux kernel for EC2
+
+Details:
+
+Ryan Sweat discovered that the kernel incorrectly handled certain VLAN
+packets. On some systems, a remote attacker could send specially crafted
+traffic to crash the system, leading to a denial of service.
+(CVE-2011-1576)
+
+Vasiliy Kulikov and Dan Rosenberg discovered that ecryptfs did not
+correctly check the origin of mount points. A local attacker could exploit
+this to trick the system into unmounting arbitrary mount points, leading to
+a denial of service. (CVE-2011-1833)
+
+Vasiliy Kulikov discovered that taskstats did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2494)
+
+Vasiliy Kulikov discovered that /proc/PID/io did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2495)
+
+Dan Rosenberg discovered that the Bluetooth stack incorrectly handled
+certain L2CAP requests. If a system was using Bluetooth, a remote attacker
+could send specially crafted traffic to crash the system or gain root
+privileges. (CVE-2011-2497)
+
+It was discovered that the EXT4 filesystem contained multiple off-by-one
+flaws. A local attacker could exploit this to crash the system, leading to
+a denial of service. (CVE-2011-2695)
+
+Fernando Gont discovered that the IPv6 stack used predictable fragment
+identification numbers. A remote attacker could exploit this to exhaust
+network resources, leading to a denial of service. (CVE-2011-2699)
+
+Christian Ohm discovered that the perf command looks for configuration
+files in the current directory. If a privileged user were tricked into
+running perf in a directory containing a malicious configuration file, an
+attacker could run arbitrary commands and possibly gain privileges.
+(CVE-2011-2905)
+
+Time Warns discovered that long symlinks were incorrectly handled on Be
+filesystems. A local attacker could exploit this with a malformed Be
+filesystem and crash the system, leading to a denial of service.
+(CVE-2011-2928)
+
+Dan Kaminsky discovered that the kernel incorrectly handled random sequence
+number generation. An attacker could use this flaw to possibly predict
+sequence numbers and inject packets. (CVE-2011-3188)
+
+Darren Lavender discovered that the CIFS client incorrectly handled certain
+large values. A remote attacker with a malicious server could exploit this
+to crash the system or possibly execute arbitrary code as the root user.
+(CVE-2011-3191)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  linux-image-2.6.32-319-ec2      2.6.32-319.39
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1239-1
+  CVE-2011-1576, CVE-2011-1833, CVE-2011-2494, CVE-2011-2495,
+  CVE-2011-2497, CVE-2011-2695, CVE-2011-2699, CVE-2011-2905,
+  CVE-2011-2928, CVE-2011-3188, CVE-2011-3191
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ec2/2.6.32-319.39
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/fe6964b3/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 25 15:02:58 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 25 Oct 2011 11:02:58 -0400
+Subject: [USN-1241-1] Linux kernel (i.MX51) vulnerabilities
+Message-ID: <1319554978.11244.45.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1241-1
+October 25, 2011
+
+linux-fsl-imx51 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-fsl-imx51: Linux kernel for IMX51
+
+Details:
+
+It was discovered that the Stream Control Transmission Protocol (SCTP)
+implementation incorrectly calculated lengths. If the net.sctp.addip_enable
+variable was turned on, a remote attacker could send specially crafted
+traffic to crash the system. (CVE-2011-1573)
+
+Ryan Sweat discovered that the kernel incorrectly handled certain VLAN
+packets. On some systems, a remote attacker could send specially crafted
+traffic to crash the system, leading to a denial of service.
+(CVE-2011-1576)
+
+Timo Warns discovered that the EFI GUID partition table was not correctly
+parsed. A physically local attacker that could insert mountable devices
+could exploit this to crash the system or possibly gain root privileges.
+(CVE-2011-1776)
+
+Dan Rosenberg discovered that the IPv4 diagnostic routines did not
+correctly validate certain requests. A local attacker could exploit this to
+consume CPU resources, leading to a denial of service. (CVE-2011-2213)
+
+Vasiliy Kulikov discovered that taskstats did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2494)
+
+Vasiliy Kulikov discovered that /proc/PID/io did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2495)
+
+Robert Swiecki discovered that mapping extensions were incorrectly handled.
+A local attacker could exploit this to crash the system, leading to a
+denial of service. (CVE-2011-2496)
+
+Dan Rosenberg discovered that the Bluetooth stack incorrectly handled
+certain L2CAP requests. If a system was using Bluetooth, a remote attacker
+could send specially crafted traffic to crash the system or gain root
+privileges. (CVE-2011-2497)
+
+It was discovered that the wireless stack incorrectly verified SSID
+lengths. A local attacker could exploit this to cause a denial of service
+or gain root privileges. (CVE-2011-2517)
+
+Ben Pfaff discovered that Classless Queuing Disciplines (qdiscs) were being
+incorrectly handled. A local attacker could exploit this to crash the
+system, leading to a denial of service. (CVE-2011-2525)
+
+It was discovered that the EXT4 filesystem contained multiple off-by-one
+flaws. A local attacker could exploit this to crash the system, leading to
+a denial of service. (CVE-2011-2695)
+
+Herbert Xu discovered that certain fields were incorrectly handled when
+Generic Receive Offload (CVE-2011-2723)
+
+Christian Ohm discovered that the perf command looks for configuration
+files in the current directory. If a privileged user were tricked into
+running perf in a directory containing a malicious configuration file, an
+attacker could run arbitrary commands and possibly gain privileges.
+(CVE-2011-2905)
+
+Vasiliy Kulikov discovered that the Comedi driver did not correctly clear
+memory. A local attacker could exploit this to read kernel stack memory,
+leading to a loss of privacy. (CVE-2011-2909)
+
+Time Warns discovered that long symlinks were incorrectly handled on Be
+filesystems. A local attacker could exploit this with a malformed Be
+filesystem and crash the system, leading to a denial of service.
+(CVE-2011-2928)
+
+Dan Kaminsky discovered that the kernel incorrectly handled random sequence
+number generation. An attacker could use this flaw to possibly predict
+sequence numbers and inject packets. (CVE-2011-3188)
+
+Darren Lavender discovered that the CIFS client incorrectly handled certain
+large values. A remote attacker with a malicious server could exploit this
+to crash the system or possibly execute arbitrary code as the root user.
+(CVE-2011-3191)
+
+Yogesh Sharma discovered that CIFS did not correctly handle UNCs that had
+no prefixpaths. A local attacker with access to a CIFS partition could
+exploit this to crash the system, leading to a denial of service.
+(CVE-2011-3363)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  linux-image-2.6.31-611-imx51    2.6.31-611.29
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1241-1
+  CVE-2011-1573, CVE-2011-1576, CVE-2011-1776, CVE-2011-2213,
+  CVE-2011-2494, CVE-2011-2495, CVE-2011-2496, CVE-2011-2497,
+  CVE-2011-2517, CVE-2011-2525, CVE-2011-2695, CVE-2011-2723,
+  CVE-2011-2905, CVE-2011-2909, CVE-2011-2928, CVE-2011-3188,
+  CVE-2011-3191, CVE-2011-3363
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-fsl-imx51/2.6.31-611.29
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/15ab849e/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 25 15:03:45 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 25 Oct 2011 11:03:45 -0400
+Subject: [USN-1243-1] Linux kernel vulnerabilities
+Message-ID: <1319555025.11244.47.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1243-1
+October 25, 2011
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.10
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+It was discovered that the security fix for CVE-2010-4250 introduced a
+regression. A remote attacker could exploit this to crash the system,
+leading to a denial of service. (CVE-2011-1479)
+
+Vasiliy Kulikov discovered that taskstats did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2494)
+
+Vasiliy Kulikov discovered that /proc/PID/io did not enforce access
+restrictions. A local attacker could exploit this to read certain
+information, leading to a loss of privacy. (CVE-2011-2495)
+
+It was discovered that the EXT4 filesystem contained multiple off-by-one
+flaws. A local attacker could exploit this to crash the system, leading to
+a denial of service. (CVE-2011-2695)
+
+Christian Ohm discovered that the perf command looks for configuration
+files in the current directory. If a privileged user were tricked into
+running perf in a directory containing a malicious configuration file, an
+attacker could run arbitrary commands and possibly gain privileges.
+(CVE-2011-2905)
+
+Vasiliy Kulikov discovered that the Comedi driver did not correctly clear
+memory. A local attacker could exploit this to read kernel stack memory,
+leading to a loss of privacy. (CVE-2011-2909)
+
+Dan Kaminsky discovered that the kernel incorrectly handled random sequence
+number generation. An attacker could use this flaw to possibly predict
+sequence numbers and inject packets. (CVE-2011-3188)
+
+Yogesh Sharma discovered that CIFS did not correctly handle UNCs that had
+no prefixpaths. A local attacker with access to a CIFS partition could
+exploit this to crash the system, leading to a denial of service.
+(CVE-2011-3363)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.10:
+  linux-image-2.6.35-30-generic   2.6.35-30.61
+  linux-image-2.6.35-30-generic-pae  2.6.35-30.61
+  linux-image-2.6.35-30-omap      2.6.35-30.61
+  linux-image-2.6.35-30-powerpc   2.6.35-30.61
+  linux-image-2.6.35-30-powerpc-smp  2.6.35-30.61
+  linux-image-2.6.35-30-powerpc64-smp  2.6.35-30.61
+  linux-image-2.6.35-30-server    2.6.35-30.61
+  linux-image-2.6.35-30-versatile  2.6.35-30.61
+  linux-image-2.6.35-30-virtual   2.6.35-30.61
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1243-1
+  CVE-2011-1479, CVE-2011-2494, CVE-2011-2495, CVE-2011-2695,
+  CVE-2011-2905, CVE-2011-2909, CVE-2011-3188, CVE-2011-3363
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/2.6.35-30.61
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/15972659/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 25 15:04:52 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 25 Oct 2011 11:04:52 -0400
+Subject: [USN-1246-1] Linux kernel vulnerabilities
+Message-ID: <1319555092.11244.50.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1246-1
+October 25, 2011
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Dan Rosenberg discovered that the IPv4 diagnostic routines did not
+correctly validate certain requests. A local attacker could exploit this to
+consume CPU resources, leading to a denial of service. (CVE-2011-2213)
+
+Dan Rosenberg discovered that the Bluetooth stack incorrectly handled
+certain L2CAP requests. If a system was using Bluetooth, a remote attacker
+could send specially crafted traffic to crash the system or gain root
+privileges. (CVE-2011-2497)
+
+It was discovered that the EXT4 filesystem contained multiple off-by-one
+flaws. A local attacker could exploit this to crash the system, leading to
+a denial of service. (CVE-2011-2695)
+
+Mauro Carvalho Chehab discovered that the si4713 radio driver did not
+correctly check the length of memory copies. If this hardware was
+available, a local attacker could exploit this to crash the system or gain
+root privileges. (CVE-2011-2700)
+
+Herbert Xu discovered that certain fields were incorrectly handled when
+Generic Receive Offload (CVE-2011-2723)
+
+Time Warns discovered that long symlinks were incorrectly handled on Be
+filesystems. A local attacker could exploit this with a malformed Be
+filesystem and crash the system, leading to a denial of service.
+(CVE-2011-2928)
+
+Dan Kaminsky discovered that the kernel incorrectly handled random sequence
+number generation. An attacker could use this flaw to possibly predict
+sequence numbers and inject packets. (CVE-2011-3188)
+
+Darren Lavender discovered that the CIFS client incorrectly handled certain
+large values. A remote attacker with a malicious server could exploit this
+to crash the system or possibly execute arbitrary code as the root user.
+(CVE-2011-3191)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  linux-image-2.6.38-12-generic   2.6.38-12.51
+  linux-image-2.6.38-12-generic-pae  2.6.38-12.51
+  linux-image-2.6.38-12-omap      2.6.38-12.51
+  linux-image-2.6.38-12-powerpc   2.6.38-12.51
+  linux-image-2.6.38-12-powerpc-smp  2.6.38-12.51
+  linux-image-2.6.38-12-powerpc64-smp  2.6.38-12.51
+  linux-image-2.6.38-12-server    2.6.38-12.51
+  linux-image-2.6.38-12-versatile  2.6.38-12.51
+  linux-image-2.6.38-12-virtual   2.6.38-12.51
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-1246-1
+  CVE-2011-2213, CVE-2011-2497, CVE-2011-2695, CVE-2011-2700,
+  CVE-2011-2723, CVE-2011-2928, CVE-2011-3188, CVE-2011-3191
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/2.6.38-12.51
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/5542664d/attachment.pgp>
+
+From jamie at canonical.com  Tue Oct 25 17:40:55 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Tue, 25 Oct 2011 12:40:55 -0500
+Subject: [USN-1247-1] Nova vulnerability
+Message-ID: <1319564455.16989.6.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1247-1
+October 25, 2011
+
+nova vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.10
+
+Summary:
+
+Nova could be made to expose sensitive information.
+
+Software Description:
+- nova: OpenStack Compute cloud infrastructure
+
+Details:
+
+An information leak was discovered in Nova. An attacker with access to a
+valid EC2_ACCESS_KEY could obtain the corresponding EC2_SECRET_KEY for that
+user.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.10:
+  python-nova                     2011.3-0ubuntu6.2
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1247-1
+  https://launchpad.net/bugs/868360
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/nova/2011.3-0ubuntu6.2
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/00f0f2d4/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Oct 25 19:11:09 2011
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 25 Oct 2011 15:11:09 -0400
+Subject: [USN-1238-2] Puppet regression
+Message-ID: <1319569869.23929.3.camel@mdlinux>
+
+==========================================================================
+Ubuntu Security Notice USN-1238-2
+October 25, 2011
+
+puppet regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+
+Summary:
+
+USN-1238-1 caused a regression on Ubuntu 11.04.
+
+Software Description:
+- puppet: Centralized configuration management
+
+Details:
+
+USN-1238-1 fixed vulnerabilities in Puppet. The upstream patch introduced a
+regression in Ubuntu 11.04 when executing certain commands. This update
+fixes the problem.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ It was discovered that Puppet incorrectly handled the non-default
+ "certdnsnames" option when generating certificates. If this setting was
+ added to puppet.conf, the puppet master?s DNS alt names were added to the
+ X.509 Subject Alternative Name field of all certificates, not just the
+ puppet master?s certificate. An attacker that has an incorrect agent
+ certificate in his possession can use it to impersonate the puppet master
+ in a man-in-the-middle attack.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  puppet-common                   2.6.4-2ubuntu2.6
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1238-2
+  http://www.ubuntu.com/usn/usn-1238-1
+  https://launchpad.net/bugs/881361
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/puppet/2.6.4-2ubuntu2.6
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/fa7755d5/attachment.pgp>
+
+From jamie at canonical.com  Tue Oct 25 22:27:56 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Tue, 25 Oct 2011 17:27:56 -0500
+Subject: [USN-1248-1] KDE-Libs vulnerability
+Message-ID: <1319581676.16989.7.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1248-1
+October 25, 2011
+
+kde4libs vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+KDE-Libs could improperly display fraudulent security certificates.
+
+Software Description:
+- kde4libs: KDE 4 core applications and libraries
+
+Details:
+
+Tim Brown discovered that KSSL in KDE-Libs did not properly perform input
+validation when displaying the common name (CN) for an SSL certificate. An
+attacker could exploit this to spoof the common name which could be used in
+an attack to trick the user into accepting a fraudulent certificate. This
+issue only affected Ubuntu 10.04 LTS and Ubuntu 10.10. (CVE-2011-3365)
+
+It was discovered that KIO in KDE-Libs did not properly perform input
+validation during proxy authentication. An attacker could exploit this to
+modify displaying of the realm and proxy URL.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.04:
+  libkio5                         4:4.6.5-0ubuntu1.1
+
+Ubuntu 10.10:
+  libkio5                         4:4.5.5-0ubuntu2.1
+
+Ubuntu 10.04 LTS:
+  kdelibs5                        4:4.4.5-0ubuntu1.2
+
+After a standard system update you need to restart any applications that
+use KSSL and KIO, such as Konqueror and Rekong, to make all the necessary
+changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1248-1
+  CVE-2011-3365
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/kde4libs/4:4.6.5-0ubuntu1.1
+  https://launchpad.net/ubuntu/+source/kde4libs/4:4.5.5-0ubuntu2.1
+  https://launchpad.net/ubuntu/+source/kde4libs/4:4.4.5-0ubuntu1.2
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111025/2711fa0d/attachment.pgp>
+
+From jamie at canonical.com  Thu Oct 27 22:28:56 2011
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Thu, 27 Oct 2011 17:28:56 -0500
+Subject: [USN-1249-1] BackupPC vulnerabilities
+Message-ID: <1319754536.31059.0.camel@localhost>
+
+==========================================================================
+Ubuntu Security Notice USN-1249-1
+October 27, 2011
+
+backuppc vulnerabilites
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.10
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+- Ubuntu 8.04 LTS
+
+Summary:
+
+BackupPC could be made to expose sensitive information over the network.
+
+Software Description:
+- backuppc: high-performance, enterprise-grade system for backing up PCs
+
+Details:
+
+It was discovered that BackupPC did not properly sanitize its input when
+processing backup browser error messages, resulting in a cross-site
+scripting (XSS) vulnerability. With cross-site scripting vulnerabilities,
+if a user were tricked into viewing server output during a crafted server
+request, a remote attacker could exploit this to modify the contents, or
+steal confidential data, within the same domain. This issue did not affect
+Ubuntu 11.10. (CVE-2011-3361)
+
+Jamie Strandboge discovered that BackupPC did not properly sanitize its
+input when processing log file viewer error messages, resulting in
+cross-site scripting (XSS) vulnerabilities.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.10:
+  backuppc                        3.2.1-1ubuntu1.1
+
+Ubuntu 11.04:
+  backuppc                        3.2.0-3ubuntu4.2
+
+Ubuntu 10.10:
+  backuppc                        3.1.0-9ubuntu2.2
+
+Ubuntu 10.04 LTS:
+  backuppc                        3.1.0-9ubuntu1.2
+
+Ubuntu 8.04 LTS:
+  backuppc                        3.0.0-4ubuntu1.3
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1249-1
+  CVE-2011-3361
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/backuppc/3.2.1-1ubuntu1.1
+  https://launchpad.net/ubuntu/+source/backuppc/3.2.0-3ubuntu4.2
+  https://launchpad.net/ubuntu/+source/backuppc/3.1.0-9ubuntu2.2
+  https://launchpad.net/ubuntu/+source/backuppc/3.1.0-9ubuntu1.2
+  https://launchpad.net/ubuntu/+source/backuppc/3.0.0-4ubuntu1.3
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111027/e9c10fe2/attachment.pgp>
+
+From sbeattie at ubuntu.com  Fri Oct 28 17:51:06 2011
+From: sbeattie at ubuntu.com (Steve Beattie)
+Date: Fri, 28 Oct 2011 10:51:06 -0700
+Subject: [USN-1250-1] Empathy vulnerabilities
+Message-ID: <20111028175106.GB4845@nxnw.org>
+
+==========================================================================
+Ubuntu Security Notice USN-1250-1
+October 28, 2011
+
+empathy vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 11.10
+- Ubuntu 11.04
+- Ubuntu 10.10
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Empathy could be made to run programs or display webpages via specially
+crafted nicknames.
+
+Software Description:
+- empathy: GNOME multi-protocol chat and call client
+
+Details:
+
+It was discovered that a cross-site scripting (XSS) vulnerability in
+the Adium theme allows remote attackers to inject arbitrary javascript
+or HTML via a crafted nickname in XMPP group conversations.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 11.10:
+  empathy                         3.2.0.1-0ubuntu1.1
+
+Ubuntu 11.04:
+  empathy                         2.34.0-0ubuntu3.2
+
+Ubuntu 10.10:
+  empathy                         2.32.1-0ubuntu1.2
+
+Ubuntu 10.04 LTS:
+  empathy                         2.30.3-0ubuntu1.1
+
+After a standard system update you need to restart your session to
+make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-1250-1
+  CVE-2011-3635, CVE-2011-4170
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/empathy/3.2.0.1-0ubuntu1.1
+  https://launchpad.net/ubuntu/+source/empathy/2.34.0-0ubuntu3.2
+  https://launchpad.net/ubuntu/+source/empathy/2.32.1-0ubuntu1.2
+  https://launchpad.net/ubuntu/+source/empathy/2.30.3-0ubuntu1.1
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20111028/b45c8869/attachment.pgp>
+

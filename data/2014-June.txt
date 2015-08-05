@@ -1,0 +1,3198 @@
+From marc.deslauriers at canonical.com  Mon Jun  2 13:37:39 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 02 Jun 2014 09:37:39 -0400
+Subject: [USN-2229-1] GnuTLS vulnerability
+Message-ID: <538C7E23.8080204@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2229-1
+June 02, 2014
+
+gnutls26 vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+GnuTLS could be made to crash or run programs if it connected to a
+malicious server.
+
+Software Description:
+- gnutls26: GNU TLS library
+
+Details:
+
+Joonas Kuorilehto discovered that GnuTLS incorrectly handled Server Hello
+messages. A malicious remote server or a man in the middle could use this
+issue to cause GnuTLS to crash, resulting in a denial of service, or
+possibly execute arbitrary code.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  libgnutls26                     2.12.23-12ubuntu2.1
+
+Ubuntu 13.10:
+  libgnutls26                     2.12.23-1ubuntu4.3
+
+Ubuntu 12.04 LTS:
+  libgnutls26                     2.12.14-5ubuntu3.8
+
+Ubuntu 10.04 LTS:
+  libgnutls26                     2.8.5-2ubuntu0.6
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2229-1
+  CVE-2014-3466
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/gnutls26/2.12.23-12ubuntu2.1
+  https://launchpad.net/ubuntu/+source/gnutls26/2.12.23-1ubuntu4.3
+  https://launchpad.net/ubuntu/+source/gnutls26/2.12.14-5ubuntu3.8
+  https://launchpad.net/ubuntu/+source/gnutls26/2.8.5-2ubuntu0.6
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140602/ff39140c/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed Jun  4 14:34:37 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 04 Jun 2014 10:34:37 -0400
+Subject: [USN-2230-1] chkrootkit vulnerability
+Message-ID: <538F2E7D.5030306@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2230-1
+June 04, 2014
+
+chkrootkit vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+chkrootkit could be made to run programs as an administrator.
+
+Software Description:
+- chkrootkit: rootkit detector
+
+Details:
+
+Thomas Stangner discovered that chkrootkit incorrectly quoted certain
+values. A local attacker could use this issue to execute arbitrary code
+when chkrootkit is run and gain root privileges.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  chkrootkit                      0.49-4.1ubuntu1.14.04.1
+
+Ubuntu 13.10:
+  chkrootkit                      0.49-4.1ubuntu1.13.10.1
+
+Ubuntu 12.04 LTS:
+  chkrootkit                      0.49-4ubuntu1.1
+
+Ubuntu 10.04 LTS:
+  chkrootkit                      0.49-3ubuntu0.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2230-1
+  CVE-2014-0476
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/chkrootkit/0.49-4.1ubuntu1.14.04.1
+  https://launchpad.net/ubuntu/+source/chkrootkit/0.49-4.1ubuntu1.13.10.1
+  https://launchpad.net/ubuntu/+source/chkrootkit/0.49-4ubuntu1.1
+  https://launchpad.net/ubuntu/+source/chkrootkit/0.49-3ubuntu0.1
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140604/e43a2e26/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Jun  5 12:33:31 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 05 Jun 2014 08:33:31 -0400
+Subject: [USN-2232-1] OpenSSL vulnerabilities
+Message-ID: <5390639B.3090209@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2232-1
+June 05, 2014
+
+openssl vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in OpenSSL.
+
+Software Description:
+- openssl: Secure Socket Layer (SSL) cryptographic library and tools
+
+Details:
+
+J?ri Aedla discovered that OpenSSL incorrectly handled invalid DTLS
+fragments. A remote attacker could use this issue to cause OpenSSL to
+crash, resulting in a denial of service, or possibly execute arbitrary
+code. This issue only affected Ubuntu 12.04 LTS, Ubuntu 13.10, and
+Ubuntu 14.04 LTS. (CVE-2014-0195)
+
+Imre Rad discovered that OpenSSL incorrectly handled DTLS recursions. A
+remote attacker could use this issue to cause OpenSSL to crash, resulting
+in a denial of service. (CVE-2014-0221)
+
+KIKUCHI Masashi discovered that OpenSSL incorrectly handled certain
+handshakes. A remote attacker could use this flaw to perform a
+man-in-the-middle attack and possibly decrypt and modify traffic.
+(CVE-2014-0224)
+
+Felix Gr?bert and Ivan Fratri? discovered that OpenSSL incorrectly handled
+anonymous ECDH ciphersuites. A remote attacker could use this issue to
+cause OpenSSL to crash, resulting in a denial of service. This issue only
+affected Ubuntu 12.04 LTS, Ubuntu 13.10, and Ubuntu 14.04 LTS.
+(CVE-2014-3470)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  libssl1.0.0                     1.0.1f-1ubuntu2.2
+
+Ubuntu 13.10:
+  libssl1.0.0                     1.0.1e-3ubuntu1.4
+
+Ubuntu 12.04 LTS:
+  libssl1.0.0                     1.0.1-4ubuntu5.14
+
+Ubuntu 10.04 LTS:
+  libssl0.9.8                     0.9.8k-7ubuntu8.18
+
+After a standard system update you need to reboot your computer to make all
+the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2232-1
+  CVE-2014-0195, CVE-2014-0221, CVE-2014-0224, CVE-2014-3470
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/openssl/1.0.1f-1ubuntu2.2
+  https://launchpad.net/ubuntu/+source/openssl/1.0.1e-3ubuntu1.4
+  https://launchpad.net/ubuntu/+source/openssl/1.0.1-4ubuntu5.14
+  https://launchpad.net/ubuntu/+source/openssl/0.9.8k-7ubuntu8.18
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140605/c7419b0f/attachment.pgp>
+
+From john.johansen at canonical.com  Thu Jun  5 22:19:00 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 05 Jun 2014 15:19:00 -0700
+Subject: [USN-2233-1] Linux kernel vulnerabilities
+Message-ID: <5390ECD4.80509@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2233-1
+June 05, 2014
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Pinkie Pie discovered a flaw in the Linux kernel's futex subsystem. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (system crash) or gain administrative privileges. (CVE-2014-3153)
+
+Dmitry Vyukov reported a flaw in the Linux kernel's handling of IPv6 UDP
+Fragmentation Offload (UFO) processing. A remote attacker could leverage
+this flaw to cause a denial of service (system crash). (CVE-2013-4387)
+
+Hannes Frederic Sowa discovered a flaw in the Linux kernel's UDP
+Fragmentation Offload (UFO). An unprivileged local user could exploit this
+flaw to cause a denial of service (system crash) or possibly gain
+administrative privileges. (CVE-2013-4470)
+
+A flaw was discovered in the Linux kernel's IPC reference counting. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (OOM system crash). (CVE-2013-4483)
+
+halfdog reported an error in the AMD K7 and K8 platform support in the
+Linux kernel. An unprivileged local user could exploit this flaw on AMD
+based systems to cause a denial of service (task kill) or possibly gain
+privileges via a crafted application. (CVE-2014-1438)
+
+Sasha Levin reported a bug in the Linux kernel's virtual memory management
+subsystem. An unprivileged local user could exploit this flaw to cause a
+denial of service (system crash). (CVE-2014-3122)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  linux-image-2.6.32-61-386       2.6.32-61.124
+  linux-image-2.6.32-61-generic   2.6.32-61.124
+  linux-image-2.6.32-61-generic-pae  2.6.32-61.124
+  linux-image-2.6.32-61-ia64      2.6.32-61.124
+  linux-image-2.6.32-61-lpia      2.6.32-61.124
+  linux-image-2.6.32-61-powerpc   2.6.32-61.124
+  linux-image-2.6.32-61-powerpc-smp  2.6.32-61.124
+  linux-image-2.6.32-61-powerpc64-smp  2.6.32-61.124
+  linux-image-2.6.32-61-preempt   2.6.32-61.124
+  linux-image-2.6.32-61-server    2.6.32-61.124
+  linux-image-2.6.32-61-sparc64   2.6.32-61.124
+  linux-image-2.6.32-61-sparc64-smp  2.6.32-61.124
+  linux-image-2.6.32-61-versatile  2.6.32-61.124
+  linux-image-2.6.32-61-virtual   2.6.32-61.124
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2233-1
+  CVE-2013-4387, CVE-2013-4470, CVE-2013-4483, CVE-2014-1438,
+  CVE-2014-3122, CVE-2014-3153
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/2.6.32-61.124
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140605/ec5bd7b6/attachment.pgp>
+
+From john.johansen at canonical.com  Thu Jun  5 22:22:15 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 05 Jun 2014 15:22:15 -0700
+Subject: [USN-2234-1] Linux kernel (EC2) vulnerabilities
+Message-ID: <5390ED97.2050507@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2234-1
+June 05, 2014
+
+linux-ec2 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ec2: Linux kernel for EC2
+
+Details:
+
+Pinkie Pie discovered a flaw in the Linux kernel's futex subsystem. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (system crash) or gain administrative privileges. (CVE-2014-3153)
+
+Dmitry Vyukov reported a flaw in the Linux kernel's handling of IPv6 UDP
+Fragmentation Offload (UFO) processing. A remote attacker could leverage
+this flaw to cause a denial of service (system crash). (CVE-2013-4387)
+
+Hannes Frederic Sowa discovered a flaw in the Linux kernel's UDP
+Fragmentation Offload (UFO). An unprivileged local user could exploit this
+flaw to cause a denial of service (system crash) or possibly gain
+administrative privileges. (CVE-2013-4470)
+
+A flaw was discovered in the Linux kernel's IPC reference counting. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (OOM system crash). (CVE-2013-4483)
+
+halfdog reported an error in the AMD K7 and K8 platform support in the
+Linux kernel. An unprivileged local user could exploit this flaw on AMD
+based systems to cause a denial of service (task kill) or possibly gain
+privileges via a crafted application. (CVE-2014-1438)
+
+Sasha Levin reported a bug in the Linux kernel's virtual memory management
+subsystem. An unprivileged local user could exploit this flaw to cause a
+denial of service (system crash). (CVE-2014-3122)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  linux-image-2.6.32-365-ec2      2.6.32-365.79
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2234-1
+  CVE-2013-4387, CVE-2013-4470, CVE-2013-4483, CVE-2014-1438,
+  CVE-2014-3122, CVE-2014-3153
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ec2/2.6.32-365.79
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140605/e3eca26f/attachment.pgp>
+
+From john.johansen at canonical.com  Thu Jun  5 22:24:59 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 05 Jun 2014 15:24:59 -0700
+Subject: [USN-2235-1] Linux kernel vulnerabilities
+Message-ID: <5390EE3B.4010405@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2235-1
+June 05, 2014
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Pinkie Pie discovered a flaw in the Linux kernel's futex subsystem. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (system crash) or gain administrative privileges. (CVE-2014-3153)
+
+A flaw was discovered in the vhost-net subsystem of the Linux kernel. Guest
+OS users could exploit this flaw to cause a denial of service (host OS
+crash). (CVE-2014-0055)
+
+Sasha Levin reported a bug in the Linux kernel's virtual memory management
+subsystem. An unprivileged local user could exploit this flaw to cause a
+denial of service (system crash). (CVE-2014-3122)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-64-generic    3.2.0-64.97
+  linux-image-3.2.0-64-generic-pae  3.2.0-64.97
+  linux-image-3.2.0-64-highbank   3.2.0-64.97
+  linux-image-3.2.0-64-omap       3.2.0-64.97
+  linux-image-3.2.0-64-powerpc-smp  3.2.0-64.97
+  linux-image-3.2.0-64-powerpc64-smp  3.2.0-64.97
+  linux-image-3.2.0-64-virtual    3.2.0-64.97
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2235-1
+  CVE-2014-0055, CVE-2014-3122, CVE-2014-3153
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.2.0-64.97
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140605/84ae7251/attachment.pgp>
+
+From john.johansen at canonical.com  Thu Jun  5 23:15:37 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 05 Jun 2014 16:15:37 -0700
+Subject: [USN-2236-1] Linux kernel (OMAP4) vulnerabilities
+Message-ID: <5390FA19.5010103@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2236-1
+June 05, 2014
+
+linux-ti-omap4 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ti-omap4: Linux kernel for OMAP4
+
+Details:
+
+Pinkie Pie discovered a flaw in the Linux kernel's futex subsystem. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (system crash) or gain administrative privileges. (CVE-2014-3153)
+
+A flaw was discovered in the vhost-net subsystem of the Linux kernel. Guest
+OS users could exploit this flaw to cause a denial of service (host OS
+crash). (CVE-2014-0055)
+
+Sasha Levin reported a bug in the Linux kernel's virtual memory management
+subsystem. An unprivileged local user could exploit this flaw to cause a
+denial of service (system crash). (CVE-2014-3122)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-1449-omap4    3.2.0-1449.68
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2236-1
+  CVE-2014-0055, CVE-2014-3122, CVE-2014-3153
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ti-omap4/3.2.0-1449.68
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140605/c3f55de3/attachment.pgp>
+
+From john.johansen at canonical.com  Thu Jun  5 23:18:52 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 05 Jun 2014 16:18:52 -0700
+Subject: [USN-2237-1] Linux kernel (Quantal HWE) vulnerability
+Message-ID: <5390FADC.3020707@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2237-1
+June 05, 2014
+
+linux-lts-quantal vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+The system could be made to crash or run programs as an administrator.
+
+Software Description:
+- linux-lts-quantal: Linux hardware enablement kernel from Quantal
+
+Details:
+
+Pinkie Pie discovered a flaw in the Linux kernel's futex subsystem. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (system crash) or gain administrative privileges.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.5.0-51-generic    3.5.0-51.77~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2237-1
+  CVE-2014-3153
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-quantal/3.5.0-51.77~precise1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140605/c922288b/attachment.pgp>
+
+From john.johansen at canonical.com  Thu Jun  5 23:40:14 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 05 Jun 2014 16:40:14 -0700
+Subject: [USN-2238-1] Linux kernel (Raring HWE) vulnerabilities
+Message-ID: <5390FFDE.7020505@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2238-1
+June 05, 2014
+
+linux-lts-raring vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-lts-raring: Linux hardware enablement kernel from Raring
+
+Details:
+
+Pinkie Pie discovered a flaw in the Linux kernel's futex subsystem. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (system crash) or gain administrative privileges. (CVE-2014-3153)
+
+A flaw was discovered in the Linux kernel's IPC reference counting. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (OOM system crash). (CVE-2013-4483)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.8.0-42-generic    3.8.0-42.62~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2238-1
+  CVE-2013-4483, CVE-2014-3153
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-raring/3.8.0-42.62~precise1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140605/d4867aa6/attachment.pgp>
+
+From john.johansen at canonical.com  Thu Jun  5 23:41:59 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 05 Jun 2014 16:41:59 -0700
+Subject: [USN-2239-1] Linux kernel (Saucy HWE) vulnerabilities
+Message-ID: <53910047.9020506@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2239-1
+June 05, 2014
+
+linux-lts-saucy vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-lts-saucy: Linux hardware enablement kernel from Saucy
+
+Details:
+
+Pinkie Pie discovered a flaw in the Linux kernel's futex subsystem. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (system crash) or gain administrative privileges. (CVE-2014-3153)
+
+A flaw was discovered in the Linux kernel virtual machine's (kvm)
+validation of interrupt requests (irq). A guest OS user could exploit this
+flaw to cause a denial of service (host OS crash). (CVE-2014-0155)
+
+An information leak was discovered in the netfilter subsystem of the Linux
+kernel. An attacker could exploit this flaw to obtain sensitive information
+from kernel memory. (CVE-2014-2568)
+
+Sasha Levin reported a bug in the Linux kernel's virtual memory management
+subsystem. An unprivileged local user could exploit this flaw to cause a
+denial of service (system crash). (CVE-2014-3122)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.11.0-23-generic   3.11.0-23.40~precise1
+  linux-image-3.11.0-23-generic-lpae  3.11.0-23.40~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2239-1
+  CVE-2014-0155, CVE-2014-2568, CVE-2014-3122, CVE-2014-3153
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-saucy/3.11.0-23.40~precise1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140605/04ac7c58/attachment.pgp>
+
+From john.johansen at canonical.com  Thu Jun  5 23:43:55 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 05 Jun 2014 16:43:55 -0700
+Subject: [USN-2240-1] Linux kernel vulnerabilities
+Message-ID: <539100BB.6040406@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2240-1
+June 05, 2014
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Pinkie Pie discovered a flaw in the Linux kernel's futex subsystem. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (system crash) or gain administrative privileges. (CVE-2014-3153)
+
+An information leak was discovered in the netfilter subsystem of the Linux
+kernel. An attacker could exploit this flaw to obtain sensitive information
+from kernel memory. (CVE-2014-2568)
+
+Sasha Levin reported a bug in the Linux kernel's virtual memory management
+subsystem. An unprivileged local user could exploit this flaw to cause a
+denial of service (system crash). (CVE-2014-3122)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  linux-image-3.13.0-29-generic   3.13.0-29.53
+  linux-image-3.13.0-29-generic-lpae  3.13.0-29.53
+  linux-image-3.13.0-29-lowlatency  3.13.0-29.53
+  linux-image-3.13.0-29-powerpc-e500  3.13.0-29.53
+  linux-image-3.13.0-29-powerpc-e500mc  3.13.0-29.53
+  linux-image-3.13.0-29-powerpc-smp  3.13.0-29.53
+  linux-image-3.13.0-29-powerpc64-emb  3.13.0-29.53
+  linux-image-3.13.0-29-powerpc64-smp  3.13.0-29.53
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2240-1
+  CVE-2014-2568, CVE-2014-3122, CVE-2014-3153
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.13.0-29.53
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140605/8bb2f4ee/attachment.pgp>
+
+From john.johansen at canonical.com  Thu Jun  5 23:46:14 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 05 Jun 2014 16:46:14 -0700
+Subject: [USN-2241-1] Linux kernel vulnerabilities
+Message-ID: <53910146.8010508@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2241-1
+June 05, 2014
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.10
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Pinkie Pie discovered a flaw in the Linux kernel's futex subsystem. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (system crash) or gain administrative privileges. (CVE-2014-3153)
+
+A flaw was discovered in the Linux kernel virtual machine's (kvm)
+validation of interrupt requests (irq). A guest OS user could exploit this
+flaw to cause a denial of service (host OS crash). (CVE-2014-0155)
+
+An information leak was discovered in the netfilter subsystem of the Linux
+kernel. An attacker could exploit this flaw to obtain sensitive information
+from kernel memory. (CVE-2014-2568)
+
+Sasha Levin reported a bug in the Linux kernel's virtual memory management
+subsystem. An unprivileged local user could exploit this flaw to cause a
+denial of service (system crash). (CVE-2014-3122)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.10:
+  linux-image-3.11.0-23-generic   3.11.0-23.40
+  linux-image-3.11.0-23-generic-lpae  3.11.0-23.40
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2241-1
+  CVE-2014-0155, CVE-2014-2568, CVE-2014-3122, CVE-2014-3153
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.11.0-23.40
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140605/5f0e19e2/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon Jun  9 14:44:07 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 09 Jun 2014 10:44:07 -0400
+Subject: [USN-2214-2] libxml2 regression
+Message-ID: <5395C837.6030004@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2214-2
+June 09, 2014
+
+libxml2 regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+USN-2214-1 introduced a regression in libxml2.
+
+Software Description:
+- libxml2: GNOME XML library
+
+Details:
+
+USN-2214-1 fixed vulnerabilities in libxml2. The upstream fix introduced a
+regression when using xmllint with the --postvalid option. This update
+fixes the problem.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ Daniel Berrange discovered that libxml2 would incorrectly perform entity
+ substitution even when requested not to. If a user or automated system were
+ tricked into opening a specially crafted document, an attacker could
+ possibly cause resource consumption, resulting in a denial of service.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  libxml2                         2.9.1+dfsg1-3ubuntu4.2
+
+Ubuntu 13.10:
+  libxml2                         2.9.1+dfsg1-3ubuntu2.2
+
+Ubuntu 12.04 LTS:
+  libxml2                         2.7.8.dfsg-5.1ubuntu4.8
+
+Ubuntu 10.04 LTS:
+  libxml2                         2.7.6.dfsg-1ubuntu1.12
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2214-2
+  http://www.ubuntu.com/usn/usn-2214-1
+  https://launchpad.net/bugs/1321869
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/libxml2/2.9.1+dfsg1-3ubuntu4.2
+  https://launchpad.net/ubuntu/+source/libxml2/2.9.1+dfsg1-3ubuntu2.2
+  https://launchpad.net/ubuntu/+source/libxml2/2.7.8.dfsg-5.1ubuntu4.8
+  https://launchpad.net/ubuntu/+source/libxml2/2.7.6.dfsg-1ubuntu1.12
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140609/f8a3499c/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Jun 10 12:04:47 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 10 Jun 2014 08:04:47 -0400
+Subject: [USN-2242-1] dpkg vulnerabilities
+Message-ID: <5396F45F.2040202@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2242-1
+June 10, 2014
+
+dpkg vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+A malicious source package could write files outside the unpack directory.
+
+Software Description:
+- dpkg: Debian package management system
+
+Details:
+
+It was discovered that dpkg incorrectly handled certain patches when
+unpacking source packages. If a user or an automated system were tricked
+into unpacking a specially crafted source package, a remote attacker could
+modify files outside the target unpack directory, leading to a denial of
+service or potentially gaining access to the system.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  libdpkg-perl                    1.17.5ubuntu5.3
+
+Ubuntu 13.10:
+  libdpkg-perl                    1.16.12ubuntu1.3
+
+Ubuntu 12.04 LTS:
+  libdpkg-perl                    1.16.1.2ubuntu7.5
+
+Ubuntu 10.04 LTS:
+  dpkg-dev                        1.15.5.6ubuntu4.9
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2242-1
+  CVE-2014-3864, CVE-2014-3865
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/dpkg/1.17.5ubuntu5.3
+  https://launchpad.net/ubuntu/+source/dpkg/1.16.12ubuntu1.3
+  https://launchpad.net/ubuntu/+source/dpkg/1.16.1.2ubuntu7.5
+  https://launchpad.net/ubuntu/+source/dpkg/1.15.5.6ubuntu4.9
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140610/14ae3b5f/attachment.pgp>
+
+From chris.coulson at canonical.com  Wed Jun 11 12:28:53 2014
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Wed, 11 Jun 2014 13:28:53 +0100
+Subject: [USN-2243-1] Firefox vulnerabilities
+Message-ID: <53984B85.8030304@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2243-1
+June 11, 2014
+
+firefox vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Firefox could be made to crash or run programs as your login if it
+opened a malicious website.
+
+Software Description:
+- firefox: Mozilla Open Source web browser
+
+Details:
+
+Gary Kwong, Christoph Diehl, Christian Holler, Hannes Verschore, Jan de
+Mooij, Ryan VanderMeulen, Jeff Walden, Kyle Huey, Jesse Ruderman, Gregor
+Wagner, Benoit Jacob and Karl Tomlinson discovered multiple memory safety
+issues in Firefox. If a user were tricked in to opening a specially
+crafted website, an attacker could potentially exploit these to cause a
+denial of service via application crash, or execute arbitrary code with
+the privileges of the user invoking Firefox. (CVE-2014-1533,
+CVE-2014-1534)
+
+Abhishek Arya discovered multiple use-after-free and out-of-bounds read
+issues in Firefox. An attacker could potentially exploit these to cause
+a denial of service via application crash or execute arbitrary code with
+the priviliges of the user invoking Firefox. (CVE-2014-1536,
+CVE-2014-1537, CVE-2014-1538)
+
+Tyson Smith and Jesse Schwartzentruber discovered a use-after-free in the
+event listener manager. An attacker could potentially exploit this to
+cause a denial of service via application crash or execute arbitrary code
+with the priviliges of the user invoking Firefox. (CVE-2014-1540)
+
+A use-after-free was discovered in the SMIL animation controller. An
+attacker could potentially exploit this to cause a denial of service via
+application crash or execute arbitrary code with the priviliges of the
+user invoking Firefox. (CVE-2014-1541)
+
+Holger Fuhrmannek discovered a buffer overflow in Web Audio. An attacker
+could potentially exploit this to cause a denial of service via
+application crash or execute arbitrary code with the priviliges of the
+user invoking Firefox. (CVE-2014-1542)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  firefox                         30.0+build1-0ubuntu0.14.04.3
+
+Ubuntu 13.10:
+  firefox                         30.0+build1-0ubuntu0.13.10.3
+
+Ubuntu 12.04 LTS:
+  firefox                         30.0+build1-0ubuntu0.12.04.3
+
+After a standard system update you need to restart Firefox to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2243-1
+  CVE-2014-1533, CVE-2014-1534, CVE-2014-1536, CVE-2014-1537,
+  CVE-2014-1538, CVE-2014-1540, CVE-2014-1541, CVE-2014-1542,
+  https://launchpad.net/bugs/1326690
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/firefox/30.0+build1-0ubuntu0.14.04.3
+  https://launchpad.net/ubuntu/+source/firefox/30.0+build1-0ubuntu0.13.10.3
+  https://launchpad.net/ubuntu/+source/firefox/30.0+build1-0ubuntu0.12.04.3
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 538 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140611/8cbe3928/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed Jun 11 13:35:12 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 11 Jun 2014 09:35:12 -0400
+Subject: [USN-2244-1] Libav vulnerability
+Message-ID: <53985B10.5080601@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2244-1
+June 11, 2014
+
+libav vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Libav could be made to crash or run programs as your login if it opened a
+specially crafted file.
+
+Software Description:
+- libav: Multimedia player, server, encoder and transcoder
+
+Details:
+
+It was discovered that Libav incorrectly handled certain malformed media
+files. If a user were tricked into opening a crafted media file, an
+attacker could cause a denial of service via application crash, or possibly
+execute arbitrary code with the privileges of the user invoking the
+program.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.10:
+  libavcodec53                    6:0.8.12-0ubuntu0.13.10.1
+  libavformat53                   6:0.8.12-0ubuntu0.13.10.1
+
+Ubuntu 12.04 LTS:
+  libavcodec53                    4:0.8.12-0ubuntu0.12.04.1
+  libavformat53                   4:0.8.12-0ubuntu0.12.04.1
+
+This update uses a new upstream release, which includes additional bug
+fixes. In general, a standard system update will make all the necessary
+changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2244-1
+  CVE-2014-3984
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/libav/6:0.8.12-0ubuntu0.13.10.1
+  https://launchpad.net/ubuntu/+source/libav/4:0.8.12-0ubuntu0.12.04.1
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140611/5495c11d/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Jun 12 16:33:16 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 12 Jun 2014 12:33:16 -0400
+Subject: [USN-2245-1] json-c vulnerabilities
+Message-ID: <5399D64C.5020801@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2245-1
+June 12, 2014
+
+json-c vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+json-c could be made to crash or consume CPU if it processed a specially
+crafted JSON document.
+
+Software Description:
+- json-c: JSON manipulation library
+
+Details:
+
+Florian Weimer discovered that json-c incorrectly handled buffer lengths.
+An attacker could use this issue with a specially-crafted large JSON
+document to cause json-c to crash, resulting in a denial of service.
+(CVE-2013-6370)
+
+Florian Weimer discovered that json-c incorrectly handled hash arrays. An
+attacker could use this issue with a specially-crafted JSON document to
+cause json-c to consume CPU resources, resulting in a denial of service.
+(CVE-2013-6371)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  libjson0                        0.11-3ubuntu1.2
+
+Ubuntu 13.10:
+  libjson0                        0.11-2ubuntu1.2
+
+Ubuntu 12.04 LTS:
+  libjson0                        0.9-1ubuntu1.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2245-1
+  CVE-2013-6370, CVE-2013-6371
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/json-c/0.11-3ubuntu1.2
+  https://launchpad.net/ubuntu/+source/json-c/0.11-2ubuntu1.2
+  https://launchpad.net/ubuntu/+source/json-c/0.9-1ubuntu1.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140612/0d55bb84/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Jun 12 19:05:37 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 12 Jun 2014 15:05:37 -0400
+Subject: [USN-2232-2] OpenSSL regression
+Message-ID: <5399FA01.5040305@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2232-2
+June 12, 2014
+
+openssl regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+USN-2232-1 introduced a regression in OpenSSL.
+
+Software Description:
+- openssl: Secure Socket Layer (SSL) cryptographic library and tools
+
+Details:
+
+USN-2232-1 fixed vulnerabilities in OpenSSL. The upstream fix for
+CVE-2014-0224 caused a regression for certain applications that use
+tls_session_secret_cb, such as wpa_supplicant. This update fixes the
+problem.
+
+Original advisory details:
+
+ J?ri Aedla discovered that OpenSSL incorrectly handled invalid DTLS
+ fragments. A remote attacker could use this issue to cause OpenSSL to
+ crash, resulting in a denial of service, or possibly execute arbitrary
+ code. This issue only affected Ubuntu 12.04 LTS, Ubuntu 13.10, and
+ Ubuntu 14.04 LTS. (CVE-2014-0195)
+  Imre Rad discovered that OpenSSL incorrectly handled DTLS recursions. A
+ remote attacker could use this issue to cause OpenSSL to crash, resulting
+ in a denial of service. (CVE-2014-0221)
+  KIKUCHI Masashi discovered that OpenSSL incorrectly handled certain
+ handshakes. A remote attacker could use this flaw to perform a
+ man-in-the-middle attack and possibly decrypt and modify traffic.
+ (CVE-2014-0224)
+  Felix Gr?bert and Ivan Fratri? discovered that OpenSSL incorrectly handled
+ anonymous ECDH ciphersuites. A remote attacker could use this issue to
+ cause OpenSSL to crash, resulting in a denial of service. This issue only
+ affected Ubuntu 12.04 LTS, Ubuntu 13.10, and Ubuntu 14.04 LTS.
+ (CVE-2014-3470)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  libssl1.0.0                     1.0.1f-1ubuntu2.3
+
+Ubuntu 13.10:
+  libssl1.0.0                     1.0.1e-3ubuntu1.5
+
+Ubuntu 12.04 LTS:
+  libssl1.0.0                     1.0.1-4ubuntu5.15
+
+After a standard system update you need to reboot your computer to make all
+the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2232-2
+  http://www.ubuntu.com/usn/usn-2232-1
+  https://launchpad.net/bugs/1329297
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/openssl/1.0.1f-1ubuntu2.3
+  https://launchpad.net/ubuntu/+source/openssl/1.0.1e-3ubuntu1.5
+  https://launchpad.net/ubuntu/+source/openssl/1.0.1-4ubuntu5.15
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140612/fa478de3/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Jun 17 12:04:46 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 17 Jun 2014 08:04:46 -0400
+Subject: [USN-2214-3] libxml2 regression
+Message-ID: <53A02EDE.5050805@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2214-3
+June 17, 2014
+
+libxml2 regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+USN-2214-1 introduced a regression in libxml2.
+
+Software Description:
+- libxml2: GNOME XML library
+
+Details:
+
+USN-2214-1 fixed vulnerabilities in libxml2. The upstream fix introduced a
+number of regressions. This update fixes the problem.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ Daniel Berrange discovered that libxml2 would incorrectly perform entity
+ substitution even when requested not to. If a user or automated system were
+ tricked into opening a specially crafted document, an attacker could
+ possibly cause resource consumption, resulting in a denial of service.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  libxml2                         2.9.1+dfsg1-3ubuntu4.3
+
+Ubuntu 13.10:
+  libxml2                         2.9.1+dfsg1-3ubuntu2.3
+
+Ubuntu 12.04 LTS:
+  libxml2                         2.7.8.dfsg-5.1ubuntu4.9
+
+Ubuntu 10.04 LTS:
+  libxml2                         2.7.6.dfsg-1ubuntu1.13
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2214-3
+  http://www.ubuntu.com/usn/usn-2214-1
+  https://launchpad.net/bugs/1321869
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/libxml2/2.9.1+dfsg1-3ubuntu4.3
+  https://launchpad.net/ubuntu/+source/libxml2/2.9.1+dfsg1-3ubuntu2.3
+  https://launchpad.net/ubuntu/+source/libxml2/2.7.8.dfsg-5.1ubuntu4.9
+  https://launchpad.net/ubuntu/+source/libxml2/2.7.6.dfsg-1ubuntu1.13
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140617/43defe46/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Jun 17 18:11:59 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 17 Jun 2014 14:11:59 -0400
+Subject: [USN-2246-1] APT vulnerability
+Message-ID: <53A084EF.5070902@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2246-1
+June 17, 2014
+
+apt vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+An attacker could trick APT into installing altered source packages.
+
+Software Description:
+- apt: Advanced front-end for dpkg
+
+Details:
+
+Jakub Wilk discovered that APT did not correctly validate signatures when
+downloading source packages. If a remote attacker were able to perform a
+man-in-the-middle attack, this flaw could potentially be used to install
+altered source packages.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  apt                             1.0.1ubuntu2.1
+
+Ubuntu 13.10:
+  apt                             0.9.9.1~ubuntu3.2
+
+Ubuntu 12.04 LTS:
+  apt                             0.8.16~exp12ubuntu10.17
+
+Ubuntu 10.04 LTS:
+  apt                             0.7.25.3ubuntu9.15
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2246-1
+  CVE-2014-0478
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/apt/1.0.1ubuntu2.1
+  https://launchpad.net/ubuntu/+source/apt/0.9.9.1~ubuntu3.2
+  https://launchpad.net/ubuntu/+source/apt/0.8.16~exp12ubuntu10.17
+  https://launchpad.net/ubuntu/+source/apt/0.7.25.3ubuntu9.15
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140617/8bd34852/attachment.pgp>
+
+From jamie at canonical.com  Tue Jun 17 21:53:41 2014
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Tue, 17 Jun 2014 16:53:41 -0500
+Subject: [USN-2247-1] OpenStack Nova vulnerabilities
+In-Reply-To: <20140617215120.F1CC826C2A3A@lillypilly.canonical.com>
+References: <20140617215120.F1CC826C2A3A@lillypilly.canonical.com>
+Message-ID: <53A0B8E5.4010709@canonical.com>
+
+
+==========================================================================
+Ubuntu Security Notice USN-2247-1
+June 17, 2014
+
+nova vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in OpenStack Nova.
+
+Software Description:
+- nova: OpenStack Compute cloud infrastructure
+
+Details:
+
+Darragh O'Reilly discovered that OpenStack Nova did not properly set up its
+sudo configuration. If a different flaw was found in OpenStack Nova, this
+vulnerability could be used to escalate privileges. This issue only
+affected Ubuntu 13.10 and Ubuntu 14.04 LTS. (CVE-2013-1068)
+
+Bernhard M. Wiedemann and Pedraig Brady discovered that OpenStack Nova did
+not properly verify the virtual size of a QCOW2 images. A remote
+authenticated attacker could exploit this to create a denial of service via
+disk consumption. This issue did not affect Ubuntu 14.04 LTS.
+(CVE-2013-4463, CVE-2013-4469)
+
+JuanFra Rodriguez Cardoso discovered that OpenStack Nova did not enforce
+SSL connections when Nova was configured to use QPid and qpid_protocol is
+set to 'ssl'. If a remote attacker were able to perform a man-in-the-middle
+attack, this flaw could be exploited to view sensitive information. Ubuntu
+does not use QPid with Nova by default. This issue did not affect Ubuntu
+14.04 LTS. (CVE-2013-6491)
+
+Loganathan Parthipan discovered that OpenStack Nova did not properly create
+expected files during KVM live block migration. A remote authenticated
+attacker could exploit this to obtain root disk snapshot contents via
+ephemeral storage. This issue did not affect Ubuntu 14.04 LTS.
+(CVE-2013-7130)
+
+Stanislaw Pitucha discovered that OpenStack Nova did not enforce the image
+format when rescuing an instance. A remote authenticated attacker could
+exploit this to read host files. In the default installation, attackers
+would be isolated by the libvirt guest AppArmor profile. This issue only
+affected Ubuntu 13.10. (CVE-2014-0134)
+
+Mark Heckmann discovered that OpenStack Nova did not enforce RBAC policy
+when adding security group rules via the EC2 API. A remote authenticated
+user could exploit this to gain unintended access to this API. This issue
+only affected Ubuntu 13.10. (CVE-2014-0167)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  python-nova                     1:2014.1-0ubuntu1.2
+
+Ubuntu 13.10:
+  python-nova                     1:2013.2.3-0ubuntu1.2
+
+Ubuntu 12.04 LTS:
+  python-nova                     2012.1.3+stable-20130423-e52e6912-0ubuntu1.4
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2247-1
+  CVE-2013-1068, CVE-2013-4463, CVE-2013-4469, CVE-2013-6491,
+  CVE-2013-7130, CVE-2014-0134, CVE-2014-0167
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/nova/1:2014.1-0ubuntu1.2
+  https://launchpad.net/ubuntu/+source/nova/1:2013.2.3-0ubuntu1.2
+
+https://launchpad.net/ubuntu/+source/nova/2012.1.3+stable-20130423-e52e6912-0ubuntu1.4
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140617/0c640605/attachment.pgp>
+
+From jamie at canonical.com  Wed Jun 18 17:50:44 2014
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Wed, 18 Jun 2014 12:50:44 -0500
+Subject: [USN-2248-1] OpenStack Cinder vulnerability
+In-Reply-To: <20140618174759.71E8D26C2A3B@lillypilly.canonical.com>
+References: <20140618174759.71E8D26C2A3B@lillypilly.canonical.com>
+Message-ID: <53A1D174.1000804@canonical.com>
+
+
+==========================================================================
+Ubuntu Security Notice USN-2248-1
+June 18, 2014
+
+cinder vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+
+Summary:
+
+OpenStack Cinder could be made to run programs as an administrator under
+certain conditions.
+
+Software Description:
+- cinder: OpenStack storage service
+
+Details:
+
+Darragh O'Reilly discovered that the Ubuntu packaging for OpenStack Cinder
+did not properly set up its sudo configuration. If a different flaw was
+found in OpenStack Cinder, this vulnerability could be used to escalate
+privileges. (CVE-2013-1068)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  python-cinder                   1:2014.1-0ubuntu1.1
+
+Ubuntu 13.10:
+  python-cinder                   1:2013.2.3-0ubuntu1.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2248-1
+  CVE-2013-1068
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/cinder/1:2014.1-0ubuntu1.1
+  https://launchpad.net/ubuntu/+source/cinder/1:2013.2.3-0ubuntu1.1
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140618/ff0d3124/attachment.pgp>
+
+From jamie at canonical.com  Wed Jun 18 20:56:24 2014
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Wed, 18 Jun 2014 15:56:24 -0500
+Subject: [USN-2249-1] OpenStack Heat vulnerability
+In-Reply-To: <20140618205425.568FB26C2A42@lillypilly.canonical.com>
+References: <20140618205425.568FB26C2A42@lillypilly.canonical.com>
+Message-ID: <53A1FCF8.3010408@canonical.com>
+
+
+==========================================================================
+Ubuntu Security Notice USN-2249-1
+June 18, 2014
+
+heat vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+
+Summary:
+
+OpenStack Heat would expose sensitive information over the network.
+
+Software Description:
+- heat: OpenStack Orchestration Service
+
+Details:
+
+Jason Dunsmore discovered that OpenStack heat did not properly restrict
+access to template information. A remote authenticated attacker could
+exploit this to see URL provider templates of other tenants for a limited
+time.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  python-heat                     2014.1-0ubuntu1.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2249-1
+  CVE-2014-3801
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/heat/2014.1-0ubuntu1.1
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140618/054fe416/attachment.pgp>
+
+From chris.coulson at canonical.com  Thu Jun 19 11:32:57 2014
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Thu, 19 Jun 2014 12:32:57 +0100
+Subject: [USN-2250-1] Thunderbird vulnerabilities
+Message-ID: <53A2CA69.2060005@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2250-1
+June 19, 2014
+
+thunderbird vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in Thunderbird.
+
+Software Description:
+- thunderbird: Mozilla Open Source mail and newsgroup client
+
+Details:
+
+Gary Kwong, Christoph Diehl, Christian Holler, Hannes Verschore, Jan de
+Mooij, Ryan VanderMeulen, Jeff Walden and Kyle Huey discovered multiple
+memory safety issues in Thunderbird. If a user were tricked in to opening
+a specially crafted message with scripting enabled, an attacker could
+potentially exploit these to cause a denial of service via application
+crash, or execute arbitrary code with the privileges of the user invoking
+Thunderbird. (CVE-2014-1533)
+
+Abhishek Arya discovered multiple use-after-free and out-of-bounds read
+issues in Thunderbird. If a user had enabled scripting, an attacker could
+potentially exploit these to cause a denial of service via application
+crash or execute arbitrary code with the priviliges of the user invoking
+Thunderbird. (CVE-2014-1538)
+
+A use-after-free was discovered in the SMIL animation controller. If a
+user had enabled scripting, an attacker could potentially exploit this
+to cause a denial of service via application crash or execute arbitrary
+code with the priviliges of the user invoking Thunderbird. (CVE-2014-1541)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  thunderbird                     1:24.6.0+build1-0ubuntu0.14.04.1
+
+Ubuntu 13.10:
+  thunderbird                     1:24.6.0+build1-0ubuntu0.13.10.1
+
+Ubuntu 12.04 LTS:
+  thunderbird                     1:24.6.0+build1-0ubuntu0.12.04.1
+
+After a standard system update you need to restart Thunderbird to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2250-1
+  CVE-2014-1533, CVE-2014-1538, CVE-2014-1541, https://launchpad.net/bugs/1328003
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/thunderbird/1:24.6.0+build1-0ubuntu0.14.04.1
+  https://launchpad.net/ubuntu/+source/thunderbird/1:24.6.0+build1-0ubuntu0.13.10.1
+  https://launchpad.net/ubuntu/+source/thunderbird/1:24.6.0+build1-0ubuntu0.12.04.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 538 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140619/042006b4/attachment.pgp>
+
+From john.johansen at canonical.com  Fri Jun 20 05:26:23 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 19 Jun 2014 22:26:23 -0700
+Subject: [USN-2251-1] Linux kernel vulnerabilities
+Message-ID: <53A3C5FF.90700@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2251-1
+June 20, 2014
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+A bounds check error was discovered in the socket filter subsystem of the
+Linux kernel. A local user could exploit this flaw to cause a denial of
+service (system crash) via crafted BPF instructions. (CVE-2014-3144)
+
+A remainder calculation error was discovered in the socket filter subsystem
+of the Linux kernel. A local user could exploit this flaw to cause a denial
+of service (system crash) via crafted BPF instructions. (CVE-2014-3145)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  linux-image-2.6.32-62-386       2.6.32-62.125
+  linux-image-2.6.32-62-generic   2.6.32-62.125
+  linux-image-2.6.32-62-generic-pae  2.6.32-62.125
+  linux-image-2.6.32-62-ia64      2.6.32-62.125
+  linux-image-2.6.32-62-lpia      2.6.32-62.125
+  linux-image-2.6.32-62-powerpc   2.6.32-62.125
+  linux-image-2.6.32-62-powerpc-smp  2.6.32-62.125
+  linux-image-2.6.32-62-powerpc64-smp  2.6.32-62.125
+  linux-image-2.6.32-62-preempt   2.6.32-62.125
+  linux-image-2.6.32-62-server    2.6.32-62.125
+  linux-image-2.6.32-62-sparc64   2.6.32-62.125
+  linux-image-2.6.32-62-sparc64-smp  2.6.32-62.125
+  linux-image-2.6.32-62-versatile  2.6.32-62.125
+  linux-image-2.6.32-62-virtual   2.6.32-62.125
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2251-1
+  CVE-2014-3144, CVE-2014-3145
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/2.6.32-62.125
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140619/248a4ed3/attachment.pgp>
+
+From john.johansen at canonical.com  Fri Jun 20 05:26:51 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Thu, 19 Jun 2014 22:26:51 -0700
+Subject: [USN-2252-1] Linux kernel (EC2) vulnerabilities
+Message-ID: <53A3C61B.7040808@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2252-1
+June 20, 2014
+
+linux-ec2 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ec2: Linux kernel for EC2
+
+Details:
+
+A bounds check error was discovered in the socket filter subsystem of the
+Linux kernel. A local user could exploit this flaw to cause a denial of
+service (system crash) via crafted BPF instructions. (CVE-2014-3144)
+
+A remainder calculation error was discovered in the socket filter subsystem
+of the Linux kernel. A local user could exploit this flaw to cause a denial
+of service (system crash) via crafted BPF instructions. (CVE-2014-3145)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 10.04 LTS:
+  linux-image-2.6.32-366-ec2      2.6.32-366.80
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2252-1
+  CVE-2014-3144, CVE-2014-3145
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ec2/2.6.32-366.80
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140619/3534c5d2/attachment.pgp>
+
+From adconrad at ubuntu.com  Fri Jun 20 05:00:13 2014
+From: adconrad at ubuntu.com (Adam Conrad)
+Date: Thu, 19 Jun 2014 23:00:13 -0600
+Subject: Ubuntu 13.10 (Saucy Salamander) reaches End of Life on July 17 2014
+Message-ID: <20140620050013.GC28005@0c3.net>
+
+Ubuntu announced its 13.10 (Saucy Salamander) release almost 9 months
+ago, on October 17, 2013.  This was the second release with our new 9
+month support cycle and, as such, the support period is now nearing
+its end and Ubuntu 13.10 will reach end of life on Thursday, July
+17th.  At that time, Ubuntu Security Notices will no longer include
+information or updated packages for Ubuntu 13.10.
+
+The supported upgrade path from Ubuntu 13.10 is via Ubuntu 14.04 LTS.
+Instructions and caveats for the upgrade may be found at:
+
+https://help.ubuntu.com/community/TrustyUpgrades
+
+Ubuntu 14.04 LTS continues to be actively supported with security
+updates and select high-impact bug fixes.  Announcements of security
+updates for Ubuntu releases are sent to the ubuntu-security-announce
+mailing list, information about which may be found at:
+
+https://lists.ubuntu.com/mailman/listinfo/ubuntu-security-announce
+
+Since its launch in October 2004 Ubuntu has become one of the most
+highly regarded Linux distributions with millions of users in homes,
+schools, businesses and governments around the world. Ubuntu is Open
+Source software, costs nothing to download, and users are free to
+customise or alter their software in order to meet their needs.
+
+On behalf of the Ubuntu Release Team,
+
+Adam Conrad
+
+
+
+From marc.deslauriers at canonical.com  Mon Jun 23 11:24:50 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 23 Jun 2014 07:24:50 -0400
+Subject: [USN-2253-1] LibreOffice vulnerability
+Message-ID: <53A80E82.5000800@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2253-1
+June 23, 2014
+
+libreoffice vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+
+Summary:
+
+LibreOffice would unconditionally execute certain VBA macros.
+
+Software Description:
+- libreoffice: Office productivity suite
+
+Details:
+
+It was discovered that LibreOffice unconditionally executed certain VBA
+macros, contrary to user expectations.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  libreoffice-core                1:4.2.4-0ubuntu2
+
+After a standard system update you need to restart LibreOffice to makea all
+the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2253-1
+  CVE-2014-0247
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/libreoffice/1:4.2.4-0ubuntu2
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140623/3984b73f/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon Jun 23 12:37:54 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 23 Jun 2014 08:37:54 -0400
+Subject: [USN-2254-1] PHP vulnerabilities
+Message-ID: <53A81FA2.9070206@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2254-1
+June 23, 2014
+
+php5 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in PHP.
+
+Software Description:
+- php5: HTML-embedded scripting language interpreter
+
+Details:
+
+Christian Hoffmann discovered that the PHP FastCGI Process Manager (FPM)
+set incorrect permissions on the UNIX socket. A local attacker could use
+this issue to possibly elevate their privileges. This issue only affected
+Ubuntu 12.04 LTS, Ubuntu 13.10, and Ubuntu 14.04 LTS. (CVE-2014-0185)
+
+Francisco Alonso discovered that the PHP Fileinfo component incorrectly
+handled certain CDF documents. A remote attacker could use this issue to
+cause PHP to hang or crash, resulting in a denial of service.
+(CVE-2014-0237, CVE-2014-0238)
+
+Stefan Esser discovered that PHP incorrectly handled DNS TXT records. A
+remote attacker could use this issue to cause PHP to crash, resulting in a
+denial of service, or possibly execute arbitrary code. (CVE-2014-4049)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  libapache2-mod-php5             5.5.9+dfsg-1ubuntu4.1
+  php5-cgi                        5.5.9+dfsg-1ubuntu4.1
+  php5-cli                        5.5.9+dfsg-1ubuntu4.1
+  php5-fpm                        5.5.9+dfsg-1ubuntu4.1
+
+Ubuntu 13.10:
+  libapache2-mod-php5             5.5.3+dfsg-1ubuntu2.4
+  php5-cgi                        5.5.3+dfsg-1ubuntu2.4
+  php5-cli                        5.5.3+dfsg-1ubuntu2.4
+  php5-fpm                        5.5.3+dfsg-1ubuntu2.4
+
+Ubuntu 12.04 LTS:
+  libapache2-mod-php5             5.3.10-1ubuntu3.12
+  php5-cgi                        5.3.10-1ubuntu3.12
+  php5-cli                        5.3.10-1ubuntu3.12
+  php5-fpm                        5.3.10-1ubuntu3.12
+
+Ubuntu 10.04 LTS:
+  libapache2-mod-php5             5.3.2-1ubuntu4.25
+  php5-cgi                        5.3.2-1ubuntu4.25
+  php5-cli                        5.3.2-1ubuntu4.25
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2254-1
+  CVE-2014-0185, CVE-2014-0237, CVE-2014-0238, CVE-2014-4049
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/php5/5.5.9+dfsg-1ubuntu4.1
+  https://launchpad.net/ubuntu/+source/php5/5.5.3+dfsg-1ubuntu2.4
+  https://launchpad.net/ubuntu/+source/php5/5.3.10-1ubuntu3.12
+  https://launchpad.net/ubuntu/+source/php5/5.3.2-1ubuntu4.25
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140623/bd313933/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon Jun 23 12:37:29 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 23 Jun 2014 08:37:29 -0400
+Subject: [USN-2232-3] OpenSSL regression
+Message-ID: <53A81F89.2090308@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2232-3
+June 23, 2014
+
+openssl regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+USN-2232-1 introduced a regression in OpenSSL.
+
+Software Description:
+- openssl: Secure Socket Layer (SSL) cryptographic library and tools
+
+Details:
+
+USN-2232-1 fixed vulnerabilities in OpenSSL. The upstream fix for
+CVE-2014-0224 caused a regression for certain applications that use
+renegotiation, such as PostgreSQL. This update fixes the problem.
+
+Original advisory details:
+
+ J?ri Aedla discovered that OpenSSL incorrectly handled invalid DTLS
+ fragments. A remote attacker could use this issue to cause OpenSSL to
+ crash, resulting in a denial of service, or possibly execute arbitrary
+ code. This issue only affected Ubuntu 12.04 LTS, Ubuntu 13.10, and
+ Ubuntu 14.04 LTS. (CVE-2014-0195)
+  Imre Rad discovered that OpenSSL incorrectly handled DTLS recursions. A
+ remote attacker could use this issue to cause OpenSSL to crash, resulting
+ in a denial of service. (CVE-2014-0221)
+  KIKUCHI Masashi discovered that OpenSSL incorrectly handled certain
+ handshakes. A remote attacker could use this flaw to perform a
+ man-in-the-middle attack and possibly decrypt and modify traffic.
+ (CVE-2014-0224)
+  Felix Gr?bert and Ivan Fratri? discovered that OpenSSL incorrectly handled
+ anonymous ECDH ciphersuites. A remote attacker could use this issue to
+ cause OpenSSL to crash, resulting in a denial of service. This issue only
+ affected Ubuntu 12.04 LTS, Ubuntu 13.10, and Ubuntu 14.04 LTS.
+ (CVE-2014-3470)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  libssl1.0.0                     1.0.1f-1ubuntu2.4
+
+Ubuntu 13.10:
+  libssl1.0.0                     1.0.1e-3ubuntu1.6
+
+Ubuntu 12.04 LTS:
+  libssl1.0.0                     1.0.1-4ubuntu5.16
+
+Ubuntu 10.04 LTS:
+  libssl0.9.8                     0.9.8k-7ubuntu8.19
+
+After a standard system update you need to reboot your computer to make all
+the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2232-3
+  http://www.ubuntu.com/usn/usn-2232-1
+  https://launchpad.net/bugs/1332643
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/openssl/1.0.1f-1ubuntu2.4
+  https://launchpad.net/ubuntu/+source/openssl/1.0.1e-3ubuntu1.6
+  https://launchpad.net/ubuntu/+source/openssl/1.0.1-4ubuntu5.16
+  https://launchpad.net/ubuntu/+source/openssl/0.9.8k-7ubuntu8.19
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140623/eb41a3fc/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed Jun 25 19:47:30 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 25 Jun 2014 15:47:30 -0400
+Subject: [USN-2254-2] PHP updates
+Message-ID: <53AB2752.2090603@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2254-2
+June 25, 2014
+
+php5 updates
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+
+Summary:
+
+An improvement was made for PHP FPM environments.
+
+Software Description:
+- php5: HTML-embedded scripting language interpreter
+
+Details:
+
+USN-2254-1 fixed vulnerabilities in PHP. The fix for CVE-2014-0185
+further restricted the permissions on the PHP FastCGI Process Manager (FPM)
+UNIX socket. This update grants socket access to the www-data user and
+group so installations and documentation relying on the previous socket
+permissions will continue to function.
+
+Original advisory details:
+
+ Christian Hoffmann discovered that the PHP FastCGI Process Manager (FPM)
+ set incorrect permissions on the UNIX socket. A local attacker could use
+ this issue to possibly elevate their privileges. This issue only affected
+ Ubuntu 12.04 LTS, Ubuntu 13.10, and Ubuntu 14.04 LTS. (CVE-2014-0185)
+  Francisco Alonso discovered that the PHP Fileinfo component incorrectly
+ handled certain CDF documents. A remote attacker could use this issue to
+ cause PHP to hang or crash, resulting in a denial of service.
+ (CVE-2014-0237, CVE-2014-0238)
+  Stefan Esser discovered that PHP incorrectly handled DNS TXT records. A
+ remote attacker could use this issue to cause PHP to crash, resulting in a
+ denial of service, or possibly execute arbitrary code. (CVE-2014-4049)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  php5-fpm                        5.5.9+dfsg-1ubuntu4.2
+
+Ubuntu 13.10:
+  php5-fpm                        5.5.3+dfsg-1ubuntu2.5
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2254-2
+  http://www.ubuntu.com/usn/usn-2254-1
+  https://launchpad.net/bugs/1334337
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/php5/5.5.9+dfsg-1ubuntu4.2
+  https://launchpad.net/ubuntu/+source/php5/5.5.3+dfsg-1ubuntu2.5
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140625/43c41ebe/attachment.pgp>
+
+From jamie at canonical.com  Wed Jun 25 21:45:47 2014
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Wed, 25 Jun 2014 16:45:47 -0500
+Subject: [USN-2255-1] OpenStack Neutron vulnerabilities
+In-Reply-To: <20140625213837.ACF2626C2D3F@lillypilly.canonical.com>
+References: <20140625213837.ACF2626C2D3F@lillypilly.canonical.com>
+Message-ID: <53AB430B.8090403@canonical.com>
+
+
+==========================================================================
+Ubuntu Security Notice USN-2255-1
+June 25, 2014
+
+neutron vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+
+Summary:
+
+Several security issues were fixed in OpenStack Neutron.
+
+Software Description:
+- neutron: OpenStack Virtual Network Service
+
+Details:
+
+Darragh O'Reilly discovered that the Ubuntu packaging for OpenStack Neutron
+did not properly set up its sudo configuration. If a different flaw was
+found in OpenStack Neutron, this vulnerability could be used to escalate
+privileges. (CVE-2013-6433)
+
+Stephen Ma and Christoph Thiel discovered that the openvswitch-agent in
+OpenStack Neutron did not properly perform input validation when creating
+security group rules when specifying --remote-ip-prefix. A remote
+authenticated attacker could exploit this to prevent application of
+additional rules. (CVE-2014-0187)
+
+Thiago Martins discovered that OpenStack Neutron would inappropriately
+apply SNAT rules to IPv6 subnets when using the L3-agent. A remote
+authenticated attacker could exploit this to prevent floating IPv4
+addresses from being attached throughout the cloud. (CVE-2014-4167)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  python-neutron                  1:2014.1-0ubuntu1.3
+
+Ubuntu 13.10:
+  python-neutron                  1:2013.2.3-0ubuntu1.5
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2255-1
+  CVE-2013-6433, CVE-2014-0187, CVE-2014-4167
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/neutron/1:2014.1-0ubuntu1.3
+  https://launchpad.net/ubuntu/+source/neutron/1:2013.2.3-0ubuntu1.5
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140625/06767aa8/attachment.pgp>
+
+From jamie at canonical.com  Wed Jun 25 21:56:19 2014
+From: jamie at canonical.com (Jamie Strandboge)
+Date: Wed, 25 Jun 2014 16:56:19 -0500
+Subject: [USN-2256-1] Swift vulnerability
+In-Reply-To: <20140625215453.B829226C2D3E@lillypilly.canonical.com>
+References: <20140625215453.B829226C2D3E@lillypilly.canonical.com>
+Message-ID: <53AB4583.9060603@canonical.com>
+
+
+==========================================================================
+Ubuntu Security Notice USN-2256-1
+June 25, 2014
+
+swift vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+
+Summary:
+
+Swift did not properly perform input validation of certain HTTP headers.
+
+Software Description:
+- swift: OpenStack distributed virtual object store
+
+Details:
+
+John Dickinson discovered that Swift did not properly quote the
+WWW-Authenticate header value. If a user were tricked into navigating to a
+malicious Swift URL, an attacker could conduct cross-site scripting
+attacks. With cross-site scripting vulnerabilities, if a user were tricked
+into viewing server output during a crafted server request, a remote
+attacker could exploit this to modify the contents, or steal confidential
+data, within the same domain.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  python-swift                    1.13.1-0ubuntu1.1
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2256-1
+  CVE-2014-3497
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/swift/1.13.1-0ubuntu1.1
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140625/63a07421/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Jun 26 18:23:17 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 26 Jun 2014 14:23:17 -0400
+Subject: [USN-2257-1] Samba vulnerabilities
+Message-ID: <53AC6515.7040603@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2257-1
+June 26, 2014
+
+samba vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+Several security issues were fixed in Samba.
+
+Software Description:
+- samba: SMB/CIFS file, print, and login server for Unix
+
+Details:
+
+Christof Schmitt discovered that Samba incorrectly initialized a certain
+response field when vfs shadow copy was enabled. A remote authenticated
+attacker could use this issue to possibly obtain sensitive information.
+This issue only affected Ubuntu 13.10 and Ubuntu 14.04 LTS. (CVE-2014-0178)
+
+It was discovered that the Samba internal DNS server incorrectly handled QR
+fields when processing incoming DNS messages. A remote attacker could use
+this issue to cause Samba to consume resources, resulting in a denial of
+service. This issue only affected Ubuntu 14.04 LTS. (CVE-2014-0239)
+
+Daniel Berteaud discovered that the Samba NetBIOS name service daemon
+incorrectly handled certain malformed packets. A remote attacker could use
+this issue to cause Samba to consume resources, resulting in a denial of
+service. This issue only affected Ubuntu 12.04 LTS, Ubuntu 13.10, and
+Ubuntu 14.04 LTS. (CVE-2014-0244)
+
+Simon Arlott discovered that Samba incorrectly handled certain unicode path
+names. A remote authenticated attacker could use this issue to cause Samba
+to stop responding, resulting in a denial of service. (CVE-2014-3493)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  samba                           2:4.1.6+dfsg-1ubuntu2.14.04.2
+
+Ubuntu 13.10:
+  samba                           2:3.6.18-1ubuntu3.3
+
+Ubuntu 12.04 LTS:
+  samba                           2:3.6.3-2ubuntu2.11
+
+Ubuntu 10.04 LTS:
+  samba                           2:3.4.7~dfsg-1ubuntu3.15
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2257-1
+  CVE-2014-0178, CVE-2014-0239, CVE-2014-0244, CVE-2014-3493
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/samba/2:4.1.6+dfsg-1ubuntu2.14.04.2
+  https://launchpad.net/ubuntu/+source/samba/2:3.6.18-1ubuntu3.3
+  https://launchpad.net/ubuntu/+source/samba/2:3.6.3-2ubuntu2.11
+  https://launchpad.net/ubuntu/+source/samba/2:3.4.7~dfsg-1ubuntu3.15
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140626/edb763d5/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Jun 26 18:23:48 2014
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 26 Jun 2014 14:23:48 -0400
+Subject: [USN-2258-1] GnuPG vulnerability
+Message-ID: <53AC6534.2050307@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2258-1
+June 26, 2014
+
+gnupg, gnupg2 vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+- Ubuntu 13.10
+- Ubuntu 12.04 LTS
+- Ubuntu 10.04 LTS
+
+Summary:
+
+GnuPG could be made to hang if it processed a specially crafted message.
+
+Software Description:
+- gnupg: GNU privacy guard - a free PGP replacement
+- gnupg2: GNU privacy guard - a free PGP replacement
+
+Details:
+
+Jean-Ren? Reinhard, Olivier Levillain and Florian Maury discovered that
+GnuPG incorrectly handled certain OpenPGP messages. If a user or automated
+system were tricked into processing a specially-crafted message, GnuPG
+could consume resources, resulting in a denial of service.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  gnupg                           1.4.16-1ubuntu2.1
+  gnupg2                          2.0.22-3ubuntu1.1
+
+Ubuntu 13.10:
+  gnupg                           1.4.14-1ubuntu2.2
+  gnupg2                          2.0.20-1ubuntu3.1
+
+Ubuntu 12.04 LTS:
+  gnupg                           1.4.11-3ubuntu2.6
+  gnupg2                          2.0.17-2ubuntu2.12.04.4
+
+Ubuntu 10.04 LTS:
+  gnupg                           1.4.10-2ubuntu1.6
+  gnupg2                          2.0.14-1ubuntu1.7
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2258-1
+  CVE-2014-4617
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/gnupg/1.4.16-1ubuntu2.1
+  https://launchpad.net/ubuntu/+source/gnupg2/2.0.22-3ubuntu1.1
+  https://launchpad.net/ubuntu/+source/gnupg/1.4.14-1ubuntu2.2
+  https://launchpad.net/ubuntu/+source/gnupg2/2.0.20-1ubuntu3.1
+  https://launchpad.net/ubuntu/+source/gnupg/1.4.11-3ubuntu2.6
+  https://launchpad.net/ubuntu/+source/gnupg2/2.0.17-2ubuntu2.12.04.4
+  https://launchpad.net/ubuntu/+source/gnupg/1.4.10-2ubuntu1.6
+  https://launchpad.net/ubuntu/+source/gnupg2/2.0.14-1ubuntu1.7
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140626/ac7b56dc/attachment.pgp>
+
+From john.johansen at canonical.com  Fri Jun 27 09:00:10 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 27 Jun 2014 05:00:10 -0400
+Subject: [USN-2259-1] Linux kernel vulnerabilities
+Message-ID: <53AD329A.1030303@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2259-1
+June 27, 2014
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Salva Peir? discovered an information leak in the Linux kernel's media-
+device driver. A local attacker could exploit this flaw to obtain sensitive
+information from kernel memory. (CVE-2014-1739)
+
+A bounds check error was discovered in the socket filter subsystem of the
+Linux kernel. A local user could exploit this flaw to cause a denial of
+service (system crash) via crafted BPF instructions. (CVE-2014-3144)
+
+A remainder calculation error was discovered in the socket filter subsystem
+of the Linux kernel. A local user could exploit this flaw to cause a denial
+of service (system crash) via crafted BPF instructions. (CVE-2014-3145)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-65-generic    3.2.0-65.98
+  linux-image-3.2.0-65-generic-pae  3.2.0-65.98
+  linux-image-3.2.0-65-highbank   3.2.0-65.98
+  linux-image-3.2.0-65-omap       3.2.0-65.98
+  linux-image-3.2.0-65-powerpc-smp  3.2.0-65.98
+  linux-image-3.2.0-65-powerpc64-smp  3.2.0-65.98
+  linux-image-3.2.0-65-virtual    3.2.0-65.98
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2259-1
+  CVE-2014-1739, CVE-2014-3144, CVE-2014-3145
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.2.0-65.98
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140627/ba2ff78d/attachment.pgp>
+
+From john.johansen at canonical.com  Fri Jun 27 09:00:37 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 27 Jun 2014 05:00:37 -0400
+Subject: [USN-2260-1] Linux kernel (Trusty HWE) vulnerabilities
+Message-ID: <53AD32B5.2030808@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2260-1
+June 27, 2014
+
+linux-lts-trusty vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-lts-trusty: Block storage devices (udeb)
+
+Details:
+
+A flaw was discovered in the Linux kernel's pseudo tty (pty) device. An
+unprivileged user could exploit this flaw to cause a denial of service
+(system crash) or potentially gain administrator privileges.
+(CVE-2014-0196)
+
+Pinkie Pie discovered a flaw in the Linux kernel's futex subsystem. An
+unprivileged local user could exploit this flaw to cause a denial of
+service (system crash) or gain administrative privileges. (CVE-2014-3153)
+
+Matthew Daley reported an information leak in the floppy disk driver of the
+Linux kernel. An unprivileged local user could exploit this flaw to obtain
+potentially sensitive information from kernel memory. (CVE-2014-1738)
+
+Matthew Daley reported a flaw in the handling of ioctl commands by the
+floppy disk driver in the Linux kernel. An unprivileged local user could
+exploit this flaw to gain administrative privileges if the floppy disk
+module is loaded. (CVE-2014-1737)
+
+A flaw was discovered in the handling of network packets when mergeable
+buffers are disabled for virtual machines in the Linux kernel. Guest OS
+users may exploit this flaw to cause a denial of service (host OS crash) or
+possibly gain privilege on the host OS. (CVE-2014-0077)
+
+An information leak was discovered in the netfilter subsystem of the Linux
+kernel. An attacker could exploit this flaw to obtain sensitive information
+from kernel memory. (CVE-2014-2568)
+
+A flaw was discovered in the Linux kernel's ping sockets. An unprivileged
+local user could exploit this flaw to cause a denial of service (system
+crash) or possibly gain privileges via a crafted application.
+(CVE-2014-2851)
+
+Sasha Levin reported a bug in the Linux kernel's virtual memory management
+subsystem. An unprivileged local user could exploit this flaw to cause a
+denial of service (system crash). (CVE-2014-3122)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.13.0-30-generic   3.13.0-30.54~precise2
+  linux-image-3.13.0-30-generic-lpae  3.13.0-30.54~precise2
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2260-1
+  CVE-2014-0077, CVE-2014-0196, CVE-2014-1737, CVE-2014-1738,
+  CVE-2014-2568, CVE-2014-2851, CVE-2014-3122, CVE-2014-3153
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-trusty/3.13.0-30.54~precise2
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140627/7de2a1fb/attachment.pgp>
+
+From john.johansen at canonical.com  Fri Jun 27 09:01:09 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 27 Jun 2014 05:01:09 -0400
+Subject: [USN-2261-1] Linux kernel (Saucy HWE) vulnerabilities
+Message-ID: <53AD32D5.4060204@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2261-1
+June 27, 2014
+
+linux-lts-saucy vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-lts-saucy: Linux hardware enablement kernel from Saucy
+
+Details:
+
+Salva Peir? discovered an information leak in the Linux kernel's media-
+device driver. A local attacker could exploit this flaw to obtain sensitive
+information from kernel memory. (CVE-2014-1739)
+
+A bounds check error was discovered in the socket filter subsystem of the
+Linux kernel. A local user could exploit this flaw to cause a denial of
+service (system crash) via crafted BPF instructions. (CVE-2014-3144)
+
+A remainder calculation error was discovered in the socket filter subsystem
+of the Linux kernel. A local user could exploit this flaw to cause a denial
+of service (system crash) via crafted BPF instructions. (CVE-2014-3145)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.11.0-24-generic   3.11.0-24.41~precise1
+  linux-image-3.11.0-24-generic-lpae  3.11.0-24.41~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2261-1
+  CVE-2014-1739, CVE-2014-3144, CVE-2014-3145
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-saucy/3.11.0-24.41~precise1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140627/9511b939/attachment.pgp>
+
+From john.johansen at canonical.com  Fri Jun 27 09:01:33 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 27 Jun 2014 05:01:33 -0400
+Subject: [USN-2262-1] Linux kernel (Quantal HWE) vulnerabilities
+Message-ID: <53AD32ED.5020909@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2262-1
+June 27, 2014
+
+linux-lts-quantal vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-lts-quantal: Linux hardware enablement kernel from Quantal
+
+Details:
+
+A bounds check error was discovered in the socket filter subsystem of the
+Linux kernel. A local user could exploit this flaw to cause a denial of
+service (system crash) via crafted BPF instructions. (CVE-2014-3144)
+
+A remainder calculation error was discovered in the socket filter subsystem
+of the Linux kernel. A local user could exploit this flaw to cause a denial
+of service (system crash) via crafted BPF instructions. (CVE-2014-3145)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.5.0-52-generic    3.5.0-52.78~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2262-1
+  CVE-2014-3144, CVE-2014-3145
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-quantal/3.5.0-52.78~precise1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140627/5ea13dc8/attachment.pgp>
+
+From john.johansen at canonical.com  Fri Jun 27 09:01:58 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 27 Jun 2014 05:01:58 -0400
+Subject: [USN-2263-1] Linux kernel (OMAP4) vulnerabilities
+Message-ID: <53AD3306.6090005@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2263-1
+June 27, 2014
+
+linux-ti-omap4 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ti-omap4: Linux kernel for OMAP4
+
+Details:
+
+Salva Peir? discovered an information leak in the Linux kernel's media-
+device driver. A local attacker could exploit this flaw to obtain sensitive
+information from kernel memory. (CVE-2014-1739)
+
+A bounds check error was discovered in the socket filter subsystem of the
+Linux kernel. A local user could exploit this flaw to cause a denial of
+service (system crash) via crafted BPF instructions. (CVE-2014-3144)
+
+A remainder calculation error was discovered in the socket filter subsystem
+of the Linux kernel. A local user could exploit this flaw to cause a denial
+of service (system crash) via crafted BPF instructions. (CVE-2014-3145)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-1450-omap4    3.2.0-1450.69
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2263-1
+  CVE-2014-1739, CVE-2014-3144, CVE-2014-3145
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ti-omap4/3.2.0-1450.69
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140627/841df3e9/attachment.pgp>
+
+From john.johansen at canonical.com  Fri Jun 27 09:02:29 2014
+From: john.johansen at canonical.com (John Johansen)
+Date: Fri, 27 Jun 2014 05:02:29 -0400
+Subject: [USN-2264-1] Linux kernel vulnerabilities
+Message-ID: <53AD3325.2010805@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2264-1
+June 27, 2014
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 13.10
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Salva Peir? discovered an information leak in the Linux kernel's media-
+device driver. A local attacker could exploit this flaw to obtain sensitive
+information from kernel memory. (CVE-2014-1739)
+
+A bounds check error was discovered in the socket filter subsystem of the
+Linux kernel. A local user could exploit this flaw to cause a denial of
+service (system crash) via crafted BPF instructions. (CVE-2014-3144)
+
+A remainder calculation error was discovered in the socket filter subsystem
+of the Linux kernel. A local user could exploit this flaw to cause a denial
+of service (system crash) via crafted BPF instructions. (CVE-2014-3145)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 13.10:
+  linux-image-3.11.0-24-generic   3.11.0-24.41
+  linux-image-3.11.0-24-generic-lpae  3.11.0-24.41
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2264-1
+  CVE-2014-1739, CVE-2014-3144, CVE-2014-3145
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.11.0-24.41
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 884 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20140627/61f536a1/attachment.pgp>
+

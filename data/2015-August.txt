@@ -1,0 +1,133 @@
+From chris.coulson at canonical.com  Tue Aug  4 16:55:55 2015
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Tue, 4 Aug 2015 17:55:55 +0100
+Subject: [USN-2677-1] Oxide vulnerabilities
+Message-ID: <55C0EE9B.5010105@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2677-1
+August 04, 2015
+
+oxide-qt vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+
+Summary:
+
+Several security issues were fixed in Oxide.
+
+Software Description:
+- oxide-qt: Web browser engine library for Qt (QML plugin)
+
+Details:
+
+An uninitialized value issue was discovered in ICU. If a user were
+tricked in to opening a specially crafted website, an attacker could
+potentially exploit this to cause a denial of service. (CVE-2015-1270)
+
+A use-after-free was discovered in the GPU process implementation in
+Chromium. If a user were tricked in to opening a specially crafted
+website, an attacker could potentially exploit this to cause a denial of
+service via application crash, or execute arbitrary code with the
+privileges of the user invoking the program. (CVE-2015-1272)
+
+A use-after-free was discovered in the IndexedDB implementation in
+Chromium. If a user were tricked in to opening a specially crafted
+website, an attacker could potentially exploit this to cause a denial of
+service via application crash, or execute arbitrary code with the
+privileges of the user invoking the program. (CVE-2015-1276)
+
+A use-after-free was discovered in the accessibility implemetation in
+Chromium. If a user were tricked in to opening a specially crafted
+website, an attacker could potentially exploit this to cause a denial of
+service via application crash, or execute arbitrary code with the
+privileges of the user invoking the program. (CVE-2015-1277)
+
+A memory corruption issue was discovered in Skia. If a user were tricked
+in to opening a specially crafted website, an attacker could potentially
+exploit this to cause a denial of service via renderer crash, or execute
+arbitrary code with the privileges of the sandboxed render process.
+(CVE-2015-1280)
+
+It was discovered that Blink did not properly determine the V8 context of
+a microtask in some circumstances. If a user were tricked in to opening a
+specially crafted website, an attacker could potentially exploit this to
+bypass Content Security Policy (CSP) restrictions. (CVE-2015-1281)
+
+Multiple integer overflows were discovered in Expat. If a user were
+tricked in to opening a specially crafted website, an attacker could
+potentially exploit this to cause a denial of service via application
+crash, or execute arbitrary code with the privileges of the user invoking
+the program. (CVE-2015-1283)
+
+It was discovered that Blink did not enforce a page's maximum number of 
+frames in some circumstances, resulting in a use-after-free. If a user
+were tricked in to opening a specially crafted website, an attacker could
+potentially exploit this to cause a denial of service via renderer crash,
+or execute arbitrary code with the privileges of the sandboxed render
+process. (CVE-2015-1284)
+
+It was discovered that the XSS auditor in Blink did not properly choose a
+truncation point. If a user were tricked in to opening a specially crafted
+website, an attacker could potentially exploit this to obtain sensitive
+information. (CVE-2015-1285)
+
+An issue was discovered in the CSS implementation in Blink. If a user were
+tricked in to opening a specially crafted website, an attacker could
+potentially exploit this to bypass same-origin restrictions.
+(CVE-2015-1287)
+
+Multiple security issues were discovered in Chromium. If a user were
+tricked in to opening a specially crafted website, an attacker could
+potentially exploit these to read uninitialized memory, cause a denial
+of service via application crash or execute arbitrary code with the
+privileges of the user invoking the program. (CVE-2015-1289)
+
+A use-after-free was discovered in oxide::qt::URLRequestDelegatedJob in
+some circumstances. If a user were tricked in to opening a specially
+crafted website, an attacker could potentially exploit this to cause a
+denial of service via application crash, or execute arbitrary code with
+the privileges of the user invoking the program. (CVE-2015-1329)
+
+A crash was discovered in the regular expression implementation in V8 in
+some circumstances. If a user were tricked in to opening a specially
+crafted website, an attacker could potentially exploit this to cause a
+denial of service. (CVE-2015-5605)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  liboxideqtcore0                 1.8.4-0ubuntu0.15.04.1
+
+Ubuntu 14.04 LTS:
+  liboxideqtcore0                 1.8.4-0ubuntu0.14.04.2
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2677-1
+  CVE-2015-1270, CVE-2015-1272, CVE-2015-1276, CVE-2015-1277,
+  CVE-2015-1280, CVE-2015-1281, CVE-2015-1283, CVE-2015-1284,
+  CVE-2015-1285, CVE-2015-1287, CVE-2015-1289, CVE-2015-1329,
+  CVE-2015-5605, https://launchpad.net/bugs/1466208
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/oxide-qt/1.8.4-0ubuntu0.15.04.1
+  https://launchpad.net/ubuntu/+source/oxide-qt/1.8.4-0ubuntu0.14.04.2
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150804/16b15295/attachment.pgp>
+
