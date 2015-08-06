@@ -13,11 +13,11 @@ sub new{
   my $class = shift;
   my $usn = shift;
   my $self = {};
-  $self->{'debug'} = 1;
+  $self->{'debug'} = 0;
   $self->{'notice'} = $usn;
   $self->{'begins_with'} = {
                              'header'              => '^=+$',
-                             'affects'             => '^(A security issue affects these releases of Ubuntu and its derivatives):',
+                             'affects'             => '^(A security issue affects these releases of Ubuntu and its derivatives|A security issue affects the following Ubuntu releases):',
                              'summary'             => '^(Summary):',
                              'description'         => '^(Software Description):',
                              'details'             => '^(Details|Details (F|f)ollow):',
@@ -52,11 +52,13 @@ sub section{
   return $self->{$type} if defined($self->{$type});
   return undef unless(defined($self->{'begins_with'}->{$type}));
   my $in_section=0;
+  my $has_section=0;
   my $section=[];
   my $stop_regex = $self->any_section_header;
   foreach my $line (split/\n/,$self->notice){
       if($line=~m/$self->{'begins_with'}->{$type}/){
          if ($in_section==0){
+             $has_section=1;
              $in_section = 1;
          }else{
              $in_section = 0;
@@ -65,13 +67,22 @@ sub section{
         $in_section = 0 if ($in_section==1);
       }
       if($in_section == 1){
-        push(@{$section},$line) if($in_section == 1);
-        print ": IN:".$line."\n" if $self->{'debug'} > 0;
+        if($in_section == 1){
+           push(@{$section},$line) unless( ($type == 'header') && ($line=~m/$self->{'begins_with'}->{$type}/) );
+        }
+        if($self->{'debug'} > 0){
+          if( ($type == 'header') && ($line=~m/$self->{'begins_with'}->{$type}/) ){
+            print ":OUT: ".$line."\n";
+          }else{
+            print ": IN: ".$line."\n";
+          }
+        }
       }else{
-        print ":OUT:".$line."\n" if $self->{'debug'} > 0;
+        print ":OUT: ".$line."\n" if $self->{'debug'} > 0;
       }
 
   }
+  return undef unless $has_section;
   $self->{$type} = join("\n",@{$section});
   return $self->{$type};
 }
@@ -85,6 +96,16 @@ sub update_instructions{ my $self=shift; return $self->section('update_instructi
 sub references{          my $self=shift; return $self->section('references');          }
 sub package_information{ my $self=shift; return $self->section('package_information'); }
 sub next_part{           my $self=shift; return $self->section('next_part');           }
+
+sub has_header{ my $self=shift; return 1 if defined($self->header); return 0; }
+sub has_affects{ my $self=shift; return 1 if defined($self->affects); return 0; }
+sub has_summary{ my $self=shift; return 1 if defined($self->summary); return 0; }
+sub has_description{ my $self=shift; return 1 if defined($self->description); return 0; }
+sub has_details{ my $self=shift; return 1 if defined($self->details); return 0; }
+sub has_update_instructions{ my $self=shift; return 1 if defined($self->update_instructions); return 0; }
+sub has_references{ my $self=shift; return 1 if defined($self->references); return 0; }
+sub has_package_information{ my $self=shift; return 1 if defined($self->package_information); return 0; }
+sub has_next_part{ my $self=shift; return 1 if defined($self->next_part); return 0; }
 
 1;
 
@@ -111,9 +132,20 @@ foreach my $mbox (@mboxes){
 }
 foreach my $mail (@{$mails}){
     my $notice = USNEasy->new(join('',@{$mail->body}));
-    #print $notice->section('header')."\n";
-    #print $notice->section('description')."\n";
-    print $notice->section('details')."\n";
+    $notice->has_header?print "H":print"_";
+    $notice->has_affects?print "A":print"_";
+    $notice->has_summary?print "S":print"_";
+    $notice->has_description?print "D":print"_";
+    $notice->has_details?print "E":print"_";
+    $notice->has_update_instructions?print "U":print"_";
+    $notice->has_references?print "R":print"_";
+    $notice->has_package_information?print "P":print"_";
+    $notice->has_next_part?print "N":print"_";
+    print "\n";
+
+    print $notice->notice unless $notice->has_header;
+    # print $notice->section('description')."\n";
+    # print $notice->section('details')."\n";
 }
 exit 0;
 
