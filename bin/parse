@@ -5,6 +5,89 @@ use Time::Piece;
 use FileHandle;
 use strict;
 
+package USNEasy;
+use strict;
+# use warnings;
+
+sub new{
+  my $class = shift;
+  my $usn = shift;
+  my $self = {};
+  $self->{'debug'} = 1;
+  $self->{'notice'} = $usn;
+  $self->{'begins_with'} = {
+                             'header'              => '^=+$',
+                             'affects'             => '^(A security issue affects these releases of Ubuntu and its derivatives):',
+                             'summary'             => '^(Summary):',
+                             'description'         => '^(Software Description):',
+                             'details'             => '^(Details|Details (F|f)ollow):',
+                             'update_instructions' => '^(Update (I|i)nstructions):',
+                             'references'          => '^(References):',
+                             'package_information' => '^(Package Information):',
+                             'next_part'           => '^-+ next part -+$',
+                           };
+  bless $self, $class;
+  return $self;
+}
+
+sub any_section_header{
+  my $self = shift;
+  my @regexes;
+  foreach my $key (sort(keys(%{$self->{'begins_with'}}))){
+    push(@regexes,$self->{'begins_with'}->{$key});
+  }
+  return "(".join('|',@regexes).")";
+}
+
+sub notice{
+  my $self = shift;
+  $self->{'notice'} = shift if @_;
+  return $self->{'notice'};
+}
+
+# A section will be defined as the section header, until the start of any next section.
+sub section{
+  my $self = shift;
+  my $type = shift;
+  return $self->{$type} if defined($self->{$type});
+  return undef unless(defined($self->{'begins_with'}->{$type}));
+  my $in_section=0;
+  my $section=[];
+  my $stop_regex = $self->any_section_header;
+  foreach my $line (split/\n/,$self->notice){
+      if($line=~m/$self->{'begins_with'}->{$type}/){
+         if ($in_section==0){
+             $in_section = 1;
+         }else{
+             $in_section = 0;
+         }
+      }elsif($line=~m/$stop_regex/){
+        $in_section = 0 if ($in_section==1);
+      }
+      if($in_section == 1){
+        push(@{$section},$line) if($in_section == 1);
+        print ": IN:".$line."\n" if $self->{'debug'} > 0;
+      }else{
+        print ":OUT:".$line."\n" if $self->{'debug'} > 0;
+      }
+
+  }
+  $self->{$type} = join("\n",@{$section});
+  return $self->{$type};
+}
+
+sub header{              my $self=shift; return $self->section('header');              }
+sub affects{             my $self=shift; return $self->section('affects');             }
+sub summary{             my $self=shift; return $self->section('summary');             }
+sub description{         my $self=shift; return $self->section('description');         }
+sub details{             my $self=shift; return $self->section('details');             }
+sub update_instructions{ my $self=shift; return $self->section('update_instructions'); }
+sub references{          my $self=shift; return $self->section('references');          }
+sub package_information{ my $self=shift; return $self->section('package_information'); }
+sub next_part{           my $self=shift; return $self->section('next_part');           }
+
+1;
+
 my $directory = $ARGV[0];
 opendir(my $dh, $directory);
 my @mboxes = sort_mboxes(grep { /.txt$/ && -f "$directory/$_" } readdir($dh));
@@ -18,7 +101,6 @@ foreach my $mbox (@mboxes){
         if (defined $fh) {
             while( my $line=<$fh> ){
               if($line=~m/^From /){
-                
                 push(@{$mails},Mail::Internet->new( $current_mail )) if $#{$current_mail} > 0;
                 $current_mail = [];
               }
@@ -27,7 +109,12 @@ foreach my $mbox (@mboxes){
             undef $fh;       # automatically closes the file
         }
 }
-print Data::Dumper->Dump([$mails]);
+foreach my $mail (@{$mails}){
+    my $notice = USNEasy->new(join('',@{$mail->body}));
+    #print $notice->section('header')."\n";
+    #print $notice->section('description')."\n";
+    print $notice->section('details')."\n";
+}
 exit 0;
 
 ################################################################################
@@ -51,5 +138,3 @@ sub sort_mboxes(){
     }
     return @result;
 }
-
-
