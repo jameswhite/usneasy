@@ -13,9 +13,30 @@ sub new{
   my $class = shift;
   my $usn = shift;
   my $self = {};
+  $self->{'debug'} = 1;
   $self->{'notice'} = $usn;
+  $self->{'begins_with'} = {
+                             'header'              => '^=+$',
+                             'affects'             => '^(A security issue affects these releases of Ubuntu and its derivatives):',
+                             'summary'             => '^(Summary):',
+                             'description'         => '^(Software Description):',
+                             'details'             => '^(Details|Details (F|f)ollow):',
+                             'update_instructions' => '^(Update (I|i)nstructions):',
+                             'references'          => '^(References):',
+                             'package_information' => '^(Package Information):',
+                             'next_part'           => '^-+ next part -+$',
+                           };
   bless $self, $class;
   return $self;
+}
+
+sub any_section_header{
+  my $self = shift;
+  my @regexes;
+  foreach my $key (sort(keys(%{$self->{'begins_with'}}))){
+    push(@regexes,$self->{'begins_with'}->{$key});
+  }
+  return "(".join('|',@regexes).")";
 }
 
 sub notice{
@@ -24,28 +45,48 @@ sub notice{
   return $self->{'notice'};
 }
 
-sub head{
+# A section will be defined as the section header, until the start of any next section.
+sub section{
   my $self = shift;
-  return $self->{'header'} if defined($self->{'header'});
-  my $in_head=0;
-  my $head=[];
+  my $type = shift;
+  return $self->{$type} if defined($self->{$type});
+  return undef unless(defined($self->{'begins_with'}->{$type}));
+  my $in_section=0;
+  my $section=[];
+  my $stop_regex = $self->any_section_header;
   foreach my $line (split/\n/,$self->notice){
-      if($line=~m/^=+$/){
-         if ($in_head==0){
-             $in_head = 1;
+      if($line=~m/$self->{'begins_with'}->{$type}/){
+         if ($in_section==0){
+             $in_section = 1;
          }else{
-             $in_head = 0;
+             $in_section = 0;
          }
-      }else{
-          push(@{$head},$line) if($in_head == 1);
+      }elsif($line=~m/$stop_regex/){
+        $in_section = 0 if ($in_section==1);
       }
+      if($in_section == 1){
+        push(@{$section},$line) if($in_section == 1);
+        print ": IN:".$line."\n" if $self->{'debug'} > 0;
+      }else{
+        print ":OUT:".$line."\n" if $self->{'debug'} > 0;
+      }
+
   }
-  $self->{'header'} = join("\n",@{$head});
-  return $self->{'header'};
+  $self->{$type} = join("\n",@{$section});
+  return $self->{$type};
 }
 
-1;
+sub header{              my $self=shift; return $self->section('header');              }
+sub affects{             my $self=shift; return $self->section('affects');             }
+sub summary{             my $self=shift; return $self->section('summary');             }
+sub description{         my $self=shift; return $self->section('description');         }
+sub details{             my $self=shift; return $self->section('details');             }
+sub update_instructions{ my $self=shift; return $self->section('update_instructions'); }
+sub references{          my $self=shift; return $self->section('references');          }
+sub package_information{ my $self=shift; return $self->section('package_information'); }
+sub next_part{           my $self=shift; return $self->section('next_part');           }
 
+1;
 
 my $directory = $ARGV[0];
 opendir(my $dh, $directory);
@@ -70,8 +111,9 @@ foreach my $mbox (@mboxes){
 }
 foreach my $mail (@{$mails}){
     my $notice = USNEasy->new(join('',@{$mail->body}));
-    print $notice->head."\n";
-    print "################################################################################\n";
+    #print $notice->section('header')."\n";
+    #print $notice->section('description')."\n";
+    print $notice->section('details')."\n";
 }
 exit 0;
 
