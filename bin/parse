@@ -162,7 +162,7 @@ sub instructions{
   while($#instructions > -1){
     my $line = shift(@instructions);
     if($in_packages == 1){
-        if($line=~m/^(Ubuntu .*)/){
+        if($line=~m/^(Ubuntu [^:]*):*/){
           $distro = $1;
         }elsif($line=~m/^  (\S+)\s+(\S+)/){
           push(@{ $packages->{$distro} }, {'package' => $1, 'version' => $2});
@@ -197,6 +197,14 @@ sub special_instructions{
   $self->instructions unless( defined($self->{'special_instructions'}) );
   return $self->{'special_instructions'};
 }
+
+sub cves{
+  my $self = shift;
+  my $references = $self->references;
+  @{$self->{'cves'}} = $references=~/([Cc][Vv][Ee]-[0-9]+-[0-9]+)/g;
+  return $self->{'cves'};
+}
+
 1;
 
 ################################################################################
@@ -228,13 +236,13 @@ foreach my $mail (@{$mails}){
     my $notice = USNEasy->new(join('',@{$mail->body}));
     next unless $notice->has_header;
     next unless $notice->update_instructions;
-
     print Data::Dumper->Dump([{
-                                'date'   => $notice->header_date,
-                                'usn'    => $notice->header_usn,
-                                'info'   => $notice->header_tagline,
-                                'update' => $notice->package_updates,
+                                'date'    => $notice->header_date,
+                                'usn'     => $notice->header_usn,
+                                'info'    => $notice->header_tagline,
+                                'update'  => $notice->package_updates,
                                 'special' => $notice->special_instructions,
+                                'CVEs'    => $notice->cves,
                              }]);
 }
 exit 0;
