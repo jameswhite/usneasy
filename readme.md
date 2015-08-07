@@ -18,7 +18,7 @@ parse them and coerce them into JSON. So that's what I did.
 1) Fetch the Security Notices from lists.ubuntu.com *(note: you might want to delete the current <year>-<month>.txt as it won't re-download it if it exists, and it is still getting appended on remote)*
 
 ```
-bin/fetch
+rm data/$(date +"%Y-%B").txt; bin/fetch
 ```
 
 2) Parse the Security Notices now in ./data and create the json files in ./output
