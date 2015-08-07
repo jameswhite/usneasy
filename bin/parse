@@ -3,6 +3,7 @@ use Mail::Internet;
 use Data::Dumper;
 use Time::Piece;
 use FileHandle;
+use JSON;
 use strict;
 
 package USNEasy;
@@ -162,8 +163,9 @@ sub instructions{
   while($#instructions > -1){
     my $line = shift(@instructions);
     if($in_packages == 1){
-        if($line=~m/^(Ubuntu [^:]*):*/){
-          $distro = $1;
+        if($line=~m/^((Ubuntu)\s+([^:]*):*)/){
+          $distro = $3;
+          $distro=~s/ LTS$//;
         }elsif($line=~m/^  (\S+)\s+(\S+)/){
           push(@{ $packages->{$distro} }, {'package' => $1, 'version' => $2});
         }elsif($line=~/^\s*$/){
@@ -205,6 +207,56 @@ sub cves{
   return $self->{'cves'};
 }
 
+sub detail_breakdown{
+  my $self = shift;
+  $self->{'details'} = $self->details unless defined($self->{'details'});
+  my @lines = split(/\n/,$self->{'details'});
+  my $paragraphs = [];
+  my $paraglines = [];
+  foreach my $line (@lines){
+    if($line=~m/^\s*$/g){
+      if($#{ $paraglines } > -1){
+        push(@{ $paragraphs },$paraglines);
+        $paraglines = [];
+      }
+    }else{
+      push(@{ $paraglines }, $line);
+    }
+  }
+  if($#{ $paraglines } > -1){
+    push(@{ $paragraphs },$paraglines);
+  }
+  $self->{'detail_paragraphs'} = $paragraphs;
+  return $self;
+}
+
+sub detail_paragraphs{
+  my $self = shift;
+  $self->detail_breakdown unless(defined($self->{'detail_paragraphs'}));
+  return $self->{'detail_paragraphs'};
+}
+
+sub detail_sentences{
+  my $self = shift;
+  return $self->{'detail_sentences'} if(defined($self->{'detail_sentences'}));
+  $self->detail_breakdown unless(defined($self->{'detail_paragraphs'}));
+  foreach my $paragraph (@{ $self->{'detail_paragraphs'} }){
+    my $pgraphoneline = join(' ',@{$paragraph});
+    my @sentences = split(/\. /,$pgraphoneline);
+    push(@{ $self->{'detail_sentences'} }, @sentences);
+  }
+  return $self->{'detail_sentences'};
+}
+
+sub attacker_capability{
+  my $self = shift;
+  return $self->{'attacker_capability'} if(defined($self->{'attacker_capability'}));
+  $self->detail_sentences unless(defined($self->{'detail_sentences'}));
+  foreach my $sentence (@{ $self->{'detail_sentences'} }){
+    push(@{ $self->{'attacker_capability'} }, "$sentence.") if($sentence =~m/attacker/);
+  }
+  return $self->{'attacker_capability'};
+}
 1;
 
 ################################################################################
@@ -236,14 +288,21 @@ foreach my $mail (@{$mails}){
     my $notice = USNEasy->new(join('',@{$mail->body}));
     next unless $notice->has_header;
     next unless $notice->update_instructions;
-    print Data::Dumper->Dump([{
-                                'date'    => $notice->header_date,
-                                'usn'     => $notice->header_usn,
-                                'info'    => $notice->header_tagline,
-                                'update'  => $notice->package_updates,
-                                'special' => $notice->special_instructions,
-                                'CVEs'    => $notice->cves,
-                             }]);
+    my $dump=1;
+    if($dump){
+      my $json = JSON->new->allow_nonref;
+      print $json->encode({
+                            'date'    => $notice->header_date,
+                            'usn'     => $notice->header_usn,
+                            'info'    => $notice->header_tagline,
+                            'update'  => $notice->package_updates,
+                            'special' => $notice->special_instructions,
+                            'CVEs'    => $notice->cves,
+                            'threat'  => $notice->attacker_capability,
+                          });
+     }else{
+       print Data::Dumper->Dump([$notice->attacker_capability]);
+     }
 }
 exit 0;
 

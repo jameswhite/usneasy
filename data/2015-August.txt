@@ -131,3 +131,360 @@ Size: 473 bytes
 Desc: OpenPGP digital signature
 URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150804/16b15295/attachment.pgp>
 
+From seth.arnold at canonical.com  Thu Aug  6 02:50:42 2015
+From: seth.arnold at canonical.com (Seth Arnold)
+Date: Wed, 5 Aug 2015 19:50:42 -0700
+Subject: [USN-2703-1] Cinder vulnerability
+Message-ID: <20150806025042.GA1265@hunt>
+
+==========================================================================
+Ubuntu Security Notice USN-2703-1
+August 06, 2015
+
+cinder vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+
+Summary:
+
+Cinder could be made to access unintended files over the network by an
+authenticated user.
+
+Software Description:
+- cinder: OpenStack storage service
+
+Details:
+
+Bastian Blank discovered that Cinder guessed image formats based on
+untrusted data. An attacker could use this to read arbitrary files from
+the Cinder host.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  python-cinder                   1:2015.1.0-0ubuntu1.1
+
+After a standard system update you need to restart cinder to make all the
+necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2703-1
+  CVE-2015-1851
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/cinder/1:2015.1.0-0ubuntu1.1
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150805/ec500b8f/attachment.pgp>
+
+From seth.arnold at canonical.com  Thu Aug  6 04:11:30 2015
+From: seth.arnold at canonical.com (Seth Arnold)
+Date: Wed, 5 Aug 2015 21:11:30 -0700
+Subject: [USN-2705-1] Keystone vulnerabilities
+Message-ID: <20150806041130.GA1874@hunt>
+
+==========================================================================
+Ubuntu Security Notice USN-2705-1
+August 06, 2015
+
+python-keystoneclient, python-keystonemiddleware vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+
+Summary:
+
+Keystone could be made to expose sensitive information over the
+network.
+
+Software Description:
+- python-keystoneclient: Client library for OpenStack Identity API
+- python-keystonemiddleware: Client library for OpenStack Identity API
+
+Details:
+
+Qin Zhao discovered Keystone disabled certification verification when
+the "insecure" option is set in a paste configuration (paste.ini)
+file regardless of the value, which allows remote attackers to conduct
+man-in-the-middle attacks via a crafted certificate. (CVE-2014-7144)
+
+Brant Knudson discovered Keystone disabled certification verification when
+the "insecure" option is set in a paste configuration (paste.ini)
+file regardless of the value, which allows remote attackers to conduct
+man-in-the-middle attacks via a crafted certificate. (CVE-2015-1852)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  python-keystoneclient           1:1.2.0-0ubuntu1.1
+  python-keystonemiddleware       1.5.0-0ubuntu1.1
+
+Ubuntu 14.04 LTS:
+  python-keystoneclient           1:0.7.1-ubuntu1.2
+
+After a standard system update you need to restart Keystone to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2705-1
+  CVE-2014-7144, CVE-2015-1852
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/python-keystoneclient/1:1.2.0-0ubuntu1.1
+  https://launchpad.net/ubuntu/+source/python-keystonemiddleware/1.5.0-0ubuntu1.1
+  https://launchpad.net/ubuntu/+source/python-keystoneclient/1:0.7.1-ubuntu1.2
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150805/8cbdeb19/attachment.pgp>
+
+From seth.arnold at canonical.com  Thu Aug  6 03:24:32 2015
+From: seth.arnold at canonical.com (Seth Arnold)
+Date: Wed, 5 Aug 2015 20:24:32 -0700
+Subject: [USN-2704-1] Swift vulnerabilities
+Message-ID: <20150806032432.GA1479@hunt>
+
+==========================================================================
+Ubuntu Security Notice USN-2704-1
+August 06, 2015
+
+swift vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in Swift.
+
+Software Description:
+- swift: OpenStack distributed virtual object store
+
+Details:
+
+Rajaneesh Singh discovered Swift does not properly enforce metadata
+limits. An attacker could abuse this issue to store more metadata than
+allowed by policy. (CVE-2014-7960)
+
+Clay Gerrard discovered Swift allowed users to delete the latest version
+of object regardless of object permissions when allow_version is
+configured. An attacker could use this issue to delete objects.
+(CVE-2015-1856)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  swift                           2.2.2-0ubuntu1.3
+
+Ubuntu 14.04 LTS:
+  swift                           1.13.1-0ubuntu1.2
+
+Ubuntu 12.04 LTS:
+  swift                           1.4.8-0ubuntu2.5
+
+After a standard system update you need to restart swift to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2704-1
+  CVE-2014-7960, CVE-2015-1856
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/swift/2.2.2-0ubuntu1.3
+  https://launchpad.net/ubuntu/+source/swift/1.13.1-0ubuntu1.2
+  https://launchpad.net/ubuntu/+source/swift/1.4.8-0ubuntu2.5
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150805/1325b860/attachment.pgp>
+
+From steve.beattie at canonical.com  Thu Aug  6 19:45:10 2015
+From: steve.beattie at canonical.com (Steve Beattie)
+Date: Thu, 6 Aug 2015 12:45:10 -0700
+Subject: [USN-2706-1] OpenJDK 6 vulnerabilities
+Message-ID: <20150806194510.GD30355@nxnw.org>
+
+==========================================================================
+Ubuntu Security Notice USN-2706-1
+August 06, 2015
+
+openjdk-6 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in OpenJDK 6.
+
+Software Description:
+- openjdk-6: Open Source Java implementation
+
+Details:
+
+Several vulnerabilities were discovered in the OpenJDK JRE related to
+information disclosure, data integrity, and availability. An attacker
+could exploit these to cause a denial of service or expose sensitive
+data over the network. (CVE-2015-2590, CVE-2015-2628, CVE-2015-4731,
+CVE-2015-4732, CVE-2015-4733, CVE-2015-4760, CVE-2015-4748)
+
+Several vulnerabilities were discovered in the cryptographic components
+of the OpenJDK JRE. An attacker could exploit these to expose sensitive
+data over the network. (CVE-2015-2601, CVE-2015-2808, CVE-2015-4000,
+CVE-2015-2625, CVE-2015-2613)
+
+As a security improvement, this update modifies OpenJDK behavior to
+disable RC4 TLS/SSL cipher suites by default.
+
+As a security improvement, this update modifies OpenJDK behavior to
+reject DH key sizes below 768 bits by default, preventing a possible
+downgrade attack.
+
+Several vulnerabilities were discovered in the OpenJDK JRE related
+to information disclosure. An attacker could exploit these to expose
+sensitive data over the network. (CVE-2015-2621, CVE-2015-2632)
+
+A vulnerability was discovered with how the JNDI component of the
+OpenJDK JRE handles DNS resolutions. A remote attacker could exploit
+this to cause a denial of service. (CVE-2015-4749)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  icedtea-6-jre-cacao             6b36-1.13.8-0ubuntu1~12.04
+  icedtea-6-jre-jamvm             6b36-1.13.8-0ubuntu1~12.04
+  openjdk-6-jdk                   6b36-1.13.8-0ubuntu1~12.04
+  openjdk-6-jre                   6b36-1.13.8-0ubuntu1~12.04
+  openjdk-6-jre-headless          6b36-1.13.8-0ubuntu1~12.04
+  openjdk-6-jre-lib               6b36-1.13.8-0ubuntu1~12.04
+  openjdk-6-jre-zero              6b36-1.13.8-0ubuntu1~12.04
+  openjdk-6-source                6b36-1.13.8-0ubuntu1~12.04
+
+This update uses a new upstream release, which includes additional
+bug fixes. After a standard system update you need to restart any
+Java applications or applets to make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2706-1
+  CVE-2015-2590, CVE-2015-2601, CVE-2015-2621, CVE-2015-2625,
+  CVE-2015-2628, CVE-2015-2632, CVE-2015-2808, CVE-2015-4000,
+  CVE-2015-4731, CVE-2015-4732, CVE-2015-4733, CVE-2015-4748,
+  CVE-2015-4749, CVE-2015-4760
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/openjdk-6/6b36-1.13.8-0ubuntu1~12.04
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150806/aa6ee901/attachment.pgp>
+
+From chris.coulson at canonical.com  Fri Aug  7 08:55:15 2015
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Fri, 7 Aug 2015 09:55:15 +0100
+Subject: [USN-2707-1] Firefox vulnerability
+Message-ID: <55C47273.8020200@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2707-1
+August 07, 2015
+
+firefox vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Firefox could be made to expose sensitive information from local files.
+
+Software Description:
+- firefox: Mozilla Open Source web browser
+
+Details:
+
+Cody Crews discovered a way to violate the same-origin policy to inject
+script in to a non-privileged part of the PDF viewer. If a user were
+tricked in to opening a specially crafted website, an attacker could
+exploit this to read sensitive information from local files.
+(CVE-2015-4495)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  firefox                         39.0.3+build2-0ubuntu0.15.04.1
+
+Ubuntu 14.04 LTS:
+  firefox                         39.0.3+build2-0ubuntu0.14.04.1
+
+Ubuntu 12.04 LTS:
+  firefox                         39.0.3+build2-0ubuntu0.12.04.1
+
+After a standard system update you need to restart Firefox to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2707-1
+  CVE-2015-4495
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/firefox/39.0.3+build2-0ubuntu0.15.04.1
+  https://launchpad.net/ubuntu/+source/firefox/39.0.3+build2-0ubuntu0.14.04.1
+  https://launchpad.net/ubuntu/+source/firefox/39.0.3+build2-0ubuntu0.12.04.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150807/2e3d2a58/attachment.pgp>
+
