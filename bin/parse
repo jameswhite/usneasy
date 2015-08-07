@@ -290,16 +290,20 @@ foreach my $mail (@{$mails}){
     next unless $notice->update_instructions;
     my $dump=1;
     if($dump){
-      my $json = JSON->new->allow_nonref;
-      print $json->encode({
-                            'date'    => $notice->header_date,
-                            'usn'     => $notice->header_usn,
-                            'info'    => $notice->header_tagline,
-                            'update'  => $notice->package_updates,
-                            'special' => $notice->special_instructions,
-                            'CVEs'    => $notice->cves,
-                            'threat'  => $notice->attacker_capability,
-                          });
+      my $fh = FileHandle->new("> output/".$notice->header_usn.".json");
+      if (defined $fh) {
+        my $json = JSON->new->allow_nonref;
+        print $fh $json->encode({
+                                  'date'    => $notice->header_date,
+                                  'usn'     => $notice->header_usn,
+                                  'info'    => $notice->header_tagline,
+                                  'update'  => $notice->package_updates,
+                                  'special' => $notice->special_instructions,
+                                  'CVEs'    => $notice->cves,
+                                  'threat'  => $notice->attacker_capability,
+                                });
+         $fh->close;
+       }
      }else{
        print Data::Dumper->Dump([$notice->attacker_capability]);
      }
