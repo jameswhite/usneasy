@@ -97,17 +97,109 @@ sub references{          my $self=shift; return $self->section('references');   
 sub package_information{ my $self=shift; return $self->section('package_information'); }
 sub next_part{           my $self=shift; return $self->section('next_part');           }
 
-sub has_header{ my $self=shift; return 1 if defined($self->header); return 0; }
-sub has_affects{ my $self=shift; return 1 if defined($self->affects); return 0; }
-sub has_summary{ my $self=shift; return 1 if defined($self->summary); return 0; }
-sub has_description{ my $self=shift; return 1 if defined($self->description); return 0; }
-sub has_details{ my $self=shift; return 1 if defined($self->details); return 0; }
+sub has_header{              my $self=shift; return 1 if defined($self->header);              return 0; }
+sub has_affects{             my $self=shift; return 1 if defined($self->affects);             return 0; }
+sub has_summary{             my $self=shift; return 1 if defined($self->summary);             return 0; }
+sub has_description{         my $self=shift; return 1 if defined($self->description);         return 0; }
+sub has_details{             my $self=shift; return 1 if defined($self->details);             return 0; }
 sub has_update_instructions{ my $self=shift; return 1 if defined($self->update_instructions); return 0; }
-sub has_references{ my $self=shift; return 1 if defined($self->references); return 0; }
+sub has_references{          my $self=shift; return 1 if defined($self->references);          return 0; }
 sub has_package_information{ my $self=shift; return 1 if defined($self->package_information); return 0; }
-sub has_next_part{ my $self=shift; return 1 if defined($self->next_part); return 0; }
+sub has_next_part{           my $self=shift; return 1 if defined($self->next_part);           return 0; }
 
+sub header_info{
+  my $self=shift;
+  return undef unless $self->has_header;
+  my $header_line = join(' ',split(/\n/,$self->header));
+  if($header_line=~m/((January|February|March|April|May|June|July|August|September|October|November|December) ([0-9]{1,2}), ([0-9]{4}))/){
+    $self->{'date'}  = $1;
+    $self->{'month'} = $2;
+    $self->{'day'}   = $3;
+    $self->{'year'}  = $4;
+  }
+  $header_line=~s/$self->{'date'}//;
+  if($header_line=~m/(Ubuntu Security Notice ([^\s]+))/){
+    $self->{'usn_text'}  = $1;
+    $self->{'usn'}  = $2;
+
+  }
+  $header_line=~s/$self->{'usn_text'}//;
+  $header_line=~s/^\s+//;
+  $header_line=~s/\s+$//;
+  $self->{'tagline'}=$header_line;
+  return $self;
+}
+
+sub header_date{
+  my $self = shift;
+  return $self->{'date'} if defined $self->{'date'};
+  $self->header_info;
+  return $self->{'date'};
+}
+
+sub header_usn{
+  my $self = shift;
+  return $self->{'usn'} if defined $self->{'usn'};
+  $self->header_info;
+  return $self->{'usn'};
+}
+
+sub header_tagline{
+  my $self = shift;
+  return $self->{'tagline'} if defined $self->{'tagline'};
+  $self->header_info;
+  return $self->{'tagline'};
+}
+
+sub instructions{
+  my $self=shift;
+  return undef unless $self->has_update_instructions;
+  my @instructions = split(/\n/,$self->update_instructions);
+  my $in_packages=0;
+  my $packages={};
+  my @special_instructions;
+  my $distro;
+  while($#instructions > -1){
+    my $line = shift(@instructions);
+    if($in_packages == 1){
+        if($line=~m/^(Ubuntu .*)/){
+          $distro = $1;
+        }elsif($line=~m/^  (\S+)\s+(\S+)/){
+          push(@{ $packages->{$distro} }, {'package' => $1, 'version' => $2});
+        }elsif($line=~/^\s*$/){
+          next;
+        }else{
+           $in_packages = 0;
+           push(@special_instructions,$line) unless($line=~m/^\s*$/);
+        }
+     }else{
+        if($line =~m/The problem can be corrected by updating your system to the following/){
+          $line = $line." ".shift(@instructions);
+          if($line =~m/The problem can be corrected by updating your system to the following package versions:/){
+            $in_packages=1;
+          }
+        }
+        push(@special_instructions,$line) unless($line=~m/^\s*$/);
+     }
+  }
+  $self->{'package_updates'}=$packages;
+  $self->{'special_instructions'}=join("\n",@special_instructions);
+}
+
+sub package_updates{
+  my $self=shift;
+  $self->instructions unless( defined($self->{'package_updates'}) );
+  return $self->{'package_updates'};
+}
+
+sub special_instructions{
+  my $self=shift;
+  $self->instructions unless( defined($self->{'special_instructions'}) );
+  return $self->{'special_instructions'};
+}
 1;
+
+################################################################################
 
 my $directory = $ARGV[0];
 opendir(my $dh, $directory);
@@ -127,29 +219,28 @@ foreach my $mbox (@mboxes){
               }
               push(@{$current_mail}, $line);
             }
+            push(@{$mails},Mail::Internet->new( $current_mail )) if $#{$current_mail} > 0;
             undef $fh;       # automatically closes the file
         }
 }
+
 foreach my $mail (@{$mails}){
     my $notice = USNEasy->new(join('',@{$mail->body}));
-    $notice->has_header?print "H":print"_";
-    $notice->has_affects?print "A":print"_";
-    $notice->has_summary?print "S":print"_";
-    $notice->has_description?print "D":print"_";
-    $notice->has_details?print "E":print"_";
-    $notice->has_update_instructions?print "U":print"_";
-    $notice->has_references?print "R":print"_";
-    $notice->has_package_information?print "P":print"_";
-    $notice->has_next_part?print "N":print"_";
-    print "\n";
+    next unless $notice->has_header;
+    next unless $notice->update_instructions;
 
-    print $notice->notice unless $notice->has_header;
-    # print $notice->section('description')."\n";
-    # print $notice->section('details')."\n";
+    print Data::Dumper->Dump([{
+                                'date'   => $notice->header_date,
+                                'usn'    => $notice->header_usn,
+                                'info'   => $notice->header_tagline,
+                                'update' => $notice->package_updates,
+                                'special' => $notice->special_instructions,
+                             }]);
 }
 exit 0;
 
 ################################################################################
+
 sub sort_mboxes(){
     my @mailboxes = @_;
     my $idx = { 'January'   => '01', 'February'  => '02', 'March'     => '03',
