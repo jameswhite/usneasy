@@ -1,30 +1,30 @@
 #!/bin/bash
-
-for yearmonth in 2004-October 2004-November 2004-December; do
-    if [ ! -f "../data/${yearmonth}.txt" ]; then
-      wget -O ../data/${yearmonth}.txt.gz https://lists.ubuntu.com/archives/ubuntu-security-announce/${yearmonth}.txt.gz
-      gunzip ../data/${yearmonth}.txt.gz
-    fi
-done
-for year in 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014; do
-  for month in January February March April May June July August September October November December; do
-    if [ ! -f "../data/${year}-${month}.txt" ]; then
-      wget -O ../data/${year}-${month}.txt.gz https://lists.ubuntu.com/archives/ubuntu-security-announce/$year-$month.txt.gz
-      gunzip ../data/${year}-${month}.txt.gz
-    fi
+(
+  cd $(dirname $0); 
+  for yearmonth in 2004-October 2004-November 2004-December; do
+      if [ ! -f "../data/${yearmonth}.txt" ]; then
+        wget -O ../data/${yearmonth}.txt.gz https://lists.ubuntu.com/archives/ubuntu-security-announce/${yearmonth}.txt.gz
+        gunzip ../data/${yearmonth}.txt.gz
+      fi
   done
-done
-for year in 2015; do
-  for month in January February March April May June July; do
-    if [ ! -f "../data/${year}-${month}.txt" ]; then
-      wget -O ../data/${year}-${month}.txt.gz https://lists.ubuntu.com/archives/ubuntu-security-announce/$year-$month.txt.gz
-      gunzip ../data/${year}-${month}.txt.gz
-    fi
+  for year in 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014; do
+    for month in January February March April May June July August September October November December; do
+      if [ ! -f "../data/${year}-${month}.txt" ]; then
+        wget -O ../data/${year}-${month}.txt.gz https://lists.ubuntu.com/archives/ubuntu-security-announce/$year-$month.txt.gz
+        gunzip ../data/${year}-${month}.txt.gz
+      fi
+    done
   done
-done
-
-if [ ! -f "../data/2015-August.txt" ]; then
-  wget -O ../data/2015-August.txt https://lists.ubuntu.com/archives/ubuntu-security-announce/2015-August.txt
-fi
-
-chmod 444 ../data/*
+  for year in 2015; do
+    for month in January February March April May June July; do
+      if [ ! -f "../data/${year}-${month}.txt" ]; then
+        wget -O ../data/${year}-${month}.txt.gz https://lists.ubuntu.com/archives/ubuntu-security-announce/$year-$month.txt.gz
+        gunzip ../data/${year}-${month}.txt.gz
+      fi
+    done
+  done
+  if [ ! -f "../data/2015-August.txt" ]; then
+    wget -O ../data/2015-August.txt https://lists.ubuntu.com/archives/ubuntu-security-announce/2015-August.txt
+  fi
+  chmod 444 ../data/*
+)
