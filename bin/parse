@@ -288,8 +288,10 @@ foreach my $mail (@{$mails}){
     my $notice = USNEasy->new(join('',@{$mail->body}));
     next unless $notice->has_header;
     next unless $notice->update_instructions;
-    my $dump=1;
+    next unless grep {/12\.04/} keys($notice->package_updates);
+    my $dump=0;
     if($dump){
+      next if $notice->header_usn == '';
       my $fh = FileHandle->new("> output/".$notice->header_usn.".json");
       if (defined $fh) {
         my $json = JSON->new->allow_nonref;
@@ -303,10 +305,10 @@ foreach my $mail (@{$mails}){
                                   'threat'  => $notice->attacker_capability,
                                 });
          $fh->close;
-       }
-     }else{
-       print Data::Dumper->Dump([$notice->attacker_capability]);
-     }
+      }
+    }else{
+      print Data::Dumper->Dump([keys($notice->package_updates)]);
+    }
 }
 exit 0;
 
