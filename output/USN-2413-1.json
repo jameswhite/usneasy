@@ -1,1 +1,0 @@
-{"info":"apparmor vulnerability","CVEs":["CVE-2014-1424"],"usn":"USN-2413-1","threat":null,"date":"November 20, 2014","update":{"14.04":[{"version":"2.8.95~2430-0ubuntu5.1","package":"apparmor"}]},"special":"The problem can be corrected by updating your system to the following package versions:\nIn general, a standard system update will make all the necessary changes."}

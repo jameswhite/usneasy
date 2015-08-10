@@ -1,1 +1,0 @@
-{"update":{"12.04":[{"version":"2:3.6.3-2ubuntu2.6","package":"samba"}]},"special":"The problem can be corrected by updating your system to the following package versions:\nIn general, a standard system update will make all the necessary changes.","date":"April 16, 2013","threat":null,"CVEs":["CVE-2013-0454"],"usn":"USN-1802-1","info":"samba vulnerability"}

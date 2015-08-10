@@ -1,1 +1,0 @@
-{"CVEs":[],"usn":"USN-1591-1","threat":null,"info":"xdiagnose update","date":"October 02, 2012","special":"The problem can be corrected by updating your system to the following package versions:\nIn general, a standard system update will make all the necessary changes.","update":{"12.04":[{"package":"xdiagnose","version":"2.5.2ubuntu0.1"}]}}

@@ -1,1 +1,0 @@
-{"info":"openssl update","usn":"USN-2367-1","CVEs":[],"threat":null,"date":"October 02, 2014","special":"The problem can be corrected by updating your system to the following package versions:\nAfter a standard system update you need to reboot your computer to make\nall the necessary changes.","update":{"12.04":[{"package":"libssl1.0.0","version":"1.0.1-4ubuntu5.18"}]}}
