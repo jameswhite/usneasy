@@ -79,10 +79,19 @@ foreach my $mail (@{$mails}){
 
 if($dump){
   foreach my $dist (keys(%{$vulns})){
+    # create a package index to the list of notices for rapid inspection by the host
+    my $pkg_index = {};
+    for(my $usn=0; $usn < $#{ $vulns->{$dist} }; $usn++){
+      foreach my $pkg (@{ $vulns->{$dist}->[$usn]->{'update'} }){
+        push(@{ $pkg_index->{ $pkg->{'package'} }->{ $pkg->{'version'} } }, $usn);
+      }
+    }
+
+    # write out the inspection file
     my $fh = FileHandle->new("> output/".$dist.".json");
     if(defined $fh){
       my $json = JSON->new->allow_nonref;
-      print $fh $json->pretty->encode($vulns->{$dist});
+      print $fh $json->pretty->encode({'security_notices' => $vulns->{$dist}, 'vulnerable_packages' => $pkg_index });
       $fh->close;
     }
   }
