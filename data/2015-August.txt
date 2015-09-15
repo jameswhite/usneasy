@@ -488,3 +488,1876 @@ Size: 473 bytes
 Desc: OpenPGP digital signature
 URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150807/2e3d2a58/attachment.pgp>
 
+From chris.coulson at canonical.com  Tue Aug 11 18:37:59 2015
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Tue, 11 Aug 2015 19:37:59 +0100
+Subject: [USN-2702-1] Firefox vulnerabilities
+Message-ID: <55CA4107.6020004@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2702-1
+August 11, 2015
+
+firefox vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Firefox could be made to crash or run programs as your login if it
+opened a malicious website.
+
+Software Description:
+- firefox: Mozilla Open Source web browser
+
+Details:
+
+Gary Kwong, Christian Holler, Byron Campen, Tyson Smith, Bobby Holley,
+Chris Coulson, and Eric Rahm discovered multiple memory safety issues in
+Firefox. If a user were tricked in to opening a specially crafted website,
+an attacker could potentially exploit these to cause a denial of service
+via application crash, or execute arbitrary code with the privileges of
+the user invoking Firefox. (CVE-2015-4473, CVE-2015-4474)
+
+Aki Helin discovered an out-of-bounds read when playing malformed MP3
+content in some circumstances. If a user were tricked in to opening a
+specially crafted website, an attacker could potentially exploit this to
+obtain sensitive information, cause a denial of service via application
+crash, or execute arbitrary code with the privileges of the user invoking
+Firefox. (CVE-2015-4475)
+
+A use-after-free was discovered during MediaStream playback in some
+circumstances. If a user were tricked in to opening a specially crafted
+website, an attacker could potentially exploit this to cause a denial of
+service via application crash or execute arbitrary code with the
+priviliges of the user invoking Firefox. (CVE-2015-4477)
+
+Andr? Bargull discovered that non-configurable properties on javascript
+objects could be redefined when parsing JSON. If a user were tricked in to
+opening a specially crafted website, an attacker could potentially exploit
+this to bypass same-origin restrictions. (CVE-2015-4478)
+
+Multiple integer overflows were discovered in libstagefright. If a user
+were tricked in to opening a specially crafted website, an attacker could
+potentially exploit these to cause a denial of service via application
+crash, or execute arbitrary code with the privileges of the user invoking
+Firefox. (CVE-2015-4479, CVE-2015-4480, CVE-2015-4493)
+
+Jukka Jyl?nki discovered a crash that occurs because javascript does not
+properly gate access to Atomics or SharedArrayBuffers in some
+circumstances. If a user were tricked in to opening a specially crafted
+website, an attacker could potentially exploit this to cause a denial of
+service. (CVE-2015-4484)
+
+Abhishek Arya discovered 2 buffer overflows in libvpx when decoding
+malformed WebM content in some circumstances. If a user were tricked in
+to opening a specially crafted website, an attacker could potentially
+exploit these to cause a denial of service via application crash, or
+execute arbitrary code with the privileges of the user invoking Firefox.
+(CVE-2015-4485, CVE-2015-4486)
+
+Ronald Crane reported 3 security issues. If a user were tricked in to
+opening a specially crafted website, an attacker could potentially
+exploit these, in combination with another security vulnerability, to
+cause a denial of service via application crash, or execute arbitrary
+code with the privileges of the user invoking Firefox. (CVE-2015-4487,
+CVE-2015-4488, CVE-2015-4489)
+
+Christoph Kerschbaumer discovered an issue with Mozilla's implementation
+of Content Security Policy (CSP), which could allow for a more permissive
+usage in some cirucumstances. An attacker could potentially exploit this
+to conduct cross-site scripting (XSS) attacks. (CVE-2015-4490)
+
+Gustavo Grieco discovered a heap overflow in gdk-pixbuf. If a user were
+tricked in to opening a specially crafted website, an attacker could
+potentially exploit this to cause a denial of service via application
+crash or execute arbitrary code with the priviliges of the user invoking
+Firefox. (CVE-2015-4491)
+
+Looben Yang discovered a use-after-free when using XMLHttpRequest with
+shared workers in some circumstances. If a user were tricked in to opening
+a specially crafted website, an attacker could potentially exploit this to
+cause a denial of service via application crash or execute arbitrary code
+with the priviliges of the user invoking Firefox. (CVE-2015-4492)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  firefox                         40.0+build4-0ubuntu0.15.04.1
+
+Ubuntu 14.04 LTS:
+  firefox                         40.0+build4-0ubuntu0.14.04.1
+
+Ubuntu 12.04 LTS:
+  firefox                         40.0+build4-0ubuntu0.12.04.1
+
+After a standard system update you need to restart Firefox to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2702-1
+  CVE-2015-4473, CVE-2015-4474, CVE-2015-4475, CVE-2015-4477,
+  CVE-2015-4478, CVE-2015-4479, CVE-2015-4480, CVE-2015-4484,
+  CVE-2015-4485, CVE-2015-4486, CVE-2015-4487, CVE-2015-4488,
+  CVE-2015-4489, CVE-2015-4490, CVE-2015-4491, CVE-2015-4492,
+  CVE-2015-4493
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/firefox/40.0+build4-0ubuntu0.15.04.1
+  https://launchpad.net/ubuntu/+source/firefox/40.0+build4-0ubuntu0.14.04.1
+  https://launchpad.net/ubuntu/+source/firefox/40.0+build4-0ubuntu0.12.04.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150811/491bd994/attachment.pgp>
+
+From chris.coulson at canonical.com  Tue Aug 11 18:50:09 2015
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Tue, 11 Aug 2015 19:50:09 +0100
+Subject: [USN-2702-2] Ubufox update
+Message-ID: <55CA43E1.8080909@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2702-2
+August 11, 2015
+
+ubufox update
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+This update provides compatible packages for Firefox 40.
+
+Software Description:
+- ubufox: Ubuntu modifications for Firefox
+
+Details:
+
+USN-2702-1 fixed vulnerabilities in Firefox. This update provides the
+corresponding updates for Ubufox.
+
+Original advisory details:
+
+ Gary Kwong, Christian Holler, Byron Campen, Tyson Smith, Bobby Holley,
+ Chris Coulson, and Eric Rahm discovered multiple memory safety issues in
+ Firefox. If a user were tricked in to opening a specially crafted website,
+ an attacker could potentially exploit these to cause a denial of service
+ via application crash, or execute arbitrary code with the privileges of
+ the user invoking Firefox. (CVE-2015-4473, CVE-2015-4474)
+ 
+ Aki Helin discovered an out-of-bounds read when playing malformed MP3
+ content in some circumstances. If a user were tricked in to opening a
+ specially crafted website, an attacker could potentially exploit this to
+ obtain sensitive information, cause a denial of service via application
+ crash, or execute arbitrary code with the privileges of the user invoking
+ Firefox. (CVE-2015-4475)
+ 
+ A use-after-free was discovered during MediaStream playback in some
+ circumstances. If a user were tricked in to opening a specially crafted
+ website, an attacker could potentially exploit this to cause a denial of
+ service via application crash or execute arbitrary code with the
+ priviliges of the user invoking Firefox. (CVE-2015-4477)
+ 
+ Andr? Bargull discovered that non-configurable properties on javascript
+ objects could be redefined when parsing JSON. If a user were tricked in to
+ opening a specially crafted website, an attacker could potentially exploit
+ this to bypass same-origin restrictions. (CVE-2015-4478)
+ 
+ Multiple integer overflows were discovered in libstagefright. If a user
+ were tricked in to opening a specially crafted website, an attacker could
+ potentially exploit these to cause a denial of service via application
+ crash, or execute arbitrary code with the privileges of the user invoking
+ Firefox. (CVE-2015-4479, CVE-2015-4480, CVE-2015-4493)
+ 
+ Jukka Jyl?nki discovered a crash that occurs because javascript does not
+ properly gate access to Atomics or SharedArrayBuffers in some
+ circumstances. If a user were tricked in to opening a specially crafted
+ website, an attacker could potentially exploit this to cause a denial of
+ service. (CVE-2015-4484)
+ 
+ Abhishek Arya discovered 2 buffer overflows in libvpx when decoding
+ malformed WebM content in some circumstances. If a user were tricked in
+ to opening a specially crafted website, an attacker could potentially
+ exploit these to cause a denial of service via application crash, or
+ execute arbitrary code with the privileges of the user invoking Firefox.
+ (CVE-2015-4485, CVE-2015-4486)
+ 
+ Ronald Crane reported 3 security issues. If a user were tricked in to
+ opening a specially crafted website, an attacker could potentially
+ exploit these, in combination with another security vulnerability, to
+ cause a denial of service via application crash, or execute arbitrary
+ code with the privileges of the user invoking Firefox. (CVE-2015-4487,
+ CVE-2015-4488, CVE-2015-4489)
+ 
+ Christoph Kerschbaumer discovered an issue with Mozilla's implementation
+ of Content Security Policy (CSP), which could allow for a more permissive
+ usage in some cirucumstances. An attacker could potentially exploit this
+ to conduct cross-site scripting (XSS) attacks. (CVE-2015-4490)
+ 
+ Gustavo Grieco discovered a heap overflow in gdk-pixbuf. If a user were
+ tricked in to opening a specially crafted website, an attacker could
+ potentially exploit this to cause a denial of service via application
+ crash or execute arbitrary code with the priviliges of the user invoking
+ Firefox. (CVE-2015-4491)
+ 
+ Looben Yang discovered a use-after-free when using XMLHttpRequest with
+ shared workers in some circumstances. If a user were tricked in to opening
+ a specially crafted website, an attacker could potentially exploit this to
+ cause a denial of service via application crash or execute arbitrary code
+ with the priviliges of the user invoking Firefox. (CVE-2015-4492)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  xul-ext-ubufox                  3.1-0ubuntu0.15.04.1
+
+Ubuntu 14.04 LTS:
+  xul-ext-ubufox                  3.1-0ubuntu0.14.04.1
+
+Ubuntu 12.04 LTS:
+  xul-ext-ubufox                  3.1-0ubuntu0.12.04.1
+
+After a standard system update you need to restart Firefox to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2702-2
+  http://www.ubuntu.com/usn/usn-2702-1
+  https://launchpad.net/bugs/1483858
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/ubufox/3.1-0ubuntu0.15.04.1
+  https://launchpad.net/ubuntu/+source/ubufox/3.1-0ubuntu0.14.04.1
+  https://launchpad.net/ubuntu/+source/ubufox/3.1-0ubuntu0.12.04.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150811/b5ba4c0d/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Fri Aug 14 15:41:46 2015
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Fri, 14 Aug 2015 11:41:46 -0400
+Subject: [USN-2710-1] OpenSSH vulnerabilities
+Message-ID: <55CE0C3A.8030108@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2710-1
+August 14, 2015
+
+openssh vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in OpenSSH.
+
+Software Description:
+- openssh: secure shell (SSH) for secure access to remote machines
+
+Details:
+
+Moritz Jodeit discovered that OpenSSH incorrectly handled usernames when
+using PAM authentication. If an additional vulnerability were discovered in
+the OpenSSH unprivileged child process, this issue could allow a remote
+attacker to perform user impersonation. (CVE number pending)
+
+Moritz Jodeit discovered that OpenSSH incorrectly handled context memory
+when using PAM authentication. If an additional vulnerability were
+discovered in the OpenSSH unprivileged child process, this issue could
+allow a remote attacker to bypass authentication or possibly execute
+arbitrary code. (CVE number pending)
+
+Jann Horn discovered that OpenSSH incorrectly handled time windows for
+X connections. A remote attacker could use this issue to bypass certain
+access restrictions. (CVE-2015-5352)
+
+It was discovered that OpenSSH incorrectly handled keyboard-interactive
+authentication. In a non-default configuration, a remote attacker could
+possibly use this issue to perform a brute-force password attack.
+(CVE-2015-5600)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  openssh-server                  1:6.7p1-5ubuntu1.2
+
+Ubuntu 14.04 LTS:
+  openssh-server                  1:6.6p1-2ubuntu2.2
+
+Ubuntu 12.04 LTS:
+  openssh-server                  1:5.9p1-5ubuntu1.6
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2710-1
+  CVE-2015-5352, CVE-2015-5600
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/openssh/1:6.7p1-5ubuntu1.2
+  https://launchpad.net/ubuntu/+source/openssh/1:6.6p1-2ubuntu2.2
+  https://launchpad.net/ubuntu/+source/openssh/1:5.9p1-5ubuntu1.6
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150814/f7614741/attachment.pgp>
+
+From seth.arnold at canonical.com  Fri Aug 14 19:03:17 2015
+From: seth.arnold at canonical.com (Seth Arnold)
+Date: Fri, 14 Aug 2015 12:03:17 -0700
+Subject: [USN-2709-1] pollinate update
+Message-ID: <20150814190317.GA28345@hunt>
+
+==========================================================================
+Ubuntu Security Notice USN-2709-1
+August 14, 2015
+
+pollinate update
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+
+Summary:
+
+The certificate bundled with pollinate has been refreshed.
+
+Software Description:
+- pollinate: seed the pseudo random number generator in virtual machines
+
+Details:
+
+The pollinate package bundles the certificate for entropy.ubuntu.com. This
+update refreshes the certificate to match the new certificate for the
+server.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  pollinate                       4.11-0ubuntu2.1
+
+Ubuntu 14.04 LTS:
+  pollinate                       4.7-0ubuntu1.3
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2709-1
+  https://launchpad.net/bugs/1483762
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/pollinate/4.11-0ubuntu2.1
+  https://launchpad.net/ubuntu/+source/pollinate/4.7-0ubuntu1.3
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: Digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150814/05cd7461/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon Aug 17 16:47:00 2015
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 17 Aug 2015 12:47:00 -0400
+Subject: [USN-2711-1] Net-SNMP vulnerabilities
+Message-ID: <55D21004.8040101@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2711-1
+August 17, 2015
+
+net-snmp vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Net-SNMP could be made to crash or run programs if it received specially
+crafted network traffic.
+
+Software Description:
+- net-snmp: SNMP (Simple Network Management Protocol) server and applications
+
+Details:
+
+It was discovered that Net-SNMP incorrectly handled certain trap messages
+when the -OQ option was used. A remote attacker could use this issue to
+cause Net-SNMP to crash, resulting in a denial of service. (CVE-2014-3565)
+
+Qinghao Tang discovered that Net-SNMP incorrectly handled SNMP PDU parsing
+failures. A remote attacker could use this issue to cause Net-SNMP to
+crash, resulting in a denial of service, or possibly execute arbitrary
+code. (CVE-2015-5621)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  libsnmp30                       5.7.2~dfsg-8.1ubuntu5.1
+
+Ubuntu 14.04 LTS:
+  libsnmp30                       5.7.2~dfsg-8.1ubuntu3.1
+
+Ubuntu 12.04 LTS:
+  libsnmp15                       5.4.3~dfsg-2.4ubuntu1.3
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2711-1
+  CVE-2014-3565, CVE-2015-5621
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/net-snmp/5.7.2~dfsg-8.1ubuntu5.1
+  https://launchpad.net/ubuntu/+source/net-snmp/5.7.2~dfsg-8.1ubuntu3.1
+  https://launchpad.net/ubuntu/+source/net-snmp/5.4.3~dfsg-2.4ubuntu1.3
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150817/79f80dfd/attachment.pgp>
+
+From john.johansen at canonical.com  Tue Aug 18 01:05:06 2015
+From: john.johansen at canonical.com (John Johansen)
+Date: Mon, 17 Aug 2015 18:05:06 -0700
+Subject: [USN-2713-1] Linux kernel vulnerabilities
+Message-ID: <55D284C2.8090500@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2713-1
+August 18, 2015
+
+linux vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Marcelo Ricardo Leitner discovered a race condition in the Linux kernel's
+SCTP address configuration lists when using Address Configuration Change
+(ASCONF) options on a socket. An unprivileged local user could exploit this
+flaw to cause a denial of service (system crash). (CVE-2015-3212)
+
+A flaw was discovered in how the Linux kernel handles invalid UDP
+checksums. A remote attacker could exploit this flaw to cause a denial of
+service using a flood of UDP packets with invalid checksums.
+(CVE-2015-5364)
+
+A flaw was discovered in how the Linux kernel handles invalid UDP
+checksums. A remote attacker can cause a denial of service against
+applications that use epoll by injecting a single packet with an invalid
+checksum. (CVE-2015-5366)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-89-generic    3.2.0-89.127
+  linux-image-3.2.0-89-generic-pae  3.2.0-89.127
+  linux-image-3.2.0-89-highbank   3.2.0-89.127
+  linux-image-3.2.0-89-omap       3.2.0-89.127
+  linux-image-3.2.0-89-powerpc-smp  3.2.0-89.127
+  linux-image-3.2.0-89-powerpc64-smp  3.2.0-89.127
+  linux-image-3.2.0-89-virtual    3.2.0-89.127
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2713-1
+  CVE-2015-3212, CVE-2015-5364, CVE-2015-5366
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.2.0-89.127
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150817/8bb8d2b8/attachment.pgp>
+
+From john.johansen at canonical.com  Tue Aug 18 01:05:52 2015
+From: john.johansen at canonical.com (John Johansen)
+Date: Mon, 17 Aug 2015 18:05:52 -0700
+Subject: [USN-2714-1] Linux kernel (OMAP4) vulnerabilities
+Message-ID: <55D284F0.3040502@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2714-1
+August 18, 2015
+
+linux-ti-omap4 vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in the kernel.
+
+Software Description:
+- linux-ti-omap4: Linux kernel for OMAP4
+
+Details:
+
+Marcelo Ricardo Leitner discovered a race condition in the Linux kernel's
+SCTP address configuration lists when using Address Configuration Change
+(ASCONF) options on a socket. An unprivileged local user could exploit this
+flaw to cause a denial of service (system crash). (CVE-2015-3212)
+
+A flaw was discovered in how the Linux kernel handles invalid UDP
+checksums. A remote attacker could exploit this flaw to cause a denial of
+service using a flood of UDP packets with invalid checksums.
+(CVE-2015-5364)
+
+A flaw was discovered in how the Linux kernel handles invalid UDP
+checksums. A remote attacker can cause a denial of service against
+applications that use epoll by injecting a single packet with an invalid
+checksum. (CVE-2015-5366)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.2.0-1469-omap4    3.2.0-1469.90
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2714-1
+  CVE-2015-3212, CVE-2015-5364, CVE-2015-5366
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-ti-omap4/3.2.0-1469.90
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150817/3918c04a/attachment.pgp>
+
+From john.johansen at canonical.com  Tue Aug 18 01:07:25 2015
+From: john.johansen at canonical.com (John Johansen)
+Date: Mon, 17 Aug 2015 18:07:25 -0700
+Subject: [USN-2715-1] Linux kernel (Trusty HWE) vulnerability
+Message-ID: <55D2854D.2000109@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2715-1
+August 18, 2015
+
+linux-lts-trusty vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 12.04 LTS
+
+Summary:
+
+The system could be made to crash under certain conditions.
+
+Software Description:
+- linux-lts-trusty: Linux hardware enablement kernel from Trusty
+
+Details:
+
+Marcelo Ricardo Leitner discovered a race condition in the Linux kernel's
+SCTP address configuration lists when using Address Configuration Change
+(ASCONF) options on a socket. An unprivileged local user could exploit this
+flaw to cause a denial of service (system crash).
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 12.04 LTS:
+  linux-image-3.13.0-62-generic   3.13.0-62.102~precise1
+  linux-image-3.13.0-62-generic-lpae  3.13.0-62.102~precise1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2715-1
+  CVE-2015-3212
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-trusty/3.13.0-62.102~precise1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150817/d74f372e/attachment.pgp>
+
+From john.johansen at canonical.com  Tue Aug 18 01:08:16 2015
+From: john.johansen at canonical.com (John Johansen)
+Date: Mon, 17 Aug 2015 18:08:16 -0700
+Subject: [USN-2716-1] Linux kernel vulnerability
+Message-ID: <55D28580.6050809@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2716-1
+August 18, 2015
+
+linux vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+
+Summary:
+
+The system could be made to crash under certain conditions.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Marcelo Ricardo Leitner discovered a race condition in the Linux kernel's
+SCTP address configuration lists when using Address Configuration Change
+(ASCONF) options on a socket. An unprivileged local user could exploit this
+flaw to cause a denial of service (system crash).
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  linux-image-3.13.0-62-generic   3.13.0-62.102
+  linux-image-3.13.0-62-generic-lpae  3.13.0-62.102
+  linux-image-3.13.0-62-lowlatency  3.13.0-62.102
+  linux-image-3.13.0-62-powerpc-e500  3.13.0-62.102
+  linux-image-3.13.0-62-powerpc-e500mc  3.13.0-62.102
+  linux-image-3.13.0-62-powerpc-smp  3.13.0-62.102
+  linux-image-3.13.0-62-powerpc64-emb  3.13.0-62.102
+  linux-image-3.13.0-62-powerpc64-smp  3.13.0-62.102
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2716-1
+  CVE-2015-3212
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.13.0-62.102
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150817/0d714f5f/attachment.pgp>
+
+From john.johansen at canonical.com  Tue Aug 18 01:08:45 2015
+From: john.johansen at canonical.com (John Johansen)
+Date: Mon, 17 Aug 2015 18:08:45 -0700
+Subject: [USN-2717-1] Linux kernel (Utopic HWE) vulnerability
+Message-ID: <55D2859D.4060101@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2717-1
+August 18, 2015
+
+linux-lts-utopic vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+
+Summary:
+
+The system could be made to crash under certain conditions.
+
+Software Description:
+- linux-lts-utopic: Linux hardware enablement kernel from Utopic
+
+Details:
+
+Marcelo Ricardo Leitner discovered a race condition in the Linux kernel's
+SCTP address configuration lists when using Address Configuration Change
+(ASCONF) options on a socket. An unprivileged local user could exploit this
+flaw to cause a denial of service (system crash).
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  linux-image-3.16.0-46-generic   3.16.0-46.62~14.04.1
+  linux-image-3.16.0-46-generic-lpae  3.16.0-46.62~14.04.1
+  linux-image-3.16.0-46-lowlatency  3.16.0-46.62~14.04.1
+  linux-image-3.16.0-46-powerpc-e500mc  3.16.0-46.62~14.04.1
+  linux-image-3.16.0-46-powerpc-smp  3.16.0-46.62~14.04.1
+  linux-image-3.16.0-46-powerpc64-emb  3.16.0-46.62~14.04.1
+  linux-image-3.16.0-46-powerpc64-smp  3.16.0-46.62~14.04.1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2717-1
+  CVE-2015-3212
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-utopic/3.16.0-46.62~14.04.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150817/1411663a/attachment-0001.pgp>
+
+From john.johansen at canonical.com  Tue Aug 18 01:09:11 2015
+From: john.johansen at canonical.com (John Johansen)
+Date: Mon, 17 Aug 2015 18:09:11 -0700
+Subject: [USN-2718-1] Linux kernel (Vivid HWE) vulnerability
+Message-ID: <55D285B7.90705@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2718-1
+August 18, 2015
+
+linux-lts-vivid vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 14.04 LTS
+
+Summary:
+
+The system could be made to crash under certain conditions.
+
+Software Description:
+- linux-lts-vivid: Linux hardware enablement kernel from Vivid
+
+Details:
+
+Marcelo Ricardo Leitner discovered a race condition in the Linux kernel's
+SCTP address configuration lists when using Address Configuration Change
+(ASCONF) options on a socket. An unprivileged local user could exploit this
+flaw to cause a denial of service (system crash).
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 14.04 LTS:
+  linux-image-3.19.0-26-generic   3.19.0-26.28~14.04.1
+  linux-image-3.19.0-26-generic-lpae  3.19.0-26.28~14.04.1
+  linux-image-3.19.0-26-lowlatency  3.19.0-26.28~14.04.1
+  linux-image-3.19.0-26-powerpc-e500mc  3.19.0-26.28~14.04.1
+  linux-image-3.19.0-26-powerpc-smp  3.19.0-26.28~14.04.1
+  linux-image-3.19.0-26-powerpc64-emb  3.19.0-26.28~14.04.1
+  linux-image-3.19.0-26-powerpc64-smp  3.19.0-26.28~14.04.1
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2718-1
+  CVE-2015-3212
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux-lts-vivid/3.19.0-26.28~14.04.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150817/b3228faf/attachment.pgp>
+
+From john.johansen at canonical.com  Tue Aug 18 01:09:38 2015
+From: john.johansen at canonical.com (John Johansen)
+Date: Mon, 17 Aug 2015 18:09:38 -0700
+Subject: [USN-2719-1] Linux kernel vulnerability
+Message-ID: <55D285D2.9020401@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2719-1
+August 18, 2015
+
+linux vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+
+Summary:
+
+The system could be made to crash under certain conditions.
+
+Software Description:
+- linux: Linux kernel
+
+Details:
+
+Marcelo Ricardo Leitner discovered a race condition in the Linux kernel's
+SCTP address configuration lists when using Address Configuration Change
+(ASCONF) options on a socket. An unprivileged local user could exploit this
+flaw to cause a denial of service (system crash).
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  linux-image-3.19.0-26-generic   3.19.0-26.28
+  linux-image-3.19.0-26-generic-lpae  3.19.0-26.28
+  linux-image-3.19.0-26-lowlatency  3.19.0-26.28
+  linux-image-3.19.0-26-powerpc-e500mc  3.19.0-26.28
+  linux-image-3.19.0-26-powerpc-smp  3.19.0-26.28
+  linux-image-3.19.0-26-powerpc64-emb  3.19.0-26.28
+  linux-image-3.19.0-26-powerpc64-smp  3.19.0-26.28
+
+After a standard system update you need to reboot your computer to make
+all the necessary changes.
+
+ATTENTION: Due to an unavoidable ABI change the kernel updates have
+been given a new version number, which requires you to recompile and
+reinstall all third party kernel modules you might have installed. If
+you use linux-restricted-modules, you have to update that package as
+well to get modules which work with the new kernel version. Unless you
+manually uninstalled the standard kernel metapackages (e.g. linux-generic,
+linux-server, linux-powerpc), a standard system upgrade will automatically
+perform this as well.
+
+References:
+  http://www.ubuntu.com/usn/usn-2719-1
+  CVE-2015-3212
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/linux/3.19.0-26.28
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150817/8e154031/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Aug 18 14:12:37 2015
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 18 Aug 2015 10:12:37 -0400
+Subject: [USN-2710-2] OpenSSH regression
+Message-ID: <55D33D55.1060702@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2710-2
+August 18, 2015
+
+openssh regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+USN-2710-1 introduced a regression in OpenSSH.
+
+Software Description:
+- openssh: secure shell (SSH) for secure access to remote machines
+
+Details:
+
+USN-2710-1 fixed vulnerabilities in OpenSSH. The upstream fix for
+CVE-2015-5600 caused a regression resulting in random authentication
+failures in non-default configurations. This update fixes the problem.
+
+Original advisory details:
+
+ Moritz Jodeit discovered that OpenSSH incorrectly handled usernames when
+ using PAM authentication. If an additional vulnerability were discovered in
+ the OpenSSH unprivileged child process, this issue could allow a remote
+ attacker to perform user impersonation. (CVE number pending)
+  Moritz Jodeit discovered that OpenSSH incorrectly handled context memory
+ when using PAM authentication. If an additional vulnerability were
+ discovered in the OpenSSH unprivileged child process, this issue could
+ allow a remote attacker to bypass authentication or possibly execute
+ arbitrary code. (CVE number pending)
+  Jann Horn discovered that OpenSSH incorrectly handled time windows for
+ X connections. A remote attacker could use this issue to bypass certain
+ access restrictions. (CVE-2015-5352)
+  It was discovered that OpenSSH incorrectly handled keyboard-interactive
+ authentication. In a non-default configuration, a remote attacker could
+ possibly use this issue to perform a brute-force password attack.
+ (CVE-2015-5600)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  openssh-server                  1:6.7p1-5ubuntu1.3
+
+Ubuntu 14.04 LTS:
+  openssh-server                  1:6.6p1-2ubuntu2.3
+
+Ubuntu 12.04 LTS:
+  openssh-server                  1:5.9p1-5ubuntu1.7
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2710-2
+  http://www.ubuntu.com/usn/usn-2710-1
+  https://launchpad.net/bugs/1485719
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/openssh/1:6.7p1-5ubuntu1.3
+  https://launchpad.net/ubuntu/+source/openssh/1:6.6p1-2ubuntu2.3
+  https://launchpad.net/ubuntu/+source/openssh/1:5.9p1-5ubuntu1.7
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150818/f33b9227/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Tue Aug 18 18:26:44 2015
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Tue, 18 Aug 2015 14:26:44 -0400
+Subject: [USN-2720-1] Django vulnerability
+Message-ID: <55D378E4.1000200@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2720-1
+August 18, 2015
+
+python-django vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Django could be made to crash if it received specially crafted network
+traffic.
+
+Software Description:
+- python-django: High-level Python web development framework (Python 2 version)
+
+Details:
+
+Lin Hua Cheng discovered that Django incorrectly handled the session store.
+A remote attacker could use this issue to cause the session store to fill
+up, resulting in a denial of service.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  python-django                   1.7.6-1ubuntu2.2
+  python3-django                  1.7.6-1ubuntu2.2
+
+Ubuntu 14.04 LTS:
+  python-django                   1.6.1-2ubuntu0.10
+
+Ubuntu 12.04 LTS:
+  python-django                   1.3.1-4ubuntu1.18
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2720-1
+  CVE-2015-5963, CVE-2015-5964
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/python-django/1.7.6-1ubuntu2.2
+  https://launchpad.net/ubuntu/+source/python-django/1.6.1-2ubuntu0.10
+  https://launchpad.net/ubuntu/+source/python-django/1.3.1-4ubuntu1.18
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150818/0053556c/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Aug 20 17:55:00 2015
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 20 Aug 2015 13:55:00 -0400
+Subject: [USN-2721-1] Subversion vulnerabilities
+Message-ID: <55D61474.5080108@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2721-1
+August 20, 2015
+
+subversion vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in Subversion.
+
+Software Description:
+- subversion: Advanced version control system
+
+Details:
+
+It was discovered that the Subversion mod_dav_svn module incorrectly
+handled REPORT requests for a resource that does not exist. A remote
+attacker could use this issue to cause the server to crash, resulting in a
+denial of service. This issue only affected Ubuntu 12.04 LTS and Ubuntu
+14.04 LTS. (CVE-2014-3580)
+
+It was discovered that the Subversion mod_dav_svn module incorrectly
+handled requests requiring a lookup for a virtual transaction name that
+does not exist. A remote attacker could use this issue to cause the server
+to crash, resulting in a denial of service. This issue only affected Ubuntu
+14.04 LTS. (CVE-2014-8108)
+
+Evgeny Kotkov discovered that the Subversion mod_dav_svn module incorrectly
+handled large numbers of REPORT requests. A remote attacker could use this
+issue to cause the server to crash, resulting in a denial of service. This
+issue only affected Ubuntu 14.04 LTS and Ubuntu 15.04. (CVE-2015-0202)
+
+Evgeny Kotkov discovered that the Subversion mod_dav_svn and svnserve
+modules incorrectly certain crafted parameter combinations. A remote
+attacker could use this issue to cause the server to crash, resulting in a
+denial of service. (CVE-2015-0248)
+
+Ivan Zhakov discovered that the Subversion mod_dav_svn module incorrectly
+handled crafted v1 HTTP protocol request sequences. A remote attacker could
+use this issue to spoof the svn:author property. (CVE-2015-0251)
+
+C. Michael Pilato discovered that the Subversion mod_dav_svn module
+incorrectly restricted anonymous access. A remote attacker could use this
+issue to read hidden files via the path name. This issue only affected
+Ubuntu 14.04 LTS and Ubuntu 15.04. (CVE-2015-3184)
+
+C. Michael Pilato discovered that Subversion incorrectly handled path-based
+authorization. A remote attacker could use this issue to obtain sensitive
+path information. (CVE-2015-3187)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  libapache2-svn                  1.8.10-5ubuntu1.1
+  libsvn1                         1.8.10-5ubuntu1.1
+  subversion                      1.8.10-5ubuntu1.1
+
+Ubuntu 14.04 LTS:
+  libapache2-svn                  1.8.8-1ubuntu3.2
+  libsvn1                         1.8.8-1ubuntu3.2
+  subversion                      1.8.8-1ubuntu3.2
+
+Ubuntu 12.04 LTS:
+  libapache2-svn                  1.6.17dfsg-3ubuntu3.5
+  libsvn1                         1.6.17dfsg-3ubuntu3.5
+  subversion                      1.6.17dfsg-3ubuntu3.5
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2721-1
+  CVE-2014-3580, CVE-2014-8108, CVE-2015-0202, CVE-2015-0248,
+  CVE-2015-0251, CVE-2015-3184, CVE-2015-3187
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/subversion/1.8.10-5ubuntu1.1
+  https://launchpad.net/ubuntu/+source/subversion/1.8.8-1ubuntu3.2
+  https://launchpad.net/ubuntu/+source/subversion/1.6.17dfsg-3ubuntu3.5
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150820/1dd4214f/attachment.pgp>
+
+From chris.coulson at canonical.com  Thu Aug 20 19:10:39 2015
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Thu, 20 Aug 2015 20:10:39 +0100
+Subject: [USN-2702-3] Firefox regression
+Message-ID: <55D6262F.7010802@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2702-3
+August 20, 2015
+
+firefox regression
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+USN-2702-1 introduced a regression in Firefox.
+
+Software Description:
+- firefox: Mozilla Open Source web browser
+
+Details:
+
+USN-2702-1 fixed vulnerabilities in Firefox. After upgrading, some users
+in the US reported that their default search engine switched to Yahoo.
+This update fixes the problem.
+
+We apologize for the inconvenience.
+
+Original advisory details:
+
+ Gary Kwong, Christian Holler, Byron Campen, Tyson Smith, Bobby Holley,
+ Chris Coulson, and Eric Rahm discovered multiple memory safety issues in
+ Firefox. If a user were tricked in to opening a specially crafted website,
+ an attacker could potentially exploit these to cause a denial of service
+ via application crash, or execute arbitrary code with the privileges of
+ the user invoking Firefox. (CVE-2015-4473, CVE-2015-4474)
+ 
+ Aki Helin discovered an out-of-bounds read when playing malformed MP3
+ content in some circumstances. If a user were tricked in to opening a
+ specially crafted website, an attacker could potentially exploit this to
+ obtain sensitive information, cause a denial of service via application
+ crash, or execute arbitrary code with the privileges of the user invoking
+ Firefox. (CVE-2015-4475)
+ 
+ A use-after-free was discovered during MediaStream playback in some
+ circumstances. If a user were tricked in to opening a specially crafted
+ website, an attacker could potentially exploit this to cause a denial of
+ service via application crash or execute arbitrary code with the
+ priviliges of the user invoking Firefox. (CVE-2015-4477)
+ 
+ Andr? Bargull discovered that non-configurable properties on javascript
+ objects could be redefined when parsing JSON. If a user were tricked in to
+ opening a specially crafted website, an attacker could potentially exploit
+ this to bypass same-origin restrictions. (CVE-2015-4478)
+ 
+ Multiple integer overflows were discovered in libstagefright. If a user
+ were tricked in to opening a specially crafted website, an attacker could
+ potentially exploit these to cause a denial of service via application
+ crash, or execute arbitrary code with the privileges of the user invoking
+ Firefox. (CVE-2015-4479, CVE-2015-4480, CVE-2015-4493)
+ 
+ Jukka Jyl?nki discovered a crash that occurs because javascript does not
+ properly gate access to Atomics or SharedArrayBuffers in some
+ circumstances. If a user were tricked in to opening a specially crafted
+ website, an attacker could potentially exploit this to cause a denial of
+ service. (CVE-2015-4484)
+ 
+ Abhishek Arya discovered 2 buffer overflows in libvpx when decoding
+ malformed WebM content in some circumstances. If a user were tricked in
+ to opening a specially crafted website, an attacker could potentially
+ exploit these to cause a denial of service via application crash, or
+ execute arbitrary code with the privileges of the user invoking Firefox.
+ (CVE-2015-4485, CVE-2015-4486)
+ 
+ Ronald Crane reported 3 security issues. If a user were tricked in to
+ opening a specially crafted website, an attacker could potentially
+ exploit these, in combination with another security vulnerability, to
+ cause a denial of service via application crash, or execute arbitrary
+ code with the privileges of the user invoking Firefox. (CVE-2015-4487,
+ CVE-2015-4488, CVE-2015-4489)
+ 
+ Christoph Kerschbaumer discovered an issue with Mozilla's implementation
+ of Content Security Policy (CSP), which could allow for a more permissive
+ usage in some cirucumstances. An attacker could potentially exploit this
+ to conduct cross-site scripting (XSS) attacks. (CVE-2015-4490)
+ 
+ Gustavo Grieco discovered a heap overflow in gdk-pixbuf. If a user were
+ tricked in to opening a specially crafted website, an attacker could
+ potentially exploit this to cause a denial of service via application
+ crash or execute arbitrary code with the priviliges of the user invoking
+ Firefox. (CVE-2015-4491)
+ 
+ Looben Yang discovered a use-after-free when using XMLHttpRequest with
+ shared workers in some circumstances. If a user were tricked in to opening
+ a specially crafted website, an attacker could potentially exploit this to
+ cause a denial of service via application crash or execute arbitrary code
+ with the priviliges of the user invoking Firefox. (CVE-2015-4492)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  firefox                         40.0+build4-0ubuntu0.15.04.4
+
+Ubuntu 14.04 LTS:
+  firefox                         40.0+build4-0ubuntu0.14.04.4
+
+Ubuntu 12.04 LTS:
+  firefox                         40.0+build4-0ubuntu0.12.04.4
+
+After a standard system update you need to restart Firefox to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2702-3
+  http://www.ubuntu.com/usn/usn-2702-1
+  https://launchpad.net/bugs/1485741
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/firefox/40.0+build4-0ubuntu0.15.04.4
+  https://launchpad.net/ubuntu/+source/firefox/40.0+build4-0ubuntu0.14.04.4
+  https://launchpad.net/ubuntu/+source/firefox/40.0+build4-0ubuntu0.12.04.4
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150820/135cdcf1/attachment.pgp>
+
+From chris.coulson at canonical.com  Tue Aug 25 10:06:30 2015
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Tue, 25 Aug 2015 11:06:30 +0100
+Subject: [USN-2712-1] Thunderbird vulnerabilities
+Message-ID: <55DC3E26.7060903@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2712-1
+August 25, 2015
+
+thunderbird vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in Thunderbird.
+
+Software Description:
+- thunderbird: Mozilla Open Source mail and newsgroup client
+
+Details:
+
+Gary Kwong, Christian Holler, and Byron Campen discovered multiple memory
+safety issues in Thunderbird. If a user were tricked in to opening a
+specially crafted message, an attacker could potentially exploit these to
+cause a denial of service via application crash, or execute arbitrary code
+with the privileges ofthe user invoking Thunderbird. (CVE-2015-4473)
+
+Ronald Crane reported 3 security issues. If a user were tricked in to
+opening a specially crafted message, an attacker could potentially
+exploit these, in combination with another security vulnerability, to
+cause a denial of service via application crash, or execute arbitrary
+code with the privileges of the user invoking Thunderbird. (CVE-2015-4487,
+CVE-2015-4488, CVE-2015-4489)
+
+Gustavo Grieco discovered a heap overflow in gdk-pixbuf. If a user were
+tricked in to opening a specially crafted message, an attacker could
+potentially exploit this to cause a denial of service via application
+crash or execute arbitrary code with the priviliges of the user invoking
+Thunderbird. (CVE-2015-4491)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  thunderbird                     1:38.2.0+build1-0ubuntu0.15.04.1
+
+Ubuntu 14.04 LTS:
+  thunderbird                     1:38.2.0+build1-0ubuntu0.14.04.1
+
+Ubuntu 12.04 LTS:
+  thunderbird                     1:38.2.0+build1-0ubuntu0.12.04.2
+
+After a standard system update you need to restart Thunderbird to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2712-1
+  CVE-2015-4473, CVE-2015-4487, CVE-2015-4488, CVE-2015-4489,
+  CVE-2015-4491
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/thunderbird/1:38.2.0+build1-0ubuntu0.15.04.1
+  https://launchpad.net/ubuntu/+source/thunderbird/1:38.2.0+build1-0ubuntu0.14.04.1
+  https://launchpad.net/ubuntu/+source/thunderbird/1:38.2.0+build1-0ubuntu0.12.04.2
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150825/c172b7f4/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Wed Aug 26 14:40:11 2015
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Wed, 26 Aug 2015 10:40:11 -0400
+Subject: [USN-2722-1] GDK-PixBuf vulnerability
+Message-ID: <55DDCFCB.1070706@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2722-1
+August 26, 2015
+
+gdk-pixbuf vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+GDK-PixBuf could be made to crash or run programs as your login if it
+opened a specially crafted file.
+
+Software Description:
+- gdk-pixbuf: GDK Pixbuf library
+
+Details:
+
+Gustavo Grieco discovered that GDK-PixBuf incorrectly handled scaling
+bitmap images. If a user or automated system were tricked into opening a
+BMP image file, a remote attacker could use this flaw to cause GDK-PixBuf
+to crash, resulting in a denial of service, or possibly execute arbitrary
+code.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  libgdk-pixbuf2.0-0              2.31.3-1ubuntu0.1
+
+Ubuntu 14.04 LTS:
+  libgdk-pixbuf2.0-0              2.30.7-0ubuntu1.1
+
+Ubuntu 12.04 LTS:
+  libgdk-pixbuf2.0-0              2.26.1-1ubuntu1.2
+
+After a standard system update you need to restart your session to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2722-1
+  CVE-2015-4491
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/gdk-pixbuf/2.31.3-1ubuntu0.1
+  https://launchpad.net/ubuntu/+source/gdk-pixbuf/2.30.7-0ubuntu1.1
+  https://launchpad.net/ubuntu/+source/gdk-pixbuf/2.26.1-1ubuntu1.2
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150826/5f692385/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Aug 27 12:02:03 2015
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 27 Aug 2015 08:02:03 -0400
+Subject: [USN-2724-1] QEMU vulnerabilities
+Message-ID: <55DEFC3B.9090307@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2724-1
+August 27, 2015
+
+qemu, qemu-kvm vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Several security issues were fixed in QEMU.
+
+Software Description:
+- qemu: Machine emulator and virtualizer
+- qemu-kvm: Machine emulator and virtualizer
+
+Details:
+
+It was discovered that QEMU incorrectly handled a PRDT with zero complete
+sectors in the IDE functionality. A malicious guest could possibly use
+this issue to cause a denial of service. This issue only affected Ubuntu
+12.04 LTS and Ubuntu 14.04 LTS. (CVE-2014-9718)
+
+Donghai Zhu discovered that QEMU incorrectly handled the RTL8139 driver.
+A malicious guest could possibly use this issue to read sensitive
+information from arbitrary host memory. (CVE-2015-5165)
+
+Donghai Zhu discovered that QEMU incorrectly handled unplugging emulated
+block devices. A malicious guest could use this issue to cause a denial of
+service, or possibly execute arbitrary code on the host as the user running
+the QEMU process. In the default installation, when QEMU is used with
+libvirt, attackers would be isolated by the libvirt AppArmor profile. This
+issue only affected Ubuntu 15.04. (CVE-2015-5166)
+
+Qinghao Tang and Mr. Zuozhi discovered that QEMU incorrectly handled memory
+in the VNC display driver. A malicious guest could use this issue to cause
+a denial of service, or possibly execute arbitrary code on the host as the
+user running the QEMU process. In the default installation, when QEMU is
+used with libvirt, attackers would be isolated by the libvirt AppArmor
+profile. This issue only affected Ubuntu 15.04. (CVE-2015-5225)
+
+It was discovered that QEMU incorrectly handled the virtio-serial device.
+A malicious guest could use this issue to cause a denial of service, or
+possibly execute arbitrary code on the host as the user running the QEMU
+process. In the default installation, when QEMU is used with libvirt,
+attackers would be isolated by the libvirt AppArmor profile. This issue
+only affected Ubuntu 14.04 LTS and Ubuntu 15.04. (CVE-2015-5745)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  qemu-system                     1:2.2+dfsg-5expubuntu9.4
+  qemu-system-aarch64             1:2.2+dfsg-5expubuntu9.4
+  qemu-system-arm                 1:2.2+dfsg-5expubuntu9.4
+  qemu-system-mips                1:2.2+dfsg-5expubuntu9.4
+  qemu-system-misc                1:2.2+dfsg-5expubuntu9.4
+  qemu-system-ppc                 1:2.2+dfsg-5expubuntu9.4
+  qemu-system-sparc               1:2.2+dfsg-5expubuntu9.4
+  qemu-system-x86                 1:2.2+dfsg-5expubuntu9.4
+
+Ubuntu 14.04 LTS:
+  qemu-system                     2.0.0+dfsg-2ubuntu1.17
+  qemu-system-aarch64             2.0.0+dfsg-2ubuntu1.17
+  qemu-system-arm                 2.0.0+dfsg-2ubuntu1.17
+  qemu-system-mips                2.0.0+dfsg-2ubuntu1.17
+  qemu-system-misc                2.0.0+dfsg-2ubuntu1.17
+  qemu-system-ppc                 2.0.0+dfsg-2ubuntu1.17
+  qemu-system-sparc               2.0.0+dfsg-2ubuntu1.17
+  qemu-system-x86                 2.0.0+dfsg-2ubuntu1.17
+
+Ubuntu 12.04 LTS:
+  qemu-kvm                        1.0+noroms-0ubuntu14.24
+
+After a standard system update you need to restart all QEMU virtual
+machines to make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2724-1
+  CVE-2014-9718, CVE-2015-5165, CVE-2015-5166, CVE-2015-5225,
+  CVE-2015-5745
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/qemu/1:2.2+dfsg-5expubuntu9.4
+  https://launchpad.net/ubuntu/+source/qemu/2.0.0+dfsg-2ubuntu1.17
+  https://launchpad.net/ubuntu/+source/qemu-kvm/1.0+noroms-0ubuntu14.24
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150827/bc685f28/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Thu Aug 27 17:10:15 2015
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Thu, 27 Aug 2015 13:10:15 -0400
+Subject: [USN-2725-1] cups-filters vulnerability
+Message-ID: <55DF4477.1060204@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2725-1
+August 27, 2015
+
+cups-filters vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+
+Summary:
+
+cups-filters would allow unintended access to printers over the network.
+
+Software Description:
+- cups-filters: OpenPrinting CUPS Filters
+
+Details:
+
+Seth Arnold discovered that ippusbxd in the cups-filters package would
+incorrectly listen to all configured network interfaces. A remote attacker
+could use this issue to possibly access locally-connected printers.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  cups-filters-ippusbxd           1.0.67-0ubuntu2.4
+
+In general, a standard system update will make all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2725-1
+  CVE-2015-6520
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/cups-filters/1.0.67-0ubuntu2.4
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150827/1394233d/attachment.pgp>
+
+From chris.coulson at canonical.com  Thu Aug 27 18:30:30 2015
+From: chris.coulson at canonical.com (Chris Coulson)
+Date: Thu, 27 Aug 2015 19:30:30 +0100
+Subject: [USN-2723-1] Firefox vulnerabilities
+Message-ID: <55DF5746.8000000@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2723-1
+August 27, 2015
+
+firefox vulnerabilities
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Firefox could be made to crash or run programs as your login if it
+opened a malicious website.
+
+Software Description:
+- firefox: Mozilla Open Source web browser
+
+Details:
+
+A use-after-free was discovered when resizing a canvas element during
+restyling in some circumstances. If a user were tricked in to opening a
+specially crafted website, an attacker could potentially exploit this to
+cause a denial of service via application crash, or execute arbitrary code
+with the privileges of the user invoking Firefox. (CVE-2015-4497)
+
+Bas Venis discovered that the addon install permission prompt could be
+bypassed using data: URLs in some circumstances. It was also discovered
+that the installation notification could be made to appear over another
+site. If a user were tricked in to opening a specially crafted website, an
+attacker could potentially exploit this to install a malicious addon.
+(CVE-2015-4498)
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  firefox                         40.0.3+build1-0ubuntu0.15.04.1
+
+Ubuntu 14.04 LTS:
+  firefox                         40.0.3+build1-0ubuntu0.14.04.1
+
+Ubuntu 12.04 LTS:
+  firefox                         40.0.3+build1-0ubuntu0.12.04.1
+
+After a standard system update you need to restart Firefox to make
+all the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2723-1
+  CVE-2015-4497, CVE-2015-4498
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/firefox/40.0.3+build1-0ubuntu0.15.04.1
+  https://launchpad.net/ubuntu/+source/firefox/40.0.3+build1-0ubuntu0.14.04.1
+  https://launchpad.net/ubuntu/+source/firefox/40.0.3+build1-0ubuntu0.12.04.1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 473 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150827/0d601b32/attachment.pgp>
+
+From marc.deslauriers at canonical.com  Mon Aug 31 17:12:59 2015
+From: marc.deslauriers at canonical.com (Marc Deslauriers)
+Date: Mon, 31 Aug 2015 13:12:59 -0400
+Subject: [USN-2726-1] Expat vulnerability
+Message-ID: <55E48B1B.6090202@canonical.com>
+
+==========================================================================
+Ubuntu Security Notice USN-2726-1
+August 31, 2015
+
+expat vulnerability
+==========================================================================
+
+A security issue affects these releases of Ubuntu and its derivatives:
+
+- Ubuntu 15.04
+- Ubuntu 14.04 LTS
+- Ubuntu 12.04 LTS
+
+Summary:
+
+Expat could be made to crash or run programs as your login if it opened a
+specially crafted file.
+
+Software Description:
+- expat: XML parsing C library
+
+Details:
+
+It was discovered that Expat incorrectly handled malformed XML data. If a
+user or application linked against Expat were tricked into opening a
+crafted XML file, an attacker could cause a denial of service, or possibly
+execute arbitrary code.
+
+Update instructions:
+
+The problem can be corrected by updating your system to the following
+package versions:
+
+Ubuntu 15.04:
+  lib64expat1                     2.1.0-6ubuntu1.1
+  libexpat1                       2.1.0-6ubuntu1.1
+
+Ubuntu 14.04 LTS:
+  lib64expat1                     2.1.0-4ubuntu1.1
+  libexpat1                       2.1.0-4ubuntu1.1
+
+Ubuntu 12.04 LTS:
+  lib64expat1                     2.0.1-7.2ubuntu1.2
+  libexpat1                       2.0.1-7.2ubuntu1.2
+
+After a standard system upgrade you need to restart any applications linked
+against Expat to effect the necessary changes.
+
+References:
+  http://www.ubuntu.com/usn/usn-2726-1
+  CVE-2015-1283
+
+Package Information:
+  https://launchpad.net/ubuntu/+source/expat/2.1.0-6ubuntu1.1
+  https://launchpad.net/ubuntu/+source/expat/2.1.0-4ubuntu1.1
+  https://launchpad.net/ubuntu/+source/expat/2.0.1-7.2ubuntu1.2
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.ubuntu.com/archives/ubuntu-security-announce/attachments/20150831/7c2de20a/attachment.pgp>
+

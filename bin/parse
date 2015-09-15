@@ -82,7 +82,7 @@ if($dump){
     my $fh = FileHandle->new("> output/".$dist.".json");
     if(defined $fh){
       my $json = JSON->new->allow_nonref;
-      print $fh $json->pretty->encode($vulns);
+      print $fh $json->pretty->encode($vulns->{$dist});
       $fh->close;
     }
   }

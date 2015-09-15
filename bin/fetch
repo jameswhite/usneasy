@@ -16,16 +16,13 @@
     done
   done
   for year in 2015; do
-    for month in January February March April May June July August; do
+    for month in January February March April May June July August September; do
       if [ ! -f "../data/${year}-${month}.txt" ]; then
-        wget -O ../data/${year}-${month}.txt.gz https://lists.ubuntu.com/archives/ubuntu-security-announce/$year-$month.txt.gz
+        wget -O ../data/${year}-${month}.txt.gz https://lists.ubuntu.com/archives/ubuntu-security-announce/$year-$month.txt.gz || \
+          wget -O ../data/${year}-${month}.txt.gz https://lists.ubuntu.com/archives/ubuntu-security-announce/$year-$month.txt
         gunzip ../data/${year}-${month}.txt.gz
       fi
     done
   done
-  if [ ! -f "../data/$(date +"%Y-%B").txt" ]; then
-    wget -O ../data/$(date +"%Y-%B").txt https://lists.ubuntu.com/archives/ubuntu-security-announce/2015-August.txt.gz
-        gunzip ../data/$(date +"%Y-%B").txt.gz
-  fi
   chmod 444 ../data/*
 )
