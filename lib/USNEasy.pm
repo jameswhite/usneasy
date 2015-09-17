@@ -259,20 +259,7 @@ sub attacker_capability{
     my ($got_who, $got_condition, $got_what) = (0,0,0);
     if($sentence =~m/attacker/){
         push(@{ $self->{'attacker_capability'} }, "$sentence.");
-        # $self->{'severity'}=$self->{'severity'}|$self->{'sev_level'}->{'tricked_open_crafted'} if($sentence =~m/tricked\s+into\s+opening\s+a\s+(specially)*\s+crafted/);
-
-#        $handled=1 if($sentence=~m/remote\s+attacker.*denial\s+of\s+service/);
-
-#        $handled=1 if($sentence=~m/attacker.*denial\s+of\s+service/);
-#        $handled=1 if($sentence=~m/attacker\s+could.*arbitrary\s+code\s+as\s+the\s+user/);
-#        $handled=1 if($sentence=~m/attacker\s+could.*obtain\s+authentication\s+tokens/);
-
-#        $handled=1 if($sentence=~m/tricked\s+in\s*to\s+(using|opening|viewing)\s+a\s+(specially\s+)*crafted/);
-#        $handled=1 if($sentence=~m/tricked\s+into\s+viewing\s+a\s+malicious\s+site/);
-#        $handled=1 if($sentence=~m/tricked\s+into\s+connecting\s+to\s+a\s+malicious.*server/);
-
         if($sentence =~m/((([Aa](n)*|[Tt]he)\s+)*(((phy(sica|scia)lly\s+)*(user-assisted\s+|proximate\s+|unprivileged\s+|privileged\s+)*)*([Rr]emo(t|v)e(,)*\s+|[Ll]ocal\s+)*(authorized\s+|authenticated\s+|unauthenticated\s+)*|(unathenticated\s+|authenticated\s+)*(remote\s+|local\s+))*(NFS\s+server\s+)*(\()*attacker(\))*(s)*)/){ $who=$1; $got_who=1; }
-
         my $mangled_sentence=$sentence;
         my $sed_who=$who; $sed_who=~s/\(/\\\(/g; $sed_who=~s/\)/\\\)/g;
         $mangled_sentence=~s/$sed_who/~attacker~/;
@@ -280,7 +267,6 @@ sub attacker_capability{
           $mangled_sentence=$sentence;
           $mangled_sentence=~s/$sed_who.*/~attacker~/;
         }
-
         if($mangled_sentence=~m/((could(,)*\s+|may\s+|might\s+|can\s+|access\s+to\s+restricted\s+|to\s+(break|bypass|cause|conduct|confuse|contact|corrupt|create|determine|discover|execute|expose|gain|inject|load|obtain|open|perform|possibly\s+(execute|obtain)|recover|spoof|view)\s+|'s\s+dialog\s+to\s+be\s+displayed\s+over\s+another\s+sites\s+content|would\s+be\s+isolated|would\s+need\s+write\s+access|more\s+information|cannot\s+exploit\s+this).*)/){ $what=$1; $got_what=1; }
         my $sed_what=$what; $sed_what=~s/\(/\\\(/g; $sed_what=~s/\)/\\\)/g;
         $mangled_sentence=~s/$sed_what/~capability~/;
@@ -288,7 +274,6 @@ sub attacker_capability{
         $mangled_sentence=~s/~attacker~//;
         $mangled_sentence=~s/~capability~//;
         $condition=$mangled_sentence; $got_condition=1;
-
     }
   }
   return $self->{'attacker_capability'};
