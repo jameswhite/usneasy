@@ -19,6 +19,8 @@ parse them and coerce them into JSON. So that's what I did.
 
 ```
 [ -f data/$(date +"%Y-%B").txt ] && rm -f data/$(date +"%Y-%B").txt
+[ -f cve/allitems-cvrf-year-$(date +"%Y").xml ] && rm -f cve/allitems-cvrf-year-$(date +"%Y").xml
+[ -f nvd/nvdcve-2.0-$(date +"%Y").xml ] && rm -f nvd/nvdcve-2.0-$(date +"%Y").xml
 bin/fetch
 ```
 

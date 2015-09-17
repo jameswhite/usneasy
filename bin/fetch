@@ -24,5 +24,19 @@
       fi
     done
   done
-  chmod 444 ../data/*
+
+  for year in 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015; do
+    if [ ! -f ../cve/allitems-cvrf-year-${year}.xml ] ; then
+      wget -O ../cve/allitems-cvrf-year-${year}.xml http://cve.mitre.org/data/downloads/allitems-cvrf-year-${year}.xml
+    fi
+  done
+
+  for year in 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015; do
+    if [ ! -f ../nvd/nvdcve-2.0-${year}.xml ] ; then
+      wget -O ../nvd/nvdcve-2.0-${year}.xml.gz https://nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-${year}.xml.gz
+      gunzip ../nvd/nvdcve-2.0-${year}.xml.gz
+    fi
+  done
+
+  chmod 444 ../data/* ../cve/* ../nvd/*
 )
